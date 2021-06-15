@@ -14,9 +14,9 @@ class RestaurantSeeder extends Seeder
     public function run()
     {
         factory(Restaurant::class,25) -> make() -> each(function($restaurant){
-            $user = User::inRandomOrder() -> first(); // Elemento casuale
+            $user = User::inRandomOrder() -> first();
             $restaurant -> user() -> associate($user);
-            $restaurant -> save(); 
+            $restaurant -> save();
         });
     }
 }
