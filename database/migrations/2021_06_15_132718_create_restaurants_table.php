@@ -21,6 +21,7 @@ class CreateRestaurantsTable extends Migration
             $table -> string('address');
             $table -> string('description', 1024);
             $table -> string('telephone', 32);
+            $table -> string('img') -> nullable();
 
             $table -> bigInteger('user_id') -> unsigned() -> index();
 
