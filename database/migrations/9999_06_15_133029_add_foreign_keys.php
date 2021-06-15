@@ -27,8 +27,8 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
-        // Schema::table('restaurants', function (Blueprint $table){
-        //     $table -> dropForeign('restaurant_user');
-        // });
+        Schema::table('restaurants', function (Blueprint $table){
+            $table -> dropForeign('restaurant_user');
+        });
     }
 }
