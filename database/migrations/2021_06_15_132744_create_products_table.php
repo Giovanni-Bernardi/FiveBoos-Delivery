@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table -> string('ingredients', 1024);
             $table -> string('description', 1024);
             $table -> integer('price');
-            $table -> boolean('visibile') -> default(0);
+            $table -> boolean('visible') -> default(0);
             $table -> string('img') -> nullable();
 
             $table -> bigInteger('restaurant_id') -> unsigned() -> index();

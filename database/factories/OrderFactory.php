@@ -13,6 +13,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'telephone' => '+39' . $faker -> numberBetween(300000000, 399999999) . $faker -> randomNumber(1),
         'address' => $faker -> address(),
         'delivery_date' => $faker -> dateTimeBetween('-1 years', 'now', null),
-        'total_price' => '€' . $faker -> numberBetween(1, 200),
+        'total_price' => $faker -> numberBetween(1, 200),
     ];
 });
