@@ -11,9 +11,18 @@ class Restaurant extends Model
         'piva',
         'address',
         'description',
+        'telephone'
     ];
-
+    
     public function user(){
         return $this -> belongsTo(User::class);
+    }
+
+    public function types(){
+        return $this -> belongsToMany(Type::class);
+    }
+
+    public function products(){
+        return $this -> hasMany(Products::class);
     }
 }
