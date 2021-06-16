@@ -151,6 +151,15 @@ class AdminController extends Controller
         ]);
 
         $product = Product::findorFail($id);
+        
+        if($request -> file('img')){
+            $img = $request -> file('img');
+            $imgExt = $img -> getClientOriginalExtension();
+            $imgNewName = time() . rand(0, 1000) . '.' . $imgExt;
+            $folder = '/product-img/';
+            $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+            $product -> img = $imgNewName;
+        }
         $product -> update($validate);
         $product -> save();
 
