@@ -110,6 +110,27 @@ class AdminController extends Controller
         $restaurant = Restaurant::findOrFail($id);
         return view('pages.restaurant-edit', compact('restaurant'));
     }
+    // ----------------------
+    public function updateRestaurantView(Request $request, $id) {
+
+        // dd($request -> all(), $id);
+
+        $validate = $request -> validate([
+            'business_name' => 'required|string',
+            'piva' => 'required|string',
+            'address' => 'required|string',
+            'description' => 'required|string',
+            'telephone' => 'required|string',
+        ]);
+        $restaurant = Restaurant::findOrFail($id);
+
+        $restaurant -> update($validate);
+
+        $restaurant -> save();
+
+        return redirect() -> route('restaurantDetailsViewLink', $restaurant -> id);
+    }
+
 
     public function editProductView($id){
 
