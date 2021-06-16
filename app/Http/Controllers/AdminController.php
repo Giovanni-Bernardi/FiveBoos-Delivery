@@ -89,19 +89,16 @@ class AdminController extends Controller
 
         $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
 
-        // $img = $request -> file('image');
-        // $imgExt = $img -> getClientOriginalExtension();
-        // $imgNewName = time() . rand(0, 1000) . '.' . $imgExt;
-        // $folder = '/car-img/';
-        // $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+        $img = $request -> file('image');
+        $imgExt = $img -> getClientOriginalExtension();
+        $imgNewName = time() . rand(0, 1000) . '.' . $imgExt;
+        $folder = '/product-img/';
+        $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
 
         $product = Product::make($validate);
         $product -> restaurant() -> associate($restaurant);
-        // $product -> img = $imgNewName;
+        $product -> img = $imgNewName;
         $product -> save();
-
-        // $car -> pilots() -> attach($request -> get('pilots_id'));
-        // $car -> save();
 
         return redirect() -> route('createProduct');
         // return redirect() -> route('restaurantDetailsViewLink');
@@ -119,5 +116,5 @@ class AdminController extends Controller
 
         return view('pages.product-edit', compact('product'));
     }
-    
+
 }
