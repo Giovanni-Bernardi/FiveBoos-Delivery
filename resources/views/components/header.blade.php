@@ -1,3 +1,3 @@
 <header>
-    <a href="">Home</a>
+    <a href="{{route('indexViewLink')}}">Home</a>
 </header>

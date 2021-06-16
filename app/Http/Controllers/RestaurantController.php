@@ -3,10 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Restaurant;
+use App\Product;
 
 class RestaurantController extends Controller
 {
     public function indexView(){
-        return view('pages.index');
+        $restaurants = Restaurant::all();
+
+        return view('pages.index', compact('restaurants'));
+    }
+    public function restaurantDetailsView($id){
+        $restaurant = Restaurant::findOrFail($id);
+
+        return view('pages.restaurant-details', compact('restaurant'));
+    }
+
+    public function productDetailsView($id){
+        $product = Product::findOrFail($id);
+
+        return view('pages.product-details', compact('product'));
     }
 }
