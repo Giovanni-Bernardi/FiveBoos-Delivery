@@ -34,6 +34,12 @@ Route::get('/edit/restaurant/{id}','AdminController@editRestaurantView') -> name
 // Route salvataggio/store edit ristorante
 // Route::post('/store/restaurant/{id}','AdminController@editRestaurantView') -> name('editRestaurantViewLink');
 
-// Route edit piatto
+// Route edit product
 Route::get('/edit/product/{id}','AdminController@editProductView') -> name('editProductViewLink');
 Route::post('/update/product/{id}', 'AdminController@updateProductView') -> name('updateProductViewLink');
+
+// Route delete ristorante
+Route::get('/delete/restaurant/{id}','AdminController@deleteRestaurant') -> name('deleteRestaurantLink');
+
+// Route delete product
+Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('deleteProductLink');
