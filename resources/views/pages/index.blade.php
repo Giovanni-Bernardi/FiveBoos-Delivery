@@ -2,11 +2,19 @@
 
 @section('content')
     <main>
-        <h2>Delivery Test</h2>
+        <h2>Delivery</h2>
         <ul>
             <li>
-                Martino test
+                <h4>
+                    Restaurants List:
+                </h4>
             </li>
+            @foreach ($restaurants as $restaurant)
+                <li>
+                    {{$restaurant -> business_name}}
+                    <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}">details</a>
+                </li>
+            @endforeach
         </ul>
     </main>
 @endsection

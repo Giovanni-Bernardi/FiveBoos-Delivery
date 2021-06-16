@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Mail;
 // Serve per mandare email al utente logato(al suo email)
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 use App\Restaurant;
 use App\Product;
@@ -108,4 +107,17 @@ class AdminController extends Controller
         // return redirect() -> route('restaurantDetailsViewLink');
     }
 
+
+    public function editRestaurantView($id){
+        $restaurant = Restaurant::findOrFail($id);
+
+        return view('pages.restaurant-edit', compact('restaurant'));
+    }
+
+    public function editProductView($id){
+        $product = Product::findOrFail($id);
+
+        return view('pages.product-edit', compact('product'));
+    }
+    
 }
