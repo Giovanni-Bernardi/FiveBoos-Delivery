@@ -106,15 +106,32 @@ class AdminController extends Controller
 
 
     public function editRestaurantView($id){
-        $restaurant = Restaurant::findOrFail($id);
 
+        $restaurant = Restaurant::findOrFail($id);
         return view('pages.restaurant-edit', compact('restaurant'));
     }
 
     public function editProductView($id){
-        $product = Product::findOrFail($id);
 
+        $product = Product::findOrFail($id);
         return view('pages.product-edit', compact('product'));
+    }
+
+    public function updateProductView(Request $request, $id) {
+
+        $validate = $request -> validate([
+            'name' => 'required|string|min:3',
+            'ingredients' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required|integer',
+            'visible' => 'required|boolean',
+        ]);
+
+        $product = Product::findorFail($id);
+        $product -> update($validate);
+        $product -> save();
+
+        return redirect() -> route('productDetailsViewLink', $product -> id);
     }
 
     // Soft delete ristorante

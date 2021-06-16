@@ -18,6 +18,9 @@ Route::get('/index','RestaurantController@indexView') -> name('indexViewLink');
 // Route dettaglio ristorante con lista prodotti
 Route::get('/restaurant/{id}','RestaurantController@restaurantDetailsView') -> name('restaurantDetailsViewLink');
 
+// Route dettaglio prodotto
+Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');
+
 // Route per creazione di Restaurant
 Route::get('/restaurant-create', 'AdminController@createRestaurant') -> name('createRestaurant');
 Route::post('/restaurant-store', 'AdminController@storeRestaurant') -> name('storeRestaurant');
@@ -41,3 +44,4 @@ Route::get('/delete/product/{id}', 'AdminController@deleteProduct') -> name('del
 Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');
 // Route edit prodotto
 Route::get('/edit/product/{id}','AdminController@editProductView') -> name('editProductViewLink');
+Route::post('/update/product/{id}', 'AdminController@updateProductView') -> name('updateProductViewLink');

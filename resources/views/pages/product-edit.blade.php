@@ -3,7 +3,7 @@
 @section('content')
     <main>
         <h2></h2>
-        <form action="" method="POST">
+        <form  method="POST" action="{{ route('updateProductViewLink', $product -> id) }}">
             @method('POST')
             @csrf
 
@@ -15,27 +15,33 @@
                 </li>
                 <li>
                     <label for="name">
-                        Product name: 
+                        Product name:
                     </label>
                     <input type="text" name="name" value="{{$product -> name}}">
                 </li>
                 <li>
                     <label for="name">
-                        Ingredients: 
+                        Ingredients:
                     </label>
                     <textarea name="ingredients" cols="40" rows="5">{{$product -> ingredients}}</textarea>
                 </li>
                 <li>
                     <label for="description">
-                        Description: 
+                        Description:
                     </label>
                     <textarea name="description" cols="40" rows="5">{{$product -> description}}</textarea>
                 </li>
                 <li>
                     <label for="price">
-                        Price: 
+                        Price:
                     </label>
                     <input type="text" name="price" value="{{$product -> price}}">
+                </li>
+                <li>
+                    <label for="img">
+                        Imagine:
+                    </label>
+                    <input type="file" name="img" value="{{$product -> img}}">
                 </li>
                 <li>
                     <label for="1">

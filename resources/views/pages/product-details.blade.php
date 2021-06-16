@@ -21,14 +21,18 @@
                 Description: {{$product -> description}}
             </li>
             <li>
-                Visible: 
+                Imagine:
+                <img src="{{ asset('storage/product-img/' . $product -> img) }}" alt="Imagine del car" width="50px">
+            </li>
+            <li>
+                Visible:
                 @if ($product -> visible)
                     <u>
-                        yes    
+                        yes
                     </u>
                 @else
                     <u>
-                        no    
+                        no
                     </u>
                 @endif
             </li>
