@@ -7,7 +7,7 @@
                     Delive<span>Boo</span> 
                 </h3>
                 <div class="stores">
-                   <a href=""> <img src="{{ asset('/storage/assets/applestore.png') }}" alt="logo apple store"> </a> 
+                   <a href=""> <img src="{{ asset('/storage/assets/applestore.svg') }}" alt="logo apple store"> </a> 
                    <a href=""> <img src="{{ asset('/storage/assets/playstore.png') }}" alt="logo play store"> </a>
                 </div>
             </div>
