@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+//Importa la nostra mail blade.
+use Illuminate\Support\Facades\Mail;
+// Serve per mandare email al utente logato(al suo email)
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Restaurant;
+use App\Product;
 
 class AdminController extends Controller
 {
@@ -13,7 +18,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     // CREA SINGOLO RISTORANTE
     public function createRestaurant()
     {
@@ -65,4 +70,42 @@ class AdminController extends Controller
 
         return redirect() -> route('indexViewLink');
     }
+
+    public function createProduct() {
+
+        $id = Auth::id();
+        $restaurants = Restaurant::All() -> where('user_id', $id);
+        return view('pages.createProduct', compact('restaurants'));
+    }
+
+    public function storeProduct(Request $request) {
+
+        $validate = $request -> validate([
+          'name' => 'required|string|min:3',
+          'ingredients' => 'required|string',
+          'description' => 'required|string',
+          'price' => 'required|integer',
+          'visible' => 'required|boolean',
+        ]);
+
+        $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
+
+        // $img = $request -> file('image');
+        // $imgExt = $img -> getClientOriginalExtension();
+        // $imgNewName = time() . rand(0, 1000) . '.' . $imgExt;
+        // $folder = '/car-img/';
+        // $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+
+        $product = Product::make($validate);
+        $product -> restaurant() -> associate($restaurant);
+        // $product -> img = $imgNewName;
+        $product -> save();
+
+        // $car -> pilots() -> attach($request -> get('pilots_id'));
+        // $car -> save();
+
+        return redirect() -> route('createProduct');
+        // return redirect() -> route('restaurantDetailsViewLink');
+    }
+
 }

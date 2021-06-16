@@ -13,7 +13,7 @@ class Restaurant extends Model
         'description',
         'telephone'
     ];
-    
+
     public function user(){
         return $this -> belongsTo(User::class);
     }
@@ -23,6 +23,6 @@ class Restaurant extends Model
     }
 
     public function products(){
-        return $this -> hasMany(Products::class);
+        return $this -> hasMany(Product::class);
     }
 }
