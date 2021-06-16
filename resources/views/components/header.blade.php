@@ -1,3 +1,15 @@
 <header>
-    <a href="">Home</a>
+    <nav>
+        <div class='site-logo'>Deliveboo</div>
+        <input class="check" type="checkbox">
+        <div class="ham-menu">
+            <div class="menuline"></div>
+        </div>
+        <ul class='menulist'>
+            <li><a href='#'>Registrati</a></li>
+            <li><a href='#'>Il mio profilo</a></li>
+            <li><a href='#'>Aggiungi ristorante</a></li>
+            <li><a href='#'>Logout</a></li>
+        </ul>
+    </nav>
 </header>
