@@ -10943,6 +10943,8 @@ a.text-dark:focus {
 }
 
 footer {
+  flex-shrink: 0;
+  width: 100%;
   background-color: black;
   padding: 20px 12px 10px 12px;
 }

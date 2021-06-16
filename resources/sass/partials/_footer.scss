@@ -2,9 +2,13 @@ footer {
     // $direction: row;
     // $justify: space-between;
     // $align: center;
-
+    
     // @include flex($direction,$justify,$align);
     
+    // position: absolute;
+    // bottom: 0;
+    flex-shrink: 0;
+    width: 100%;
     background-color: black;
     padding: 20px 12px 10px 12px;
     
