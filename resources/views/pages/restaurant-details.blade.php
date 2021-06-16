@@ -32,6 +32,9 @@
             <li>
                 <a href="{{route('editRestaurantViewLink', $restaurant -> id)}}">Edit this restaurant</a>
             </li>
+            <li>
+                <a href="{{route('deleteRestaurantLink', $restaurant -> id)}}">Delete this restaurant</a>
+            </li>
         </ul>
 
         <hr>

@@ -117,4 +117,24 @@ class AdminController extends Controller
         return view('pages.product-edit', compact('product'));
     }
 
+    // Soft delete ristorante
+    public function deleteRestaurant($id){
+        $restaurant = Restaurant::findOrFail($id);
+        $restaurant -> visible = 0;
+
+        $restaurant -> save();
+
+        return redirect() -> route('indexViewLink');
+    }
+
+    // Soft delete product
+    public function deleteProduct($id){
+        $product = Product::findOrFail($id);
+        $product -> visible = 0;
+
+        $product -> save();
+
+        return redirect() -> route('restaurantDetailsViewLink', $product -> restaurant -> id);
+    }
+    
 }

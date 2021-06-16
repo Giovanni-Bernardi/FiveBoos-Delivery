@@ -35,6 +35,9 @@
             <li>
                 <a href="{{route('editProductViewLink', $product -> id)}}">Edit this product</a>
             </li>
+            <li>
+                <a href="{{route('deleteProductLink', $product -> id)}}">Delete this product</a>
+            </li>
         </ul>
     </main>
 @endsection
