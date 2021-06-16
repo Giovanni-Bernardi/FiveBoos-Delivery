@@ -3,7 +3,8 @@
 @section('content')
     <main>
         <h2></h2>
-        <form action="" method="POST">
+        <form  method="POST"
+            action="{{ route('updateRestaurantViewLink', $restaurant -> id) }}">
             @method('POST')
             @csrf
 
@@ -26,7 +27,7 @@
                     <textarea name="address" cols="50" rows="2">{{$restaurant -> address}}</textarea>
                 </li>
                 <li>
-                    <label for="address">
+                    <label for="piva">
                         P-IVA: 
                     </label>
                     <input type="text" name="piva" value="{{$restaurant -> piva}}">
