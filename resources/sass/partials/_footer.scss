@@ -1,0 +1,51 @@
+footer {
+    // $direction: row;
+    // $justify: space-between;
+    // $align: center;
+
+    // @include flex($direction,$justify,$align);
+    
+    background-color: black;
+    padding: 20px 12px 10px 12px;
+    
+    ul {
+        li {
+            a {
+                text-decoration: none;
+                color: white;
+                &:hover {
+                    color: white;
+                    text-shadow: #00CCBC 1px 1px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    h3 {
+        color: white;
+        text-shadow: white 1px 1px;
+        span {
+            color: #00CCBC;
+            text-shadow: #00CCBC 1px 1px;
+        }
+        
+    }
+    .deivh-container {
+        .top {
+            
+            //  $direction: row;
+            //  $justify: space-between;
+            //  $align: center;
+            //  @include flex($direction,$justify,$align);
+            width: 100%;
+            border-bottom: 1px solid white;
+            display: flex;
+            direction: row;
+            justify-content: space-between;
+            
+    
+    
+        } 
+}
+}
