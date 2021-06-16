@@ -43,29 +43,16 @@ class AdminController extends Controller
 
         $restaurant -> save();
 
-        // passo l'img del form dell html in file
-        $img = $request -> file('img');
-
-        // mi estraggo l'extension del file
-        $imgExt = $img -> getClientOriginalExtension();
-
-        // modifico nome img
-        $imgNewName = time() . rand(0, 1000). '.' . $imgExt;
-
-        // creo il percorso
-        $folder = '/restaurant-img/';
-
-        // e le salvo lato server
-        $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
-
-        $restaurant -> img = $imgNewName;
-
-        $restaurant -> save();
-
-
-        // dd($img, $imgNewName, $imgFile);
-
-
+        // dd($request -> file('img'));
+        if ($request -> file('img')) {
+            $img = $request -> file('img');
+            $imgExt = $img -> getClientOriginalExtension();
+            $imgNewName = time() . rand(0, 1000). '.' . $imgExt;
+            $folder = '/restaurant-img/';
+            $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+            $restaurant -> img = $imgNewName;
+            $restaurant -> save();
+        }
 
         return redirect() -> route('indexViewLink');
     }
@@ -127,6 +114,16 @@ class AdminController extends Controller
         $restaurant -> update($validate);
 
         $restaurant -> save();
+
+        if ($request -> file('img')) {
+            $img = $request -> file('img');
+            $imgExt = $img -> getClientOriginalExtension();
+            $imgNewName = time() . rand(0, 1000). '.' . $imgExt;
+            $folder = '/restaurant-img/';
+            $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+            $restaurant -> img = $imgNewName;
+            $restaurant -> save();
+        }
 
         return redirect() -> route('restaurantDetailsViewLink', $restaurant -> id);
     }

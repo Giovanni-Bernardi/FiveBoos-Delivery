@@ -4,7 +4,9 @@
     <main>
         <h2></h2>
         <form  method="POST"
-            action="{{ route('updateRestaurantViewLink', $restaurant -> id) }}">
+                action="{{ route('updateRestaurantViewLink', $restaurant -> id) }}"
+                enctype="multipart/form-data">
+
             @method('POST')
             @csrf
 
@@ -43,6 +45,13 @@
                         Description: 
                     </label>
                     <textarea name="description" cols="50" rows="7">{{$restaurant -> description}}</textarea>
+                </li>
+                <li>
+                    <label for="img">
+                        IMG: 
+                        <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px">
+                    </label>
+                    <input type="file" name="img">
                 </li>
                 <li>
                     <hr>
