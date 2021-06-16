@@ -72,7 +72,7 @@
           <li>
             <h2>Imagine del Piatto</h2>
             <div>
-              <input type="file" name="image">
+              <input type="file" name="img">
             </div>
           </li>
 

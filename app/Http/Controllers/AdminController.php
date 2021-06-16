@@ -85,25 +85,27 @@ class AdminController extends Controller
           'description' => 'required|string',
           'price' => 'required|integer',
           'visible' => 'required|boolean',
+          'restaurant_id' => 'required|exists:restaurants,id'
         ]);
 
         $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
-
-        $img = $request -> file('image');
-        $imgExt = $img -> getClientOriginalExtension();
-        $imgNewName = time() . rand(0, 1000) . '.' . $imgExt;
-        $folder = '/product-img/';
-        $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
-
+        
         $product = Product::make($validate);
         $product -> restaurant() -> associate($restaurant);
-        $product -> img = $imgNewName;
+
+        if($request -> file('img')){
+            $img = $request -> file('img');
+            $imgExt = $img -> getClientOriginalExtension();
+            $imgNewName = time() . rand(0, 1000) . '.' . $imgExt;
+            $folder = '/product-img/';
+            $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+            $product -> img = $imgNewName;
+        }
+
         $product -> save();
 
-        return redirect() -> route('createProduct');
-        // return redirect() -> route('restaurantDetailsViewLink');
+        return redirect() -> route('productDetailsViewLink', $product -> id);
     }
-
 
     public function editRestaurantView($id){
 
