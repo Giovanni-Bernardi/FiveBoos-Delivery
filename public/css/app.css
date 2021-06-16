@@ -10942,6 +10942,111 @@ a.text-dark:focus {
   }
 }
 
+footer {
+  background-color: black;
+  padding: 20px 12px 10px 12px;
+}
+
+footer div .border-footer-divider {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid white;
+  padding: 3px 25px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+  text-shadow: #00CCBC 1px 1px;
+  text-decoration: none;
+}
+
+footer h3 {
+  color: white;
+  text-shadow: white 1px 1px;
+  margin: 10px 20px 10px 25px;
+  font-size: 2em;
+}
+
+footer h3 span {
+  color: #00CCBC;
+  text-shadow: #00CCBC 1px 1px;
+}
+
+footer img {
+  width: 200px;
+  height: auto;
+}
+
+footer .ms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .ms-container .top {
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+}
+
+footer .ms-container .top .logo {
+  width: 50%;
+}
+
+footer .ms-container .top .info {
+  width: 50%;
+}
+
+footer .ms-container .top .info .info-box {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.15em;
+}
+
+footer .ms-container .top .info .info-box div {
+  padding: 25px 40px;
+}
+
+footer .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .bottom .icons i {
+  font-size: 1.35rem;
+  margin: 10px 20px 10px 25px;
+  padding: 25px 3px;
+}
+
+footer .bottom .privacy {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 40px;
+}
+
+footer .bottom .privacy .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+footer .bottom .privacy .top a {
+  font-size: 1.15em;
+  margin: 5px;
+}
+
+footer .bottom .privacy .copyright {
+  color: #00CCBC;
+  align-self: flex-end;
+}
+
 .site-logo {
   color: #ffffff;
   font-size: 22px;
@@ -11067,40 +11172,6 @@ body > header > nav > ul > li:nth-child(1) > a {
 .check:checked ~ .ham-menu .menuline::after {
   top: 0;
   transform: rotate(90deg);
-}
-
-footer {
-  background-color: black;
-  padding: 20px 12px 10px 12px;
-}
-
-footer ul li a {
-  text-decoration: none;
-  color: white;
-}
-
-footer ul li a:hover {
-  color: white;
-  text-shadow: #00CCBC 1px 1px;
-  text-decoration: none;
-}
-
-footer h3 {
-  color: white;
-  text-shadow: white 1px 1px;
-}
-
-footer h3 span {
-  color: #00CCBC;
-  text-shadow: #00CCBC 1px 1px;
-}
-
-footer .deivh-container .top {
-  width: 100%;
-  border-bottom: 1px solid white;
-  display: flex;
-  direction: row;
-  justify-content: space-between;
 }
 
 * {
