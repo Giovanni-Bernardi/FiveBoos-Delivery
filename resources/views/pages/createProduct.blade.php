@@ -16,7 +16,7 @@
         @csrf
         @method('POST')
 
-        <h1>Create New Product:</h1>
+        <h1>Aggiungi nuovo Piatto:</h1>
         <ul>
 
           <li>
@@ -56,7 +56,7 @@
           </li>
 
           <li>
-            <h2>visible</h2>
+            <h2>Ristorante</h2>
             <div>
                 <select name="restaurant_id">
                     {{-- <option selected disabled>Brand</option> --}}
@@ -69,12 +69,12 @@
             </div>
           </li>
 
-          {{-- <li>
+          <li>
             <h2>Imagine del Piatto</h2>
             <div>
               <input type="file" name="image">
             </div>
-          </li> --}}
+          </li>
 
         </ul>
 
