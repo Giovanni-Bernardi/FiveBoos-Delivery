@@ -1,0 +1,32 @@
+
+// flex
+@mixin flex($direction, $justify, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// buttons
+@mixin link($color, $bg-color, $padding){
+  text-decoration: none;
+  padding: $padding;
+  border-radius: 10px;
+  background-color: $bg-color;
+  color: $color;
+}
+
+// categorie
+@mixin food-type($bg-color, $padding){
+  border-radius: 20px;
+  color: $color;
+  background-color: $bg-color;
+}
+
+//searchbar
+@mixin search-bar($bg-color, $padding){
+  color: $color;
+  background-color: $bg-color;
+  border-radius: 10px;
+}
+
