@@ -3,7 +3,7 @@
 @section('content')
     <main>
         <h2></h2>
-        <form  method="POST" action="{{ route('updateProductViewLink', $product -> id) }}">
+        <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data">
             @method('POST')
             @csrf
 
