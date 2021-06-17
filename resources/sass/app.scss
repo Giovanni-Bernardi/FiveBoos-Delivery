@@ -25,7 +25,15 @@
 }
 body{ 
     background-color:crimson;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+.container-fixed {
+    flex-grow: 1;
+}
+
 ul{
     list-style-type: none;
 }
