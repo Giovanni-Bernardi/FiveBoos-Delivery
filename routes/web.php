@@ -42,3 +42,6 @@ Route::get('/delete/restaurant/{id}','AdminController@deleteRestaurant') -> name
 
 // Route delete product
 Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('deleteProductLink');
+
+// Route grafico TEST
+Route::get('/stats','StatisticCharController@getOrderMonths') -> name('statsMonthLink');

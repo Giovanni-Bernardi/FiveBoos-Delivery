@@ -54,5 +54,11 @@
                 </li>
             @endforeach
         </ul>
+
+        <div id="app" style="width: 100%">
+            <canvas id="myChart">
+                Your browser does not support the canvas element.
+            </canvas>
+        </div>
     </main>
 @endsection
