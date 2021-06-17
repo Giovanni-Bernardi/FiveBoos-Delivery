@@ -23,10 +23,8 @@
                         </div>
                     </div>
                 </section>
-
-
+                
         {{-- restaurant list --}}
-        <h2>Delivery</h2>
         <ul>
             <li>
                 <h4>
