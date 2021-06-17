@@ -30,3 +30,8 @@
   border-radius: 10px;
 }
 
+//border radius restaurant cards
+@mixin border-r-c {
+  border: 1px solid black;
+  border-radius: 8px;
+}

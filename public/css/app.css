@@ -10942,110 +10942,44 @@ a.text-dark:focus {
   }
 }
 
-footer {
-  width: 100%;
-  background-color: black;
-  padding: 20px 12px 10px 12px;
+@-webkit-keyframes shrinkbg {
+  0% {
+    background-size: 110%;
+  }
+
+  100% {
+    background-size: 100%;
+  }
 }
 
-footer div .border-footer-divider {
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px solid white;
-  padding: 3px 25px;
+@keyframes shrinkbg {
+  0% {
+    background-size: 110%;
+  }
+
+  100% {
+    background-size: 100%;
+  }
 }
 
-footer a {
-  text-decoration: none;
-  color: white;
+@-webkit-keyframes zoombg {
+  0% {
+    background-size: 100%;
+  }
+
+  100% {
+    background-size: 130%;
+  }
 }
 
-footer a:hover {
-  color: white;
-  text-shadow: #00CCBC 1px 1px;
-  text-decoration: none;
-}
+@keyframes zoombg {
+  0% {
+    background-size: 100%;
+  }
 
-footer h3 {
-  color: white;
-  text-shadow: white 1px 1px;
-  margin: 10px 20px 10px 25px;
-  font-size: 2em;
-}
-
-footer h3 span {
-  color: #00CCBC;
-  text-shadow: #00CCBC 1px 1px;
-}
-
-footer img {
-  width: 200px;
-  height: auto;
-}
-
-footer .ms-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-footer .ms-container .top {
-  width: 100%;
-  display: flex;
-  direction: row;
-  justify-content: space-between;
-}
-
-footer .ms-container .top .logo {
-  width: 50%;
-}
-
-footer .ms-container .top .info {
-  width: 50%;
-}
-
-footer .ms-container .top .info .info-box {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.15em;
-}
-
-footer .ms-container .top .info .info-box div {
-  padding: 25px 40px;
-}
-
-footer .bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-footer .bottom .icons i {
-  font-size: 1.35rem;
-  margin: 10px 20px 10px 25px;
-  padding: 25px 3px;
-}
-
-footer .bottom .privacy {
-  display: flex;
-  flex-direction: column;
-  padding: 25px 40px;
-}
-
-footer .bottom .privacy .top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-footer .bottom .privacy .top a {
-  font-size: 1.15em;
-  margin: 5px;
-}
-
-footer .bottom .privacy .copyright {
-  color: #00CCBC;
-  align-self: flex-end;
+  100% {
+    background-size: 130%;
+  }
 }
 
 .site-logo {
@@ -11175,6 +11109,291 @@ body > header > nav > ul > li:nth-child(1) > a {
   transform: rotate(90deg);
 }
 
+footer {
+  width: 100%;
+  background-color: black;
+  padding: 20px 12px 10px 12px;
+}
+
+footer div .border-footer-divider {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid white;
+  padding: 3px 25px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+  text-shadow: #00CCBC 1px 1px;
+  text-decoration: none;
+}
+
+footer h3 {
+  color: white;
+  text-shadow: white 1px 1px;
+  margin: 10px 20px 10px 25px;
+  font-size: 2em;
+}
+
+footer h3 span {
+  color: #00CCBC;
+  text-shadow: #00CCBC 1px 1px;
+}
+
+footer img {
+  width: 200px;
+  height: auto;
+}
+
+footer .ms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .ms-container .top {
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+}
+
+footer .ms-container .top .logo {
+  width: 50%;
+}
+
+footer .ms-container .top .info {
+  width: 50%;
+}
+
+footer .ms-container .top .info .info-box {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.15em;
+}
+
+footer .ms-container .top .info .info-box div {
+  padding: 25px 40px;
+}
+
+footer .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .bottom .icons i {
+  font-size: 1.35rem;
+  margin: 10px 20px 10px 25px;
+  padding: 25px 3px;
+}
+
+footer .bottom .privacy {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 40px;
+}
+
+footer .bottom .privacy .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+footer .bottom .privacy .top a {
+  font-size: 1.15em;
+  margin: 5px;
+}
+
+footer .bottom .privacy .copyright {
+  color: #00CCBC;
+  align-self: flex-end;
+}
+
+main {
+  background-image: url("/storage/assets/bg-placeholder.jpg");
+}
+
+main div.jumbo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #00ccbc;
+}
+
+main div.jumbo-list .carousel-2 ul {
+  display: flex;
+}
+
+main div.jumbo-list .carousel-2 ul li {
+  margin: 5px;
+}
+
+main div.jumbo-list .carousel-2 ul li .type-check {
+  display: none;
+}
+
+main div.jumbo-list .carousel-2 ul img {
+  filter: grayscale(100%);
+  width: 50px;
+  height: auto;
+}
+
+main div.jumbo-list .carousel-2 ul img:hover {
+  filter: grayscale(0%);
+}
+
+h2#title {
+  text-align: center;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 32px;
+  text-align: center;
+}
+
+div.restaurants-box {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+div.restaurants-box div.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  width: 30%;
+  height: 215px;
+  margin: 10px;
+}
+
+div.restaurants-box div.restaurant-card .top-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  flex-grow: 1;
+  width: 100%;
+  height: 80%;
+  background-image: url("/storage/assets/pizza-placeholder.jpg");
+  background-size: 100%;
+  background-position: center center;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+div.restaurants-box div.restaurant-card .top-info:hover {
+  background-size: 120%;
+  transition: all 0.5s ease-in-out;
+}
+
+div.restaurants-box div.restaurant-card .top-info a {
+  text-decoration: none;
+  font-size: 35px;
+  color: whitesmoke;
+  font-weight: 900;
+}
+
+div.restaurants-box div.restaurant-card .top-info a:hover {
+  text-decoration: none;
+  text-shadow: #1d2e2c 2px 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card {
+  display: flex;
+  flex-direction: row;
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card .cell {
+  margin: 3px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  border: 1px solid grey;
+  text-align: center;
+  border-radius: 24px;
+  padding: 8px;
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card .cell a {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card .cell a:hover {
+  text-shadow: black 1px 1px;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-pizza {
+  background-color: rgba(214, 16, 16, 0.65);
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-pizza:hover {
+  background-color: rgba(214, 16, 16, 0.8);
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-panini {
+  background-color: rgba(0, 204, 188, 0.65);
+}
+
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-panini:hover {
+  background-color: rgba(0, 204, 188, 0.8);
+}
+
+div.restaurants-box div.restaurant-card .bottom-info {
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  padding: 2px 5px;
+  background-color: white;
+  width: 100%;
+  height: 20%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px black;
+}
+
+div.restaurants-box div.restaurant-card .bottom-info .stats i:hover {
+  font-size: 1.56em;
+  transition: all 0.1s ease-in-out;
+}
+
+div.restaurants-box div.restaurant-card .bottom-info .address-show {
+  display: none;
+  position: relative;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+div.restaurants-box div.restaurant-card .bottom-info .address-icon:hover .address-show {
+  display: block;
+  color: black;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11201,6 +11420,6 @@ a {
 }
 
 main {
-  padding: 75px 0px 0px;
+  padding: 50px 0px 0px;
 }
 
