@@ -49889,7 +49889,7 @@ function statisticsChart() {
         borderWidth: 1,
         fill: {
           target: 'origin',
-          above: 'rgb(255, 0, 0)',
+          above: 'rgba(255, 0, 0, 0.2)',
           // Area will be red above the origin
           below: 'rgb(0, 0, 255)' // And blue below the origin
 
