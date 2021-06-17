@@ -14,8 +14,7 @@
     @include('components.header')
     <div class="container-fixed">
         @yield('content')
-    </div>
-    
+    </div>  
     @include('components.footer')
 </body>
 </html>

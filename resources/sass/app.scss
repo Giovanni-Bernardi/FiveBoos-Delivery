@@ -12,10 +12,11 @@
 
 //partials
 @import 'partials/variables';
-@import 'partials/restaurant-list';
-@import 'partials/footer';
-
+@import 'partials/animations';
 @import 'partials/header.scss';
+@import 'partials/footer';
+@import 'partials/restaurant-list';
+@import 'partials/restaurant-details';
 
 // Proprietà generali
 *{
@@ -43,7 +44,7 @@ a{
 
 // distanziamento da header
 main {
-    padding: 75px 0px 0px;
+    padding: 50px 0px 0px;
 }
 
 

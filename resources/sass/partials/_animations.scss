@@ -1,0 +1,17 @@
+@keyframes shrinkbg { //unused
+    0% {
+        background-size: 110%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes zoombg { //unused
+    0% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 130%;
+    }
+}
