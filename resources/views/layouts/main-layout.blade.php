@@ -12,7 +12,10 @@
 </head>
 <body>
     @include('components.header')
-    @yield('content')
+    <div class="container-fixed">
+        @yield('content')
+    </div>
+    
     @include('components.footer')
 </body>
 </html>

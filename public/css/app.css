@@ -10943,7 +10943,6 @@ a.text-dark:focus {
 }
 
 footer {
-  flex-shrink: 0;
   width: 100%;
   background-color: black;
   padding: 20px 12px 10px 12px;
@@ -11184,6 +11183,13 @@ body > header > nav > ul > li:nth-child(1) > a {
 
 body {
   background-color: crimson;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container-fixed {
+  flex-grow: 1;
 }
 
 ul {
