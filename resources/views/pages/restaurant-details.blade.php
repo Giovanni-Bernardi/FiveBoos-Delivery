@@ -45,14 +45,27 @@
                     Products list:
                 </h4>
             </li>
-            @foreach ($restaurant -> products as $product)
+            {{-- @foreach ($restaurant -> products as $product)
                 <li>
                     {{$product -> name}}: &euro;{{$product -> price}},00
                     <a href="{{route('productDetailsViewLink', $product -> id)}}">
                         details
                     </a>
                 </li>
+            @endforeach --}}
+
+            @foreach ($restaurant -> products as $product)
+                <li>
+                    <product-component :product="{{$product}}"></product-component>
+                </li>
             @endforeach
+
         </ul>
+
+        <div v-for='cart in product'>
+            <ul>
+                {{-- <li> {{ plate.name }}</li> --}}
+            </ul>
+        </div>
     </main>
 @endsection
