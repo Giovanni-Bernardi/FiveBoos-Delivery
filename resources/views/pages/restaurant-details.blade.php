@@ -45,14 +45,32 @@
                     Products list:
                 </h4>
             </li>
-            @foreach ($restaurant -> products as $product)
+            {{-- @foreach ($restaurant -> products as $product)
                 <li>
                     {{$product -> name}}: &euro;{{$product -> price}},00
                     <a href="{{route('productDetailsViewLink', $product -> id)}}">
                         details
                     </a>
                 </li>
-            @endforeach
+            @endforeach --}}
+
+            {{-- @foreach ($restaurant -> products as $product)
+                <li>
+                    <product-component :product="{{$product}}"></product-component>
+                </li>
+            @endforeach --}}
+            <li v-for='product in products' v-if="product.restaurant_id == currentRestaurantId">
+                <div>
+                    <div>ID: @{{product.id}}</div>
+                    <div>Name: @{{product.name}}</div>
+                    <div>Price: @{{product.price}}</div>
+                    <div>IdRestaurant: @{{product.restaurant_id}}</div>
+                </div>
+            </li>
         </ul>
+
     </main>
 @endsection
+<script>
+    var id = {!! json_encode($restaurant->id) !!};
+</script>
