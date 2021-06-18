@@ -54,17 +54,23 @@
                 </li>
             @endforeach --}}
 
-            @foreach ($restaurant -> products as $product)
+            {{-- @foreach ($restaurant -> products as $product)
                 <li>
                     <product-component :product="{{$product}}"></product-component>
                 </li>
-            @endforeach
-            {{-- <li v-for='product in products'>
-                <div>@{{product.id}}</div>
-                <div>@{{product.name}}</div>
-                <div>@{{product.price}}</div>
-            </li> --}}
+            @endforeach --}}
+            <li v-for='product in products' v-if="product.restaurant_id == currentRestaurantId">
+                <div>
+                    <div>ID: @{{product.id}}</div>
+                    <div>Name: @{{product.name}}</div>
+                    <div>Price: @{{product.price}}</div>
+                    <div>IdRestaurant: @{{product.restaurant_id}}</div>
+                </div>
+            </li>
         </ul>
 
     </main>
 @endsection
+<script>
+    var id = {!! json_encode($restaurant->id) !!};
+</script>

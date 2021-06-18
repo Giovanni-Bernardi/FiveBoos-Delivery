@@ -18,8 +18,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        // $id = Restaurant::id();
-        // $products = products::all() -> where('restaurant_id', $id);
 
         return response()->json($products);
     }

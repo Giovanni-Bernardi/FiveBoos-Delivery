@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 
     <div class="container">
         <div class="row ">
@@ -15,6 +15,7 @@
                     <div class="card-body">
                         <button @click="increase">+</button>
                         <button @click="decrease">-</button>
+                        <button @click="addCart">Aggiungi in carello</button>
                     </div>
                 </div>
             </div>
@@ -31,19 +32,23 @@
         data: function () {
             return {
                 click: 0,
+                cart:[],
             }
         },
         mounted() {
             console.log(this.product)
         },
         methods: {
-            increase: function(){
+            increase: function() {
                 this.click++;
             },
-            decrease: function(){
+            decrease: function() {
                 this.click--;
+            },
+            addCart: function() {
+                this.cart += this.product;
             }
 
         }
     }
-</script>
+</script> -->
