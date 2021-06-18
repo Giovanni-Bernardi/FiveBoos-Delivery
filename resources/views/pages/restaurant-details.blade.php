@@ -55,7 +55,16 @@
             @endforeach
         </ul>
 
-        <div id="app" style="width: 100%">
+        
+        <h3>
+            <a href="{{route('statsMonthLink', $restaurant -> id)}}">Statistics Chart Details: CLICK HERE</a>
+        </h3>
+        <div id="appChart" style="width: 50%">
+            <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
+            <button v-on:click="getMonthsData()">STATS</button>
+
+            {{-- -------------- FAKE CHART ---------------- --}}
+            <h5 style="margin-top: 50px">&#11015; Fake Chart &#11015;</h5>
             <canvas id="myChart">
                 Your browser does not support the canvas element.
             </canvas>

@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+const { method } = require('lodash');
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -34,10 +36,47 @@ function statisticsChart() {
     // const app = new Vue({
     //     el: '#app',
     // });
+    var restaurantId = document.getElementById('d_elem').value;
+    console.log(restaurantId);
+    var monthsName = [];
+    var monthsCount = [];
 
     new Vue({
-        el: '#app',
+        el: '#appChart',
+        data: {
+            motnthsList: [],
+            motnthsOrderCount: [],
+        },
+        mounted: function(){
+            console.log('ciao');
+        },
+        methods:{
+            getMonthsData: function(){
+                // API ricerca film/serie per nome
+                axios.get('/stats/month/' + restaurantId,
+                {
+                    params:{
+                        // api_key: this.api_key,
+                        // query: this.search
+                    }
+                }).then(data => {
+                    
+                    let datas = data.data;
+                    for (const month in datas[0]) {
+                        monthsName.push(month);
+                        console.log(monthsName);
+
+                    }
+                    // monthsName = datas[0];
+                    console.log(datas[0]);
+                    
+                }).catch(() => {
+                    console.log('Error');
+                });
+			}
+        }
     });
+
 
     console.log('JS Connected');
     var ctx = document.getElementById('myChart');

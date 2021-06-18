@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\Order;
+use App\Restaurant;
 
 class StatisticCharController extends Controller
 {
@@ -15,34 +16,62 @@ class StatisticCharController extends Controller
         $this->middleware('auth');
     }
 
-    // Funzione che ritorna i mesi degli ordini al grafico
-    public function getOrderMonths(){
+    // Funzione default che torna gli ordini ad un determinato ristorante
+    public function getOrdersByRestuarant($restaurantId){
         $id = Auth::id();
-        // dd($id);
-
+        
         $orders_date = DB::table('orders')
                     -> join('order_product', 'orders.id', '=', 'order_product.order_id')
                     -> join('products', 'order_product.product_id', '=', 'products.id')
                     -> join('restaurants', 'restaurant_id', '=', 'restaurants.id')
-                    // -> pluck('orders.delivery_date')
                     -> orderBy('orders.delivery_date', 'ASC')
-                    -> select('orders.delivery_date')
+                    -> select('orders.delivery_date', 'restaurants.id as res_id')
                     // -> select('orders.firstname', 'products.name', 'restaurants.business_name', 'user_id', 'restaurants.id as res_id')
                     -> where([
                         ['restaurants.user_id', $id],
-                        ['restaurants.id', 1]
-                    ])
+                        ['restaurants.id', $restaurantId], // !Inserire id ristorante selezionato
+                        ])
+                    -> whereYear('orders.delivery_date', 2020)
                     -> get();
-        // dd($orders);
 
+        return $orders_date;
+    }
+
+    // Funzione che ritorna i mesi degli ordini al grafico (ASC, no doppioni)
+    public function getOrdersMonths($restaurantId){
         $monthsList = [];
+        $countsPerMont = [];
 
+        $orders_date = $this -> getOrdersByRestuarant($restaurantId);
+        //Ciclo che crea array di mesi ordinato e senza doppioni
         foreach ($orders_date as $unformatted_date) {
             $date = new \DateTime($unformatted_date -> delivery_date);
             $monthNumber = $date -> format('m');
             $monthName = $date -> format('M');
-            $monthsList [$monthNumber] =  $monthName;
+            $monthsList [$monthNumber] =  $monthName; // Sovrascrive i mesi uguali (Key => Value | MonthName => MonthNumber)
         }
-        return $monthsList;
+
+        foreach ($monthsList as $monthNumber => $month) {
+            $countsPerMont [] = $this -> getOrdersCount($monthNumber, $restaurantId);   
+        }
+        // dd($orders_date, $monthsList);
+        // dd($countsPerMont);
+        return json_encode([$monthsList ,$countsPerMont]);
+    }
+
+    // Funzione che ritorna il count degil ordini per mese
+    public function getOrdersCount($monthNumber, $restaurantId){
+        // $month = '08';
+        $id = Auth::id();
+
+        $orderPerMonth = DB::table('orders')
+                        -> join('order_product', 'orders.id', '=', 'order_product.order_id')
+                        -> join('products', 'order_product.product_id', '=', 'products.id')
+                        -> where ('products.restaurant_id', $restaurantId)
+                        -> whereMonth('orders.delivery_date', $monthNumber) 
+                        -> get()
+                        -> count();
+        // dd($orderPerMonth);
+        return $orderPerMonth;
     }
 }

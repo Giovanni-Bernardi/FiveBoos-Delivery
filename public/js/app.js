@@ -49848,6 +49848,9 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    method = _require.method;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -49872,8 +49875,41 @@ function statisticsChart() {
   // const app = new Vue({
   //     el: '#app',
   // });
+  var restaurantId = document.getElementById('d_elem').value;
+  console.log(restaurantId);
+  var monthsName = [];
+  var monthsCount = [];
   new Vue({
-    el: '#app'
+    el: '#appChart',
+    data: {
+      motnthsList: [],
+      motnthsOrderCount: []
+    },
+    mounted: function mounted() {
+      console.log('ciao');
+    },
+    methods: {
+      getMonthsData: function getMonthsData() {
+        // API ricerca film/serie per nome
+        axios.get('/stats/month/' + restaurantId, {
+          params: {// api_key: this.api_key,
+            // query: this.search
+          }
+        }).then(function (data) {
+          var datas = data.data;
+
+          for (var month in datas[0]) {
+            monthsName.push(month);
+            console.log(monthsName);
+          } // monthsName = datas[0];
+
+
+          console.log(datas[0]);
+        })["catch"](function () {
+          console.log('Error');
+        });
+      }
+    }
   });
   console.log('JS Connected');
   var ctx = document.getElementById('myChart');
