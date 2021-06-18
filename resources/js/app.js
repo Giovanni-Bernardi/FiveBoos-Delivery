@@ -17,10 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
             products: [],
             types: [],
             filterRestaurants: [],
+            cart: [],
             typeSelect: '',
             search: '',
             currentRestaurantId: '',
             totalPrice: 0,
+            visibility: false,
+            quantity: 0,
         },
         mounted() {
             this.currentRestaurantId = window.id;
@@ -60,6 +63,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(error)
                 })
             },
+            increase() {
+                this.quantity++;
+            },
+            decrease() {
+                this.quantity--;
+            },
+            addToCart() {
+                //funzione per aggiungere piatto in carello
+            }
         },
     });
 });
