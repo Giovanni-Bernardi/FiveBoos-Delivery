@@ -54,9 +54,14 @@ class StatisticCharController extends Controller
         foreach ($monthsList as $monthNumber => $month) {
             $countsPerMont [] = $this -> getOrdersCount($monthNumber, $restaurantId);   
         }
-        // dd($orders_date, $monthsList);
-        // dd($countsPerMont);
-        return json_encode([$monthsList ,$countsPerMont]);
+
+        // Trasformo obj monthsNameList da Obj in array per encode migliore
+        $monthsListNoObj = [];
+        foreach ($monthsList as $key => $value) {
+            $monthsListNoObj [] = $value;
+        }
+
+        return json_encode([$monthsListNoObj ,$countsPerMont]);
     }
 
     // Funzione che ritorna il count degil ordini per mese

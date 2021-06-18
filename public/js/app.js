@@ -49849,7 +49849,8 @@ module.exports = function(module) {
  * building robust, powerful web applications using Vue and Laravel.
  */
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
-    method = _require.method;
+    method = _require.method,
+    isSet = _require.isSet;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -49878,18 +49879,20 @@ function statisticsChart() {
   var restaurantId = document.getElementById('d_elem').value;
   console.log(restaurantId);
   var monthsName = [];
-  var monthsCount = [];
+  var monthsOrders = [];
   new Vue({
     el: '#appChart',
     data: {
-      motnthsList: [],
-      motnthsOrderCount: []
+      monthsList: [],
+      monthsOrderCount: []
     },
     mounted: function mounted() {
       console.log('ciao');
     },
     methods: {
       getMonthsData: function getMonthsData() {
+        var _this = this;
+
         // API ricerca film/serie per nome
         axios.get('/stats/month/' + restaurantId, {
           params: {// api_key: this.api_key,
@@ -49897,87 +49900,105 @@ function statisticsChart() {
           }
         }).then(function (data) {
           var datas = data.data;
+          monthsName = datas[0];
+          monthsOrders = datas[1];
+          console.log(monthsName);
 
-          for (var month in datas[0]) {
-            monthsName.push(month);
-            console.log(monthsName);
-          } // monthsName = datas[0];
-
-
-          console.log(datas[0]);
+          if (monthsName) {
+            _this.chartIt();
+          }
         })["catch"](function () {
           console.log('Error');
         });
-      }
-    }
-  });
-  console.log('JS Connected');
-  var ctx = document.getElementById('myChart');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: 'Number of orders',
-        data: [10, 19, 3, 5, 2, 3],
-        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-        borderWidth: 1,
-        fill: {
-          target: 'origin',
-          above: 'rgba(255, 0, 0, 0.2)',
-          // Area will be red above the origin
-          below: 'rgb(0, 0, 255)' // And blue below the origin
-
-        }
-      }]
-    },
-    options: {
-      scales: {
-        // x:{
-        //     // type: 'time',
-        //     display: true,
-        // //     title: {
-        // //         display: true,
-        // //         text: 'Date'
-        // //     }
-        // },
-        y: {
-          beginAtZero: true //     // display: true,
-          //     // title: {
-          //     //   display: true,
-          //     //   text: 'value'
-          //     // }
-
-        } // grid:{
-        // }
-
       },
-      layout: {
-        padding: 50
-      },
-      plugins: {
-        legend: {
-          labels: {
-            font: {
-              // weight: 'bold',
-              size: 20,
-              weight: 'bold'
+      chartIt: function chartIt() {
+        console.log(monthsName, 'asdasdaas');
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: monthsName,
+            datasets: [{
+              label: 'Number of orders',
+              data: monthsOrders,
+              backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+              borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+              borderWidth: 1,
+              fill: {
+                target: 'origin',
+                above: 'rgba(255, 0, 0, 0.2)',
+                // Area will be red above the origin
+                below: 'rgb(0, 0, 255)' // And blue below the origin
+
+              }
+            }]
+          },
+          options: {
+            scales: {
+              // x:{
+              //     // type: 'time',
+              //     display: true,
+              // //     title: {
+              // //         display: true,
+              // //         text: 'Date'
+              // //     }
+              // },
+              y: {
+                beginAtZero: true //     // display: true,
+                //     // title: {
+                //     //   display: true,
+                //     //   text: 'value'
+                //     // }
+
+              } // grid:{
+              // }
+
+            },
+            layout: {
+              padding: 50
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  font: {
+                    // weight: 'bold',
+                    size: 20,
+                    weight: 'bold'
+                  }
+                }
+              }
+            },
+            elements: {
+              point: {
+                radius: 10,
+                hoverRadius: 15
+              },
+              line: {
+                fill: true
+              }
             }
           }
-        }
-      },
-      elements: {
-        point: {
-          radius: 10,
-          hoverRadius: 15
-        },
-        line: {
-          fill: true
-        }
-      }
+        });
+      } // sortIt: function(elem){
+      //     console.log(elem, elem[0]);
+      //     for (let i = 0; i < elem.length; i++) {
+      //         for (let j = 0; j < elem.length - i; j++) {
+      //             let item = 0;
+      //             if(elem[i] > elem[i + j]){
+      //                 item = elem[i + j];
+      //                 elem[i + j] = elem[i];
+      //                 elem[i] = item; 
+      //             }
+      //         }
+      //     }
+      //     return elem;
+      // }
+
     }
   });
+  console.log(monthsName);
+  console.log('JS Connected');
 }
 
 document.addEventListener('DOMContentLoaded', statisticsChart);
