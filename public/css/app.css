@@ -11328,7 +11328,7 @@ div.restaurants-box div.restaurant-card .top-info .categories-card .cell {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  border: 1px solid grey;
+  border: solid grey;
   text-align: center;
   border-radius: 24px;
   padding: 8px;
@@ -11392,6 +11392,239 @@ div.restaurants-box div.restaurant-card .bottom-info .address-show {
 div.restaurants-box div.restaurant-card .bottom-info .address-icon:hover .address-show {
   display: block;
   color: black;
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  padding: 20px 12px 10px 12px;
+}
+
+footer div .border-footer-divider {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid white;
+  padding: 3px 25px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+  text-shadow: #00CCBC 1px 1px;
+  text-decoration: none;
+}
+
+footer h3 {
+  color: white;
+  text-shadow: white 1px 1px;
+  margin: 10px 20px 10px 25px;
+  font-size: 2em;
+}
+
+footer h3 span {
+  color: #00CCBC;
+  text-shadow: #00CCBC 1px 1px;
+}
+
+footer img {
+  width: 200px;
+  height: auto;
+}
+
+footer .ms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .ms-container .top {
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+}
+
+footer .ms-container .top .logo {
+  width: 50%;
+}
+
+footer .ms-container .top .info {
+  width: 50%;
+}
+
+footer .ms-container .top .info .info-box {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.15em;
+}
+
+footer .ms-container .top .info .info-box div {
+  padding: 25px 40px;
+}
+
+footer .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .bottom .icons i {
+  font-size: 1.35rem;
+  margin: 10px 20px 10px 25px;
+  padding: 25px 3px;
+}
+
+footer .bottom .privacy {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 40px;
+}
+
+footer .bottom .privacy .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+footer .bottom .privacy .top a {
+  font-size: 1.15em;
+  margin: 5px;
+}
+
+footer .bottom .privacy .copyright {
+  color: #00CCBC;
+  align-self: flex-end;
+}
+
+.site-logo {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px;
+  padding-left: 60px;
+  position: absolute;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  z-index: 2;
+  background: #00ccbc;
+  position: fixed;
+}
+
+.menulist {
+  display: flex;
+  top: 50px;
+  left: -100%;
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  list-style: none;
+  text-align: center;
+  padding-top: 50px;
+  margin-right: 0px;
+  margin-right: 10px;
+  transition: 0.5s;
+  background: #00ccbc;
+}
+
+.menulist li {
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  margin: 10px;
+}
+
+.menulist li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+body > header > nav > ul > li:nth-child(1) > a {
+  background-color: #ffaf53;
+  padding: 10px 50px;
+  border-radius: 3px;
+}
+
+.check {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  margin: 3px 20px 0px 0px;
+  z-index: 3;
+  opacity: 0;
+}
+
+.ham-menu {
+  height: 40px;
+  width: 40px;
+  margin: 3px 20px 0px 15px;
+  position: relative;
+  display: block;
+}
+
+.menuline {
+  height: 2px;
+  width: 25px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  top: 50%;
+  background: #ffffff;
+}
+
+.menuline::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  top: -8px;
+  background: #ffffff;
+}
+
+.menuline::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  top: 8px;
+  background: #ffffff;
+}
+
+.content-area {
+  height: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+.menulist {
+  display: block;
+  margin-right: 0px;
+}
+
+.menulist li a {
+  font-size: 22px;
+  text-align: center;
+}
+
+.check:checked ~ .menulist {
+  left: 0;
+}
+
+.check:checked ~ .ham-menu .menuline {
+  transform: rotate(135deg);
+  transition: 0.3s ease;
+}
+
+.check:checked ~ .ham-menu .menuline::before,
+.check:checked ~ .ham-menu .menuline::after {
+  top: 0;
+  transform: rotate(90deg);
 }
 
 * {
