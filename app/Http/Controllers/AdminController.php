@@ -182,5 +182,4 @@ class AdminController extends Controller
 
         return redirect() -> route('restaurantDetailsViewLink', $product -> restaurant -> id);
     }
-    
 }

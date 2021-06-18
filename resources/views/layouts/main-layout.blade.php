@@ -20,6 +20,7 @@
     <div id="app">
         @include('components.header')
         <div class="container-fixed">
+            @include('components.notifications')
             @yield('content')
         </div>
         @include('components.footer')
