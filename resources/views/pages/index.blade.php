@@ -5,25 +5,23 @@
         {{-- landing page --}}
                 <section id="landing-jumbo">
                     <div id="background-jumbo">
-                        <h1 id="landing-title">
-                            Hai fame? Sei nel posto giusto
-                        </h1>
-                        <div id="cover">
-                            <form method="get" action="">
-                                <div class="tb">
-                                    <div class="td"><input type="text" placeholder="Indirizzo di consegna" required></div>
-                                    <div class="td" id="s-cover">
-                                        <button type="submit">
-                                            <div id="s-circle"></div>
-                                            <span></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                        <div id="landing-title">
+                            <h1>
+                                Hungry?
+                            </h1>
+                            <h2>
+                                your favourite food delivered in 20 minutes
+                            </h2>
+                            <div class="landing-buttons">
+                                <a id="white-button" href="#">ORDER NOW</a> <!-- aggiungere la route -->
+                                <span>or</span>
+                                <a id="dotted-button" href="#">SELECT A FOOD ICON</a> <!-- no route -->
+                            </div>
                         </div>
+                        
                     </div>
                 </section>
-                
+
         {{-- restaurant list --}}
         <ul>
             <li>

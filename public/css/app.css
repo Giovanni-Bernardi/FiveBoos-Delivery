@@ -11394,6 +11394,239 @@ div.restaurants-box div.restaurant-card .bottom-info .address-icon:hover .addres
   color: black;
 }
 
+footer {
+  width: 100%;
+  background-color: black;
+  padding: 20px 12px 10px 12px;
+}
+
+footer div .border-footer-divider {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid white;
+  padding: 3px 25px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+  text-shadow: #00CCBC 1px 1px;
+  text-decoration: none;
+}
+
+footer h3 {
+  color: white;
+  text-shadow: white 1px 1px;
+  margin: 10px 20px 10px 25px;
+  font-size: 2em;
+}
+
+footer h3 span {
+  color: #00CCBC;
+  text-shadow: #00CCBC 1px 1px;
+}
+
+footer img {
+  width: 200px;
+  height: auto;
+}
+
+footer .ms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .ms-container .top {
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+}
+
+footer .ms-container .top .logo {
+  width: 50%;
+}
+
+footer .ms-container .top .info {
+  width: 50%;
+}
+
+footer .ms-container .top .info .info-box {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.15em;
+}
+
+footer .ms-container .top .info .info-box div {
+  padding: 25px 40px;
+}
+
+footer .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .bottom .icons i {
+  font-size: 1.35rem;
+  margin: 10px 20px 10px 25px;
+  padding: 25px 3px;
+}
+
+footer .bottom .privacy {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 40px;
+}
+
+footer .bottom .privacy .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+footer .bottom .privacy .top a {
+  font-size: 1.15em;
+  margin: 5px;
+}
+
+footer .bottom .privacy .copyright {
+  color: #00CCBC;
+  align-self: flex-end;
+}
+
+.site-logo {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px;
+  padding-left: 60px;
+  position: absolute;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  z-index: 2;
+  background: #00ccbc;
+  position: fixed;
+}
+
+.menulist {
+  display: flex;
+  top: 50px;
+  left: -100%;
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  list-style: none;
+  text-align: center;
+  padding-top: 50px;
+  margin-right: 0px;
+  margin-right: 10px;
+  transition: 0.5s;
+  background: #00ccbc;
+}
+
+.menulist li {
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  margin: 10px;
+}
+
+.menulist li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+body > header > nav > ul > li:nth-child(1) > a {
+  background-color: #ffaf53;
+  padding: 10px 50px;
+  border-radius: 3px;
+}
+
+.check {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  margin: 3px 20px 0px 0px;
+  z-index: 3;
+  opacity: 0;
+}
+
+.ham-menu {
+  height: 40px;
+  width: 40px;
+  margin: 3px 20px 0px 15px;
+  position: relative;
+  display: block;
+}
+
+.menuline {
+  height: 2px;
+  width: 25px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  top: 50%;
+  background: #ffffff;
+}
+
+.menuline::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  top: -8px;
+  background: #ffffff;
+}
+
+.menuline::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 25px;
+  top: 8px;
+  background: #ffffff;
+}
+
+.content-area {
+  height: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+.menulist {
+  display: block;
+  margin-right: 0px;
+}
+
+.menulist li a {
+  font-size: 22px;
+  text-align: center;
+}
+
+.check:checked ~ .menulist {
+  left: 0;
+}
+
+.check:checked ~ .ham-menu .menuline {
+  transform: rotate(135deg);
+  transition: 0.3s ease;
+}
+
+.check:checked ~ .ham-menu .menuline::before,
+.check:checked ~ .ham-menu .menuline::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
 * {
   outline: none;
 }
@@ -11404,7 +11637,7 @@ div.restaurants-box div.restaurant-card .bottom-info .address-icon:hover .addres
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
-  min-height: 95vh;
+  min-height: 106vh;
   width: 100%;
   margin-top: -100px;
   padding: 0 3%;
@@ -11416,167 +11649,52 @@ div.restaurants-box div.restaurant-card .bottom-info .address-icon:hover .addres
 
 #landing-jumbo #landing-title {
   color: #000000;
-  font-size: 3rem;
   font-weight: bold;
   position: relative;
-  top: -75px;
+  top: -45px;
 }
 
-#landing-jumbo .tb {
-  display: table;
-  width: 100%;
+#landing-jumbo #landing-title h1 {
+  font-size: 4.5rem;
+  font-weight: bolder;
 }
 
-#landing-jumbo .td {
-  display: table-cell;
-  vertical-align: middle;
+#landing-jumbo #landing-title h2 {
+  margin: 15px 0 40px 0;
 }
 
-#landing-jumbo input,
-#landing-jumbo button {
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-#landing-jumbo #cover {
-  padding: 35px;
-  background-color: #ffaf53;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px #f7ae5a, 0 0 0 20px #ffffff91;
-  transform: scale(0.6);
-  position: relative;
-  top: -75px;
-}
-
-#landing-jumbo form {
-  height: 96px;
-}
-
-#landing-jumbo input[type=text] {
-  width: 100%;
-  height: 96px;
-  font-size: 60px;
-  line-height: 1;
-}
-
-#landing-jumbo input[type=text]::-moz-placeholder {
-  color: #ffffff;
-}
-
-#landing-jumbo input[type=text]:-ms-input-placeholder {
-  color: #ffffff;
-}
-
-#landing-jumbo input[type=text]::placeholder {
-  color: #ffffff;
-}
-
-#landing-jumbo #s-cover {
-  width: 1px;
-  padding-left: 35px;
-}
-
-#landing-jumbo button {
-  position: relative;
-  display: block;
-  width: 84px;
-  height: 96px;
-  cursor: pointer;
-}
-
-#landing-jumbo #s-circle {
-  position: relative;
-  top: -7px;
-  left: 6px;
-  width: 65px;
-  height: 62px;
-  margin-top: 0;
-  border-width: 15px;
-  border: 15px solid #fff;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: 0.5s ease all;
-}
-
-#landing-jumbo button span {
-  position: absolute;
-  top: 68px;
-  left: 43px;
-  display: block;
-  width: 45px;
-  height: 15px;
-  background-color: transparent;
-  border-radius: 10px;
-  transform: rotateZ(52deg);
-  transition: 0.5s ease all;
-}
-
-#landing-jumbo button span:before,
-#landing-jumbo button span:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 45px;
-  height: 15px;
-  background-color: #fff;
-  border-radius: 10px;
-  transform: rotateZ(0);
-  transition: 0.5s ease all;
-}
-
-#landing-jumbo #s-cover:hover #s-circle {
-  top: -1px;
-  width: 67px;
-  height: 15px;
-  border-width: 0;
-  background-color: #fff;
-  border-radius: 20px;
-}
-
-#landing-jumbo #s-cover:hover span {
-  top: 50%;
-  left: 56px;
-  width: 25px;
-  margin-top: -9px;
-  transform: rotateZ(0);
-}
-
-#landing-jumbo #s-cover:hover button span:before {
-  bottom: 11px;
-  transform: rotateZ(52deg);
-}
-
-#landing-jumbo #s-cover:hover button span:after {
-  bottom: -11px;
-  transform: rotateZ(-52deg);
-}
-
-#landing-jumbo #s-cover:hover button span:before,
-#landing-jumbo #s-cover:hover button span:after {
-  right: -6px;
-  width: 40px;
-  background-color: #fff;
-}
-
-#landing-jumbo #ytd-url {
-  display: block;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 10px 14px;
-  margin: 20px;
-  color: #fff;
-  font-family: Nunito;
-  font-size: 14px;
+#landing-jumbo div.landing-buttons {
+  display: inline;
   text-decoration: none;
-  background-color: #ff7575;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
-  z-index: 125;
+  width: 30%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+#landing-jumbo div.landing-buttons:hover {
+  text-decoration: none;
+}
+
+#landing-jumbo div.landing-buttons #white-button {
+  border: 4px solid black;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  margin-right: 10px;
+  color: #000000;
+}
+
+#landing-jumbo div.landing-buttons #white-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#landing-jumbo div.landing-buttons #dotted-button {
+  border: 4px dashed #757575;
+  padding: 15px 30px;
+  margin-left: 10px;
+  color: #000000;
 }
 
 * {
@@ -11590,6 +11708,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+span {
+  font-family: "Fredoka One", cursive;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
 }
 
 .container-fixed {
