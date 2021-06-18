@@ -26,13 +26,6 @@
 
 
         {{-- restaurant list --}}
-        <h2>Delivery</h2>
-        <ul>
-            <li>
-                <h4>
-                    Restaurants List:
-                </h4>
-            </li>
         <div class="jumbo-list">
             <div class="placeholder-categories">
                 <h2>qui andranno le categories per la ricerca dinamica</h2>
@@ -64,10 +57,12 @@
                 </ul>
             </div>
         </div>
-        <h2 id="title">Delivery</h2>
-        <h4>
-            Scegli il ristorante: 
-        </h4>
+        <div class="titles-restaurant-list">
+            <h2 id="title">Delivery</h2>
+            <h4>
+                Scegli il ristorante: 
+            </h4>
+        </div>
         <div class="restaurants-box">
             @foreach ($restaurants as $restaurant)
                 <div class="restaurant-card">
@@ -84,17 +79,24 @@
                         </div>
                     </div>
                     <div class="bottom-info">
-                        <div class="stats">
+                        {{-- <div class="stats">
                             <i class="fas fa-thumbs-up"></i>
                             <span>--</span>
-                        </div>
+                        </div> --}}
                         <div class="address-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="address-show">
+                            <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"><i class="fas fa-map-marker-alt"></i></a>
+                            {{-- <div class="address-show">
                                 {{$restaurant -> address}}
-                            </div>
+                            </div> --}}
                         </div>
+                        
                         <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"><i class="fas fa-utensils"></i>Mostra dettagli</a>
+                        <div class="delivery">
+                            <img src="{{asset('/storage/assets/scooter.png')}}" alt="icona consegna">
+                            <div class="delivery-checkout active">
+                                &euro; 1,00
+                            </div> 
+                        </div>
                     </div>
                 </div>
             @endforeach
