@@ -40,16 +40,32 @@
                         <input type="checkbox" name="type-sushi" class="type-check">
                     </li>
                     <li class="food-type">
-                        <label for="type-spaghetti"><img src="{{asset('/storage/assets/spaghetti.png')}}" alt=""></label>
-                        <input type="checkbox" name="type-spaghetti" class="type-check">
+                        <label for="type-spaghetti"><img src="{{asset('/storage/assets/japanese.png')}}" alt=""></label>
+                        <input type="checkbox" name="type-japanese" class="type-check">
                     </li>
                     <li class="food-type">
-                        <label for="type-noodles"><img src="{{asset('/storage/assets/noodles.png')}}" alt=""></label>
-                        <input type="checkbox" name="type-noodles" class="type-check">
+                        <label for="type-desserts"><img src="{{asset('/storage/assets/desserts.png')}}" alt=""></label>
+                        <input type="checkbox" name="type-desserts" class="type-check">
                     </li>
                     <li class="food-type">
                         <label for="type-meat"><img src="{{asset('/storage/assets/meat.png')}}" alt=""></label>
                         <input type="checkbox" name="type-meat" class="type-check">
+                    </li>
+                    <li class="food-type">
+                        <label for="type-american"><img src="{{asset('/storage/assets/american.png')}}" alt=""></label>
+                        <input type="checkbox" name="type-american" class="type-check">
+                    </li>
+                    <li class="food-type">
+                        <label for="type-snack"><img src="{{asset('/storage/assets/snack.png')}}" alt=""></label>
+                        <input type="checkbox" name="type-snack" class="type-check">
+                    </li>
+                    <li class="food-type">
+                        <label for="type-mexican"><img src="{{asset('/storage/assets/mexican.png')}}" alt=""></label>
+                        <input type="checkbox" name="type-mexican" class="type-check">
+                    </li>
+                    <li class="food-type">
+                        <label for="type-cake"><img src="{{asset('/storage/assets/cake.png')}}" alt=""></label>
+                        <input type="checkbox" name="type-cake" class="type-check">
                     </li>
                 </ul>
             </div>
