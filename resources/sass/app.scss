@@ -35,6 +35,14 @@ body{
     min-height: 100vh;
 }
 
+//fonts
+h1, h2, h3, h4, h5, a, span {
+    font-family: 'Fredoka One', cursive;
+}
+p {
+font-family: 'Raleway', sans-serif;
+}
+
 .container-fixed {
     flex-grow: 1;
 }
