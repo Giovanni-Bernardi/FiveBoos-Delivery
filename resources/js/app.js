@@ -5,34 +5,59 @@ window.Vue = require('vue');
 const files = require.context('./', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-document.addEventListener('DOMContentLoaded', () => {
+import axios from 'axios';
+import Vue from 'vue';
 
-    const app = new Vue({
+document.addEventListener('DOMContentLoaded', function () {
+
+    new Vue({
         el: '#app',
-        // data: {
-        //     url: 'http://127.0.0.1:8000',
-        //     restaurants: [],
-        //     filterRestaurants: [],
-        //     types: [],
-        //     typeSelect: '',
-        //     products: [],
-        //     search: '',
-        //     currentRestaurantId: '',
-        //     totalPrice: 0,
-        // },
-        // methods: {
-        //     mounted: function () {
-        //         axios.get("http://localhost:8000/index")
-        //
-        //         .then((data) => {
-        //             this.restaurants = data.data.results;
-        //             console.log(this.restaurants);
-        //         })
-        //         .catch(function (e) {
-        //             this.error = e;
-        //         });
-        //         console.log('hello');
-        //     },
-        // },
+        data: {
+            restaurants: [],
+            products: [],
+            types: [],
+            filterRestaurants: [],
+            typeSelect: '',
+            search: '',
+            currentRestaurantId: '',
+            totalPrice: 0,
+        },
+        mounted() {
+            this.getRestaurants();
+            this.getProducts();
+            this.getTypes();
+        },
+        methods: {
+            getRestaurants() {
+                axios.get('/api/restaurants')
+                .then(response =>{
+                    this.restaurants = response.data
+                    console.log(this.restaurants);
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            },
+            getProducts() {
+                axios.get('/api/products')
+                .then(response =>{
+                    this.products = response.data
+                    console.log(this.products);
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            },
+            getTypes() {
+                axios.get('/api/types')
+                .then(response =>{
+                    this.types = response.data
+                    console.log(this.types);
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            },
+        },
     });
 });

@@ -59,13 +59,12 @@
                     <product-component :product="{{$product}}"></product-component>
                 </li>
             @endforeach
-
+            {{-- <li v-for='product in products'>
+                <div>@{{product.id}}</div>
+                <div>@{{product.name}}</div>
+                <div>@{{product.price}}</div>
+            </li> --}}
         </ul>
 
-        <div v-for='cart in product'>
-            <ul>
-                {{-- <li> {{ plate.name }}</li> --}}
-            </ul>
-        </div>
     </main>
 @endsection
