@@ -15,3 +15,39 @@
         background-size: 130%;
     }
 }
+
+//landing-background
+@keyframes bg-landing-rgb {
+	0% {
+		background: #ee6055;
+	}
+	20% {
+		background: #b993fa;
+	}
+	40% {
+		background: #aaf683;
+	}
+	60% {
+		background: #7ae0ff;
+	}
+	80% {
+		background: #ffd97d;
+	}
+	100%{
+		background: #fc927b;
+	}
+}
+
+
+//floating food
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}

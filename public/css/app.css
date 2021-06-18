@@ -10982,6 +10982,86 @@ a.text-dark:focus {
   }
 }
 
+@-webkit-keyframes bg-landing-rgb {
+  0% {
+    background: #ee6055;
+  }
+
+  20% {
+    background: #b993fa;
+  }
+
+  40% {
+    background: #aaf683;
+  }
+
+  60% {
+    background: #7ae0ff;
+  }
+
+  80% {
+    background: #ffd97d;
+  }
+
+  100% {
+    background: #fc927b;
+  }
+}
+
+@keyframes bg-landing-rgb {
+  0% {
+    background: #ee6055;
+  }
+
+  20% {
+    background: #b993fa;
+  }
+
+  40% {
+    background: #aaf683;
+  }
+
+  60% {
+    background: #7ae0ff;
+  }
+
+  80% {
+    background: #ffd97d;
+  }
+
+  100% {
+    background: #fc927b;
+  }
+}
+
+@-webkit-keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
 .site-logo {
   color: #ffffff;
   font-size: 22px;
@@ -11649,246 +11729,12 @@ body > header > nav > ul > li:nth-child(1) > a {
   transform: rotate(90deg);
 }
 
-footer {
-  width: 100%;
-  background-color: black;
-  padding: 20px 12px 10px 12px;
-}
-
-footer div .border-footer-divider {
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px solid white;
-  padding: 3px 25px;
-}
-
-footer a {
-  text-decoration: none;
-  color: white;
-}
-
-footer a:hover {
-  color: white;
-  text-shadow: #00CCBC 1px 1px;
-  text-decoration: none;
-}
-
-footer h3 {
-  color: white;
-  text-shadow: white 1px 1px;
-  margin: 10px 20px 10px 25px;
-  font-size: 2em;
-}
-
-footer h3 span {
-  color: #00CCBC;
-  text-shadow: #00CCBC 1px 1px;
-}
-
-footer img {
-  width: 200px;
-  height: auto;
-}
-
-footer .ms-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-footer .ms-container .top {
-  width: 100%;
-  display: flex;
-  direction: row;
-  justify-content: space-between;
-}
-
-footer .ms-container .top .logo {
-  width: 50%;
-}
-
-footer .ms-container .top .info {
-  width: 50%;
-}
-
-footer .ms-container .top .info .info-box {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.15em;
-}
-
-footer .ms-container .top .info .info-box div {
-  padding: 25px 40px;
-}
-
-footer .bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-footer .bottom .icons i {
-  font-size: 1.35rem;
-  margin: 10px 20px 10px 25px;
-  padding: 25px 3px;
-}
-
-footer .bottom .privacy {
-  display: flex;
-  flex-direction: column;
-  padding: 25px 40px;
-}
-
-footer .bottom .privacy .top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-footer .bottom .privacy .top a {
-  font-size: 1.15em;
-  margin: 5px;
-}
-
-footer .bottom .privacy .copyright {
-  color: #00CCBC;
-  align-self: flex-end;
-}
-
-.site-logo {
-  color: #ffffff;
-  font-size: 22px;
-  font-weight: bold;
-  margin: 5px;
-  padding-left: 60px;
-  position: absolute;
-}
-
-header {
-  height: 50px;
-  width: 100%;
-  z-index: 2;
-  background: #00ccbc;
-  position: fixed;
-}
-
-.menulist {
-  display: flex;
-  top: 50px;
-  left: -100%;
-  width: 25%;
-  height: 100%;
-  position: fixed;
-  list-style: none;
-  text-align: center;
-  padding-top: 50px;
-  margin-right: 0px;
-  margin-right: 10px;
-  transition: 0.5s;
-  background: #00ccbc;
-}
-
-.menulist li {
-  font-size: 18px;
-  font-weight: bold;
-  position: relative;
-  margin: 10px;
-}
-
-.menulist li a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-body > header > nav > ul > li:nth-child(1) > a {
-  background-color: #ffaf53;
-  padding: 10px 50px;
-  border-radius: 3px;
-}
-
-.check {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  margin: 3px 20px 0px 0px;
-  z-index: 3;
-  opacity: 0;
-}
-
-.ham-menu {
-  height: 40px;
-  width: 40px;
-  margin: 3px 20px 0px 15px;
-  position: relative;
-  display: block;
-}
-
-.menuline {
-  height: 2px;
-  width: 25px;
-  position: relative;
-  margin: auto;
-  display: flex;
-  top: 50%;
-  background: #ffffff;
-}
-
-.menuline::before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 25px;
-  top: -8px;
-  background: #ffffff;
-}
-
-.menuline::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 25px;
-  top: 8px;
-  background: #ffffff;
-}
-
-.content-area {
-  height: 1000px;
-  width: 100%;
-  text-align: center;
-}
-
-.menulist {
-  display: block;
-  margin-right: 0px;
-}
-
-.menulist li a {
-  font-size: 22px;
-  text-align: center;
-}
-
-.check:checked ~ .menulist {
-  left: 0;
-}
-
-.check:checked ~ .ham-menu .menuline {
-  transform: rotate(135deg);
-  transition: 0.3s ease;
-}
-
-.check:checked ~ .ham-menu .menuline::before,
-.check:checked ~ .ham-menu .menuline::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
 * {
   outline: none;
 }
 
 #landing-jumbo #background-jumbo {
   background-image: url(/images/background-landing.png?b13fd6cc8729ea0cbf60ce8b03cbe494);
-  background-color: #b3dfea;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
@@ -11896,33 +11742,105 @@ body > header > nav > ul > li:nth-child(1) > a {
   width: 100%;
   margin-top: -100px;
   padding: 0 3%;
+  -webkit-animation-name: bg-landing-rgb;
+          animation-name: bg-landing-rgb;
+  -webkit-animation-duration: 18s;
+          animation-duration: 18s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+#landing-jumbo #background-jumbo .type {
+  z-index: 1;
+}
+
+#landing-jumbo #background-jumbo .type img {
+  -webkit-animation: float 4s ease-in-out infinite;
+          animation: float 4s ease-in-out infinite;
+  width: 130px;
+  height: auto;
+}
+
+#landing-jumbo #background-jumbo #pizzeria {
+  position: absolute;
+  top: 80px;
+}
+
+#landing-jumbo #background-jumbo #fastfood {
+  position: absolute;
+  top: 120px;
+  left: 190px;
+}
+
+#landing-jumbo #background-jumbo #sushi {
+  position: absolute;
+  right: 150px;
+}
+
+#landing-jumbo #background-jumbo #messicano {
+  position: absolute;
+  left: 100px;
+}
+
+#landing-jumbo #background-jumbo #cinese {
+  position: absolute;
+  bottom: 40px;
+  left: 400px;
+}
+
+#landing-jumbo #background-jumbo #carne {
+  position: absolute;
+  bottom: 50px;
+  left: 90px;
+}
+
+#landing-jumbo #background-jumbo #pesce {
+  position: absolute;
+  top: 80px;
+  right: 250px;
+}
+
+#landing-jumbo #background-jumbo #pasticceria {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}
+
+#landing-jumbo #background-jumbo #vegan {
+  position: absolute;
+  right: 160px;
+  bottom: 60px;
+}
+
 #landing-jumbo #landing-title {
   color: #000000;
   font-weight: bold;
-  position: relative;
-  top: -45px;
+  z-index: 10;
 }
 
 #landing-jumbo #landing-title h1 {
-  font-size: 4.5rem;
+  font-size: 6rem;
   font-weight: bolder;
 }
 
 #landing-jumbo #landing-title h2 {
-  margin: 15px 0 40px 0;
+  margin: 15px 0 60px 0;
 }
 
 #landing-jumbo div.landing-buttons {
   display: inline;
   text-decoration: none;
+  letter-spacing: 3px;
   width: 30%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #000000;
   text-align: center;
@@ -11934,7 +11852,7 @@ body > header > nav > ul > li:nth-child(1) > a {
 
 #landing-jumbo div.landing-buttons #white-button {
   border: 4px solid black;
-  padding: 15px 30px;
+  padding: 15px 35px;
   background-color: #ffffff;
   margin-right: 10px;
   color: #000000;
@@ -11946,8 +11864,8 @@ body > header > nav > ul > li:nth-child(1) > a {
 }
 
 #landing-jumbo div.landing-buttons #dotted-button {
-  border: 4px dashed #757575;
-  padding: 15px 30px;
+  border: 4px dashed #727272;
+  padding: 15px 35px;
   margin-left: 10px;
   color: #000000;
 }
@@ -11981,6 +11899,7 @@ p {
 
 .container-fixed {
   flex-grow: 1;
+  margin-top: 50px;
 }
 
 ul {

@@ -18,9 +18,54 @@
                                 <a id="dotted-button" href="#">SELECT A FOOD ICON</a> <!-- no route -->
                             </div>
                         </div>
-                        
-                    </div>
-                </section>
+                        <!-- types -->
+                        <div class="type" id="pizzeria">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/pizza.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="fastfood">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/hamburger.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="sushi">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/sushi.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="messicano">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/mexican.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="cinese">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/japanese.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="carne">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/meat.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="pesce">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/fish.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="vegan">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/veg.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="type" id="pasticceria">
+                            <a href="">
+                                <img src="{{asset('/storage/assets/dessert.png')}}" alt="">
+                            </a>
+                        </div>
+                    </div> <!-- /background-jumbo -->
+                </section> <!-- /landing-jumbo -->
 
         {{-- restaurant list --}}
         <div class="jumbo-list">
