@@ -45,51 +45,14 @@
                     Products list:
                 </h4>
             </li>
-            {{-- @foreach ($restaurant -> products as $product)
+            @foreach ($restaurant -> products as $product)
                 <li>
                     {{$product -> name}}: &euro;{{$product -> price}},00
                     <a href="{{route('productDetailsViewLink', $product -> id)}}">
                         details
                     </a>
                 </li>
-            @endforeach --}}
-
-            {{-- @foreach ($restaurant -> products as $product)
-                <li>
-                    <product-component :product="{{$product}}"></product-component>
-                </li>
-            @endforeach --}}
-            <li v-for='(product, productIndex) in products' v-if="product.restaurant_id == currentRestaurantId">
-                <div>
-                    <div>ID: @{{product.id}}</div>
-                    <div>Name: @{{product.name}}</div>
-                    <div>Price: @{{product.price}}</div>
-                    <div>IdRestaurant: @{{product.restaurant_id}}</div>
-                    <div>Quantita: @{{quantity}}</div>
-                    <button @click="increase">+</button>
-                    <button @click="decrease">-</button>
-                    <div>Ingredients: @{{product.ingredients}}</div>
-                    <div>Description: @{{product.description}}</div>
-                    {{-- <div v-show='visibility'>
-                        <div>Ingredients: @{{product.ingredients}}</div>
-                        <div>Description: @{{product.description}}</div>
-                    </div>
-                    <div class="">
-                        <button type="button" @click='visibility = !visibility'>Show More Info</button>
-                    </div> --}}
-                    <div class="">
-                        <button type="button" @click='addToCart'>Add to Cart</button>
-                    </div>
-                    {{-- <button type="button" @click='visibility = !visibility'>Show More Info</button> --}}
-                    {{-- <div v-if="product.restaurant_id == currentRestaurantId">
-                        @foreach ($restaurant -> products as $product)
-                            @if ($product)
-                                <a href="{{route('productDetailsViewLink', $product -> id)}}">details</a>
-                            @endif
-                        @endforeach
-                    </div> --}}
-                </div>
-            </li>
+            @endforeach
         </ul>
 
     </main>

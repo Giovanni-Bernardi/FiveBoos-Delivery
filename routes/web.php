@@ -42,3 +42,7 @@ Route::get('/delete/restaurant/{id}','AdminController@deleteRestaurant') -> name
 
 // Route delete product
 Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('deleteProductLink');
+
+// 2 Route per carello temporanee
+Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
+Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');

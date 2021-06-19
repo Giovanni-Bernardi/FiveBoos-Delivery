@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 axios.get('/api/restaurants')
                 .then(response =>{
                     this.restaurants = response.data
-                    console.log(this.restaurants);
+                    // console.log(this.restaurants);
                 })
                 .catch(error => {
                     console.log(error)
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 axios.get('/api/products/')
                 .then(response =>{
                     this.products = response.data
-                    console.log(this.products);
+                    // console.log(this.products);
                 })
                 .catch(error => {
                     console.log(error)
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 axios.get('/api/types')
                 .then(response =>{
                     this.types = response.data
-                    console.log(this.types);
+                    // console.log(this.types);
                 })
                 .catch(error => {
                     console.log(error)
@@ -69,9 +69,27 @@ document.addEventListener('DOMContentLoaded', function () {
             decrease() {
                 this.quantity--;
             },
-            addToCart() {
-                //funzione per aggiungere piatto in carello
-            }
+            addToCart(productId, productName, productPrice) {
+
+                var object = {
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                };
+
+                // for(let i= 0; i< this.cart.length; i++) {
+                //     // se id presente nel cart non deve pushiare piatto ma per adesso non funziona
+                //     if(this.id == this.cart[i].id) {
+                //
+                //     }
+                //     else {
+                //         this.cart.push(object);
+                //     }
+                // }
+                this.cart.push(object);
+                console.log(object);
+                console.log(this.cart);
+            },
         },
     });
 });

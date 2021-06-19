@@ -25,4 +25,16 @@ class RestaurantController extends Controller
 
         return view('pages.product-details', compact('product'));
     }
+
+    // Pagina di prova del carello per tutti ristoranti
+    public function restaurantPublic(){
+        $restaurants = Restaurant::all();
+        return view('pages.restaurant-public', compact('restaurants'));
+    }
+
+    // Pagina di prova del carello per gli piatti del ristorante
+    public function restaurantDetailsPublic($id){
+        $restaurant = Restaurant::findOrFail($id);
+        return view('pages.restaurant-product-public', compact('restaurant'));
+    }
 }
