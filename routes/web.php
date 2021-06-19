@@ -48,3 +48,7 @@ Route::get('pay','PaymentController@payOrder') -> name('payOrder');
 // Route checkout
 Route::post('checkout','PaymentController@checkoutOrder') -> name('checkoutOrder');
 Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');
+
+// 2 Route per carello temporanee
+Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
+Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');
