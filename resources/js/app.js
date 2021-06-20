@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
             typeSelect: '',
             search: '',
             currentRestaurantId: '',
-            totalPrice: 0,
             visibility: false,
             quantity: 0,
+            totalPrice: 0,
         },
         mounted() {
             this.currentRestaurantId = window.id;
@@ -63,18 +63,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(error)
                 })
             },
-            increase() {
+            increase(id) {
                 this.quantity++;
             },
-            decrease() {
+            decrease(id) {
                 this.quantity--;
             },
-            addToCart(productId, productName, productPrice) {
+            addToCart(productId, productName, productPrice, quantita) {
 
                 var object = {
                     id: productId,
                     name: productName,
                     price: productPrice,
+                    counter: quantita,
                 };
 
                 // for(let i= 0; i< this.cart.length; i++) {
@@ -86,6 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 //         this.cart.push(object);
                 //     }
                 // }
+                // this.cart.push(object);
+
+                this.totalPrice = Number((this.totalPrice + productPrice * quantita).toFixed(2));
                 this.cart.push(object);
                 console.log(object);
                 console.log(this.cart);
