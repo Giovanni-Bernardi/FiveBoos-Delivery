@@ -49850,7 +49850,8 @@ module.exports = function(module) {
  */
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
     method = _require.method,
-    isSet = _require.isSet;
+    isSet = _require.isSet,
+    fromPairs = _require.fromPairs;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -49873,55 +49874,82 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 function statisticsChart() {
+  console.log('JS: Connected'); // VUE Standard components
   // const app = new Vue({
   //     el: '#app',
   // });
+  // Input invisibile, value = restaurant_id
+
   var restaurantId = document.getElementById('d_elem').value;
-  console.log(restaurantId);
-  var monthsName = [];
-  var monthsOrders = [];
+  console.log('Restaurant id: ' + restaurantId); // Lista 12 mesi per grafico 
+
+  var monthsNames12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; // -- Vue Class --
+
   new Vue({
     el: '#appChart',
     data: {
-      monthsList: [],
-      monthsOrderCount: []
+      monthsName: [],
+      monthsOrders: [],
+      year: 0,
+      currentYear: new Date().getFullYear(),
+      myChart: ''
     },
     mounted: function mounted() {
-      console.log('ciao');
+      console.log('VUE Connected');
+      this.get12MonthsData();
     },
     methods: {
-      getMonthsData: function getMonthsData() {
+      // Funzione di chiamata al controller Statistiche
+      get12MonthsData: function get12MonthsData() {
         var _this = this;
 
-        // API ricerca film/serie per nome
-        axios.get('/stats/month/' + restaurantId, {
-          params: {// api_key: this.api_key,
-            // query: this.search
+        if (!this.year) {
+          this.year = this.currentYear;
+        }
+
+        console.log('Year selected:' + this.year);
+        axios.get('/stats/month/' + restaurantId + '/' + this.year, {
+          params: {// Parametri
           }
         }).then(function (data) {
+          console.log(data.data); // Contatore mesi con ordini
+
+          var cont = 0; // Lista finale con numero ordini per mese (12 mesi)
+
+          var ordersNumberList = [];
           var datas = data.data;
           monthsName = datas[0];
           monthsOrders = datas[1];
-          console.log(monthsName);
+          console.log(monthsName, 'API Axios 2'); // Assegnamento valori in lista finale
 
-          if (monthsName) {
-            _this.chartIt();
+          for (var i = 0; i < monthsNames12.length; i++) {
+            var month = monthsNames12[i];
+
+            if (month == monthsName[cont]) {
+              ordersNumberList.push(monthsOrders[cont]);
+              cont++;
+            } else {
+              ordersNumberList.push(0);
+            }
           }
+
+          console.log(ordersNumberList);
+
+          _this.chart12(ordersNumberList);
         })["catch"](function () {
           console.log('Error');
         });
       },
-      chartIt: function chartIt() {
-        console.log(monthsName, 'asdasdaas');
+      // Istanza classe - Grafico statistiche n°ordini per 12 mesi 
+      chart12: function chart12(ordersNumberList) {
         var ctx = document.getElementById('myChart');
-        var myChart = new Chart(ctx, {
+        myChart = new Chart(ctx, {
           type: 'line',
           data: {
-            // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            labels: monthsName,
+            labels: monthsNames12,
             datasets: [{
-              label: 'Number of orders',
-              data: monthsOrders,
+              label: 'Orders per month',
+              data: ordersNumberList,
               backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
               borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
               borderWidth: 1,
@@ -49936,24 +49964,9 @@ function statisticsChart() {
           },
           options: {
             scales: {
-              // x:{
-              //     // type: 'time',
-              //     display: true,
-              // //     title: {
-              // //         display: true,
-              // //         text: 'Date'
-              // //     }
-              // },
               y: {
-                beginAtZero: true //     // display: true,
-                //     // title: {
-                //     //   display: true,
-                //     //   text: 'value'
-                //     // }
-
-              } // grid:{
-              // }
-
+                beginAtZero: true
+              }
             },
             layout: {
               padding: 50
@@ -49964,14 +49977,14 @@ function statisticsChart() {
                   font: {
                     // weight: 'bold',
                     size: 20,
-                    weight: 'bold'
+                    weight: 'normal'
                   }
                 }
               }
             },
             elements: {
               point: {
-                radius: 10,
+                radius: 5,
                 hoverRadius: 15
               },
               line: {
@@ -49980,25 +49993,23 @@ function statisticsChart() {
             }
           }
         });
-      } // sortIt: function(elem){
-      //     console.log(elem, elem[0]);
-      //     for (let i = 0; i < elem.length; i++) {
-      //         for (let j = 0; j < elem.length - i; j++) {
-      //             let item = 0;
-      //             if(elem[i] > elem[i + j]){
-      //                 item = elem[i + j];
-      //                 elem[i + j] = elem[i];
-      //                 elem[i] = item; 
-      //             }
-      //         }
-      //     }
-      //     return elem;
-      // }
-
+      },
+      deleteMonthsChart: function deleteMonthsChart() {
+        this.myChart.data.labels.pop();
+        this.myChart.data.datasets.forEach(function (dataset) {
+          dataset.data.pop();
+        });
+        this.myChart.update();
+      },
+      updateMonthsChart: function updateMonthsChart() {
+        this.myChart.data.labels.push(label);
+        this.myChart.data.datasets.forEach(function (dataset) {
+          dataset.data.push(data);
+        });
+        this.myChart.update();
+      }
     }
   });
-  console.log(monthsName);
-  console.log('JS Connected');
 }
 
 document.addEventListener('DOMContentLoaded', statisticsChart);

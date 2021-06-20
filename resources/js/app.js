@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-const { method, isSet } = require('lodash');
+const { method, isSet, fromPairs } = require('lodash');
 
 require('./bootstrap');
 
@@ -33,56 +33,91 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 
 function statisticsChart() {
+    console.log('JS: Connected');
+
+    // VUE Standard components
     // const app = new Vue({
     //     el: '#app',
     // });
-    var restaurantId = document.getElementById('d_elem').value;
-    console.log(restaurantId);
-    var monthsName = [];
-    var monthsOrders = [];
 
+    // Input invisibile, value = restaurant_id
+    var restaurantId = document.getElementById('d_elem').value;
+    console.log('Restaurant id: ' + restaurantId);
+
+    // Lista 12 mesi per grafico 
+    let monthsNames12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+    // -- Vue Class --
     new Vue({
         el: '#appChart',
         data: {
-            monthsList: [],
-            monthsOrderCount: [],
+            monthsName: [],
+            monthsOrders: [],
+            year: 0,
+            currentYear: new Date().getFullYear(),
+            myChart: ''
         },
         mounted: function(){
-            console.log('ciao');
+            console.log('VUE Connected');
+            this.get12MonthsData();
+
         },
         methods:{
-            getMonthsData: function(){
-                // API ricerca film/serie per nome
-                axios.get('/stats/month/' + restaurantId,
+            // Funzione di chiamata al controller Statistiche
+            get12MonthsData: function(){
+
+                if(!this.year){
+                    this.year = this.currentYear
+                }
+                console.log('Year selected:' + this.year);
+
+                axios.get('/stats/month/' + restaurantId + '/' + this.year,
                 {
                     params:{
-                        // api_key: this.api_key,
-                        // query: this.search
+                        // Parametri
                     }
                 }).then(data => {
+                    console.log(data.data);
+
+                    // Contatore mesi con ordini
+                    let cont = 0;
+                    // Lista finale con numero ordini per mese (12 mesi)
+                    let ordersNumberList = [];
+
                     let datas = data.data;
                     monthsName = datas[0];
                     monthsOrders = datas[1];
-                    console.log(monthsName);
-                    if(monthsName){
-                        this.chartIt();
+                    console.log(monthsName, 'API Axios 2');
+
+                    // Assegnamento valori in lista finale
+                    for (let i = 0; i < monthsNames12.length; i++) {
+                        const month = monthsNames12[i];
+
+                        if(month == monthsName[cont]){
+                            ordersNumberList.push(monthsOrders[cont]);
+                            cont ++;
+                        }else{
+                            ordersNumberList.push(0);
+                        }
                     }
+                    
+                    console.log(ordersNumberList);
+                    this.chart12(ordersNumberList);
                 }).catch(() => {
                     console.log('Error');
                 });
 			},
-            chartIt: function(){
-                console.log(monthsName, 'asdasdaas');
+            // Istanza classe - Grafico statistiche n°ordini per 12 mesi 
+            chart12: function(ordersNumberList){
 
-                var ctx = document.getElementById('myChart');
-                var myChart = new Chart(ctx, {
+                let ctx = document.getElementById('myChart');
+                myChart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                        labels: monthsName,
+                        labels: monthsNames12,
                         datasets: [{
-                            label: 'Number of orders',
-                            data: monthsOrders,
+                            label: 'Orders per month',
+                            data: ordersNumberList,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
@@ -110,25 +145,9 @@ function statisticsChart() {
                     },
                     options: {
                         scales: {
-                            // x:{
-                            //     // type: 'time',
-                            //     display: true,
-                            // //     title: {
-                            // //         display: true,
-                            // //         text: 'Date'
-                            // //     }
-                            // },
                             y: {
                                 beginAtZero: true,
-                            //     // display: true,
-                            //     // title: {
-                            //     //   display: true,
-                            //     //   text: 'value'
-                            //     // }
                             },
-                            // grid:{
-                                
-                            // }
                         },
                         layout:{
                             padding: 50,
@@ -139,14 +158,14 @@ function statisticsChart() {
                                     font:{
                                         // weight: 'bold',
                                         size: 20,
-                                        weight: 'bold'
+                                        weight: 'normal',
                                     },
                                 }
                             }
                         },
                         elements:{
                             point:{
-                                radius: 10,
+                                radius: 5,
                                 hoverRadius: 15,
                             },
                             line:{
@@ -155,28 +174,23 @@ function statisticsChart() {
                         }
                     }
                 });
+            },
+            deleteMonthsChart: function (){
+                this.myChart.data.labels.pop();
+                this.myChart.data.datasets.forEach((dataset) => {
+                    dataset.data.pop();
+                });
+                this.myChart.update();
+            },
+            updateMonthsChart: function (){
+                this.myChart.data.labels.push(label);
+                this.myChart.data.datasets.forEach((dataset) => {
+                dataset.data.push(data);
+                });
+                this.myChart.update();
             }
-            // sortIt: function(elem){
-            //     console.log(elem, elem[0]);
-
-            //     for (let i = 0; i < elem.length; i++) {
-            //         for (let j = 0; j < elem.length - i; j++) {
-            //             let item = 0;
-            //             if(elem[i] > elem[i + j]){
-            //                 item = elem[i + j];
-            //                 elem[i + j] = elem[i];
-            //                 elem[i] = item; 
-            //             }
-            //         }
-            //     }
-            //     return elem;
-            // }
         }
     });
-
-    console.log(monthsName);
-    console.log('JS Connected');
-    
 }
 
 document.addEventListener('DOMContentLoaded', statisticsChart);

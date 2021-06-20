@@ -166,7 +166,7 @@ class AdminController extends Controller
     // Soft delete ristorante
     public function deleteRestaurant($id){
         $restaurant = Restaurant::findOrFail($id);
-        $restaurant -> visible = 0;
+        $restaurant -> visible = !($restaurant -> visible);
 
         $restaurant -> save();
 
@@ -176,7 +176,7 @@ class AdminController extends Controller
     // Soft delete product
     public function deleteProduct($id){
         $product = Product::findOrFail($id);
-        $product -> visible = 0;
+        $product -> visible = !($product -> visible);
 
         $product -> save();
 

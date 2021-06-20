@@ -17,9 +17,9 @@ class StatisticCharController extends Controller
     }
 
     // Funzione default che torna gli ordini ad un determinato ristorante
-    public function getOrdersByRestuarant($restaurantId){
+    public function getOrdersByRestuarant($restaurantId, $selectedYear){
         $id = Auth::id();
-        
+
         $orders_date = DB::table('orders')
                     -> join('order_product', 'orders.id', '=', 'order_product.order_id')
                     -> join('products', 'order_product.product_id', '=', 'products.id')
@@ -31,18 +31,22 @@ class StatisticCharController extends Controller
                         ['restaurants.user_id', $id],
                         ['restaurants.id', $restaurantId], // !Inserire id ristorante selezionato
                         ])
-                    -> whereYear('orders.delivery_date', 2020)
+                    -> whereYear('orders.delivery_date', $selectedYear)
                     -> get();
 
         return $orders_date;
     }
 
     // Funzione che ritorna i mesi degli ordini al grafico (ASC, no doppioni)
-    public function getOrdersMonths($restaurantId){
+    public function getOrdersMonths($restaurantId, $selectedYear = 0){
         $monthsList = [];
         $countsPerMont = [];
 
-        $orders_date = $this -> getOrdersByRestuarant($restaurantId);
+        if(!$selectedYear){
+            $selectedYear = date('Y');
+        }
+
+        $orders_date = $this -> getOrdersByRestuarant($restaurantId, $selectedYear);
         //Ciclo che crea array di mesi ordinato e senza doppioni
         foreach ($orders_date as $unformatted_date) {
             $date = new \DateTime($unformatted_date -> delivery_date);
