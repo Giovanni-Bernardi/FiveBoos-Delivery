@@ -10,6 +10,8 @@
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway:wght@200;400;600;700&display=swap" rel="stylesheet"> {{-- Freedoka One + Raleway --}}
+    {{-- lottie --}}
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
 
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
 </head>

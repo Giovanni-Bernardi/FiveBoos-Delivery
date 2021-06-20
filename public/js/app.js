@@ -49870,7 +49870,15 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app'
-});
+}); // //mouse follow
+// var cursorFollow = document.querySelectorAll('.popup-note');
+// document.addEventListener('mousemove', fn, false);
+// function fn(e) {
+//   for (var i = cursorFollow.length; i--;) {
+//     cursorFollow[i].style.left = e.pageX + 'px';
+//     cursorFollow[i].style.top = e.pageY + 'px';
+//   }
+// }
 
 /***/ }),
 

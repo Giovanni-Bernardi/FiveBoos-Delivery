@@ -40,14 +40,45 @@
 
 
 //floating food
-@keyframes float {
+@keyframes float-down {
 	0% {
 		transform: translatey(0px);
 	}
 	50% {
-		transform: translatey(-20px);
+		transform: translatey(30px);
 	}
 	100% {
 		transform: translatey(0px);
 	}
+}
+
+@keyframes float-up {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-30px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+// bumping menù (UNUSED)
+// animation: down-bump 0.4s ease; //NAME
+// 			box:hover {
+//   		background-position: 100% 100%;
+//   		animation: up-bump 0.4s ease;
+
+				// add colors top background and 2 version of text
+
+@keyframes up-bump {
+	0% { padding-top: 2em; }
+	50% { padding-top: 1.5em; }
+	100% { padding-top: 2em; }
+}
+@keyframes down-bump {
+	0% { padding-top: 2em; }
+	50% { padding-top: 2.5em; }
+	100% { padding-top: 2em; }
 }

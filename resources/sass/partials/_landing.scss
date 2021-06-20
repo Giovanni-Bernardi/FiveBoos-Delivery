@@ -11,7 +11,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
-    min-height: 106vh;
+    min-height: 100vh;
     width: 100%;
     margin-top: -100px;
     padding: 0 3%;
@@ -30,61 +30,90 @@
     //types img
     .type {
       z-index: 1;
-        img {
-          animation: float 4s ease-in-out infinite;
-          width: 130px;
-          height: auto;
+          img {
+            animation: float-up 5s ease-in-out infinite;
+            width: 120px;
+            height: auto;
       }
     }
+    
     #pizzeria{
       position: absolute;
       top: 80px;
+      left:500px;
     }
+
     #fastfood {
       position: absolute;
       top: 120px;
-      left: 190px;
+      left: 230px;
     }
+
     #sushi {
       position: absolute;
       right: 150px;
     }
+
     #messicano {
       position: absolute;
       left: 100px;
+      img {
+        animation: float-down 5s ease-in-out infinite;
+      }
     }
+
     #cinese{
       position: absolute;
       bottom: 40px;
-      left: 400px;
+      left: 500px;
+      img {
+        animation: float-down 5s ease-in-out infinite;
+      }
     }
+
     #carne {
       position: absolute;
       bottom: 50px;
       left: 90px;
     }
+
     #pesce {
       position: absolute;
       top: 80px;
       right: 250px;
 
     }
+
     #pasticceria {
       position: absolute;
-      top: 50px;
-      right: 30px;
+      bottom: 40px;
+      right: 500px;
     }
+
     #vegan {
-        position: absolute;
-        right: 160px;
-        bottom: 60px;
+      position: absolute;
+      right: 160px;
+      bottom: 60px;
+        img {
+          animation: float-down 5s ease-in-out infinite;
+        }
       }
+
+    #poke {
+      position: absolute;
+      top: 80px;
+      right:500px;
+        img {
+        animation: float-down 5s ease-in-out infinite;
+      }
+    }
   }
 
   #landing-title {
     color: #000000; //$text-color-light
     font-weight: bold;
     z-index: 10;
+    position: absolute;
 
     h1 {
       font-size: 6rem;
@@ -110,7 +139,7 @@
         }
 
         #white-button {
-          border: 4px solid black;
+          border: 4px solid #000000;
           padding: 15px 35px;
           background-color: #ffffff;
           margin-right: 10px;
@@ -121,12 +150,47 @@
           }
         }
         #dotted-button {
-          border: 4px dashed  #727272;
+          border: 4px dashed  rgba(73, 73, 73, 0.26);
           padding: 15px 35px;
           margin-left: 10px;
           color: #000000;
-        }
+        }     
     }
 }
+
+//popup text img
+.popup-note {
+  .pop {
+    display: none;
+    position: absolute;
+    border-radius: 30px;
+    border: 4px solid black;
+    font-size: 1.6rem;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    padding: 15px 35px;
+    text-align: center;
+  }
+  &:hover{
+    .pop {
+    display: block;
+      }
+    .up{
+    bottom: 100px;
+    }
+    .right {
+      left: 140px;
+      bottom: 40px;
+    }
+  }
+}
+
+//boobles
+#lottie-player {
+  width: 100%;
+  height: 100vh;
+}
+
+
  
  
