@@ -79,12 +79,12 @@
                             </a>
                             <a class="pop up" href="#">Vegan</a>
                         </div>
-                        <!-- <lottie-player id="lottie-player"
+                        <lottie-player id="lottie-player"
                         src="https://assets8.lottiefiles.com/packages/lf20_kh7lwZ.json"  
                         background="transparent"  
                         speed="0.5"  
-                        loop controls autoplay
-                        > -->
+                        loop autoplay
+                        >
                    </lottie-player>
                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                     </div> <!-- /background-jumbo -->
