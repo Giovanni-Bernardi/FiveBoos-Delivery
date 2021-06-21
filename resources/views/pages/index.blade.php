@@ -85,10 +85,10 @@
                         <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"> {{$restaurant -> business_name}} </a>
                         <div class="categories-card">
                             {{-- categories placeholder --}}
-                            <div class="cell type-pizza">
+                            <div class="cell type-generic">
                                 <a href="#"> Pizza </a>
                             </div> 
-                            <div class="cell type-panini">
+                            <div class="cell type-generic">
                                 <a href="#"> Panini </a>
                             </div> 
                         </div>
@@ -105,7 +105,7 @@
                             </div> --}}
                         </div>
                         
-                        <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"><i class="fas fa-utensils"></i></a>
+                        {{-- <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"><i class="fas fa-utensils"></i></a> --}}
                         <div class="delivery">
                             <img src="{{asset('/storage/assets/scooter.png')}}" alt="icona consegna">
                             <div class="delivery-checkout active">

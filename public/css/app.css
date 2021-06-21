@@ -11312,7 +11312,7 @@ div.restaurants-box div.restaurant-card .top-info .background-image {
   width: 100%;
   height: 100%;
   position: absolute;
-  filter: saturate(25%);
+  filter: saturate(35%);
   z-index: 1;
 }
 
@@ -11352,37 +11352,29 @@ div.restaurants-box div.restaurant-card .top-info .categories-card .cell {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  border: 1px solid lightgrey;
+  border: 1px solid black;
   text-align: center;
-  border-radius: 12px;
-  padding: 8px;
+  border-radius: 4px;
+  padding: 1px 4px;
 }
 
 div.restaurants-box div.restaurant-card .top-info .categories-card .cell:hover {
-  text-shadow: black 1px 1px;
+  text-shadow: white 1px 1px;
   transition: all 0.3s ease-in-out;
 }
 
 div.restaurants-box div.restaurant-card .top-info .categories-card .cell a {
+  color: black;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: lighter;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-pizza {
-  background-color: rgba(214, 16, 16, 0.65);
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-generic {
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-pizza:hover {
-  background-color: #d61010;
-  transition: all 0.3s ease-in-out;
-}
-
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-panini {
-  background-color: rgba(0, 204, 188, 0.65);
-}
-
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-panini:hover {
-  background-color: #00ccbc;
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-generic:hover {
+  background-color: white;
   transition: all 0.3s ease-in-out;
 }
 
