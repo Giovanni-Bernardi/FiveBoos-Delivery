@@ -10,15 +10,21 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-const files = require.context('./', true, /\.vue$/i)
-files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-import axios from 'axios';
-import Vue from 'vue';
+// import axios from 'axios';
+// import Vue from 'vue';
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
-    new Vue({
+function init () {
+    statisticsChart();
+    vladCarrello();
+}
+function vladCarrello (){
+
+    let carrello = new Vue({
         el: '#app',
         data: {
             restaurants: [],
@@ -104,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         },
     });
-});
+// });
+}
 
 
 
@@ -124,7 +131,7 @@ function statisticsChart() {
     let monthsNames12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
     // -- Vue Class --
-    new Vue({
+    let chart = new Vue({
         el: '#appChart',
         data: {
             monthsName: [],
@@ -269,4 +276,4 @@ function statisticsChart() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', statisticsChart);
+document.addEventListener('DOMContentLoaded', init);
