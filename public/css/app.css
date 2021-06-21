@@ -11886,6 +11886,10 @@ body > header > nav > ul > li:nth-child(1) > a {
   right: 150px;
 }
 
+#landing-jumbo #background-jumbo #sushi img {
+  width: 140px;
+}
+
 #landing-jumbo #background-jumbo #messicano {
   position: absolute;
   left: 100px;
@@ -11913,6 +11917,10 @@ body > header > nav > ul > li:nth-child(1) > a {
   left: 90px;
 }
 
+#landing-jumbo #background-jumbo #carne img {
+  width: 140px;
+}
+
 #landing-jumbo #background-jumbo #pesce {
   position: absolute;
   top: 80px;
@@ -11934,6 +11942,7 @@ body > header > nav > ul > li:nth-child(1) > a {
 #landing-jumbo #background-jumbo #vegan img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
+  width: 100px;
 }
 
 #landing-jumbo #background-jumbo #poke {
@@ -11984,6 +11993,7 @@ body > header > nav > ul > li:nth-child(1) > a {
   background-color: #ffffff;
   margin-right: 10px;
   color: #000000;
+  text-decoration: none;
 }
 
 #landing-jumbo div.landing-buttons #white-button:hover {
@@ -11996,6 +12006,8 @@ body > header > nav > ul > li:nth-child(1) > a {
   padding: 15px 35px;
   margin-left: 10px;
   color: #000000;
+  text-decoration: none;
+  cursor: context-menu;
 }
 
 .popup-note .pop {
@@ -12012,6 +12024,7 @@ body > header > nav > ul > li:nth-child(1) > a {
 
 .popup-note:hover .pop {
   display: block;
+  transform: scale(1.2);
 }
 
 .popup-note:hover .up {
@@ -12026,6 +12039,11 @@ body > header > nav > ul > li:nth-child(1) > a {
 #lottie-player {
   width: 100%;
   height: 100vh;
+}
+
+.scale:hover {
+  transform: scale(0.9);
+  transition: ease-in-out 0.3s;
 }
 
 * {

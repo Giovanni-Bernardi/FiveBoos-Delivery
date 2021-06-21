@@ -445,15 +445,16 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 document.addEventListener('DOMContentLoaded', init);
-// //mouse follow
-// var cursorFollow = document.querySelectorAll('.popup-note');
 
-// document.addEventListener('mousemove', fn, false);
 
-// function fn(e) {
-//   for (var i = cursorFollow.length; i--;) {
-//     cursorFollow[i].style.left = e.pageX + 'px';
-//     cursorFollow[i].style.top = e.pageY + 'px';
-//   }
-// }
+//mouse follow
+var cursorFollow = document.querySelectorAll('.popup-note');
 
+document.addEventListener('mousemove', fn, false);
+
+function fn(e) {
+  for (var i = cursorFollow.length; i--;) {
+    cursorFollow[i].style.left = e.pageX + 'px';
+    cursorFollow[i].style.top = e.pageY + 'px';
+  }
+}
