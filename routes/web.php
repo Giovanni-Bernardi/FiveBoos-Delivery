@@ -43,7 +43,7 @@ Route::get('/delete/restaurant/{id}','AdminController@deleteRestaurant') -> name
 // Route delete product
 Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('deleteProductLink');
 
-// Route pay 
+// Route pay
 Route::get('pay','PaymentController@payOrder') -> name('payOrder');
 // Route checkout
 Route::post('checkout','PaymentController@checkoutOrder') -> name('checkoutOrder');
@@ -52,6 +52,9 @@ Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');
 // 2 Route per carello temporanee
 Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
 Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');
+
+// Prova di inviare nel database order
+Route::post('/store/order', 'RestaurantController@storeOrder') -> name('storeOrder');
 
 // Route grafico TEST
 Route::get('/stats/month/{restaurantId}/{selectedYear}','StatisticCharController@getOrdersMonths') -> name('statsMonthLink');

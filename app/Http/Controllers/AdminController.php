@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 // Serve per mandare email al utente logato(al suo email)
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Restaurant;
 use App\Product;
@@ -77,7 +78,7 @@ class AdminController extends Controller
         ]);
 
         $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
-        
+
         $product = Product::make($validate);
         $product -> restaurant() -> associate($restaurant);
 
@@ -148,7 +149,7 @@ class AdminController extends Controller
         ]);
 
         $product = Product::findorFail($id);
-        
+
         if($request -> file('img')){
             $img = $request -> file('img');
             $imgExt = $img -> getClientOriginalExtension();
