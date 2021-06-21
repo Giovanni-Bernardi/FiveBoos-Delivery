@@ -576,6 +576,176 @@ eval("var map = {\n\t\"./components/ExampleComponent.vue\": \"./resources/js/com
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.common.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);\n__webpack_require__(/*! ./bootstrap */ \"./resources/js/bootstrap.js\");\n\nwindow.Vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.common.js\");\n\nvar files = __webpack_require__(\"./resources/js sync recursive \\\\.vue$/\");\n\nfiles.keys().map(function (key) {\n  return vue__WEBPACK_IMPORTED_MODULE_1___default.a.component(key.split('/').pop().split('.')[0], files(key)[\"default\"]);\n});\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  new vue__WEBPACK_IMPORTED_MODULE_1___default.a({\n    el: '#app',\n    data: {\n      restaurants: [],\n      products: [],\n      types: [],\n      filterRestaurants: [],\n      cart: [],\n      typeSelect: '',\n      search: '',\n      currentRestaurantId: '',\n      visibility: false,\n      quantity: 0,\n      totalPrice: 0\n    },\n    mounted: function mounted() {\n      this.currentRestaurantId = window.id;\n      this.getProducts();\n      this.getRestaurants();\n      this.getTypes();\n      console.log(this.currentRestaurantId);\n    },\n    methods: {\n      getRestaurants: function getRestaurants() {\n        var _this = this;\n\n        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/restaurants').then(function (response) {\n          _this.restaurants = response.data; // console.log(this.restaurants);\n        })[\"catch\"](function (error) {\n          console.log(error);\n        });\n      },\n      getProducts: function getProducts() {\n        var _this2 = this;\n\n        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/products/').then(function (response) {\n          _this2.products = response.data; // console.log(this.products);\n        })[\"catch\"](function (error) {\n          console.log(error);\n        });\n      },\n      getTypes: function getTypes() {\n        var _this3 = this;\n\n        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/types').then(function (response) {\n          _this3.types = response.data; // console.log(this.types);\n        })[\"catch\"](function (error) {\n          console.log(error);\n        });\n      },\n      increase: function increase(id) {\n        this.quantity++;\n      },\n      decrease: function decrease(id) {\n        this.quantity--;\n      },\n      addToCart: function addToCart(productId, productName, productPrice, quantita) {\n        var object = {\n          id: productId,\n          name: productName,\n          price: productPrice,\n          counter: quantita\n        }; // for(let i= 0; i< this.cart.length; i++) {\n        //     // se id presente nel cart non deve pushiare piatto ma per adesso non funziona\n        //     if(this.id == this.cart[i].id) {\n        //\n        //     }\n        //     else {\n        //         this.cart.push(object);\n        //     }\n        // }\n        // this.cart.push(object);\n\n        this.totalPrice = Number((this.totalPrice + productPrice * quantita).toFixed(2));\n        this.cart.push(object);\n        console.log(object);\n        console.log(this.cart);\n      }\n    }\n  });\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvYXBwLmpzPzZkNDAiXSwibmFtZXMiOlsicmVxdWlyZSIsIndpbmRvdyIsIlZ1ZSIsImZpbGVzIiwia2V5cyIsIm1hcCIsImtleSIsImNvbXBvbmVudCIsInNwbGl0IiwicG9wIiwiZG9jdW1lbnQiLCJhZGRFdmVudExpc3RlbmVyIiwiZWwiLCJkYXRhIiwicmVzdGF1cmFudHMiLCJwcm9kdWN0cyIsInR5cGVzIiwiZmlsdGVyUmVzdGF1cmFudHMiLCJjYXJ0IiwidHlwZVNlbGVjdCIsInNlYXJjaCIsImN1cnJlbnRSZXN0YXVyYW50SWQiLCJ2aXNpYmlsaXR5IiwicXVhbnRpdHkiLCJ0b3RhbFByaWNlIiwibW91bnRlZCIsImlkIiwiZ2V0UHJvZHVjdHMiLCJnZXRSZXN0YXVyYW50cyIsImdldFR5cGVzIiwiY29uc29sZSIsImxvZyIsIm1ldGhvZHMiLCJheGlvcyIsImdldCIsInRoZW4iLCJyZXNwb25zZSIsImVycm9yIiwiaW5jcmVhc2UiLCJkZWNyZWFzZSIsImFkZFRvQ2FydCIsInByb2R1Y3RJZCIsInByb2R1Y3ROYW1lIiwicHJvZHVjdFByaWNlIiwicXVhbnRpdGEiLCJvYmplY3QiLCJuYW1lIiwicHJpY2UiLCJjb3VudGVyIiwiTnVtYmVyIiwidG9GaXhlZCIsInB1c2giXSwibWFwcGluZ3MiOiJBQUFBQTtBQUFBQTtBQUFBQTtBQUFBQTtBQUFBQTtBQUFBQSxtQkFBTyxDQUFDLGdEQUFELENBQVA7O0FBRUFDLE1BQU0sQ0FBQ0MsR0FBUCxHQUFhRixtQkFBTyxDQUFDLGtEQUFELENBQXBCOztBQUVBLElBQU1HLEtBQUssR0FBR0gsNkRBQWQ7O0FBQ0FHLEtBQUssQ0FBQ0MsSUFBTixHQUFhQyxHQUFiLENBQWlCLFVBQUFDLEdBQUc7QUFBQSxTQUFJSiwwQ0FBRyxDQUFDSyxTQUFKLENBQWNELEdBQUcsQ0FBQ0UsS0FBSixDQUFVLEdBQVYsRUFBZUMsR0FBZixHQUFxQkQsS0FBckIsQ0FBMkIsR0FB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QXhCO0FBQ0EsYUFBS2hDLElBQUwsQ0FBVWlDLElBQVYsQ0FBZU4sTUFBZjtBQUNBZixlQUFPLENBQUNDLEdBQVIsQ0FBWWMsTUFBWjtBQUNBZixlQUFPLENBQUNDLEdBQVIsQ0FBWSxLQUFLYixJQUFqQjtBQUNIO0FBN0RJO0FBdEJMLEdBQVI7QUFzRkgsQ0F4RkQiLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvYXBwLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsicmVxdWlyZSgnLi9ib290c3RyYXAnKTtcblxud2luZG93LlZ1ZSA9IHJlcXVpcmUoJ3Z1ZScpO1xuXG5jb25zdCBmaWxlcyA9IHJlcXVpcmUuY29udGV4dCgnLi8nLCB0cnVlLCAvXFwudnVlJC9pKVxuZmlsZXMua2V5cygpLm1hcChrZXkgPT4gVnVlLmNvbXBvbmVudChrZXkuc3BsaXQoJy8nKS5wb3AoKS5zcGxpdCgnLicpWzBdLCBmaWxlcyhrZXkpLmRlZmF1bHQpKVxuXG5pbXBvcnQgYXhpb3MgZnJvbSAnYXhpb3MnO1xuaW1wb3J0IFZ1ZSBmcm9tICd2dWUnO1xuXG5kb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdET01Db250ZW50TG9hZGVkJywgZnVuY3Rpb24gKCkge1xuXG4gICAgbmV3IFZ1ZSh7XG4gICAgICAgIGVsOiAnI2FwcCcsXG4gICAgICAgIGRhdGE6IHtcbiAgICAgICAgICAgIHJlc3RhdXJhbnRzOiBbXSxcbiAgICAgICAgICAgIHByb2R1Y3RzOiBbXSxcbiAgICAgICAgICAgIHR5cGVzOiBbXSxcbiAgICAgICAgICAgIGZpbHRlclJlc3RhdXJhbnRzOiBbXSxcbiAgICAgICAgICAgIGNhcnQ6IFtdLFxuICAgICAgICAgICAgdHlwZVNlbGVjdDogJycsXG4gICAgICAgICAgICBzZWFyY2g6ICcnLFxuICAgICAgICAgICAgY3VycmVudFJlc3RhdXJhbnRJZDogJycsXG4gICAgICAgICAgICB2aXNpYmlsaXR5OiBmYWxzZSxcbiAgICAgICAgICAgIHF1YW50aXR5OiAwLFxuICAgICAgICAgICAgdG90YWxQcmljZTogMCxcbiAgICAgICAgfSxcbiAgICAgICAgbW91bnRlZCgpIHtcbiAgICAgICAgICAgIHRoaXMuY3VycmVudFJlc3RhdXJhbnRJZCA9IHdpbmRvdy5pZDtcbiAgICAgICAgICAgIHRoaXMuZ2V0UHJvZHVjdHMoKTtcbiAgICAgICAgICAgIHRoaXMuZ2V0UmVzdGF1cmFudHMoKTtcbiAgICAgICAgICAgIHRoaXMuZ2V0VHlwZXMoKTtcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKHRoaXMuY3VycmVudFJlc3RhdXJhbnRJZCk7XG4gICAgICAgIH0sXG4gICAgICAgIG1ldGhvZHM6IHtcbiAgICAgICAgICAgIGdldFJlc3RhdXJhbnRzKCkge1xuICAgICAgICAgICAgICAgIGF4aW9zLmdldCgnL2FwaS9yZXN0YXVyYW50cycpXG4gICAgICAgICAgICAgICAgLnRoZW4ocmVzcG9uc2UgPT57XG4gICAgICAgICAgICAgICAgICAgIHRoaXMucmVzdGF1cmFudHMgPSByZXNwb25zZS5kYXRhXG4gICAgICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKHRoaXMucmVzdGF1cmFudHMpO1xuICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICAgICAgLmNhdGNoKGVycm9yID0+IHtcbiAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coZXJyb3IpXG4gICAgICAgICAgICAgICAgfSlcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICBnZXRQcm9kdWN0cygpIHtcbiAgICAgICAgICAgICAgICBheGlvcy5nZXQoJy9hcGkvcHJvZHVjdHMvJylcbiAgICAgICAgICAgICAgICAudGhlbihyZXNwb25zZSA9PntcbiAgICAgICAgICAgICAgICAgICAgdGhpcy5wcm9kdWN0cyA9IHJlc3BvbnNlLmRhdGFcbiAgICAgICAgICAgICAgICAgICAgLy8gY29uc29sZS5sb2codGhpcy5wcm9kdWN0cyk7XG4gICAgICAgICAgICAgICAgfSlcbiAgICAgICAgICAgICAgICAuY2F0Y2goZXJyb3IgPT4ge1xuICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhlcnJvcilcbiAgICAgICAgICAgICAgICB9KVxuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIGdldFR5cGVzKCkge1xuICAgICAgICAgICAgICAgIGF4aW9zLmdldCgnL2FwaS90eXBlcycpXG4gICAgICAgICAgICAgICAgLnRoZW4ocmVzcG9uc2UgPT57XG4gICAgICAgICAgICAgICAgICAgIHRoaXMudHlwZXMgPSByZXNwb25zZS5kYXRhXG4gICAgICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKHRoaXMudHlwZXMpO1xuICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICAgICAgLmNhdGNoKGVycm9yID0+IHtcbiAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coZXJyb3IpXG4gICAgICAgICAgICAgICAgfSlcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICBpbmNyZWFzZShpZCkge1xuICAgICAgICAgICAgICAgIHRoaXMucXVhbnRpdHkrKztcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICBkZWNyZWFzZShpZCkge1xuICAgICAgICAgICAgICAgIHRoaXMucXVhbnRpdHktLTtcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICBhZGRUb0NhcnQocHJvZHVjdElkLCBwcm9kdWN0TmFtZSwgcHJvZHVjdFByaWNlLCBxdWFudGl0YSkge1xuXG4gICAgICAgICAgICAgICAgdmFyIG9iamVjdCA9IHtcbiAgICAgICAgICAgICAgICAgICAgaWQ6IHByb2R1Y3RJZCxcbiAgICAgICAgICAgICAgICAgICAgbmFtZTogcHJvZHVjdE5hbWUsXG4gICAgICAgICAgICAgICAgICAgIHByaWNlOiBwcm9kdWN0UHJpY2UsXG4gICAgICAgICAgICAgICAgICAgIGNvdW50ZXI6IHF1YW50aXRhLFxuICAgICAgICAgICAgICAgIH07XG5cbiAgICAgICAgICAgICAgICAvLyBmb3IobGV0IGk9IDA7IGk8IHRoaXMuY2FydC5sZW5ndGg7IGkrKykge1xuICAgICAgICAgICAgICAgIC8vICAgICAvLyBzZSBpZCBwcmVzZW50ZSBuZWwgY2FydCBub24gZGV2ZSBwdXNoaWFyZSBwaWF0dG8gbWEgcGVyIGFkZXNzbyBub24gZnVuemlvbmFcbiAgICAgICAgICAgICAgICAvLyAgICAgaWYodGhpcy5pZCA9PSB0aGlzLmNhcnRbaV0uaWQpIHtcbiAgICAgICAgICAgICAgICAvL1xuICAgICAgICAgICAgICAgIC8vICAgICB9XG4gICAgICAgICAgICAgICAgLy8gICAgIGVsc2Uge1xuICAgICAgICAgICAgICAgIC8vICAgICAgICAgdGhpcy5jYXJ0LnB1c2gob2JqZWN0KTtcbiAgICAgICAgICAgICAgICAvLyAgICAgfVxuICAgICAgICAgICAgICAgIC8vIH1cbiAgICAgICAgICAgICAgICAvLyB0aGlzLmNhcnQucHVzaChvYmplY3QpO1xuXG4gICAgICAgICAgICAgICAgdGhpcy50b3RhbFByaWNlID0gTnVtYmVyKCh0aGlzLnRvdGFsUHJpY2UgKyBwcm9kdWN0UHJpY2UgKiBxdWFudGl0YSkudG9GaXhlZCgyKSk7XG4gICAgICAgICAgICAgICAgdGhpcy5jYXJ0LnB1c2gob2JqZWN0KTtcbiAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhvYmplY3QpO1xuICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKHRoaXMuY2FydCk7XG4gICAgICAgICAgICB9LFxuICAgICAgICB9LFxuICAgIH0pO1xufSk7XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/js/app.js\n");
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    method = _require.method,
+    isSet = _require.isSet,
+    fromPairs = _require.fromPairs;
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+
+Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+function statisticsChart() {
+  console.log('JS: Connected'); // VUE Standard components
+  // const app = new Vue({
+  //     el: '#app',
+  // });
+  // Input invisibile, value = restaurant_id
+
+  var restaurantId = document.getElementById('d_elem').value;
+  console.log('Restaurant id: ' + restaurantId); // Lista 12 mesi per grafico 
+
+  var monthsNames12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; // -- Vue Class --
+
+  new Vue({
+    el: '#appChart',
+    data: {
+      monthsName: [],
+      monthsOrders: [],
+      year: 0,
+      currentYear: new Date().getFullYear(),
+      myChart: ''
+    },
+    mounted: function mounted() {
+      console.log('VUE Connected');
+      this.get12MonthsData();
+    },
+    methods: {
+      // Funzione di chiamata al controller Statistiche
+      get12MonthsData: function get12MonthsData() {
+        var _this = this;
+
+        if (!this.year) {
+          this.year = this.currentYear;
+        }
+
+        console.log('Year selected:' + this.year);
+        axios.get('/stats/month/' + restaurantId + '/' + this.year, {
+          params: {// Parametri
+          }
+        }).then(function (data) {
+          console.log(data.data); // Contatore mesi con ordini
+
+          var cont = 0; // Lista finale con numero ordini per mese (12 mesi)
+
+          var ordersNumberList = [];
+          var datas = data.data;
+          monthsName = datas[0];
+          monthsOrders = datas[1];
+          console.log(monthsName, 'API Axios 2'); // Assegnamento valori in lista finale
+
+          for (var i = 0; i < monthsNames12.length; i++) {
+            var month = monthsNames12[i];
+
+            if (month == monthsName[cont]) {
+              ordersNumberList.push(monthsOrders[cont]);
+              cont++;
+            } else {
+              ordersNumberList.push(0);
+            }
+          }
+
+          console.log(ordersNumberList);
+
+          _this.chart12(ordersNumberList);
+        })["catch"](function () {
+          console.log('Error');
+        });
+      },
+      // Istanza classe - Grafico statistiche n°ordini per 12 mesi 
+      chart12: function chart12(ordersNumberList) {
+        var ctx = document.getElementById('myChart');
+        myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: monthsNames12,
+            datasets: [{
+              label: 'Orders per month',
+              data: ordersNumberList,
+              backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+              borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+              borderWidth: 1,
+              fill: {
+                target: 'origin',
+                above: 'rgba(255, 0, 0, 0.2)',
+                // Area will be red above the origin
+                below: 'rgb(0, 0, 255)' // And blue below the origin
+
+              }
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+            layout: {
+              padding: 50
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  font: {
+                    // weight: 'bold',
+                    size: 20,
+                    weight: 'normal'
+                  }
+                }
+              }
+            },
+            elements: {
+              point: {
+                radius: 5,
+                hoverRadius: 15
+              },
+              line: {
+                fill: true
+              }
+            }
+          }
+        });
+      },
+      deleteMonthsChart: function deleteMonthsChart() {
+        this.myChart.data.labels.pop();
+        this.myChart.data.datasets.forEach(function (dataset) {
+          dataset.data.pop();
+        });
+        this.myChart.update();
+      },
+      updateMonthsChart: function updateMonthsChart() {
+        this.myChart.data.labels.push(label);
+        this.myChart.data.datasets.forEach(function (dataset) {
+          dataset.data.push(data);
+        });
+        this.myChart.update();
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', statisticsChart);
 
 /***/ }),
 

@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table -> integer('price');
             $table -> boolean('visible') -> default(0);
             $table -> string('img') -> nullable();
-
+            
             $table -> bigInteger('restaurant_id') -> unsigned() -> index();
 
             $table->timestamps();

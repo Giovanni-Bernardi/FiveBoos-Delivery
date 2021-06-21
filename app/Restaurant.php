@@ -11,7 +11,8 @@ class Restaurant extends Model
         'piva',
         'address',
         'description',
-        'telephone'
+        'telephone',
+        'img'
     ];
 
     public function user(){

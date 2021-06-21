@@ -52,3 +52,6 @@ Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');
 // 2 Route per carello temporanee
 Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
 Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');
+
+// Route grafico TEST
+Route::get('/stats/month/{restaurantId}/{selectedYear}','StatisticCharController@getOrdersMonths') -> name('statsMonthLink');

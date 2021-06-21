@@ -12,7 +12,7 @@ $factory->define(Order::class, function (Faker $faker) {
         'email' => $faker-> unique() -> safeEmail,
         'telephone' => '+39' . $faker -> numberBetween(300000000, 399999999) . $faker -> randomNumber(1),
         'address' => $faker -> address(),
-        'delivery_date' => $faker -> dateTimeBetween('-1 years', 'now', null),
+        'delivery_date' => $faker -> dateTimeBetween('-3 years', 'now', null),
         'total_price' => $faker -> numberBetween(1, 200),
     ];
 });
