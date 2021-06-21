@@ -92,7 +92,7 @@ main {
                     width: 100%;
                     height: 100%;
                     position: absolute;
-                    filter: saturate(15%);
+                    filter: saturate(25%);
                     z-index: 1;
                     // &:hover{
                     //     filter: saturate(50%);
@@ -106,9 +106,13 @@ main {
                     // animation: zoombg 2s ease-in;
                     .background-image {
                             filter: saturate(50%);
-                            background-size: 115%;
+                            background-size: 108%;
                             background-position: center right; 
-                            transition: all .7s ease-in-out;              
+                            transition: all .15s ease-in-out;              
+                    }
+                    > a {
+                        text-shadow:  0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+                        transition: all .1s ease-in-out;                          
                     }
                 }
                 a {
@@ -118,8 +122,6 @@ main {
                     color: whitesmoke;
                     font-weight: 900;
                     &:hover {
-                        text-shadow:  0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-                        transition: all .1s ease-in-out;                         
 
 
                     }
