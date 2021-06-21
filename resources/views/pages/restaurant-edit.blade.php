@@ -3,6 +3,7 @@
 @section('content')
     <main>
         <h2></h2>
+        @if (Auth::user()->id == $restaurant -> user -> id)
         <form  method="POST"
                 action="{{ route('updateRestaurantViewLink', $restaurant -> id) }}"
                 enctype="multipart/form-data">
@@ -54,6 +55,23 @@
                     <input type="file" name="img">
                 </li>
                 <li>
+                    Catrogies:
+                    @foreach ($categories as $category)
+                </li>
+                <li>
+                        <label for="categories[]">
+                            {{$category -> name}}
+                            {{$category -> id}}
+                        </label>
+                        <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}"
+                            @foreach ($restaurant -> categories as $restaurantType)
+                                @if ($restaurantType -> id == $category -> id)
+                                    checked
+                                @endif
+                            @endforeach>
+                @endforeach
+                </li>
+                <li>
                     <hr>
                 </li>
                 <li>
@@ -61,5 +79,9 @@
                 </li>
             </ul>
         </form>
+            
+        @else
+            <h2>Non sei il proprietario di: {{$restaurant -> business_name}}</h2>
+        @endif
     </main>
 @endsection

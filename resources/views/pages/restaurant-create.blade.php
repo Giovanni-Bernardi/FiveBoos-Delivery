@@ -58,6 +58,19 @@
                             <input id="img" type="file" class="form-control" name="img" value="">
                         </div>
                     </div> 
+                    <div>
+                        Catrogies:
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12 text-center">
+                            @foreach ($categories as $category)
+                                <label for="categories[]">
+                                    {{$category -> name}}
+                                </label>
+                                <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}">
+                            @endforeach
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-12 text-center">
                              <button type="submit" class="btn btn-primary">Submit</button>

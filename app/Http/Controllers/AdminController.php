@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Restaurant;
 use App\Product;
+use App\Category;
 
 class AdminController extends Controller
 {
@@ -21,29 +22,29 @@ class AdminController extends Controller
     // CREA SINGOLO RISTORANTE
     public function createRestaurant()
     {
-        return view('pages.restaurant-create');
+        $categories = Category::all();
+        return view('pages.restaurant-create', compact('categories'));
     }
     // ---------------------------------
     public function storeRestaurant(Request $request)
     {
-        // dd($request -> all());
         $validate = $request -> validate([
         'business_name' => 'required|string',
         'piva' => 'required|string',
         'address' => 'required|string',
         'description' => 'required|string',
         'telephone' => 'required|string',
+        'category_id' => 'required|exists:categories,id',
         ]);
-        // dd($validate);
         $restaurant = Restaurant::make($validate);
 
         $id = Auth::id();
 
         $restaurant -> user() -> associate($id);
-
         $restaurant -> save();
 
-        // dd($request -> file('img'));
+        $restaurant -> categories() -> attach($request -> category_id);
+        
         if ($request -> file('img')) {
             $img = $request -> file('img');
             $imgExt = $img -> getClientOriginalExtension();
@@ -51,9 +52,9 @@ class AdminController extends Controller
             $folder = '/restaurant-img/';
             $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
             $restaurant -> img = $imgNewName;
-            $restaurant -> save();
         }
-
+        $restaurant -> save();
+        
         return redirect() -> route('indexViewLink');
     }
 
@@ -95,14 +96,13 @@ class AdminController extends Controller
     }
 
     public function editRestaurantView($id){
-
         $restaurant = Restaurant::findOrFail($id);
-        return view('pages.restaurant-edit', compact('restaurant'));
+        $categories = Category::all();
+
+        return view('pages.restaurant-edit', compact('restaurant', 'categories'));
     }
     // ----------------------
     public function updateRestaurantView(Request $request, $id) {
-
-        // dd($request -> all(), $id);
 
         $validate = $request -> validate([
             'business_name' => 'required|string',
@@ -115,6 +115,7 @@ class AdminController extends Controller
 
         $restaurant -> update($validate);
 
+        $restaurant -> categories() -> sync($request -> category_id);
         $restaurant -> save();
 
         if ($request -> file('img')) {
@@ -130,10 +131,9 @@ class AdminController extends Controller
         return redirect() -> route('restaurantDetailsViewLink', $restaurant -> id);
     }
 
-
     public function editProductView($id){
-
         $product = Product::findOrFail($id);
+
         return view('pages.product-edit', compact('product'));
     }
 
@@ -165,20 +165,30 @@ class AdminController extends Controller
 
     // Soft delete ristorante
     public function deleteRestaurant($id){
+        $user_id = Auth::id();
         $restaurant = Restaurant::findOrFail($id);
-        $restaurant -> visible = !($restaurant -> visible);
 
-        $restaurant -> save();
-
-        return redirect() -> route('indexViewLink');
+        if($user_id == $restaurant -> user_id){
+            $restaurant -> visible = !($restaurant -> visible);
+            $restaurant -> save();
+            return redirect() -> route('indexViewLink');
+        }else{
+            return redirect() -> route('editRestaurantViewLink', $id);
+        }
     }
 
     // Soft delete product
     public function deleteProduct($id){
-        $product = Product::findOrFail($id);
-        $product -> visible = !($product -> visible);
+        $user_id = Auth::id();
 
-        $product -> save();
+        $product = Product::findOrFail($id);
+
+        if($user_id == $product -> restaurant -> user_id){
+            $product -> visible = !($product -> visible);
+            $product -> save();
+        }else{
+            return redirect() -> route('editRestaurantViewLink', $product -> restaurant -> id);
+        }
 
         return redirect() -> route('restaurantDetailsViewLink', $product -> restaurant -> id);
     }

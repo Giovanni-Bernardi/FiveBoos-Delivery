@@ -36,12 +36,14 @@
                     </u>
                 @endif
             </li>
-            <li>
-                <a href="{{route('editProductViewLink', $product -> id)}}">Edit this product</a>
-            </li>
-            <li>
-                <a href="{{route('deleteProductLink', $product -> id)}}">Delete this product</a>
-            </li>
+            @if (Auth::user()->id == $product -> restaurant -> user -> id)
+                <li>
+                    <a href="{{route('editProductViewLink', $product -> id)}}">Edit this product</a>
+                </li>
+                <li>
+                    <a href="{{route('deleteProductLink', $product -> id)}}">Delete this product</a>
+                </li>
+            @endif
         </ul>
     </main>
 @endsection

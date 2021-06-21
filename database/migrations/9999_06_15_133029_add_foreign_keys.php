@@ -23,13 +23,13 @@ class AddForeignKeys extends Migration
                     -> references('id')
                     -> on ('restaurants');
         });
-        Schema::table('restaurant_type', function (Blueprint $table) {
-            $table -> foreign('restaurant_id', 'restaurant-type')
+        Schema::table('category_restaurant', function (Blueprint $table) {
+            $table -> foreign('restaurant_id', 'restaurant-category')
                    -> references('id')
                    -> on('restaurants');
-            $table -> foreign('type_id', 'type-restaurant')
+            $table -> foreign('category_id', 'category-restaurant')
                    -> references('id')
-                   -> on('types');
+                   -> on('categories');
         });
         Schema::table('order_product', function (Blueprint $table) {
             $table -> foreign('order_id', 'order-product')
@@ -48,19 +48,19 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
-        Schema::table('restaurants', function (Blueprint $table){
-            $table -> dropForeign('restaurant_user');
-        });
-        Schema::table('products', function (Blueprint $table){
-            $table -> dropForeign('product_restaurant');
-        });
-        Schema::table('restaurant_type', function (Blueprint $table) {
-            $table -> dropForeign('restaurant-type');
-            $table -> dropForeign('type-restaurant');
-        });
-        Schema::table('order_product', function (Blueprint $table) {
-            $table -> dropForeign('order-product');
-            $table -> dropForeign('product-order');
-        });
+        // Schema::table('restaurants', function (Blueprint $table){
+        //     $table -> dropForeign('restaurant_user');
+        // });
+        // Schema::table('products', function (Blueprint $table){
+        //     $table -> dropForeign('product_restaurant');
+        // });
+        // Schema::table('restaurant_type', function (Blueprint $table) {
+        //     $table -> dropForeign('restaurant-category');
+        //     $table -> dropForeign('category-restaurant');
+        // });
+        // Schema::table('order_product', function (Blueprint $table) {
+        //     $table -> dropForeign('order-product');
+        //     $table -> dropForeign('product-order');
+        // });
     }
 }
