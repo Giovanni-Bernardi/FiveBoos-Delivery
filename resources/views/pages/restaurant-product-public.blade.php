@@ -40,34 +40,34 @@
                 </h4>
             </li>
 
-            <li v-for='(product, productIndex) in products' v-if="product.restaurant_id == currentRestaurantId">
+            <li v-for='(product, prIndex) in products' v-if="product.restaurant_id == currentRestaurantId">
                 <div>
                     <div>ID: @{{product.id}}</div>
                     <div>Name: @{{product.name}}</div>
                     <div>Price: @{{product.price}} €</div>
                     <div>IdRestaurant: @{{product.restaurant_id}}</div>
-                    <div>Quantita: @{{quantity}}</div>
-                    <button @click="increase(product.id)">+</button>
-                    <button @click="decrease(product.id)">-</button>
+                    {{-- <div>Quantita: @{{quantity}}</div>
+                    <button @click="increase(prIndex)">+</button>
+                    <button @click="decrease(prIndex)">-</button> --}}
                     <div>Ingredients: @{{product.ingredients}}</div>
                     <div>Description: @{{product.description}}</div>
                     <div>
-                        <button type="button" @click="addToCart(product.id, product.name, product.price, quantity)">Add to Cart</button>
+                        <button type="button" @click="addToCart(product.id, product.name, product.price)">Add to Cart</button>
                     </div>
 
                 </div>
             </li>
             <li><h1>Carello</h1></li>
-            <li v-for='car in cart'>
+            <li v-for='(car, index) in cart'>
                 <div>ID: @{{car.id}}</div>
                 <div>Name: @{{car.name}}</div>
-                <div>Price: @{{car.price * car.counter}} €</div>
+                <div>Price: @{{car.price}} €</div>
                 <div>Quantita: @{{car.counter}}</div>
-                <button @click="increase">+</button>
-                <button @click="decrease">-</button>
+                <button @click="increase(index)">+</button>
+                <button @click="decrease(index)">-</button>
                 <br>
             </li>
-            <li>totalPrice: @{{totalPrice}} €</li>
+            <li>totalPrice: @{{totalPrice * car.counter}} €</li>
         </ul>
 
     </main>
