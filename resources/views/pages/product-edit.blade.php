@@ -3,6 +3,7 @@
 @section('content')
     <main>
         <h2></h2>
+        @if (Auth::user()->id == $product -> restaurant -> user_id)
         <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data">
             @method('POST')
             @csrf
@@ -47,11 +48,11 @@
                     <label for="1">
                         Visible:
                     </label>
-                    <input type="radio" name="visible" value="1">
+                    <input type="radio" name="visible" value="1" @if($product -> visible) checked @endif>
                     <label for="0">
                         Non Visible:
                     </label>
-                    <input type="radio" name="visible" value="0">
+                    <input type="radio" name="visible" value="0" @if(!$product -> visible) checked @endif>
                     {{-- <input type="checkbox" name="visible" value="1"> --}}
                 </li>
                 <li>
@@ -59,5 +60,8 @@
                 </li>
             </ul>
         </form>
+        @else
+            <h2>Non puoi modificare: {{$product -> name}}</h2>
+        @endif
     </main>
 @endsection

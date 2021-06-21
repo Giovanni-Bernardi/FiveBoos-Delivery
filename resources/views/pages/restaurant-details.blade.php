@@ -30,11 +30,22 @@
                 </u>
             </li>
             <li>
-                <a href="{{route('editRestaurantViewLink', $restaurant -> id)}}">Edit this restaurant</a>
+                Categories: 
             </li>
+            @foreach ($restaurant -> categories as $category)
             <li>
-                <a href="{{route('deleteRestaurantLink', $restaurant -> id)}}">Delete this restaurant</a>
+                {{$category -> name}}
             </li>
+            @endforeach
+
+            @if (Auth::user()->id == $restaurant -> user_id)
+                <li>
+                    <a href="{{route('editRestaurantViewLink', $restaurant -> id)}}">Edit this restaurant</a>
+                </li>
+                <li>
+                    <a href="{{route('deleteRestaurantLink', $restaurant -> id)}}">Delete this restaurant</a>
+                </li>
+            @endif
         </ul>
 
         <hr>
@@ -55,24 +66,26 @@
             @endforeach
         </ul>
 
-        <h3>
-            <a href="{{route('statsMonthLink', ['restaurantId' => $restaurant -> id, 'selectedYear' => 2020])}}">Statistics Chart Route: CLICK HERE</a>
-        </h3>
-        <div id="appChart" style="width: 60%">
-            <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
-            {{-- <button v-on:click="getMonthsData()">STATS</button> --}}
-            <select name="year" id="yearOrder" v-model="year" v-on:change="get12MonthsData()">
-                <option :value="currentYear">@{{currentYear}}</option>
-                <option :value="currentYear - 1">@{{currentYear - 1}}</option>
-                <option :value="currentYear - 2">@{{currentYear - 2}}</option>
-            </select>
+        @if (Auth::user()->id == $restaurant -> user_id)
+            <h3>
+                <a href="{{route('statsMonthLink', ['restaurantId' => $restaurant -> id, 'selectedYear' => 2020])}}">Statistics Chart Route: CLICK HERE</a>
+            </h3>
+            <div id="appChart" style="width: 60%">
+                <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
+                {{-- <button v-on:click="getMonthsData()">STATS</button> --}}
+                <select name="year" id="yearOrder" v-model="year" v-on:change="get12MonthsData()">
+                    <option :value="currentYear">@{{currentYear}}</option>
+                    <option :value="currentYear - 1">@{{currentYear - 1}}</option>
+                    <option :value="currentYear - 2">@{{currentYear - 2}}</option>
+                </select>
 
-            <button v-on:click="">STATS</button>
+                <button v-on:click="">STATS</button>
 
-            {{-- -------------- CHART ---------------- --}}
-            <canvas id="myChart">
-                Your browser does not support the canvas element.
-            </canvas>
-        </div>
+                {{-- -------------- CHART ---------------- --}}
+                <canvas id="myChart">
+                    Your browser does not support the canvas element.
+                </canvas>
+            </div>
+        @endif
     </main>
 @endsection
