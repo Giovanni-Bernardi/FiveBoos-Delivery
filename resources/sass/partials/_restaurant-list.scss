@@ -86,6 +86,8 @@ main {
                 position: relative;
                 // filter: grayscale(60%);
                 .background-image {
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
                     background-image: url('/storage/assets/pizza-placeholder.jpg');
                     background-size: 100%;
                     background-position: center right; 
@@ -106,12 +108,13 @@ main {
                     // animation: zoombg 2s ease-in;
                     .background-image {
                             filter: saturate(50%);
-                            background-size: 108%;
+                            background-size: 105%;
                             background-position: center right; 
                             transition: all .15s ease-in-out;              
                     }
                     > a {
                         text-shadow:  0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+                        font-size: 37px;
                         transition: all .1s ease-in-out;                          
                     }
                 }
@@ -121,10 +124,6 @@ main {
                     font-size: 35px;
                     color: whitesmoke;
                     font-weight: 900;
-                    &:hover {
-
-
-                    }
                 }
                 .categories-card {
                     z-index: 2;
@@ -173,7 +172,7 @@ main {
                 display: flex;
                 justify-content: space-between;
                 font-size: 1.5em;
-                padding: 5px 10px;
+                padding: 5px 15px;
                 background-color: white;
                 width: 100%;
                 height: 23%;
