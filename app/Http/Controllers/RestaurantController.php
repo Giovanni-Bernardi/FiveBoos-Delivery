@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use App\Restaurant;
 use App\Product;
 use App\Type;
@@ -30,17 +32,15 @@ class RestaurantController extends Controller
     // Pagina di prova del carello per tutti ristoranti
     public function restaurantPublic(){
         $restaurants = Restaurant::all();
-        $products = Product::all();
-        $orders = Order::all();
-        return view('pages.restaurant-public', compact('restaurants', 'products', 'orders'));
+        return view('pages.restaurant-public', compact('restaurants'));
     }
 
     // Pagina di prova del carello per gli piatti del ristorante
     public function restaurantDetailsPublic($id){
         $restaurant = Restaurant::findOrFail($id);
-        $products = Product::all();
-        $orders = Order::all();
-        return view('pages.restaurant-product-public', compact('restaurant', 'products', 'orders'));
+        $products = DB::table("products") -> where("restaurant_id", $id) -> get();
+        // dd($products);
+        return view('pages.restaurant-product-public', compact('restaurant', 'products'));
     }
 
     public function storeOrder(Request $request) {
@@ -56,11 +56,11 @@ class RestaurantController extends Controller
           'total_price' => 'required|integer'
         ]);
 
-        $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
+        // $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
 
         $order = Order::make($validate);
-        $product -> restaurant() -> associate($restaurant);
         $order -> save();
+        // $product -> restaurant() -> associate($restaurant);
 
         $order -> products() -> attach($request -> get('products_id'));
         $order -> save();

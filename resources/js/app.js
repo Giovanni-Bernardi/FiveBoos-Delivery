@@ -96,26 +96,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     counter: counter,
                 };
 
-                // for(var i = 0; i < this.cart.length; i++) {
-                //     // se id presente nel cart non deve pushiare piatto ma per adesso non funziona
-                //     if(this.cart[i].id == productId) {
-                //         break;
-                //     }
-                //     else {
-                //         this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
-                //         this.cart.push(object);
-                //     }
-                // }
-                // if () {
-                //     this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
-                //     this.cart.push(object);
-                // }
-                // else {
-                //
-                // }
+                if (this.cart.length == 0) {
+                    this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
+                    this.cart.push(object);
+                }
+                else {
+                    // se id presente nel cart non deve pushiare piatto
+                    for(var i = 0; i <= this.cart.length; i++) {
 
-                this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
-                this.cart.push(object);
+                        if(this.cart[i].id == object.id) {
+                            break;
+                        }
+                        else if (i == this.cart.length - 1) {
+                            this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
+                            this.cart.push(object);
+                        }
+                    }
+                }
                 console.log(object);
                 console.log(this.cart);
             },
