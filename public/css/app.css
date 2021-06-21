@@ -11463,32 +11463,50 @@ div.restaurants-box div.restaurant-card .top-info {
   flex-grow: 1;
   width: 100%;
   height: 77%;
+  z-index: 2;
+  position: relative;
+}
+
+div.restaurants-box div.restaurant-card .top-info .background-image {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   background-image: url("/storage/assets/pizza-placeholder.jpg");
   background-size: 100%;
-  background-position: center center;
-  -o-object-fit: contain;
-     object-fit: contain;
+  background-position: center right;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: saturate(35%);
+  z-index: 1;
 }
 
 div.restaurants-box div.restaurant-card .top-info:hover {
-  background-size: 120%;
-  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+div.restaurants-box div.restaurant-card .top-info:hover .background-image {
+  filter: saturate(50%);
+  background-size: 105%;
+  background-position: center right;
+  transition: all 0.15s ease-in-out;
+}
+
+div.restaurants-box div.restaurant-card .top-info:hover > a {
+  text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  font-size: 37px;
+  transition: all 0.1s ease-in-out;
 }
 
 div.restaurants-box div.restaurant-card .top-info a {
+  z-index: 2;
   text-decoration: none;
   font-size: 35px;
   color: whitesmoke;
   font-weight: 900;
 }
 
-div.restaurants-box div.restaurant-card .top-info a:hover {
-  text-decoration: none;
-  text-shadow: #1d2e2c 2px 1px;
-  transition: all 0.3s ease-in-out;
-}
-
 div.restaurants-box div.restaurant-card .top-info .categories-card {
+  z-index: 2;
   display: flex;
   flex-direction: row;
 }
@@ -11498,51 +11516,44 @@ div.restaurants-box div.restaurant-card .top-info .categories-card .cell {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  border: 1px solid lightgrey;
+  border: 1px solid black;
   text-align: center;
-  border-radius: 12px;
-  padding: 8px;
+  border-radius: 4px;
+  padding: 1px 4px;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .cell a {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-div.restaurants-box div.restaurant-card .top-info .categories-card .cell a:hover {
-  text-shadow: black 1px 1px;
-  font-size: 19px;
+div.restaurants-box div.restaurant-card .top-info .categories-card .cell:hover {
+  text-shadow: white 1px 1px;
   transition: all 0.3s ease-in-out;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-pizza {
-  background-color: rgba(214, 16, 16, 0.65);
+div.restaurants-box div.restaurant-card .top-info .categories-card .cell a {
+  color: black;
+  font-size: 18px;
+  font-weight: lighter;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-pizza:hover {
-  background-color: rgba(214, 16, 16, 0.8);
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-generic {
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-panini {
-  background-color: rgba(0, 204, 188, 0.65);
-}
-
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-panini:hover {
-  background-color: rgba(0, 204, 188, 0.8);
+div.restaurants-box div.restaurant-card .top-info .categories-card .type-generic:hover {
+  background-color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 div.restaurants-box div.restaurant-card .bottom-info {
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
-  padding: 5px 10px;
+  padding: 5px 15px;
   background-color: white;
   width: 100%;
   height: 23%;
   overflow: hidden;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  box-shadow: 1px 1px 1px grey;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 div.restaurants-box div.restaurant-card .bottom-info * {
@@ -11551,6 +11562,11 @@ div.restaurants-box div.restaurant-card .bottom-info * {
 
 div.restaurants-box div.restaurant-card .bottom-info .delivery {
   display: flex;
+}
+
+div.restaurants-box div.restaurant-card .bottom-info .delivery i:hover {
+  text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  transition: all 0.1s ease-in-out;
 }
 
 div.restaurants-box div.restaurant-card .bottom-info .delivery .delivery-checkout {
