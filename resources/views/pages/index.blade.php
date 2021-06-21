@@ -19,61 +19,61 @@
                             </div>
                         </div>
                         <!-- types -->
-                        <div class="type popup-note" id="pizzeria">
+                        <div class="type popup-note scale" id="pizzeria">
                             <a href="">
-                                <img src="{{asset('/storage/assets/pizza.png')}}" alt="pizza">
+                                <img class="" src="{{asset('/storage/assets/pizza.png')}}" alt="pizza">
                             </a>
                             <a class="pop" href="#">Pizza</a>
                         </div>
-                        <div class="type popup-note" id="fastfood">
+                        <div class="type popup-note scale" id="fastfood">
                             <a href="">
                                 <img src="{{asset('/storage/assets/hamburger.png')}}" alt="">
                             </a>
                             <a class="pop" href="#">Fast food</a>
                         </div>
-                        <div class="type popup-note" id="sushi">
+                        <div class="type popup-note scale" id="sushi">
                             <a href="">
                                 <img src="{{asset('/storage/assets/sushi.png')}}" alt="">
                             </a>
                             <a class="pop" href="#">Sushi</a>
                         </div>
-                        <div class="type popup-note" id="messicano">
+                        <div class="type popup-note scale" id="messicano">
                             <a href="">
                                 <img src="{{asset('/storage/assets/mexican.png')}}" alt="">
                             </a>
                             <a class="pop popup-note" href="#">Messicano</a>
                         </div>
-                        <div class="type popup-note" id="cinese">
+                        <div class="type popup-note scale" id="cinese">
                             <a href="">
                                 <img src="{{asset('/storage/assets/japanese.png')}}" alt="">
                             </a>
                             <a class="pop right" href="#">Cinese</a>
                         </div>
-                        <div class="type popup-note" id="carne">
+                        <div class="type popup-note scale" id="carne">
                             <a href="">
                                 <img src="{{asset('/storage/assets/meat.png')}}" alt="">
                             </a>
                             <a class="pop up" href="#">Carne</a>
                         </div>
-                        <div class="type popup-note" id="pesce">
+                        <div class="type popup-note scale" id="pesce">
                             <a href="">
                                 <img src="{{asset('/storage/assets/fish.png')}}" alt="">
                             </a>
                             <a class="pop" href="#">Pesce</a>
                         </div>
-                        <div class="type popup-note" id="poke">
+                        <div class="type popup-note scale" id="poke">
                             <a href="">
                                 <img src="{{asset('/storage/assets/veg.png')}}" alt="">
                             </a>
                             <a class="pop" href="#">Poke</a>
                         </div>
-                        <div class="type popup-note" id="pasticceria">
+                        <div class="type popup-note scale" id="pasticceria">
                             <a href="">
                                 <img src="{{asset('/storage/assets/cake.png')}}" alt="">
                             </a>
                             <a class="pop right" href="#">Bakery</a>
                         </div>
-                        <div class="type popup-note" id="vegan">
+                        <div class="type popup-note scale" id="vegan">
                             <a href="">
                                 <img src="{{asset('/storage/assets/apple.png')}}" alt="">
                             </a>
