@@ -140,7 +140,7 @@
                   <h2>Product</h2>
                   <div class="checkboxing">
                       @foreach ($products as $product)
-                          <input type="checkbox" name="id[]" value="{{ $product -> id }}">
+                          <input type="checkbox" name="products_id[]" value="{{ $product -> id }}">
                           <label> {{$product -> id}} {{$product -> name}} </label><br>
                       @endforeach
                   </div>

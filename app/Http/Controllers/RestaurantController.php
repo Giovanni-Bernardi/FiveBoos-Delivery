@@ -32,6 +32,7 @@ class RestaurantController extends Controller
     // Pagina di prova del carello per tutti ristoranti
     public function restaurantPublic(){
         $restaurants = Restaurant::all();
+
         return view('pages.restaurant-public', compact('restaurants'));
     }
 
@@ -39,12 +40,11 @@ class RestaurantController extends Controller
     public function restaurantDetailsPublic($id){
         $restaurant = Restaurant::findOrFail($id);
         $products = DB::table("products") -> where("restaurant_id", $id) -> get();
-        // dd($products);
+
         return view('pages.restaurant-product-public', compact('restaurant', 'products'));
     }
 
     public function storeOrder(Request $request) {
-        // $products = Product::all();
 
         $validate = $request -> validate([
           'firstname' => 'required|string|min:3',
@@ -56,11 +56,8 @@ class RestaurantController extends Controller
           'total_price' => 'required|integer'
         ]);
 
-        // $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
-
         $order = Order::make($validate);
         $order -> save();
-        // $product -> restaurant() -> associate($restaurant);
 
         $order -> products() -> attach($request -> get('products_id'));
         $order -> save();
