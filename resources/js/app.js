@@ -63,33 +63,33 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(error)
                 })
             },
-            increase(id) {
-                this.quantity++;
+            increase(index) {
+                this.cart[index].counter++;
             },
-            decrease(id) {
-                this.quantity--;
+            decrease(index) {
+                this.cart[index].counter--;
             },
-            addToCart(productId, productName, productPrice, quantita) {
+            addToCart(productId, productName, productPrice) {
 
                 var object = {
                     id: productId,
                     name: productName,
                     price: productPrice,
-                    counter: quantita,
+                    counter: 1,
                 };
 
-                // for(let i= 0; i< this.cart.length; i++) {
+                // for(var i= 0; i < this.cart.length; i++) {
                 //     // se id presente nel cart non deve pushiare piatto ma per adesso non funziona
-                //     if(this.id == this.cart[i].id) {
-                //
+                //     if(this.cart[i].id == productId) {
+                //         break;
                 //     }
                 //     else {
+                //         this.totalPrice = Number((this.totalPrice + productPrice).toFixed(2));
                 //         this.cart.push(object);
                 //     }
                 // }
-                // this.cart.push(object);
 
-                this.totalPrice = Number((this.totalPrice + productPrice * quantita).toFixed(2));
+                this.totalPrice = Number((this.totalPrice + productPrice * 1).toFixed(2));
                 this.cart.push(object);
                 console.log(object);
                 console.log(this.cart);
