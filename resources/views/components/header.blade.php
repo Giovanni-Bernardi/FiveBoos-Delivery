@@ -1,6 +1,11 @@
 <header>
-    <nav>
-        <div class='site-logo'><a href="{{route('indexViewLink')}}">DeliveBoo</a></div>
+    <nav :class="scrollPosition > 0 ? 'scroll-color' : 'transparent'">
+        <div class='site-logo'>
+            <a href="{{route('indexViewLink')}}">
+                {{-- <img src="{{asset('/storage/assets/five-bool.svg')}}" alt="site-logo"> --}}
+                FIVEBOO'S
+            </a>
+        </div>
         <input class="check" type="checkbox">
         <div class="ham-menu">
             <div class="menuline"></div>
@@ -13,3 +18,5 @@
         </ul>
     </nav>
 </header>
+{{-- :class="onScoll < 0 ? 'transparent' : 'red'" VERSIONE 1--}}
+{{-- :class="{classA: scrollPosition < 100, classB: scrollPosition > 100}" VERSIONE 2 --}}
