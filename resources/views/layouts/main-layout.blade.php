@@ -20,6 +20,8 @@
     <script src="{{ asset('js/cart.js') }}"></script>
     <script src="{{ asset('js/stats.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/cart.js') }}"></script>
+    <script src="{{ asset('js/stats.js') }}"></script>
 </head>
 <body>
     <div id="app">

@@ -41,6 +41,7 @@ class RestaurantController extends Controller
     // Pagina di prova del carello per tutti ristoranti
     public function restaurantPublic(){
         $restaurants = Restaurant::all();
+
         return view('pages.restaurant-public', compact('restaurants'));
     }
 
@@ -48,12 +49,11 @@ class RestaurantController extends Controller
     public function restaurantDetailsPublic($id){
         $restaurant = Restaurant::findOrFail($id);
         $products = DB::table("products") -> where("restaurant_id", $id) -> get();
-        // dd($products);
+
         return view('pages.restaurant-product-public', compact('restaurant', 'products'));
     }
 
     public function storeOrder(Request $request) {
-        // $products = Product::all();
 
         $validate = $request -> validate([
           'firstname' => 'required|string|min:3',
@@ -61,15 +61,22 @@ class RestaurantController extends Controller
           'email' => 'required|string',
           'telephone' => 'required|string',
           'address' => 'required|string',
-          'delivery_date' => 'required|date',
-          'total_price' => 'required|integer'
+          'delivery_date' => '|date',
         ]);
 
-        // $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
-
         $order = Order::make($validate);
+
+        // Funzione per calcolare il prezzo, che non si puo modificare.
+        $totalPrice = 0;
+        for($i=0;$i<count($request->products_id);$i++){
+            $productId = $request->products_id[$i];
+            $priceQuery = DB::table("products") -> select('products.price') -> where("id", $productId) -> get();
+            $price = $priceQuery[0] -> price;
+            $totalPrice += $price;
+        }
+
+        $order -> total_price = $totalPrice;
         $order -> save();
-        // $product -> restaurant() -> associate($restaurant);
 
         $order -> products() -> attach($request -> get('products_id'));
         $order -> save();
