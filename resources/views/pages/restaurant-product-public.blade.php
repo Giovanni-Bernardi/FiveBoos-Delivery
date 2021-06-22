@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.chart-layout')
 
 @section('content')
     <main>

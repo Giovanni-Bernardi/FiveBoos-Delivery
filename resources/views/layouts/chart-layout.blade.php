@@ -10,15 +10,14 @@
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     {{-- SASS --}}
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('/css/app.css')}}"> --}}
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway:wght@200;400;600;700&display=swap" rel="stylesheet"> {{-- Freedoka One + Raleway --}}
     {{-- lottie --}}
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
     {{-- JS/VUE --}}
-    {{-- <script src="{{ asset('js/cart.js') }}"></script> --}}
-    {{-- <script src="{{ asset('js/stats.js') }}"></script> --}}
+    <script src="{{ asset('js/cart.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
@@ -28,7 +27,7 @@
             @include('components.notifications')
             @yield('content')
         </div>
-        @include('components.footer')
+        {{-- @include('components.footer') --}}
     </div>
 </body>
 </html>

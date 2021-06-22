@@ -2,7 +2,7 @@
 
 {{-- <?php require_once ("../includes/braintree_init.php"); ?> --}}
 
-@extends('layouts.main-layout')
+@extends('layouts.pay-layout')
 @section('content')
 
 <main>
