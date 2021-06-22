@@ -60,8 +60,8 @@
                 <div>Name: @{{plates.name}}</div>
                 <div>Price: @{{plates.price}} €</div>
                 <div>Quantita: @{{plates.counter}}</div>
-                <button @click="increase(index)">+</button>
-                <button @click="decrease(index)">-</button>
+                <button @click="increase(plates.id, index)">+</button>
+                <button @click="decrease(plates.id, index)">-</button>
                 <br>
             </li>
             <li>totalPrice: @{{totalPrice}}</li>
@@ -111,38 +111,16 @@
               <li>
                 <h2>delivery_date</h2>
                 <div>
-                  <input type="date" name="delivery_date" placeholder="delivery_date" required>
+                  {{-- <input type="date" name="delivery_date" required>
+                  <input type="time" name="delivery_date" required> --}}
+                  <input type="date" name="delivery_date" min ='<?php echo date('Y-m-d');?>T00:00' max="2099-12-31T00:00" value="" required>
                 </div>
               </li>
 
-                <li>
-                  <h2>total_price</h2>
-                  <div>
-                      <input type="number" name="total_price" placeholder="total_price" required>
-                  </div>
-                </li>
-
-                {{-- <li>
-                  <h2>Restaurant</h2>
-                  <div>
-                      <select id="brand" name="brand_id" required>
-                          <option selected disabled>Brand</option>
-                          @foreach ($brands as $brand)
-                              <option value="{{ $brand -> id }}">
-                                  {{$brand -> name}} ({{$brand -> nationality}})
-                              </option>
-                          @endforeach
-                      </select>
-                  </div>
-                </li> --}}
-
-                <li>
+                <li style="display:none">
                   <h2>Product</h2>
                   <div class="checkboxing">
-                      @foreach ($products as $product)
-                          <input type="checkbox" name="products_id[]" value="{{ $product -> id }}">
-                          <label> {{$product -> id}} {{$product -> name}} </label><br>
-                      @endforeach
+                    <input v-for="product in numberProduct" type="checkbox" name="products_id[]" :value="product" checked>
                   </div>
                 </li>
 

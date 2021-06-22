@@ -52,11 +52,21 @@ class RestaurantController extends Controller
           'email' => 'required|string',
           'telephone' => 'required|string',
           'address' => 'required|string',
-          'delivery_date' => 'required|date',
-          'total_price' => 'required|integer'
+          'delivery_date' => '|date',
         ]);
 
         $order = Order::make($validate);
+
+        // Funzione per calcolare il prezzo, che non si puo modificare.
+        $totalPrice = 0;
+        for($i=0;$i<count($request->products_id);$i++){
+            $productId = $request->products_id[$i];
+            $priceQuery = DB::table("products") -> select('products.price') -> where("id", $productId) -> get();
+            $price = $priceQuery[0] -> price;
+            $totalPrice += $price;
+        }
+
+        $order -> total_price = $totalPrice;
         $order -> save();
 
         $order -> products() -> attach($request -> get('products_id'));
