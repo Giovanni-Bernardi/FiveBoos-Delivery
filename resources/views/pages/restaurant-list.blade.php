@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="titles-restaurant-list">
-                <h2 id="title">Delivery</h2>
+                <h2 id="title">FIVEBOO'S</h2>
                 <h4>
                     Scegli il ristorante: 
                 </h4>

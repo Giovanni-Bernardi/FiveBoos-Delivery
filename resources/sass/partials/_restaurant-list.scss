@@ -4,12 +4,12 @@
         // display: flex;
         height: 350px;
         background-color: #00CCBC;
-        padding: 30px;
+        padding: 50px 30px 30px 30px;
         h2 {
             text-align: center;
         }
         ul {
-            width: 80%;
+            width: 65%;
             margin: auto;
             display: flex;
             justify-content: center;
@@ -99,7 +99,7 @@
                     width: 100%;
                     height: 100%;
                     position: absolute;
-                    filter: contrast(50%);
+                    filter: contrast(65%);
                     z-index: 1;
                     // &:hover{
                     //     filter: saturate(50%);
@@ -113,8 +113,8 @@
                     // animation: zoombg 2s ease-in;
                     .background-image {
                             filter: contrast(90%);
-                            background-size: 105%;
-                            background-position: center right; 
+                            background-size: 103%;
+                            background-position: center center; 
                             transition: all .15s ease-in-out;              
                     }
                     > a {
@@ -131,7 +131,7 @@
                 }
                 .categories-card {
                     z-index: 2;
-
+                    
                     display: flex;
                     flex-direction: row;
                     
@@ -141,16 +141,17 @@
                         border: 1px solid black;
                         text-align: center;
                         border-radius:4px;
-                        padding: 1px 4px;
+                        padding: 0px 4px;
                         &:hover {
                             text-shadow: white 1px 1px;
                             
                             transition: all .3s ease-in-out;
                         }
                         a {
+                            font-family: 'Raleway', sans-serif;
                             color: black;
-                            font-size: 18px;
-                            font-weight: lighter;        
+                            font-weight: 500;
+                            font-size: 18px;        
                         }
                     }
                     .type-generic {
