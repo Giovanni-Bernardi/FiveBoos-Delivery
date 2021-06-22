@@ -24,16 +24,15 @@ class StatisticCharController extends Controller
                     -> join('order_product', 'orders.id', '=', 'order_product.order_id')
                     -> join('products', 'order_product.product_id', '=', 'products.id')
                     -> join('restaurants', 'restaurant_id', '=', 'restaurants.id')
-                    -> orderBy('orders.delivery_date', 'ASC')
                     -> select('orders.delivery_date', 'restaurants.id as res_id')
                     // -> select('orders.firstname', 'products.name', 'restaurants.business_name', 'user_id', 'restaurants.id as res_id')
+                    -> orderBy('orders.delivery_date', 'ASC')
                     -> where([
                         ['restaurants.user_id', $id],
                         ['restaurants.id', $restaurantId], // !Inserire id ristorante selezionato
                         ])
                     -> whereYear('orders.delivery_date', $selectedYear)
                     -> get();
-
         return $orders_date;
     }
 
@@ -47,6 +46,7 @@ class StatisticCharController extends Controller
         }
 
         $orders_date = $this -> getOrdersByRestuarant($restaurantId, $selectedYear);
+
         //Ciclo che crea array di mesi ordinato e senza doppioni
         foreach ($orders_date as $unformatted_date) {
             $date = new \DateTime($unformatted_date -> delivery_date);
@@ -56,7 +56,7 @@ class StatisticCharController extends Controller
         }
 
         foreach ($monthsList as $monthNumber => $month) {
-            $countsPerMont [] = $this -> getOrdersCount($monthNumber, $restaurantId);   
+            $countsPerMont [] = $this -> getOrdersCount($monthNumber, $restaurantId, $selectedYear);   
         }
 
         // Trasformo obj monthsNameList da Obj in array per encode migliore
@@ -69,7 +69,7 @@ class StatisticCharController extends Controller
     }
 
     // Funzione che ritorna il count degil ordini per mese
-    public function getOrdersCount($monthNumber, $restaurantId){
+    public function getOrdersCount($monthNumber, $restaurantId, $selectedYear){
         // $month = '08';
         $id = Auth::id();
 
@@ -77,7 +77,8 @@ class StatisticCharController extends Controller
                         -> join('order_product', 'orders.id', '=', 'order_product.order_id')
                         -> join('products', 'order_product.product_id', '=', 'products.id')
                         -> where ('products.restaurant_id', $restaurantId)
-                        -> whereMonth('orders.delivery_date', $monthNumber) 
+                        -> whereMonth('orders.delivery_date', $monthNumber)
+                        -> whereYear('orders.delivery_date', $selectedYear)
                         -> get()
                         -> count();
         // dd($orderPerMonth);
