@@ -96,11 +96,13 @@
                 <h2>qui andranno le categories per la ricerca dinamica</h2>
                 {{-- slider carousel 1--}}
             </div>
-            <div class="carousel-2">
+            <div class="jumbotron">
                 <ul>
                     <li class="food-type">
-                        <label for="type-pizza"><img src="{{asset('/storage/assets/pizza.png')}}" alt=""></label>
-                        <input type="checkbox" name="type-pizza" class="type-check">
+                        <div class="category">
+                            <label for="type-pizza"><img src="{{asset('/storage/assets/pizza.png')}}" alt=""></label>
+                            <input type="checkbox" name="type-pizza" class="type-check">
+                        </div>
                     </li>
                     <li class="food-type">
                         <label for="type-sushi"><img src="{{asset('/storage/assets/sushi.png')}}" alt=""></label>
