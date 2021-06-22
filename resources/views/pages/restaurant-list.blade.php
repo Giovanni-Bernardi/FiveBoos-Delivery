@@ -8,7 +8,7 @@
        <div class="list-container">
 
                 <div id="app-categories" class="list-jumbotron">
-                    <h2>Scegli una categoria: </h2>
+                    {{-- <h2>Scegli una categoria: </h2> --}}
                     <ul>
                         <li class="food-type"> 
                             {{-- v-on:click="addClass" :class="selected" --}}

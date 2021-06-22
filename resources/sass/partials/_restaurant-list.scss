@@ -1,4 +1,6 @@
-// .list-container {
+.list-container {
+    min-height: 550px;
+}
 //     background-color: whitesmoke;
     div.list-jumbotron {   
         // display: flex;
@@ -14,7 +16,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            padding: 30px 0px;
+            padding: 120px 100px;
             position: relative;
             li {
                 display: flex;
@@ -25,7 +27,7 @@
                 border-radius: 50%;
                 background-color: whitesmoke;
                 padding: 15px;
-                box-shadow: 0 2px 17px 0 #00CCBC;
+                box-shadow: 0 2px 17px 0 #1e988e;
                 position: relative;
                 &:active{
                     // transform: translateY(30px);
@@ -43,12 +45,12 @@
                         opacity: 0;
                     }
                     img {
-                        filter: grayscale(100%);
+                        // filter: grayscale(100%);
                         width: 80px;
                         height: 80px;
-                        &:hover {
-                            filter: grayscale(0%);
-                        }
+                        // &:hover {
+                            // filter: grayscale(0%);
+                        // }
                     }
                 }
             }
@@ -266,3 +268,10 @@
     }   
 
 // }
+
+
+.food-type {
+    img {
+        padding: 4px;
+    }
+}
