@@ -1,24 +1,28 @@
 // LOGO IMG
 .site-logo {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 5px;
+  margin: 14px;
   padding-left: 60px;
   position: absolute;
+   a{
+    color: #000000;
+   }
 }
 
 header {
-  height: 50px;
+  height: 75px;
   width: 100%;
-  z-index: 2;
-  background: rgb(0, 204, 188);
+  z-index: 900;
+  // background: #00ccbc;
+  // background: transparent;
   position: fixed;
+  margin-top: -3px;
 }
 
 .menulist {
-  display: flex;
-  top: 50px;
+  top: 0px;
   left: -100%;
   width: 25%;
   height: 100%;
@@ -29,7 +33,7 @@ header {
   margin-right: 0px;
   margin-right: 10px;
   transition: 0.5s;
-  background:rgb(0, 204, 188);
+  background:#00ccbc;
 }
 
 .menulist li {
@@ -41,7 +45,7 @@ header {
 
 .menulist li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
 }
 
 body > header > nav > ul > li:nth-child(1) > a {
@@ -51,48 +55,58 @@ body > header > nav > ul > li:nth-child(1) > a {
 }
 
 .check {
-  height: 40px;
-  width: 40px;
+  height: 71px;
+  width: 60px;
   position: absolute;
-  margin: 3px 20px 0px 0px;
+  margin: 10px 15px;
   z-index: 3;
   opacity: 0;
+  cursor: pointer;
+  z-index: 910;
 }
 
 .ham-menu {
-  height: 40px;
-  width: 40px;
+  height: 71px;
+  width: 60px;
   margin: 3px 20px 0px 15px;
   position: relative;
   display: block;
 }
 
+// CUSTOM LINES
+//middle
 .menuline {
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   position: relative;
   margin: auto;
   display: flex;
   top: 50%;
   background: #ffffff;
+  border-radius: 5px;
+  z-index: 901;
 }
 
+//up
 .menuline::before {
   content:'';
   position: absolute;
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   top: -8px;
   background: #ffffff;
+  border-radius: 5px;
 }
 
+//down
 .menuline::after {
   content:'';
   position: absolute;
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   top: 8px;
   background: #ffffff;
+  border-radius: 5px;
 }
 
 .content-area {
@@ -107,8 +121,16 @@ body > header > nav > ul > li:nth-child(1) > a {
   margin-right: 0px;
 }
 
+ul.menulist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .menulist li a{
-  font-size: 22px;
+  font-size: 1.8rem;
   text-align: center;
 }
 
@@ -125,4 +147,15 @@ body > header > nav > ul > li:nth-child(1) > a {
 .check:checked ~ .ham-menu .menuline::before,.check:checked ~ .ham-menu .menuline::after {
   top: 0;
   transform: rotate(90deg);
+}
+
+// SCROLL CLASSES
+.scroll-color{
+  background-color: #00CCBC;
+  height: 75px;
+  margin-top: -3px;
+}
+
+.transparent {
+  background: transparent;
 }

@@ -11148,24 +11148,27 @@ a.text-dark:focus {
 
 .site-logo {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 5px;
+  margin: 14px;
   padding-left: 60px;
   position: absolute;
 }
 
+.site-logo a {
+  color: #000000;
+}
+
 header {
-  height: 50px;
+  height: 75px;
   width: 100%;
-  z-index: 2;
-  background: #00ccbc;
+  z-index: 900;
   position: fixed;
+  margin-top: -3px;
 }
 
 .menulist {
-  display: flex;
-  top: 50px;
+  top: 0px;
   left: -100%;
   width: 25%;
   height: 100%;
@@ -11188,7 +11191,7 @@ header {
 
 .menulist li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
 }
 
 body > header > nav > ul > li:nth-child(1) > a {
@@ -11198,48 +11201,54 @@ body > header > nav > ul > li:nth-child(1) > a {
 }
 
 .check {
-  height: 40px;
-  width: 40px;
+  height: 71px;
+  width: 60px;
   position: absolute;
-  margin: 3px 20px 0px 0px;
+  margin: 10px 15px;
   z-index: 3;
   opacity: 0;
+  cursor: pointer;
+  z-index: 910;
 }
 
 .ham-menu {
-  height: 40px;
-  width: 40px;
+  height: 71px;
+  width: 60px;
   margin: 3px 20px 0px 15px;
   position: relative;
   display: block;
 }
 
 .menuline {
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   position: relative;
   margin: auto;
   display: flex;
   top: 50%;
   background: #ffffff;
+  border-radius: 5px;
+  z-index: 901;
 }
 
 .menuline::before {
   content: "";
   position: absolute;
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   top: -8px;
   background: #ffffff;
+  border-radius: 5px;
 }
 
 .menuline::after {
   content: "";
   position: absolute;
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   top: 8px;
   background: #ffffff;
+  border-radius: 5px;
 }
 
 .content-area {
@@ -11253,8 +11262,16 @@ body > header > nav > ul > li:nth-child(1) > a {
   margin-right: 0px;
 }
 
+ul.menulist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .menulist li a {
-  font-size: 22px;
+  font-size: 1.8rem;
   text-align: center;
 }
 
@@ -11271,6 +11288,16 @@ body > header > nav > ul > li:nth-child(1) > a {
 .check:checked ~ .ham-menu .menuline::after {
   top: 0;
   transform: rotate(90deg);
+}
+
+.scroll-color {
+  background-color: #00CCBC;
+  height: 75px;
+  margin-top: -3px;
+}
+
+.transparent {
+  background: transparent;
 }
 
 footer {
@@ -11704,24 +11731,27 @@ footer .bottom .privacy .copyright {
 
 .site-logo {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 5px;
+  margin: 14px;
   padding-left: 60px;
   position: absolute;
 }
 
+.site-logo a {
+  color: #000000;
+}
+
 header {
-  height: 50px;
+  height: 75px;
   width: 100%;
-  z-index: 2;
-  background: #00ccbc;
+  z-index: 900;
   position: fixed;
+  margin-top: -3px;
 }
 
 .menulist {
-  display: flex;
-  top: 50px;
+  top: 0px;
   left: -100%;
   width: 25%;
   height: 100%;
@@ -11744,7 +11774,7 @@ header {
 
 .menulist li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
 }
 
 body > header > nav > ul > li:nth-child(1) > a {
@@ -11754,48 +11784,54 @@ body > header > nav > ul > li:nth-child(1) > a {
 }
 
 .check {
-  height: 40px;
-  width: 40px;
+  height: 71px;
+  width: 60px;
   position: absolute;
-  margin: 3px 20px 0px 0px;
+  margin: 10px 15px;
   z-index: 3;
   opacity: 0;
+  cursor: pointer;
+  z-index: 910;
 }
 
 .ham-menu {
-  height: 40px;
-  width: 40px;
+  height: 71px;
+  width: 60px;
   margin: 3px 20px 0px 15px;
   position: relative;
   display: block;
 }
 
 .menuline {
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   position: relative;
   margin: auto;
   display: flex;
   top: 50%;
   background: #ffffff;
+  border-radius: 5px;
+  z-index: 901;
 }
 
 .menuline::before {
   content: "";
   position: absolute;
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   top: -8px;
   background: #ffffff;
+  border-radius: 5px;
 }
 
 .menuline::after {
   content: "";
   position: absolute;
-  height: 2px;
-  width: 25px;
+  height: 3px;
+  width: 30px;
   top: 8px;
   background: #ffffff;
+  border-radius: 5px;
 }
 
 .content-area {
@@ -11809,8 +11845,16 @@ body > header > nav > ul > li:nth-child(1) > a {
   margin-right: 0px;
 }
 
+ul.menulist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .menulist li a {
-  font-size: 22px;
+  font-size: 1.8rem;
   text-align: center;
 }
 
@@ -11827,6 +11871,16 @@ body > header > nav > ul > li:nth-child(1) > a {
 .check:checked ~ .ham-menu .menuline::after {
   top: 0;
   transform: rotate(90deg);
+}
+
+.scroll-color {
+  background-color: #00CCBC;
+  height: 75px;
+  margin-top: -3px;
+}
+
+.transparent {
+  background: transparent;
 }
 
 * {
