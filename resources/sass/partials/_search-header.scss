@@ -1,13 +1,13 @@
 // LOGO IMG
-.site-logo {
+.site-logo-2 {
 
-   a{
+  a{
     color: #000000;
       img {
         width: auto;
         height: 60px;
         position: absolute;
-        top: 12px;
+        top: 40px;
         left: 90px;
       }
    }
@@ -17,8 +17,6 @@ header {
   height: 75px;
   width: 100%;
   z-index: 900;
-  // background: #00ccbc;
-  // background: transparent;
   position: fixed;
   margin-top: -3px;
 }
@@ -70,9 +68,15 @@ body > header > nav > ul > li:nth-child(1) > a {
 .ham-menu {
   height: 71px;
   width: 60px;
-  margin: 0px 20px 3px 15px;
-  // position: relative;
+  margin: 0px 20px 9px 15px;
   display: block;
+  position: absolute;
+  left: 10px;
+}
+
+input.check {
+  position: absolute;
+  left: 10px;
 }
 
 // CUSTOM LINES
@@ -84,7 +88,7 @@ body > header > nav > ul > li:nth-child(1) > a {
   margin: auto;
   display: flex;
   top: 50%;
-  background: #ffffff;
+  background: #000000;
   border-radius: 5px;
   z-index: 901;
 }
@@ -96,7 +100,7 @@ body > header > nav > ul > li:nth-child(1) > a {
   height: 3px;
   width: 30px;
   top: -8px;
-  background: #ffffff;
+  background: #000000;
   border-radius: 5px;
 }
 
@@ -107,7 +111,7 @@ body > header > nav > ul > li:nth-child(1) > a {
   height: 3px;
   width: 30px;
   top: 8px;
-  background: #ffffff;
+  background: #000000;
   border-radius: 5px;
 }
 
@@ -162,6 +166,19 @@ ul.menulist {
   background: transparent;
 }
 
-nav {
-  min-height: 75px;
-}
+//nav
+  #search-nav {
+    // min-height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #00CCBC;
+  }
+
+  #cart {
+    font-size: 35px;
+  }
+
+  #container-search {
+    min-width: 750px;
+  }

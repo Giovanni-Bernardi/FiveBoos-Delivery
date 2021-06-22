@@ -1,5 +1,7 @@
 @extends('layouts.main-layout')
 
+@include('components.search-header')
+    
 @section('content')
 <main>
        <!-- {{-- restaurant list --}} -->

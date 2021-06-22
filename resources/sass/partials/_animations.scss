@@ -82,3 +82,21 @@
 	50% { padding-top: 2.5em; }
 	100% { padding-top: 2em; }
 }
+
+/* text typing*/
+
+  // animation: animated-text 4s linear 1s 1 normal both,
+  // animated-cursor 600ms linear infinite;
+
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 570px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: rgb(250, 210, 10);}
+  to{border-right-color: transparent;}
+}
