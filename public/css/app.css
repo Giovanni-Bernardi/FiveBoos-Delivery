@@ -11406,45 +11406,47 @@ footer .bottom .privacy .copyright {
   align-self: flex-end;
 }
 
-main {
-  background-color: whitesmoke;
+div.list-jumbotron {
+  height: 350px;
+  background-color: #00CCBC;
+  padding: 30px;
 }
 
-main div.jumbo-list {
+div.list-jumbotron h2 {
+  text-align: center;
+}
+
+div.list-jumbotron ul {
+  width: 80%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background: #C0F7B6;
+  flex-wrap: wrap;
 }
 
-main div.jumbo-list .carousel-2 ul {
+div.list-jumbotron ul li {
   display: flex;
-}
-
-main div.jumbo-list .carousel-2 ul li {
+  align-self: center;
+  align-content: center;
+  justify-content: center;
   margin: 5px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  padding: 15px;
 }
 
-main div.jumbo-list .carousel-2 ul li .type-check {
-  display: none;
-}
-
-main div.jumbo-list .carousel-2 ul img {
+div.list-jumbotron ul li img {
   filter: grayscale(100%);
-  width: 50px;
-  height: auto;
+  width: 80px;
+  height: 80px;
 }
 
-main div.jumbo-list .carousel-2 ul img:hover {
+div.list-jumbotron ul li img:hover {
   filter: grayscale(0%);
 }
 
 .titles-restaurant-list {
-  width: 80vw;
+  width: 80%;
   margin: auto;
 }
 
@@ -11460,7 +11462,7 @@ main div.jumbo-list .carousel-2 ul img:hover {
   margin-left: 10px;
 }
 
-div.restaurants-box {
+.restaurants-box {
   width: 80%;
   margin: auto;
   display: flex;
@@ -11470,17 +11472,13 @@ div.restaurants-box {
   flex-wrap: wrap;
 }
 
-div.restaurants-box div.restaurant-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.restaurants-box .restaurant-card {
   width: 30%;
   height: 230px;
   margin: 10px;
 }
 
-div.restaurants-box div.restaurant-card .top-info {
+.restaurants-box .restaurant-card .top-info {
   font-family: "Raleway", sans-serif;
   display: flex;
   flex-direction: column;
@@ -11495,7 +11493,7 @@ div.restaurants-box div.restaurant-card .top-info {
   position: relative;
 }
 
-div.restaurants-box div.restaurant-card .top-info .background-image {
+.restaurants-box .restaurant-card .top-info .background-image {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   background-image: url("/storage/assets/pizza-placeholder.jpg");
@@ -11508,23 +11506,23 @@ div.restaurants-box div.restaurant-card .top-info .background-image {
   z-index: 1;
 }
 
-div.restaurants-box div.restaurant-card .top-info:hover {
+.restaurants-box .restaurant-card .top-info:hover {
   cursor: pointer;
 }
 
-div.restaurants-box div.restaurant-card .top-info:hover .background-image {
+.restaurants-box .restaurant-card .top-info:hover .background-image {
   filter: contrast(90%);
   background-size: 105%;
   background-position: center right;
   transition: all 0.15s ease-in-out;
 }
 
-div.restaurants-box div.restaurant-card .top-info:hover > a {
+.restaurants-box .restaurant-card .top-info:hover > a {
   text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   transition: all 0.1s ease-in-out;
 }
 
-div.restaurants-box div.restaurant-card .top-info a {
+.restaurants-box .restaurant-card .top-info a {
   z-index: 2;
   text-decoration: none;
   font-size: 35px;
@@ -11532,13 +11530,13 @@ div.restaurants-box div.restaurant-card .top-info a {
   font-weight: 900;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card {
+.restaurants-box .restaurant-card .top-info .categories-card {
   z-index: 2;
   display: flex;
   flex-direction: row;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .cell {
+.restaurants-box .restaurant-card .top-info .categories-card .cell {
   margin: 3px;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -11549,27 +11547,27 @@ div.restaurants-box div.restaurant-card .top-info .categories-card .cell {
   padding: 1px 4px;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .cell:hover {
+.restaurants-box .restaurant-card .top-info .categories-card .cell:hover {
   text-shadow: white 1px 1px;
   transition: all 0.3s ease-in-out;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .cell a {
+.restaurants-box .restaurant-card .top-info .categories-card .cell a {
   color: black;
   font-size: 18px;
   font-weight: lighter;
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-generic {
+.restaurants-box .restaurant-card .top-info .categories-card .type-generic {
   background-color: rgba(255, 255, 255, 0.65);
 }
 
-div.restaurants-box div.restaurant-card .top-info .categories-card .type-generic:hover {
+.restaurants-box .restaurant-card .top-info .categories-card .type-generic:hover {
   background-color: white;
   transition: all 0.3s ease-in-out;
 }
 
-div.restaurants-box div.restaurant-card .bottom-info {
+.restaurants-box .restaurant-card .bottom-info {
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
@@ -11583,20 +11581,20 @@ div.restaurants-box div.restaurant-card .bottom-info {
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-div.restaurants-box div.restaurant-card .bottom-info * {
+.restaurants-box .restaurant-card .bottom-info * {
   align-self: center;
 }
 
-div.restaurants-box div.restaurant-card .bottom-info .delivery {
+.restaurants-box .restaurant-card .bottom-info .delivery {
   display: flex;
 }
 
-div.restaurants-box div.restaurant-card .bottom-info .delivery i:hover {
+.restaurants-box .restaurant-card .bottom-info .delivery i:hover {
   text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   transition: all 0.1s ease-in-out;
 }
 
-div.restaurants-box div.restaurant-card .bottom-info .delivery .delivery-checkout {
+.restaurants-box .restaurant-card .bottom-info .delivery .delivery-checkout {
   font-size: 12px;
   padding: 5px;
   margin-left: 5px;
@@ -11610,15 +11608,15 @@ div.restaurants-box div.restaurant-card .bottom-info .delivery .delivery-checkou
   border-radius: 8px;
 }
 
-div.restaurants-box div.restaurant-card .bottom-info .delivery .active {
+.restaurants-box .restaurant-card .bottom-info .delivery .active {
   background-color: rgba(192, 247, 182, 0.7);
 }
 
-div.restaurants-box div.restaurant-card .bottom-info .delivery .active:hover {
+.restaurants-box .restaurant-card .bottom-info .delivery .active:hover {
   background-color: rgba(192, 247, 182, 0.9);
 }
 
-div.restaurants-box div.restaurant-card .bottom-info .address-icon a {
+.restaurants-box .restaurant-card .bottom-info .address-icon a {
   text-decoration: none;
   color: black;
 }
@@ -12165,9 +12163,8 @@ p {
   font-family: "Raleway", sans-serif;
 }
 
-.container-fixed {
+.container-sticky-footer {
   flex-grow: 1;
-  margin-top: 50px;
 }
 
 ul {

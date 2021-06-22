@@ -1,37 +1,42 @@
-main {
-    background-color: whitesmoke;
-    div.jumbo-list {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: fit-content;
-        background: #C0F7B6;
-        // background: linear-gradient(175deg, rgba(0,204,188,1) 35%, rgba(201,156,18,1) 100%);
-        .carousel-2 {
-            ul {
+// .list-container {
+//     background-color: whitesmoke;
+    div.list-jumbotron {   
+        // display: flex;
+        height: 350px;
+        background-color: #00CCBC;
+        padding: 30px;
+        h2 {
+            text-align: center;
+        }
+        ul {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            li {
                 display: flex;
-                li {
-                    margin: 5px;
-                    .type-check{
-                        display: none;
-                        }
+                align-self: center;
+                align-content: center;
+                justify-content: center;
+                margin: 5px;
+                border-radius: 50%;
+                background-color: whitesmoke;
+                padding: 15px;
+                img {
+                    filter: grayscale(100%);
+                    width: 80px;
+                    height: 80px;
+                    &:hover {
+                        filter: grayscale(0%);
                     }
-                    img {
-                        filter: grayscale(100%);
-                        width: 50px;
-                        height: auto;
-                        &:hover {
-                            filter: grayscale(0%);
-                        }
-                    }
-
                 }
             }
         }
     }
+
     .titles-restaurant-list {
-        width: 80vw;
+        width: 80%;
         margin: auto;
         h2#title {
             text-align: center;
@@ -51,7 +56,7 @@ main {
             //nothing to see here
         }
     }
-    div.restaurants-box {
+    .restaurants-box {
         width: 80%;
         margin: auto;
         $direction: row;
@@ -60,10 +65,7 @@ main {
         @include flex($direction, $justify, $align);
         flex-wrap: wrap;
 
-        div.restaurant-card {
-            $direction:column;
-            $justify: center;
-            @include flex($direction, $justify, $align);
+        .restaurant-card {
             width: 30%;
             height: 230px;
             margin: 10px;
@@ -73,6 +75,8 @@ main {
             // }
             .top-info {
                 font-family: 'Raleway', sans-serif;
+                $direction: column;
+                $justify: center;
                 @include flex($direction, $justify, $align);
 
                 // @include border-r-c;
@@ -237,5 +241,6 @@ main {
                 }
             }
         }
-}
+    }   
 
+// }
