@@ -12,17 +12,26 @@ use App\Order;
 
 class RestaurantController extends Controller
 {
+    //pagina landing page
     public function indexView(){
         $restaurants = Restaurant::all();
         $categories = Category::all();
 
         return view('pages.index', compact('restaurants', 'categories'));
     }
+    //pagina restaurant list
+    public function restaurantListView(){
+        $restaurants = Restaurant::all();
+        $categories = Category::all();
+        
+        return view('pages.restaurant-list', compact('restaurants', 'categories'));
+    }
+    //pagina restaurant details
     public function restaurantDetailsView($id){
         $restaurant = Restaurant::findOrFail($id);
         return view('pages.restaurant-details', compact('restaurant'));
     }
-
+    //pagina product details
     public function productDetailsView($id){
         $product = Product::findOrFail($id);
 
