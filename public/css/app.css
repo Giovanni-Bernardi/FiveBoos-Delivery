@@ -11407,7 +11407,9 @@ footer .bottom .privacy .copyright {
 }
 
 div.list-jumbotron {
-  height: 350px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: #00CCBC;
   padding: 50px 30px 30px 30px;
 }
@@ -11422,6 +11424,7 @@ div.list-jumbotron ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 30px 0px;
 }
 
 div.list-jumbotron ul li {
@@ -11433,15 +11436,26 @@ div.list-jumbotron ul li {
   border-radius: 50%;
   background-color: whitesmoke;
   padding: 15px;
+  box-shadow: 0 2px 17px 0 #00CCBC;
 }
 
-div.list-jumbotron ul li img {
+div.list-jumbotron ul li label {
+  cursor: pointer;
+  position: relative;
+}
+
+div.list-jumbotron ul li label input {
+  position: absolute;
+  opacity: 0;
+}
+
+div.list-jumbotron ul li label img {
   filter: grayscale(100%);
   width: 80px;
   height: 80px;
 }
 
-div.list-jumbotron ul li img:hover {
+div.list-jumbotron ul li label img:hover {
   filter: grayscale(0%);
 }
 
@@ -11610,11 +11624,11 @@ div.list-jumbotron ul li img:hover {
 }
 
 .restaurants-box .restaurant-card .bottom-info .delivery .active {
-  background-color: rgba(192, 247, 182, 0.7);
+  background-color: rgba(0, 204, 188, 0.7);
 }
 
 .restaurants-box .restaurant-card .bottom-info .delivery .active:hover {
-  background-color: rgba(192, 247, 182, 0.9);
+  background-color: rgba(0, 204, 188, 0.9);
 }
 
 .restaurants-box .restaurant-card .bottom-info .address-icon a {

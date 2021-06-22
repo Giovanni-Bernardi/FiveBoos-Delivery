@@ -9,40 +9,58 @@
                     <h2>Scegli una categoria: </h2>
                     <ul>
                         <li class="food-type">
-                            <label for="type-pizza"><img src="{{asset('/storage/assets/pizza.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-pizza" class="type-check">
+                            <label for="type-pizza">
+                                <input type="checkbox" name="type-pizza" class="type-check" id="type-pizza">
+                                <img src="{{asset('/storage/assets/pizza.png')}}" alt="pizza">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-sushi"><img src="{{asset('/storage/assets/sushi.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-sushi" class="type-check">
+                            <label for="type-sushi">
+                                <input type="checkbox" name="type-sushi" class="type-check">
+                                <img src="{{asset('/storage/assets/sushi.png')}}" alt="">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-spaghetti"><img src="{{asset('/storage/assets/japanese.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-japanese" class="type-check">
+                            <label for="type-spaghetti">
+                                <input type="checkbox" name="type-japanese" class="type-check">
+                                <img src="{{asset('/storage/assets/japanese.png')}}" alt="">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-desserts"><img src="{{asset('/storage/assets/desserts.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-desserts" class="type-check">
+                            <label for="type-desserts">
+                                <input type="checkbox" name="type-desserts" class="type-check">
+                                <img src="{{asset('/storage/assets/desserts.png')}}" alt="">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-meat"><img src="{{asset('/storage/assets/meat.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-meat" class="type-check">
+                            <label for="type-meat">
+                                <input type="checkbox" name="type-meat" class="type-check">
+                                <img src="{{asset('/storage/assets/meat.png')}}" alt="">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-american"><img src="{{asset('/storage/assets/american.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-american" class="type-check">
+                            <label for="type-american">
+                                <input type="checkbox" name="type-american" class="type-check">
+                                <img src="{{asset('/storage/assets/american.png')}}" alt="">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-snack"><img src="{{asset('/storage/assets/snack.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-snack" class="type-check">
+                            <label for="type-snack">
+                                <input type="checkbox" name="type-snack" class="type-check">
+                                <img src="{{asset('/storage/assets/snack.png')}}" alt="">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-mexican"><img src="{{asset('/storage/assets/mexican.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-mexican" class="type-check">
+                            <label for="type-mexican">
+                                <input type="checkbox" name="type-mexican" class="type-check">
+                                <img src="{{asset('/storage/assets/mexican.png')}}" alt="">
+                            </label>
                         </li>
                         <li class="food-type">
-                            <label for="type-cake"><img src="{{asset('/storage/assets/cake.png')}}" alt=""></label>
-                            <input type="checkbox" name="type-cake" class="type-check">
+                            <label for="type-cake">
+                                <input type="checkbox" name="type-cake" class="type-check">
+                                <img src="{{asset('/storage/assets/cake.png')}}" alt="">
+                            </label>
                         </li>
                     </ul>
                 </div>
