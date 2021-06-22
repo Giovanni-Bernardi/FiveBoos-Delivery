@@ -1,3 +1,34 @@
 main.details {
-    
+    .details-jumbotron {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        background-image: url('/storage/restaurant-img/162400364131.jpeg');
+        background-position: center;
+        
+        h2 {
+            align-self: flex-end;
+            width: 50%;
+            background-color: whitesmoke;
+            border-radius: 2px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            text-align: center;
+            opacity: 0.87;
+        }
+    }
+
+    .dishes-box {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        ul {
+            display: flex;
+            .dish {
+                display: flex;
+                width: 40%;
+            }
+        }
+    }
 }

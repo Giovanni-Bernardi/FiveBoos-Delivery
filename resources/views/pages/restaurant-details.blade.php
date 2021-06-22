@@ -2,12 +2,14 @@
 
 @section('content')
     <main class="details">
-        <h2></h2>
+        <div class="details-jumbotron">
+            <h2>
+                Restaurant '{{$restaurant -> business_name}}' details
+            </h2>
+        </div>
         <ul>
+
             <li>
-                <h4>
-                    Restaurant '{{$restaurant -> business_name}}' details
-                </h4>
             </li>
             <li>
                 Business name: {{$restaurant -> business_name}}
@@ -49,22 +51,24 @@
         </ul>
 
         <hr>
-
-        <ul>
-            <li>
-                <h4>
-                    Products list:
-                </h4>
-            </li>
-            @foreach ($restaurant -> products as $product)
-                <li>
-                    {{$product -> name}}: &euro;{{$product -> price}},00
-                    <a href="{{route('productDetailsViewLink', $product -> id)}}">
-                        details
-                    </a>
-                </li>
-            @endforeach
-        </ul>
+        <div class="dishes-box">
+            <h4>
+                Products list:
+            </h4>
+            <ul>
+                @foreach ($restaurant -> products as $product)
+                    <li>
+                        <div class="dish">
+                            {{$product -> name}}: &euro;{{$product -> price}},00
+                            <a href="{{route('productDetailsViewLink', $product -> id)}}">
+                                <img src="{{asset('/storage/placeholder/product.png')}}" alt="">
+                                {{-- details --}}
+                            </a>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
 
         @if (Auth::user()->id == $restaurant -> user_id)
             <h3>
