@@ -11425,6 +11425,7 @@ div.list-jumbotron ul {
   justify-content: center;
   flex-wrap: wrap;
   padding: 30px 0px;
+  position: relative;
 }
 
 div.list-jumbotron ul li {
@@ -11437,6 +11438,17 @@ div.list-jumbotron ul li {
   background-color: whitesmoke;
   padding: 15px;
   box-shadow: 0 2px 17px 0 #00CCBC;
+  position: relative;
+}
+
+div.list-jumbotron ul li:active {
+  top: 5px;
+  transition: ease-in-out;
+}
+
+div.list-jumbotron ul li:hover {
+  -webkit-animation: float-up 1.3s ease-in-out infinite;
+          animation: float-up 1.3s ease-in-out infinite;
 }
 
 div.list-jumbotron ul li label {
@@ -11532,6 +11544,7 @@ div.list-jumbotron ul li label img:hover {
 }
 
 .restaurants-box .restaurant-card .top-info:hover > a {
+  font-size: 42px;
   text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   transition: all 0.1s ease-in-out;
 }

@@ -483,5 +483,16 @@ function statisticsChart() {
     //   }
     // }
 
-
-
+// document.addEventListener('DOMContentLoaded', function () {
+//     new Vue({
+//         el: "#app-categories",
+//         data: {
+//             isAddClass: false,
+//         },
+//         methods: {
+//             addClass: function(){
+//                 this.isAddClasse = true;
+//             }
+//         }
+//     })
+// }

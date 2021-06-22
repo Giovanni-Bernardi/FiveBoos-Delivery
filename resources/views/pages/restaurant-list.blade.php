@@ -5,10 +5,11 @@
        <!-- {{-- restaurant list --}} -->
        <div class="list-container">
 
-                <div class="list-jumbotron">
+                <div id="app-categories" class="list-jumbotron">
                     <h2>Scegli una categoria: </h2>
                     <ul>
-                        <li class="food-type">
+                        <li class="food-type"> 
+                            {{-- v-on:click="addClass" :class="selected" --}}
                             <label for="type-pizza">
                                 <input type="checkbox" name="type-pizza" class="type-check" id="type-pizza">
                                 <img src="{{asset('/storage/assets/pizza.png')}}" alt="pizza">

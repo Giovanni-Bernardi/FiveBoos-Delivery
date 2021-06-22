@@ -15,6 +15,7 @@
             justify-content: center;
             flex-wrap: wrap;
             padding: 30px 0px;
+            position: relative;
             li {
                 display: flex;
                 align-self: center;
@@ -25,6 +26,15 @@
                 background-color: whitesmoke;
                 padding: 15px;
                 box-shadow: 0 2px 17px 0 #00CCBC;
+                position: relative;
+                &:active{
+                    // transform: translateY(30px);
+                    top: 5px;
+                    transition: ease-in-out;
+                }
+                &:hover {
+                    animation: float-up 1.3s ease-in-out infinite;
+                }
                 label {
                     cursor: pointer;
                     position: relative;
@@ -39,7 +49,7 @@
                         &:hover {
                             filter: grayscale(0%);
                         }
-                }
+                    }
                 }
             }
         }
@@ -128,6 +138,7 @@
                             transition: all .15s ease-in-out;              
                     }
                     > a {
+                        font-size: 42px;
                         text-shadow:  0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
                         transition: all .1s ease-in-out;                          
                     }
