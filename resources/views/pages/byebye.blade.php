@@ -1,5 +1,5 @@
 {{-- PAG FINALE -> ESITO PAGAMENTO--}}
-
+@extends('layouts.main-layout')
 
 @section('content')
 
