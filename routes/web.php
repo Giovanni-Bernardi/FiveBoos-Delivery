@@ -10,6 +10,9 @@ Route::get('/', function () {
 Auth::routes();
 
 // Route per pagina di Login
+Route::get('/restaurant/list', 'RestaurantController@restaurantListView')->name('restaurantListLink');
+
+// Route per pagina di Login
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Route princilape (Home)
