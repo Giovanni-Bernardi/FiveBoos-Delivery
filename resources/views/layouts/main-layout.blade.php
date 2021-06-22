@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         @include('components.header')
-        <div class="container-fixed">
+        <div class="container-sticky-footer">
             @include('components.notifications')
             @yield('content')
         </div>

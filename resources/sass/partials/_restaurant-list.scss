@@ -1,37 +1,62 @@
-main {
-    background-color: whitesmoke;
-    div.jumbo-list {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+// .list-container {
+//     background-color: whitesmoke;
+    div.list-jumbotron {   
+        // display: flex;
         height: fit-content;
-        background: #C0F7B6;
-        // background: linear-gradient(175deg, rgba(0,204,188,1) 35%, rgba(201,156,18,1) 100%);
-        .carousel-2 {
-            ul {
+        background-color: #00CCBC;
+        padding: 50px 30px 30px 30px;
+        h2 {
+            text-align: center;
+        }
+        ul {
+            width: 65%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 30px 0px;
+            position: relative;
+            li {
                 display: flex;
-                li {
-                    margin: 5px;
-                    .type-check{
-                        display: none;
-                        }
+                align-self: center;
+                align-content: center;
+                justify-content: center;
+                margin: 5px;
+                border-radius: 50%;
+                background-color: whitesmoke;
+                padding: 15px;
+                box-shadow: 0 2px 17px 0 #00CCBC;
+                position: relative;
+                &:active{
+                    // transform: translateY(30px);
+                    top: 3px;
+                    transition: ease-in-out;
+                }
+                &:hover {
+                    animation: float-up 1.3s ease-in-out infinite;
+                }
+                label {
+                    cursor: pointer;
+                    position: relative;
+                    input {
+                        position: absolute;
+                        opacity: 0;
                     }
                     img {
                         filter: grayscale(100%);
-                        width: 50px;
-                        height: auto;
+                        width: 80px;
+                        height: 80px;
                         &:hover {
                             filter: grayscale(0%);
                         }
                     }
-
                 }
             }
         }
     }
+
     .titles-restaurant-list {
-        width: 80vw;
+        width: 80%;
         margin: auto;
         h2#title {
             text-align: center;
@@ -51,7 +76,7 @@ main {
             //nothing to see here
         }
     }
-    div.restaurants-box {
+    .restaurants-box {
         width: 80%;
         margin: auto;
         $direction: row;
@@ -60,10 +85,7 @@ main {
         @include flex($direction, $justify, $align);
         flex-wrap: wrap;
 
-        div.restaurant-card {
-            $direction:column;
-            $justify: center;
-            @include flex($direction, $justify, $align);
+        .restaurant-card {
             width: 30%;
             height: 230px;
             margin: 10px;
@@ -73,6 +95,8 @@ main {
             // }
             .top-info {
                 font-family: 'Raleway', sans-serif;
+                $direction: column;
+                $justify: center;
                 @include flex($direction, $justify, $align);
 
                 // @include border-r-c;
@@ -95,7 +119,7 @@ main {
                     width: 100%;
                     height: 100%;
                     position: absolute;
-                    filter: contrast(50%);
+                    filter: contrast(65%);
                     z-index: 1;
                     // &:hover{
                     //     filter: saturate(50%);
@@ -109,11 +133,12 @@ main {
                     // animation: zoombg 2s ease-in;
                     .background-image {
                             filter: contrast(90%);
-                            background-size: 105%;
-                            background-position: center right; 
+                            background-size: 103%;
+                            background-position: center center; 
                             transition: all .15s ease-in-out;              
                     }
                     > a {
+                        font-size: 42px;
                         text-shadow:  0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
                         transition: all .1s ease-in-out;                          
                     }
@@ -127,7 +152,7 @@ main {
                 }
                 .categories-card {
                     z-index: 2;
-
+                    
                     display: flex;
                     flex-direction: row;
                     
@@ -137,16 +162,17 @@ main {
                         border: 1px solid black;
                         text-align: center;
                         border-radius:4px;
-                        padding: 1px 4px;
+                        padding: 0px 4px;
                         &:hover {
                             text-shadow: white 1px 1px;
                             
                             transition: all .3s ease-in-out;
                         }
                         a {
+                            font-family: 'Raleway', sans-serif;
                             color: black;
-                            font-size: 18px;
-                            font-weight: lighter;        
+                            font-weight: 500;
+                            font-size: 18px;        
                         }
                     }
                     .type-generic {
@@ -200,9 +226,9 @@ main {
                         border-radius: 8px;
                     }
                     .active {
-                        background-color: rgba(192, 247, 182, 0.7);
+                        background-color: rgba(#00CCBC, 0.7);
                         &:hover {
-                            background-color:rgba(192, 247, 182, 0.9);
+                            background-color:rgba(#00CCBC, 0.9);
                         }
                     }
                 }
@@ -237,5 +263,6 @@ main {
                 }
             }
         }
-}
+    }   
 
+// }
