@@ -1,5 +1,7 @@
 @extends('layouts.main-layout')
 
+@include('components.search-header')
+    
 @section('content')
        <!-- {{-- restaurant list --}} -->
        <div class="jumbo-list">
@@ -95,6 +97,7 @@
         @endforeach
         
     </div>
+    
 </main>
     
 @endsection

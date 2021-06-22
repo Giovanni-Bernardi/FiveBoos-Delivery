@@ -1,5 +1,7 @@
 @extends('layouts.main-layout')
 
+@include('components.header')
+
 @section('content')
     <main>
         <!-- {{-- landing page --}} -->
