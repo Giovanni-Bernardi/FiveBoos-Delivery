@@ -11461,7 +11461,7 @@ main div.jumbo-list .carousel-2 ul img:hover {
 }
 
 div.restaurants-box {
-  width: 80vw;
+  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -11481,6 +11481,7 @@ div.restaurants-box div.restaurant-card {
 }
 
 div.restaurants-box div.restaurant-card .top-info {
+  font-family: "Raleway", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11503,7 +11504,7 @@ div.restaurants-box div.restaurant-card .top-info .background-image {
   width: 100%;
   height: 100%;
   position: absolute;
-  filter: saturate(35%);
+  filter: contrast(50%);
   z-index: 1;
 }
 
@@ -11512,7 +11513,7 @@ div.restaurants-box div.restaurant-card .top-info:hover {
 }
 
 div.restaurants-box div.restaurant-card .top-info:hover .background-image {
-  filter: saturate(50%);
+  filter: contrast(90%);
   background-size: 105%;
   background-position: center right;
   transition: all 0.15s ease-in-out;
@@ -11520,7 +11521,6 @@ div.restaurants-box div.restaurant-card .top-info:hover .background-image {
 
 div.restaurants-box div.restaurant-card .top-info:hover > a {
   text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-  font-size: 37px;
   transition: all 0.1s ease-in-out;
 }
 
