@@ -11442,7 +11442,7 @@ div.list-jumbotron ul li {
 }
 
 div.list-jumbotron ul li:active {
-  top: 5px;
+  top: 3px;
   transition: ease-in-out;
 }
 
