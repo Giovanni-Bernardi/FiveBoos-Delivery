@@ -8,23 +8,32 @@
             <h2>
                 Restaurant '{{$restaurant -> business_name}}' details
             </h2>
-            <p>Mostra Altro</p>
-            <div class="info-box-popup">
-                <p>
-                    Business name: {{$restaurant -> business_name}}
-                </p>
-                <p>
-                    Address: {{$restaurant -> address}}
-                </p>
-                <p>
-                    P-IVA: {{$restaurant -> piva}}
-                </p>
-                <p>
-                    Telephone: {{$restaurant -> telephone}}
-                </p>
-                <p>
-                    Description: {{$restaurant -> description}}
-                </p>
+            <div id="info">
+                {{-- <button>Mostra Altro</button> --}}
+                <!-- modal popup info -->
+                <button id="myBtn">Mostra Altro</button>
+                <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="info-box">
+                        <p>
+                            Business name: {{$restaurant -> business_name}}
+                        </p>
+                        <p>
+                            Address: {{$restaurant -> address}}
+                        </p>
+                        <p>
+                            P-IVA: {{$restaurant -> piva}}
+                        </p>
+                        <p>
+                            Telephone: {{$restaurant -> telephone}}
+                        </p>
+                        <p>
+                            Description: {{$restaurant -> description}}
+                        </p>
+                    </div>
+                </div>
+                </div>
             </div>
             <div class="overview">
                 <div class="checkout-button">
@@ -64,11 +73,11 @@
                 @foreach ($restaurant -> products as $product)
                 <li>
                     <div class="dish @if(!($product -> visible)) unavailable @endif" >
-                        @if(!($product -> visible)) 
+                        {{-- @if(!($product -> visible)) 
                             <div class="unavailable-dish">
                                 <h3>Non disponibile</h3>
                             </div> 
-                        @endif
+                        @endif --}}
                         <div class="left-side">
                             <span class="product-name">{{$product -> name}}:</span> <span class="prduct-price">&euro;{{$product -> price}},00</span>
                             <div class="description">

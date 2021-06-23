@@ -496,3 +496,31 @@ function statisticsChart() {
 //         }
 //     })
 // }
+
+// modal not finished -deivh
+// const openEls = document.querySelectorAll("[data-open]");
+// const isVisible = "is-visible";
+
+// for(const el of openEls) {
+// el.addEventListener("click", function() {
+//     const modalId = this.dataset.open;
+//     document.getElementById(modalId).classList.add(isVisible);
+// });
+// }
+function PopupModal(){
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+}
+document.addEventListener('DOMContentLoaded', PopupModal);
