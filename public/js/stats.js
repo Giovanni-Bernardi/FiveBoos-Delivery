@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', statisticsChart);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\maste\Desktop\Esercizi Boolean\proj-final-delivery\resources\js\stats.js */"./resources/js/stats.js");
+module.exports = __webpack_require__(/*! D:\Corso programmazione Boolean\Classe 29\Esercizi Boolean\Esercizi Giugno\proj-final-delivery\resources\js\stats.js */"./resources/js/stats.js");
 
 
 /***/ })

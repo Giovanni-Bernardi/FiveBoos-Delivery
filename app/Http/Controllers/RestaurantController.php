@@ -23,13 +23,15 @@ class RestaurantController extends Controller
     public function restaurantListView(){
         $restaurants = Restaurant::all();
         $categories = Category::all();
-        
+
         return view('pages.restaurant-list', compact('restaurants', 'categories'));
     }
     //pagina restaurant details
     public function restaurantDetailsView($id){
         $restaurant = Restaurant::findOrFail($id);
-        return view('pages.restaurant-details', compact('restaurant'));
+        $products = DB::table("products") -> where("restaurant_id", $id) -> get();
+
+        return view('pages.restaurant-details', compact('restaurant', 'products'));
     }
     //pagina product details
     public function productDetailsView($id){
@@ -61,7 +63,8 @@ class RestaurantController extends Controller
           'email' => 'required|string',
           'telephone' => 'required|string',
           'address' => 'required|string',
-          'delivery_date' => '|date',
+          'delivery_date' => 'required|date',
+          'delivery_time' => 'required|string',
         ]);
 
         $order = Order::make($validate);
@@ -81,6 +84,6 @@ class RestaurantController extends Controller
         $order -> products() -> attach($request -> get('products_id'));
         $order -> save();
 
-        return redirect() -> route('indexViewLink');
+        return redirect() -> route('payOrder');
     }
 }

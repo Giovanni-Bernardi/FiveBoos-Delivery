@@ -23,25 +23,27 @@ class PaymentController extends Controller
 
         return $gateway;
     }
-    
-    public function payOrder()
+
+    public function payOrder($id)
     {
         $gateway = $this -> braintreeGateway();
 
         $token = $gateway->ClientToken()->generate();
 
-        $orders = Order::all();
-
+        $orders = Order::findOrFail($id);
+        dd($orders);
         //  dd($bill);
 
         // dd($gateway->ClientToken()->generate());
 
-        return view('pages.pay', compact('gateway','token', 'orders'));
+        return view('pages.pay', compact('gateway', 'token', 'orders'));
     }
 
-    public function checkoutOrder(Request $request)
+    public function checkoutOrder(Request $request, $id)
     {
         // dd($request);
+        $order = Order::findOrFail($id);
+        dd($order);
         $gateway = $this -> braintreeGateway();
 
         $amount = $request -> amount;
@@ -79,7 +81,7 @@ class PaymentController extends Controller
         foreach ($result->errors->deepAll() as $error) {
         $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
         }
-        
+
         return redirect() -> route('byebyeOrder') -> withErrors('errore di pagamento: ' . $result -> message);
         }
     }
