@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Braintree;
+use App\Order;
 
 class PaymentController extends Controller
 {
@@ -29,9 +30,13 @@ class PaymentController extends Controller
 
         $token = $gateway->ClientToken()->generate();
 
+        $orders = Order::all();
+
+        //  dd($bill);
+
         // dd($gateway->ClientToken()->generate());
 
-        return view('pages.pay', compact('gateway','token'));
+        return view('pages.pay', compact('gateway','token', 'orders'));
     }
 
     public function checkoutOrder(Request $request)
