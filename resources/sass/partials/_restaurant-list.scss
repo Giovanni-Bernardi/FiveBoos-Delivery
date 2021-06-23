@@ -60,26 +60,27 @@ div.list-jumbotron {
     display: flex;
 }
 
-
-.titles-restaurant-list {
-    width: 80%;
-    margin: auto;
-    h2#title {
-        text-align: center;
-        font-size: 56px;
-        font-weight: bold;
-        // text-shadow: 1px 1px whitesmoke;
-        // &:hover {
-        // text-shadow: 2px 2px white;
-        // transition: all .5s ease-in-out;
-
-        // }
-            }
-    h4 {
-        font-size: 32px;
-        text-align: left;
-        margin-left: 10px;
-        //nothing to see here
+    .titles-restaurant-list {
+        width: 80%;
+        margin: auto;
+        h2#title {
+            text-align: center;
+            font-size: 56px;
+            font-weight: bold;
+            // text-shadow: 1px 1px whitesmoke;
+            // &:hover {
+            // text-shadow: 2px 2px white;
+            // transition: all .5s ease-in-out;
+    
+            // }
+             }
+        h4 {
+            font-size: 32px;
+            text-align: left;
+            margin-left: 10px;
+            margin: 40px 0 10px 0;
+            //nothing to see here
+        }
     }
 }
 .restaurants-box {

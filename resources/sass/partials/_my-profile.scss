@@ -1,0 +1,92 @@
+//main container
+#restaurant-container {
+  // padding: 70px 0;
+  height: 100vh;
+  background-color: #00CCBC;
+  padding-top: 70px;
+
+    #welcome-back {
+      width: 100%;
+      background-color: #8fddd7;
+      height: 40px;
+      font-size: 1.4rem;
+      padding-left: 2%;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+       span {
+
+       }
+    }
+    #create-row {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      #left-create{
+        display: flex;
+        justify-content: flex-start;
+      }
+      #right-create {
+        display: flex;
+        justify-content: flex-end;
+        .fa, .fas{
+          font-size: 20px;
+          padding-left: 10px;
+          vertical-align: middle;
+        }
+          #create-button {
+            padding: 10px;
+            text-decoration: none;
+            color: #202020;
+            background-color: #FAD10A;
+            text-align: center;
+            border-radius: 20px;
+        }
+      }
+    }
+    #restaurant-cards {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-top: 30px;
+      // padding: 0 10%;
+      .crd{
+        // width: calc(100%/4);
+        width: 22%;
+        margin: 0 1%;
+        height: 480px;
+        border-radius: 20px;
+        background-color: white;
+        li {
+          span {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #202020;
+          }
+          span, p, a{
+            padding: 0 7%;
+          }
+          img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+        }
+        .fa, .fas {
+          font-size: 22px;
+          padding-left: 7%;
+        }
+      }
+    }
+  }
+
+  //spacing
+.side-padding {
+  padding: 0 6%;
+}
+
+
+

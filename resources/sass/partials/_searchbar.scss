@@ -21,9 +21,10 @@
   #cover {
     padding: 10px;
     background-color: #ffffff;
-    border-radius: 30px;
+    border-radius: 55px;
     color: black;
-    border: 8px solid black;
+    // border: 8px solid black;
+    box-shadow: 0 2px 8px 0 #1e988e;
     transform: scale(0.53);
     align-items: stretch;
   }
@@ -150,14 +151,14 @@
     z-index: 125;
   }
 
-  p {
-    border-right: solid 3px rgba(0, 0, 0, 0.75);
-    white-space: nowrap;
-    overflow: hidden; 
-    font-size: 49px;
-    animation: animated-text 1.6s linear 1s 1 normal both,
-    animated-cursor 600ms linear infinite !important;
-  }
+  // p {
+  //   border-right: solid 3px rgba(0, 0, 0, 0.75);
+  //   white-space: nowrap;
+  //   overflow: hidden; 
+  //   font-size: 49px;
+  //   animation: animated-text 1.6s linear 1s 1 normal both,
+  //   animated-cursor 600ms linear infinite !important;
+  // }
     // animation: animated-text 4s linear 1s 1 normal both,
     // animated-cursor 600ms linear infinite;
   

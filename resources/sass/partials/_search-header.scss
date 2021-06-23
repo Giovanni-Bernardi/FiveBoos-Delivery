@@ -173,6 +173,9 @@ ul.menulist {
     justify-content: space-around;
     align-items: center;
     background: #00CCBC;
+    -webkit-box-shadow: 0 4px 10px -6px #313131;
+    -moz-box-shadow: 0 4px 10px -5px #313131;
+    box-shadow: 0 4px 10px -5px #313131;
   }
 
   #cart {
