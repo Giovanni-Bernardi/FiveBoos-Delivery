@@ -20,7 +20,7 @@
                             <span class="input-label">TOTALE ORDINE</span>
 
                             <div class="input-wrapper amount-wrapper">
-                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
+                                <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
                             </div>
                         </label>
 
@@ -33,7 +33,6 @@
                     <input id="nonce" name="payment_method_nonce" type="hidden" />
                     <button class="btn btn-primary" type="submit"><span>PAGA IL TUO ORDINE</span></button>
                 </form>
-
             </div>
         </div>
     </div>
