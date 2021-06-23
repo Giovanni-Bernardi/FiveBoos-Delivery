@@ -9,17 +9,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route per pagina di Login
+// Route Lista Ristoranti
 Route::get('/restaurant/list', 'RestaurantController@restaurantListView')->name('restaurantListLink');
 
 // Route per pagina di Login
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route princilape (Home)
+// Route principale (Home)
 Route::get('/index','RestaurantController@indexView') -> name('indexViewLink');
 
 // Route dettaglio ristorante con lista prodotti
 Route::get('/restaurant/{id}','RestaurantController@restaurantDetailsView') -> name('restaurantDetailsViewLink');
+
+// Route profilo ristoratore loggato
+Route::get('/restaurant/profile/{id}', 'RestaurantController@restaurantProfileView')->name('restaurantProfileViewLink');
 
 // Route dettaglio piatto
 Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');
@@ -48,6 +51,7 @@ Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('dele
 
 // Route pay
 Route::get('pay','PaymentController@payOrder') -> name('payOrder');
+
 // Route checkout
 Route::post('checkout','PaymentController@checkoutOrder') -> name('checkoutOrder');
 Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');

@@ -156,6 +156,9 @@ ul.menulist {
   background-color: #00CCBC;
   height: 75px;
   margin-top: -3px;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
 }
 
 .transparent {

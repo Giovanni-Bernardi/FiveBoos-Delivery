@@ -31,6 +31,11 @@ class RestaurantController extends Controller
         $restaurant = Restaurant::findOrFail($id);
         return view('pages.restaurant-details', compact('restaurant'));
     }
+    //pagina Profilo Ristoratre loggato
+    public function restaurantProfileView($id){
+        $restaurant = Restaurant::findOrFail($id);
+        return view('pages.my-profile', compact('restaurant'));
+    }
     //pagina product details
     public function productDetailsView($id){
         $product = Product::findOrFail($id);
