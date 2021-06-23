@@ -1,12 +1,3 @@
-// require('./bootstrap');
-//
-// window.Vue = require('vue');
-//
-// // const files = require.context('./', true, /\.vue$/i)
-// // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-//
-// import axios from 'axios';
-// import Vue from 'vue';
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -28,21 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
         mounted() {
             this.currentRestaurantId = window.id;
             this.getProducts();
-            // this.getRestaurants();
-            // this.getTypes();
             console.log(this.currentRestaurantId);
         },
         methods: {
-            // getRestaurants() {
-            //     axios.get('/api/restaurants')
-            //     .then(response =>{
-            //         this.restaurants = response.data
-            //         console.log(this.restaurants);
-            //     })
-            //     .catch(error => {
-            //         console.log(error)
-            //     })
-            // },
             getProducts() {
                 axios.get('/api/products/' + this.currentRestaurantId)
                 .then(response =>{

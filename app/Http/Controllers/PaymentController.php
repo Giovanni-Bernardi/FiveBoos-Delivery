@@ -3,8 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+use App\Mail\NewOrderNotify;
 
 use Braintree;
+use App\Restaurant;
+use App\Product;
+use App\Category;
 use App\Order;
 
 class PaymentController extends Controller
@@ -40,7 +46,7 @@ class PaymentController extends Controller
     public function checkoutOrder(Request $request, $id)
     {
         $order = Order::findOrFail($id);
-        // dd($order);
+
         $gateway = $this -> braintreeGateway();
 
         $amount = $request -> amount;
@@ -68,6 +74,9 @@ class PaymentController extends Controller
             $transaction = $result->transaction;
             $order -> payment_status = 1;
             $order -> save();
+
+            $mail = new NewOrderNotify($order);
+            Mail::to('client@mail.com') -> send(new NewOrderNotify($order));
 
             return redirect() -> route('byebyeOrder') -> with ('message', 'pagamento andato a buon fine. ID pagamento: ' .
             $transaction -> id);
