@@ -12524,10 +12524,10 @@ nav {
   transition: ease-in-out 0.3s;
 }
 
-#pot {
+#scooter {
   position: absolute;
-  -webkit-animation: run 5s linear infinite alternate;
-          animation: run 5s linear infinite alternate;
+  -webkit-animation: run 8s;
+          animation: run 8s;
 }
 
 .prova1 {
@@ -12535,21 +12535,13 @@ nav {
   color: pink;
 }
 
-.movimento {
-  position: relative;
-}
-
 @-webkit-keyframes run {
-  0% {
-    left: 0;
+  from {
+    left: 0px;
   }
 
-  50% {
-    left: calc(100% - 100px);
-  }
-
-  100% {
-    left: 0;
+  to {
+    left: 1200px;
   }
 }
 
@@ -12557,9 +12549,16 @@ nav {
   height: 400px;
   margin-top: 50px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   width: 50%;
+}
+
+.home_route {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.home_route a {
+  color: pink;
 }
 
 * {

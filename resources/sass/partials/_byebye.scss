@@ -1,7 +1,7 @@
-#pot {
+#scooter {
     // bottom: 15%;
     position: absolute;
-    animation: run 5s linear infinite alternate;
+    animation: run 8s;
 }
 
 .prova1 {
@@ -10,22 +10,18 @@
     // background-color: blue;
 }
 
-.movimento {
-    position: relative;
-}
+// .movimento {
+//     position: relative;
+// }
 
 @-webkit-keyframes run {
-    0% {
-        left: 0;
-    }
+   from {
+       left: 0px;
+   }
 
-    50% {
-        left: calc(100% - 100px);
-    }
-
-    100% {
-        left: 0;
-    }
+   to {
+       left: 1200px;
+   }
 }
 
 .riders-img {
@@ -33,7 +29,16 @@
     height: 400px;
     margin-top: 50px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
     width: 50%;
+}
+
+.home_route{
+    font-size: 3rem;
+    text-align: center;
+    
+    a{
+        color: pink;
+    }
 }
