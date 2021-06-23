@@ -11690,6 +11690,10 @@ div.list-jumbotron ul li label img {
   height: 80px;
 }
 
+.category-list {
+  display: flex;
+}
+
 .titles-restaurant-list {
   width: 80%;
   margin: auto;
