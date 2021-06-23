@@ -11748,11 +11748,10 @@ main.details .dishes-box ul li .unavailable {
   cursor: auto;
   color: lightgrey;
   background-color: rgba(0, 0, 0, 0.3);
-  filter: grayscale(80%);
 }
 
 main.details .dishes-box ul li .unavailable:hover {
-  border: 1px solid whitesmoke;
+  border: 1px solid lightgrey;
   box-shadow: none;
 }
 
