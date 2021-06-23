@@ -7,6 +7,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('restaurants', 'API\RestaurantController');
-Route::apiResource('products', 'API\ProductController');
-Route::apiResource('types', 'API\TypeController');
+Route::get('/products/{id}','API\ProductController@index') -> name('indexapi');

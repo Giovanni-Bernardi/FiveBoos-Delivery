@@ -48,6 +48,7 @@ Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('dele
 
 // Route pay
 Route::get('pay/{id}','PaymentController@payOrder') -> name('payOrder');
+
 // Route checkout
 Route::post('checkout/{id}','PaymentController@checkoutOrder') -> name('checkoutOrder');
 Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');

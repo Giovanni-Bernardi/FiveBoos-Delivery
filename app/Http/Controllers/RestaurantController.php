@@ -84,6 +84,6 @@ class RestaurantController extends Controller
         $order -> products() -> attach($request -> get('products_id'));
         $order -> save();
 
-        return redirect() -> route('payOrder');
+        return redirect() -> route('payOrder', $order -> id);
     }
 }

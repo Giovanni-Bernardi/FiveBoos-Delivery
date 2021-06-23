@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
     data: {
       restaurants: [],
       products: [],
-      types: [],
       cart: [],
       numberProduct: [],
       filterRestaurants: [],
@@ -140,23 +139,13 @@ document.addEventListener('DOMContentLoaded', function () {
       getProducts: function getProducts() {
         var _this = this;
 
-        axios.get('/api/products/').then(function (response) {
+        axios.get('/api/products/' + this.currentRestaurantId).then(function (response) {
           _this.products = response.data;
           console.log(_this.products);
         })["catch"](function (error) {
           console.log(error);
         });
       },
-      // getTypes() {
-      //     axios.get('/api/types')
-      //     .then(response =>{
-      //         this.types = response.data
-      //         console.log(this.types);
-      //     })
-      //     .catch(error => {
-      //         console.log(error)
-      //     })
-      // },
       increase: function increase(platesId, index) {
         this.cart[index].counter++;
         this.totalPrice += this.cart[index].price;

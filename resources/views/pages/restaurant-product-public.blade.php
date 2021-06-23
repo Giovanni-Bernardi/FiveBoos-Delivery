@@ -40,7 +40,7 @@
                 </h4>
             </li>
 
-            <li v-for='(product, prIndex) in products' v-if="product.restaurant_id == currentRestaurantId">
+            <li v-for='(product, prIndex) in products'>
                 <div>
                     <div>ID: @{{product.id}}</div>
                     <div>Name: @{{product.name}}</div>

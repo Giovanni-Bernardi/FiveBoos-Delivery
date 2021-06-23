@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         data: {
             restaurants: [],
             products: [],
-            types: [],
             cart: [],
             numberProduct: [],
             filterRestaurants: [],
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //     })
             // },
             getProducts() {
-                axios.get('/api/products/')
+                axios.get('/api/products/' + this.currentRestaurantId)
                 .then(response =>{
                     this.products = response.data
                     console.log(this.products);
@@ -54,16 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(error)
                 })
             },
-            // getTypes() {
-            //     axios.get('/api/types')
-            //     .then(response =>{
-            //         this.types = response.data
-            //         console.log(this.types);
-            //     })
-            //     .catch(error => {
-            //         console.log(error)
-            //     })
-            // },
             increase(platesId, index) {
                 this.cart[index].counter++;
                 this.totalPrice += (this.cart[index].price);

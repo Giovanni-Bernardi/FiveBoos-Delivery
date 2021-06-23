@@ -12,7 +12,7 @@ class PaymentController extends Controller
     // pagamento ordine
 
     // private F da riusare quando necessario
-    private function braintreeGateway()
+    public function braintreeGateway()
     {
         $gateway = new Braintree\Gateway([
         'environment' => env('BT_ENVIRONMENT'),
@@ -30,20 +30,17 @@ class PaymentController extends Controller
 
         $token = $gateway->ClientToken()->generate();
 
-        $orders = Order::findOrFail($id);
-        dd($orders);
-        //  dd($bill);
+        $order = Order::findOrFail($id);
 
         // dd($gateway->ClientToken()->generate());
 
-        return view('pages.pay', compact('gateway', 'token', 'orders'));
+        return view('pages.pay', compact('order', 'gateway', 'token'));
     }
 
     public function checkoutOrder(Request $request, $id)
     {
-        // dd($request);
         $order = Order::findOrFail($id);
-        dd($order);
+        // dd($order);
         $gateway = $this -> braintreeGateway();
 
         $amount = $request -> amount;
@@ -68,21 +65,24 @@ class PaymentController extends Controller
 
         // situazione di successo
         if ($result->success) {
-        $transaction = $result->transaction;
+            $transaction = $result->transaction;
+            $order -> payment_status = 1;
+            $order -> save();
 
-        // dd('success');
-        return redirect() -> route('byebyeOrder') -> with ('message', 'pagamento andato a buon fine. ID pagamento: ' .
-        $transaction -> id);
+            return redirect() -> route('byebyeOrder') -> with ('message', 'pagamento andato a buon fine. ID pagamento: ' .
+            $transaction -> id);
 
-        // situazione di errore
-        } else {
-        $errorString = "";
 
-        foreach ($result->errors->deepAll() as $error) {
-        $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            // situazione di errore
         }
+        else {
+            $errorString = "";
 
-        return redirect() -> route('byebyeOrder') -> withErrors('errore di pagamento: ' . $result -> message);
+            foreach ($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
+
+            return redirect() -> route('byebyeOrder') -> withErrors('errore di pagamento: ' . $result -> message);
         }
     }
 
