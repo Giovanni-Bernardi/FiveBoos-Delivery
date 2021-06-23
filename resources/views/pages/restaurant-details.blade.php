@@ -2,35 +2,51 @@
 
 @section('content')
     <main class="details">
-        <h2></h2>
+        <div class="details-jumbotron">
+        </div>
+        <div class="restaurant-info">
+            <h2>
+                Restaurant '{{$restaurant -> business_name}}' details
+            </h2>
+            <div id="info">
+                {{-- <button>Mostra Altro</button> --}}
+                <!-- modal popup info -->
+                <button id="myBtn">Mostra Altro</button>
+                <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="info-box">
+                        <p>
+                            Business name: {{$restaurant -> business_name}}
+                        </p>
+                        <p>
+                            Address: {{$restaurant -> address}}
+                        </p>
+                        <p>
+                            P-IVA: {{$restaurant -> piva}}
+                        </p>
+                        <p>
+                            Telephone: {{$restaurant -> telephone}}
+                        </p>
+                        <p>
+                            Description: {{$restaurant -> description}}
+                        </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="overview">
+                <div class="checkout-button">
+                    <a href="">Vai alla Cassa</a>
+                </div>
+                <div class="temp-cart">
+                    <p>Il tuo carrello è vuoto</p>
+                </div>
+            </div>
+        </div>
         <ul>
-            <li>
-                <h4>
-                    Restaurant '{{$restaurant -> business_name}}' details
-                </h4>
-            </li>
-            <li>
-                Business name: {{$restaurant -> business_name}}
-            </li>
-            <li>
-                Address: {{$restaurant -> address}}
-            </li>
-            <li>
-                P-IVA: {{$restaurant -> piva}}
-            </li>
-            <li>
-                Telephone: {{$restaurant -> telephone}}
-            </li>
-            <li>
-                Description: {{$restaurant -> description}}
-            </li>
-            <li>
-                <u>
-                    Owner: {{$restaurant -> user -> email}}
-                </u>
-            </li>
-            <li>
-                Categories:
+            {{-- <li>
+                Categories: 
             </li>
             @foreach ($restaurant -> categories as $category)
             <li>
@@ -49,107 +65,47 @@
                 @endif
             @endif
         </ul>
-
+        
         <hr>
-
-        <ul>
-            <li>
-                <h4>
-                    Products list:
-                </h4>
-            </li>
-            <li v-for='(product, prIndex) in products' v-if="product.restaurant_id == currentRestaurantId">
-                <div>
-                    <div>ID: @{{product.id}}</div>
-                    <div>Name: @{{product.name}}</div>
-                    <div>Price: @{{product.price}} €</div>
-                    <div>IdRestaurant: @{{product.restaurant_id}}</div>
-                    <div>Ingredients: @{{product.ingredients}}</div>
-                    <div>Description: @{{product.description}}</div>
-                    <div>
-                        <button type="button" @click="addToCart(product.id, product.name, product.price, quantity)">Add to Cart</button>
-                    </div>
-
-                </div>
-            </li>
-            <li><h1>Carello</h1></li>
-            <li v-for='(plates, index) in cart'>
-                <div>ID: @{{plates.id}}</div>
-                <div>Name: @{{plates.name}}</div>
-                <div>Price: @{{plates.price}} €</div>
-                <div>Quantita: @{{plates.counter}}</div>
-                <button @click="increase(plates.id, index)">+</button>
-                <button @click="decrease(plates.id, index)">-</button>
-                <br>
-            </li>
-            <li>totalPrice: @{{totalPrice}}</li>
-        </ul>
-        <form method="POST" action="{{ route('storeOrder') }}" >
-            @csrf
-            @method('POST')
-
-            <h1 class="text-center">New Order:</h1>
+        <div class="dishes-box">
+            <h4>
+                Products list:
+            </h4>
             <ul>
-
-              <li>
-                <h2>firstname</h2>
-                <div>
-                  <input type="text" name="firstname" placeholder="firstname" required>
-                </div>
-              </li>
-
-              <li>
-                <h2>lastname</h2>
-                <div>
-                  <input type="text" name="lastname" placeholder="lastname" required>
-                </div>
-              </li>
-
-              <li>
-                <h2>email</h2>
-                <div>
-                  <input type="text" name="email" placeholder="email" required>
-                </div>
-              </li>
-
-              <li>
-                <h2>telephone</h2>
-                <div>
-                  <input type="text" name="telephone" placeholder="telephone" required>
-                </div>
-              </li>
-
-              <li>
-                <h2>address</h2>
-                <div>
-                  <input type="text" name="address" placeholder="address" required>
-                </div>
-              </li>
-
-              <li>
-                <h2>delivery_date</h2>
-                <div>
-                  <input type="date" name="delivery_date" required>
-                  <input type="time" name="delivery_time" required>
-                </div>
-              </li>
-
-                <li style="display:none">
-                  <h2>Product</h2>
-                  <div class="checkboxing">
-                    <input v-for="product in numberProduct" type="checkbox" name="products_id[]" :value="product" checked>
-                  </div>
+                @foreach ($restaurant -> products as $product)
+                <li>
+                    <div class="dish @if(!($product -> visible)) unavailable @endif" >
+                        {{-- @if(!($product -> visible)) 
+                            <div class="unavailable-dish">
+                                <h3>Non disponibile</h3>
+                            </div> 
+                        @endif --}}
+                        <div class="left-side">
+                            <span class="product-name">{{$product -> name}}:</span> <span class="prduct-price">&euro;{{$product -> price}},00</span>
+                            <div class="description">
+                                Breve descrizione del piatto
+                            </div>
+                            <div class="ingredients">
+                                <ul>
+                                    <li>ingrediente, </li>
+                                    <li>ingrediente,</li>
+                                    <li>ingrediente</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <a href="{{route('productDetailsViewLink', $product -> id)}}">
+                                <img src="{{asset('/storage/placeholder/product.png')}}" alt="placeholder product">
+                            </a>
+                        </div>
+                            {{-- details --}}
+                    </div>
                 </li>
-
+                @endforeach
             </ul>
-
-            <div class="button-center">
-              <button type="submit" class="home">Ad Car</button>
-              {{-- <a class="home" href="{{route('home')}}">List Cars</a> --}}
-            </div>
-
-        </form>
-
+        </div>
+        
         {{-- Controllo se User esiste --}}
         @if (Auth::check())
             {{-- Controllo se User è il porprietario --}}
@@ -173,8 +129,31 @@
                 </div>
             @endif
         @endif
+        <p>
+            <u>
+                Owner: {{$restaurant -> user -> email}}
+            </u>
+        </p>
+    
     </main>
-@endsection
-<script>
-    var id = {!! json_encode($restaurant->id) !!};
-</script>
+    {{-- <script>
+            function PopupModal(){
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', PopupModal);
+    </script> --}}
+    @endsection
+    
