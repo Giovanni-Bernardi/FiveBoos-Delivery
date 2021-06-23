@@ -3,35 +3,40 @@
 @section('content')
     <main class="details">
         <div class="details-jumbotron">
+        </div>
+        <div class="restaurant-info">
             <h2>
                 Restaurant '{{$restaurant -> business_name}}' details
             </h2>
+            <p>Mostra Altro</p>
+            <div class="info-box-popup">
+                <p>
+                    Business name: {{$restaurant -> business_name}}
+                </p>
+                <p>
+                    Address: {{$restaurant -> address}}
+                </p>
+                <p>
+                    P-IVA: {{$restaurant -> piva}}
+                </p>
+                <p>
+                    Telephone: {{$restaurant -> telephone}}
+                </p>
+                <p>
+                    Description: {{$restaurant -> description}}
+                </p>
+            </div>
+            <div class="overview">
+                <div class="checkout-button">
+                    <a href="">Vai alla Cassa</a>
+                </div>
+                <div class="temp-cart">
+                    <p>Il tuo carrello è vuoto</p>
+                </div>
+            </div>
         </div>
         <ul>
-
-            <li>
-            </li>
-            <li>
-                Business name: {{$restaurant -> business_name}}
-            </li>
-            <li>
-                Address: {{$restaurant -> address}}
-            </li>
-            <li>
-                P-IVA: {{$restaurant -> piva}}
-            </li>
-            <li>
-                Telephone: {{$restaurant -> telephone}}
-            </li>
-            <li>
-                Description: {{$restaurant -> description}}
-            </li>
-            <li>
-                <u>
-                    Owner: {{$restaurant -> user -> email}}
-                </u>
-            </li>
-            <li>
+            {{-- <li>
                 Categories: 
             </li>
             @foreach ($restaurant -> categories as $category)
@@ -39,17 +44,17 @@
                 {{$category -> name}}
             </li>
             @endforeach
-
+             --}}
             @if (Auth::user()->id == $restaurant -> user_id)
-                <li>
-                    <a href="{{route('editRestaurantViewLink', $restaurant -> id)}}">Edit this restaurant</a>
-                </li>
-                <li>
-                    <a href="{{route('deleteRestaurantLink', $restaurant -> id)}}">Delete this restaurant</a>
-                </li>
+            <li>
+                <a href="{{route('editRestaurantViewLink', $restaurant -> id)}}">Edit this restaurant</a>
+            </li>
+            <li>
+                <a href="{{route('deleteRestaurantLink', $restaurant -> id)}}">Delete this restaurant</a>
+            </li>
             @endif
         </ul>
-
+        
         <hr>
         <div class="dishes-box">
             <h4>
@@ -57,39 +62,65 @@
             </h4>
             <ul>
                 @foreach ($restaurant -> products as $product)
-                    <li>
-                        <div class="dish">
-                            {{$product -> name}}: &euro;{{$product -> price}},00
+                <li>
+                    <div class="dish @if(!($product -> visible)) unavailable @endif" >
+                        @if(!($product -> visible)) 
+                            <div class="unavailable-dish">
+                                <h3>Non disponibile</h3>
+                            </div> 
+                        @endif
+                        <div class="left-side">
+                            <span class="product-name">{{$product -> name}}:</span> <span class="prduct-price">&euro;{{$product -> price}},00</span>
+                            <div class="description">
+                                Breve descrizione del piatto
+                            </div>
+                            <div class="ingredients">
+                                <ul>
+                                    <li>ingrediente, </li>
+                                    <li>ingrediente,</li>
+                                    <li>ingrediente</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-side">
                             <a href="{{route('productDetailsViewLink', $product -> id)}}">
-                                <img src="{{asset('/storage/placeholder/product.png')}}" alt="">
-                                {{-- details --}}
+                                <img src="{{asset('/storage/placeholder/product.png')}}" alt="placeholder product">
                             </a>
                         </div>
-                    </li>
+                            {{-- details --}}
+                    </div>
+                </li>
                 @endforeach
             </ul>
         </div>
-
+        
         @if (Auth::user()->id == $restaurant -> user_id)
-            <h3>
-                <a href="{{route('statsMonthLink', ['restaurantId' => $restaurant -> id, 'selectedYear' => 2020])}}">Statistics Chart Route: CLICK HERE</a>
-            </h3>
-            <div id="appChart" style="width: 60%">
-                <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
-                {{-- <button v-on:click="getMonthsData()">STATS</button> --}}
-                <select name="year" id="yearOrder" v-model="year" v-on:change="get12MonthsData()">
-                    <option :value="currentYear">@{{currentYear}}</option>
-                    <option :value="currentYear - 1">@{{currentYear - 1}}</option>
-                    <option :value="currentYear - 2">@{{currentYear - 2}}</option>
-                </select>
-
-                <button v-on:click="">STATS</button>
-
-                {{-- -------------- CHART ---------------- --}}
-                <canvas id="myChart">
-                    Your browser does not support the canvas element.
-                </canvas>
-            </div>
+        <h3>
+            <a href="{{route('statsMonthLink', ['restaurantId' => $restaurant -> id, 'selectedYear' => 2020])}}">Statistics Chart Route: CLICK HERE</a>
+        </h3>
+        <div id="appChart" style="width: 60%">
+            <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
+            {{-- <button v-on:click="getMonthsData()">STATS</button> --}}
+            <select name="year" id="yearOrder" v-model="year" v-on:change="get12MonthsData()">
+                <option :value="currentYear">@{{currentYear}}</option>
+                <option :value="currentYear - 1">@{{currentYear - 1}}</option>
+                <option :value="currentYear - 2">@{{currentYear - 2}}</option>
+            </select>
+            
+            <button v-on:click="">STATS</button>
+            
+            {{-- -------------- CHART ---------------- --}}
+            <canvas id="myChart">
+                Your browser does not support the canvas element.
+            </canvas>
+        </div>
         @endif
+        <p>
+            <u>
+                Owner: {{$restaurant -> user -> email}}
+            </u>
+        </p>
     </main>
-@endsection
+    @endsection
+    
