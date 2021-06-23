@@ -6,6 +6,19 @@
 @section('content')
 
 <main>
+
+    <h1>
+
+        <ul>
+            @foreach ($orders as $order)
+            <li>
+                {{$order -> total_price}}
+            </li>
+            
+            @endforeach
+        </ul>
+            
+    </h1>
     <div class="container">
         <div class="row ">
             <div class="col-lg-12">

@@ -21,7 +21,9 @@ class CreateOrdersTable extends Migration
             $table -> string('email', 128);
             $table -> string('address');
             $table -> string('telephone', 32);
-            $table -> dateTime('delivery_date');
+            $table -> date('delivery_date');
+            $table -> time('delivery_time');
+            $table -> boolean('payment_status') -> default(0);
             $table -> integer('total_price');
 
             $table->timestamps();
