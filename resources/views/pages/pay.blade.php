@@ -18,9 +18,9 @@
 
                         <label for="amount">
                             <span class="input-label">TOTALE ORDINE</span>
+
                             <div class="input-wrapper amount-wrapper">
-                                {{-- da implementare con il totale di ordine del cliente --}}
-                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $order -> total_price}}">
+                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
                             </div>
                         </label>
 
