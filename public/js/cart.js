@@ -93,15 +93,6 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// require('./bootstrap');
-//
-// window.Vue = require('vue');
-//
-// // const files = require.context('./', true, /\.vue$/i)
-// // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-//
-// import axios from 'axios';
-// import Vue from 'vue';
 document.addEventListener('DOMContentLoaded', function () {
   new Vue({
     el: '#app',
@@ -120,22 +111,10 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     mounted: function mounted() {
       this.currentRestaurantId = window.id;
-      this.getProducts(); // this.getRestaurants();
-      // this.getTypes();
-
+      this.getProducts();
       console.log(this.currentRestaurantId);
     },
     methods: {
-      // getRestaurants() {
-      //     axios.get('/api/restaurants')
-      //     .then(response =>{
-      //         this.restaurants = response.data
-      //         console.log(this.restaurants);
-      //     })
-      //     .catch(error => {
-      //         console.log(error)
-      //     })
-      // },
       getProducts: function getProducts() {
         var _this = this;
 
