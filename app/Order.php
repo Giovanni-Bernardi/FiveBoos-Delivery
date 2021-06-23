@@ -11,9 +11,11 @@ class Order extends Model
         'lastname',
         'email',
         'address',
+        'telephone',
         'delivery_date',
+        'delivery_time',
+        'payment_status',
         'total_price',
-        'telephone'
     ];
 
     public function products(){

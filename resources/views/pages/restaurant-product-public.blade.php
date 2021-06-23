@@ -111,9 +111,8 @@
               <li>
                 <h2>delivery_date</h2>
                 <div>
-                  {{-- <input type="date" name="delivery_date" required>
-                  <input type="time" name="delivery_date" required> --}}
-                  <input type="date" name="delivery_date" min ='<?php echo date('Y-m-d');?>T00:00' max="2099-12-31T00:00" value="" required>
+                  <input type="date" name="delivery_date" required>
+                  <input type="time" name="delivery_time" required>
                 </div>
               </li>
 
@@ -127,7 +126,7 @@
             </ul>
 
             <div class="button-center">
-              <button type="submit" class="home">Ad Car</button>
+              <button type="submit" class="home">Go to payment</button>
               {{-- <a class="home" href="{{route('home')}}">List Cars</a> --}}
             </div>
 

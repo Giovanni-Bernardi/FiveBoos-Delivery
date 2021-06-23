@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\maste\Desktop\Esercizi Boolean\proj-final-delivery\resources\js\cart.js */"./resources/js/cart.js");
+module.exports = __webpack_require__(/*! D:\Corso programmazione Boolean\Classe 29\Esercizi Boolean\Esercizi Giugno\proj-final-delivery\resources\js\cart.js */"./resources/js/cart.js");
 
 
 /***/ })

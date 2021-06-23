@@ -1,51 +1,33 @@
 {{-- PAG PAGAMANETO --}}
 
-{{-- <?php require_once ("../includes/braintree_init.php"); ?> --}}
+
 
 @extends('layouts.pay-layout')
 @section('content')
 
 <main>
-
-    <h1>
-
-        <ul>
-            @foreach ($orders as $order)
-            <li>
-                {{$order -> total_price}}
-            </li>
-            
-            @endforeach
-        </ul>
-            
-    </h1>
     <div class="container">
         <div class="row ">
             <div class="col-lg-12">
 
                 <form method="post" id="payment-form" action=" {{route ('checkoutOrder')}}">
-
                     @csrf
+                    @method('POST')
 
                     <section>
+
                         <label for="amount">
                             <span class="input-label">TOTALE ORDINE</span>
                             <div class="input-wrapper amount-wrapper">
                                 {{-- da implementare con il totale di ordine del cliente --}}
-                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $orders -> total_price}}">
                             </div>
                         </label>
-
-                        <div>
-                            <label for="" class="col-md-4 col-form-label text-md-right">INDIRIZZO</label>
-                            <div class="col-md-6">
-                                <input id="" type="text" class="form-control" name="" value="indirizzo">
-                            </div>
-                        </div>
 
                         <div class="bt-drop-in-wrapper">
                             <div id="bt-dropin"></div>
                         </div>
+
                     </section>
 
                     <input id="nonce" name="payment_method_nonce" type="hidden" />
