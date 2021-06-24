@@ -45,14 +45,14 @@
             </div>
         </div>
         <ul>
-            {{-- <li>
+             {{-- <li>
                 Categories: 
             </li>
             @foreach ($restaurant -> categories as $category)
             <li>
                 {{$category -> name}}
             </li>
-            @endforeach
+            @endforeach --}}
 
             @if (Auth::check())
                 @if (Auth::user()->id == $restaurant -> user_id)
@@ -75,11 +75,11 @@
                 @foreach ($restaurant -> products as $product)
                 <li>
                     <div class="dish @if(!($product -> visible)) unavailable @endif" >
-                        {{-- @if(!($product -> visible)) 
-                            <div class="unavailable-dish">
+                        @if(!($product -> visible)) 
+                            {{-- <div class="unavailable-dish">
                                 <h3>Non disponibile</h3>
-                            </div> 
-                        @endif --}}
+                            </div>  --}}
+                        @endif
                         <div class="left-side">
                             <span class="product-name">{{$product -> name}}:</span> <span class="prduct-price">&euro;{{$product -> price}},00</span>
                             <div class="description">

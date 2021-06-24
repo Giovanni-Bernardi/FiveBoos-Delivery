@@ -24,7 +24,7 @@
 <body>
     <div id="app">
         {{-- rimosso header e incluso solo in index --}}
-        <div class="container-fixed"> {{-- chi è lo stronzone --}}
+        <div class="container-sticky-footer"> {{-- chi è lo stronzone --}}
             @include('components.notifications')
             @yield('content')
         </div>

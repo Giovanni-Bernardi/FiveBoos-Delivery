@@ -21,6 +21,9 @@ main.details {
         .info {
             display: flex;
             justify-content: center;
+            #myBtn {
+                color: black;
+            }
             .info-box{
                 display: none;
             }
