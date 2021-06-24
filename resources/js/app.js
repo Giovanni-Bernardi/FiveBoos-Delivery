@@ -130,7 +130,7 @@ var cursorFollow = document.querySelectorAll('.popup-note');
             window.removeEventListener('scroll', this.updateScroll);
         },
     });
-});
+
 
 
 

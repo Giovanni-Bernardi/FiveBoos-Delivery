@@ -11872,177 +11872,6 @@ div.list-jumbotron ul li label img {
   padding: 4px;
 }
 
-.tb {
-  display: table;
-  width: 100%;
-}
-
-.td {
-  display: table-cell;
-  vertical-align: top;
-  max-width: 600px;
-}
-
-input,
-button {
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-#cover {
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  color: black;
-  border: 8px solid black;
-  transform: scale(0.53);
-  align-items: stretch;
-}
-
-form {
-  height: 96px;
-}
-
-input[type=text] {
-  width: 100%;
-  height: 96px;
-  font-size: 49px;
-  line-height: 1;
-  position: absolute;
-  top: 7px;
-  max-width: 570px;
-  color: #000000;
-}
-
-input[type=text]::-moz-placeholder {
-  color: #000000;
-}
-
-input[type=text]:-ms-input-placeholder {
-  color: #000000;
-}
-
-input[type=text]::placeholder {
-  color: #000000;
-}
-
-#s-cover {
-  width: 1px;
-  padding-left: 35px;
-}
-
-button {
-  position: relative;
-  display: block;
-  width: 84px;
-  height: 96px;
-  cursor: pointer;
-}
-
-#s-circle {
-  position: relative;
-  top: -7px;
-  left: 6px;
-  width: 65px;
-  height: 62px;
-  margin-top: 0;
-  border-width: 15px;
-  border: 15px solid black;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: 0.5s ease all;
-}
-
-button span {
-  position: absolute;
-  top: 68px;
-  left: 43px;
-  display: block;
-  width: 45px;
-  height: 15px;
-  background-color: transparent;
-  border-radius: 10px;
-  transform: rotateZ(52deg);
-  transition: 0.5s ease all;
-}
-
-button span:before,
-button span:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 45px;
-  height: 15px;
-  background-color: #000000;
-  border-radius: 10px;
-  transform: rotateZ(0);
-  transition: 0.5s ease all;
-}
-
-#s-cover:hover #s-circle {
-  top: -1px;
-  width: 67px;
-  height: 15px;
-  border-width: 0;
-  background-color: #000000;
-  border-radius: 20px;
-}
-
-#s-cover:hover span {
-  top: 50%;
-  left: 56px;
-  width: 25px;
-  margin-top: -9px;
-  transform: rotateZ(0);
-}
-
-#s-cover:hover button span:before {
-  bottom: 11px;
-  transform: rotateZ(52deg);
-}
-
-#s-cover:hover button span:after {
-  bottom: -11px;
-  transform: rotateZ(-52deg);
-}
-
-#s-cover:hover button span:before,
-#s-cover:hover button span:after {
-  right: -6px;
-  width: 40px;
-  background-color: #000000;
-}
-
-#ytd-url {
-  display: block;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 10px 14px;
-  margin: 20px;
-  color: #000000;
-  font-family: Nunito;
-  font-size: 14px;
-  text-decoration: none;
-  background-color: #ff7575;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
-  z-index: 125;
-}
-
-p {
-  border-right: solid 3px rgba(0, 0, 0, 0.75);
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 49px;
-  -webkit-animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
-          animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
-}
-
 main.details .details-jumbotron {
   width: 100%;
   height: 200px;
@@ -12067,6 +11896,10 @@ main.details .restaurant-info {
 main.details .restaurant-info .info {
   display: flex;
   justify-content: center;
+}
+
+main.details .restaurant-info .info #myBtn {
+  color: black;
 }
 
 main.details .restaurant-info .info .info-box {
@@ -12182,6 +12015,177 @@ main.details .dishes-box ul li .unavailable:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+header .tb {
+  display: table;
+  width: 100%;
+}
+
+header .td {
+  display: table-cell;
+  vertical-align: top;
+  max-width: 600px;
+}
+
+header input,
+header button {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+header #cover {
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  color: black;
+  border: 8px solid black;
+  transform: scale(0.53);
+  align-items: stretch;
+}
+
+header form {
+  height: 96px;
+}
+
+header input[type=text] {
+  width: 100%;
+  height: 96px;
+  font-size: 49px;
+  line-height: 1;
+  position: absolute;
+  top: 7px;
+  max-width: 570px;
+  color: #000000;
+}
+
+header input[type=text]::-moz-placeholder {
+  color: #000000;
+}
+
+header input[type=text]:-ms-input-placeholder {
+  color: #000000;
+}
+
+header input[type=text]::placeholder {
+  color: #000000;
+}
+
+header #s-cover {
+  width: 1px;
+  padding-left: 35px;
+}
+
+header button {
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 96px;
+  cursor: pointer;
+}
+
+header #s-circle {
+  position: relative;
+  top: -7px;
+  left: 6px;
+  width: 65px;
+  height: 62px;
+  margin-top: 0;
+  border-width: 15px;
+  border: 15px solid black;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+}
+
+header button span {
+  position: absolute;
+  top: 68px;
+  left: 43px;
+  display: block;
+  width: 45px;
+  height: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  transform: rotateZ(52deg);
+  transition: 0.5s ease all;
+}
+
+header button span:before,
+header button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 15px;
+  background-color: #000000;
+  border-radius: 10px;
+  transform: rotateZ(0);
+  transition: 0.5s ease all;
+}
+
+header #s-cover:hover #s-circle {
+  top: -1px;
+  width: 67px;
+  height: 15px;
+  border-width: 0;
+  background-color: #000000;
+  border-radius: 20px;
+}
+
+header #s-cover:hover span {
+  top: 50%;
+  left: 56px;
+  width: 25px;
+  margin-top: -9px;
+  transform: rotateZ(0);
+}
+
+header #s-cover:hover button span:before {
+  bottom: 11px;
+  transform: rotateZ(52deg);
+}
+
+header #s-cover:hover button span:after {
+  bottom: -11px;
+  transform: rotateZ(-52deg);
+}
+
+header #s-cover:hover button span:before,
+header #s-cover:hover button span:after {
+  right: -6px;
+  width: 40px;
+  background-color: #000000;
+}
+
+header #ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #000000;
+  font-family: Nunito;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #ff7575;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
+  z-index: 125;
+}
+
+header p {
+  border-right: solid 3px rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 49px;
+  -webkit-animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
+          animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
 }
 
 footer {
