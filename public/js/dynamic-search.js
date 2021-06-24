@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -201,14 +201,14 @@ document.addEventListener('DOMContentLoaded', dynamicSearch);
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!**********************************************!*\
   !*** multi ./resources/js/dynamic-search.js ***!
   \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\Corso\EserciziGit\proj-final-delivery\resources\js\dynamic-search.js */"./resources/js/dynamic-search.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\dynamic-search.js */"./resources/js/dynamic-search.js");
 
 
 /***/ })

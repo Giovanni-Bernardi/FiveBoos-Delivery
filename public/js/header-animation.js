@@ -81,111 +81,59 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/cart.js":
-/*!******************************!*\
-  !*** ./resources/js/cart.js ***!
-  \******************************/
+/***/ "./resources/js/header-animation.js":
+/*!******************************************!*\
+  !*** ./resources/js/header-animation.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-document.addEventListener('DOMContentLoaded', function () {
-  new Vue({
-    el: '#app',
-    data: {
-      restaurants: [],
-      products: [],
-      cart: [],
-      numberProduct: [],
-      filterRestaurants: [],
-      typeSelect: '',
-      search: '',
-      currentRestaurantId: '',
-      visibility: false,
-      quantity: 1,
-      totalPrice: 0
-    },
-    mounted: function mounted() {
-      this.currentRestaurantId = window.id;
-      this.getProducts();
-      console.log(this.currentRestaurantId);
-    },
-    methods: {
-      getProducts: function getProducts() {
-        var _this = this;
+// Funzione di animazione header a scroll verticale
+function scrolledHeader() {
+  // Px scroll verticale
+  var scrollValueY = window.scrollY;
+  var header = document.getElementById('scrolledHeader');
 
-        axios.get('/api/products/' + this.currentRestaurantId).then(function (response) {
-          _this.products = response.data;
-          console.log(_this.products);
-        })["catch"](function (error) {
-          console.log(error);
-        });
-      },
-      increase: function increase(platesId, index) {
-        this.cart[index].counter++;
-        this.totalPrice += this.cart[index].price;
-        var product = {
-          id: platesId
-        };
-        this.numberProduct.push(platesId);
-        console.log(this.numberProduct);
-      },
-      decrease: function decrease(platesId, index) {
-        if (this.cart[index].counter > 0) {
-          this.cart[index].counter--;
-          this.totalPrice -= this.cart[index].price;
-          var product = {
-            id: platesId
-          };
-          this.numberProduct.splice(index, 1);
-        } else if (this.cart[index].counter < 1) {
-          this.cart.splice(index, 1);
-        }
-      },
-      addToCart: function addToCart(productId, productName, productPrice, counter) {
-        var object = {
-          id: productId,
-          name: productName,
-          price: productPrice,
-          counter: counter
-        };
+  if (scrollValueY > 0) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+} // Funzione animazione hamburger e apertura menu
 
-        if (this.cart.length == 0) {
-          this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
-          this.cart.push(object);
-          this.numberProduct.push(productId);
-          console.log(this.numberProduct);
-        } else {
-          // se id presente nel cart non deve pushiare piatto
-          for (var i = 0; i <= this.cart.length; i++) {
-            if (this.cart[i].id == object.id) {
-              break;
-            } else if (i == this.cart.length - 1) {
-              this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
-              this.cart.push(object);
-              this.numberProduct.push(productId);
-            }
-          }
-        }
-      }
-    }
+
+function hambugerClick() {
+  var hambuger = document.getElementsByClassName('ham-container')[0];
+  var hamburgerMenu = document.getElementsByClassName('menulist')[0];
+  hambuger.addEventListener('click', function () {
+    hambuger.classList.toggle('active');
+    hamburgerMenu.classList.toggle('active');
   });
-});
+}
+
+function init() {
+  console.log('JS header attivo');
+  window.addEventListener('scroll', scrolledHeader);
+  hambugerClick();
+}
+
+document.addEventListener('DOMContentLoaded', init);
 
 /***/ }),
 
-/***/ 2:
-/*!************************************!*\
-  !*** multi ./resources/js/cart.js ***!
-  \************************************/
+/***/ 1:
+/*!************************************************!*\
+  !*** multi ./resources/js/header-animation.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\cart.js */"./resources/js/cart.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\header-animation.js */"./resources/js/header-animation.js");
 
 
 /***/ })

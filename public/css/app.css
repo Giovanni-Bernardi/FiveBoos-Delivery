@@ -246,336 +246,270 @@
   }
 }
 
-.site-logo a {
-  color: #000000;
-}
-
-.site-logo a img {
-  width: auto;
-  height: 60px;
-  position: absolute;
-  top: 12px;
-  left: 90px;
-}
-
 header {
   height: 75px;
   width: 100%;
   z-index: 900;
+  background: transparent;
   position: fixed;
-  margin-top: -3px;
+  transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
 }
 
-.menulist {
+header.scrolled {
+  height: 100px;
+  background-color: #00ccbc;
+  box-shadow: 0 0 10px 0 #5e5e5e;
+}
+
+header nav {
+  padding: 10px 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header nav img {
+  vertical-align: middle;
+  width: 200px;
+}
+
+header nav .ham-container {
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  margin-right: 30px;
+}
+
+header nav .ham-container .hamburger {
+  position: relative;
+  z-index: 950;
+  line-height: 30px;
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  border: 0;
+  transition: background-color 0.5s;
+}
+
+header nav .ham-container .hamburger::before,
+header nav .ham-container .hamburger::after {
+  content: "";
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  border: 0;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+}
+
+header nav .ham-container .hamburger::before {
+  top: -9px;
+}
+
+header nav .ham-container .hamburger::after {
+  bottom: -9px;
+}
+
+header nav .ham-container.active .hamburger {
+  background-color: transparent;
+}
+
+header nav .ham-container.active .hamburger::before,
+header nav .ham-container.active .hamburger::after {
+  width: 30px;
+  background-color: white;
+  left: 50%;
+}
+
+header nav .ham-container.active .hamburger::before {
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+header nav .ham-container.active .hamburger::after {
+  bottom: 50%;
+  transform: translate(-50%, 50%) rotateZ(-45deg);
+}
+
+header .menulist {
   top: 0px;
   left: -100%;
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   position: fixed;
-  list-style: none;
+  z-index: 910;
   text-align: center;
   padding-top: 50px;
   margin-right: 0px;
   margin-right: 10px;
-  transition: 0.5s;
-  background: #00ccbc;
-}
-
-.menulist li {
-  font-size: 18px;
-  font-weight: bold;
-  position: relative;
-  margin: 10px;
-}
-
-.menulist li a {
-  text-decoration: none;
-  color: #000000;
-}
-
-body > header > nav > ul > li:nth-child(1) > a {
-  background-color: #ffaf53;
-  padding: 10px 50px;
-  border-radius: 3px;
-}
-
-.check {
-  height: 71px;
-  width: 60px;
-  position: absolute;
-  margin: 10px 15px;
-  z-index: 3;
+  background-color: #00ccbc;
+  transition: left 0.5s, visibility 0.5s, opacity 0.5s;
   opacity: 0;
-  cursor: pointer;
-  z-index: 910;
-}
-
-.ham-menu {
-  height: 71px;
-  width: 60px;
-  margin: 0px 20px 3px 15px;
-  display: block;
-}
-
-.menuline {
-  height: 3px;
-  width: 30px;
-  position: relative;
-  margin: auto;
-  display: flex;
-  top: 50%;
-  background: #ffffff;
-  border-radius: 5px;
-  z-index: 901;
-}
-
-.menuline::before {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 30px;
-  top: -8px;
-  background: #ffffff;
-  border-radius: 5px;
-}
-
-.menuline::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 30px;
-  top: 8px;
-  background: #ffffff;
-  border-radius: 5px;
-}
-
-.content-area {
-  height: 1000px;
-  width: 100%;
-  text-align: center;
-}
-
-.menulist {
-  display: block;
-  margin-right: 0px;
-}
-
-ul.menulist {
-  width: 100%;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.menulist li a {
-  font-size: 1.8rem;
-  text-align: center;
+header .menulist.active {
+  left: 0%;
+  visibility: visible;
+  opacity: 1;
 }
 
-.check:checked ~ .menulist {
-  left: 0;
+header .menulist li {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
-.check:checked ~ .ham-menu .menuline {
-  transform: rotate(135deg);
-  transition: 0.3s ease;
+header .menulist li:first-child a {
+  background-color: #ffaf53;
+  padding: 10px 50px;
+  border-radius: 3px;
 }
 
-.check:checked ~ .ham-menu .menuline::before,
-.check:checked ~ .ham-menu .menuline::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-.scroll-color {
-  background-color: #00CCBC;
-  height: 75px;
-  margin-top: -3px;
-  box-shadow: 0 4px 6px -6px #222;
-}
-
-.transparent {
-  background: transparent;
-}
-
-nav {
-  min-height: 75px;
-}
-
-.site-logo-2 a {
+header .menulist li a {
+  text-decoration: none;
   color: #000000;
-}
-
-.site-logo-2 a img {
-  width: auto;
-  height: 60px;
-  position: absolute;
-  top: 40px;
-  left: 90px;
 }
 
 header {
   height: 75px;
   width: 100%;
   z-index: 900;
+  background: transparent;
   position: fixed;
-  margin-top: -3px;
+  transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
 }
 
-.menulist {
+header.scrolled {
+  height: 100px;
+  background-color: #00ccbc;
+  box-shadow: 0 0 10px 0 #5e5e5e;
+}
+
+header nav {
+  padding: 10px 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header nav img {
+  vertical-align: middle;
+  width: 200px;
+}
+
+header nav .ham-container {
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  margin-right: 30px;
+}
+
+header nav .ham-container .hamburger {
+  position: relative;
+  z-index: 950;
+  line-height: 30px;
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  border: 0;
+  transition: background-color 0.5s;
+}
+
+header nav .ham-container .hamburger::before,
+header nav .ham-container .hamburger::after {
+  content: "";
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  border: 0;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+}
+
+header nav .ham-container .hamburger::before {
+  top: -9px;
+}
+
+header nav .ham-container .hamburger::after {
+  bottom: -9px;
+}
+
+header nav .ham-container.active .hamburger {
+  background-color: transparent;
+}
+
+header nav .ham-container.active .hamburger::before,
+header nav .ham-container.active .hamburger::after {
+  width: 30px;
+  background-color: white;
+  left: 50%;
+}
+
+header nav .ham-container.active .hamburger::before {
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+header nav .ham-container.active .hamburger::after {
+  bottom: 50%;
+  transform: translate(-50%, 50%) rotateZ(-45deg);
+}
+
+header .menulist {
   top: 0px;
   left: -100%;
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   position: fixed;
-  list-style: none;
+  z-index: 910;
   text-align: center;
   padding-top: 50px;
   margin-right: 0px;
   margin-right: 10px;
-  transition: 0.5s;
-  background: #00ccbc;
-}
-
-.menulist li {
-  font-size: 18px;
-  font-weight: bold;
-  position: relative;
-  margin: 10px;
-}
-
-.menulist li a {
-  text-decoration: none;
-  color: #000000;
-}
-
-body > header > nav > ul > li:nth-child(1) > a {
-  background-color: #ffaf53;
-  padding: 10px 50px;
-  border-radius: 3px;
-}
-
-.check {
-  height: 71px;
-  width: 60px;
-  position: absolute;
-  margin: 10px 15px;
-  z-index: 3;
+  background-color: #00ccbc;
+  transition: left 0.5s, visibility 0.5s, opacity 0.5s;
   opacity: 0;
-  cursor: pointer;
-  z-index: 910;
-}
-
-.ham-menu {
-  height: 71px;
-  width: 60px;
-  margin: 0px 20px 9px 15px;
-  display: block;
-  position: absolute;
-  left: 10px;
-}
-
-input.check {
-  position: absolute;
-  left: 10px;
-}
-
-.menuline {
-  height: 3px;
-  width: 30px;
-  position: relative;
-  margin: auto;
-  display: flex;
-  top: 50%;
-  background: #000000;
-  border-radius: 5px;
-  z-index: 901;
-}
-
-.menuline::before {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 30px;
-  top: -8px;
-  background: #000000;
-  border-radius: 5px;
-}
-
-.menuline::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 30px;
-  top: 8px;
-  background: #000000;
-  border-radius: 5px;
-}
-
-.content-area {
-  height: 1000px;
-  width: 100%;
-  text-align: center;
-}
-
-.menulist {
-  display: block;
-  margin-right: 0px;
-}
-
-ul.menulist {
-  width: 100%;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.menulist li a {
-  font-size: 1.8rem;
-  text-align: center;
+header .menulist.active {
+  left: 0%;
+  visibility: visible;
+  opacity: 1;
 }
 
-.check:checked ~ .menulist {
-  left: 0;
+header .menulist li {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
-.check:checked ~ .ham-menu .menuline {
-  transform: rotate(135deg);
-  transition: 0.3s ease;
+header .menulist li:first-child a {
+  background-color: #ffaf53;
+  padding: 10px 50px;
+  border-radius: 3px;
 }
 
-.check:checked ~ .ham-menu .menuline::before,
-.check:checked ~ .ham-menu .menuline::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-.scroll-color {
-  background-color: #00CCBC;
-  height: 75px;
-  margin-top: -3px;
-}
-
-.transparent {
-  background: transparent;
-}
-
-#search-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #00CCBC;
-  box-shadow: 0 4px 10px -5px #313131;
-}
-
-#cart {
-  font-size: 35px;
-}
-
-#container-search {
-  min-width: 750px;
+header .menulist li a {
+  text-decoration: none;
+  color: #000000;
 }
 
 footer {
@@ -1453,161 +1387,137 @@ footer .bottom .privacy .copyright {
   align-self: flex-end;
 }
 
-.site-logo a {
-  color: #000000;
-}
-
-.site-logo a img {
-  width: auto;
-  height: 60px;
-  position: absolute;
-  top: 12px;
-  left: 90px;
-}
-
 header {
   height: 75px;
   width: 100%;
   z-index: 900;
+  background: transparent;
   position: fixed;
-  margin-top: -3px;
+  transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
 }
 
-.menulist {
+header.scrolled {
+  height: 100px;
+  background-color: #00ccbc;
+  box-shadow: 0 0 10px 0 #5e5e5e;
+}
+
+header nav {
+  padding: 10px 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header nav img {
+  vertical-align: middle;
+  width: 200px;
+}
+
+header nav .ham-container {
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  margin-right: 30px;
+}
+
+header nav .ham-container .hamburger {
+  position: relative;
+  z-index: 950;
+  line-height: 30px;
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  border: 0;
+  transition: background-color 0.5s;
+}
+
+header nav .ham-container .hamburger::before,
+header nav .ham-container .hamburger::after {
+  content: "";
+  height: 4px;
+  width: 30px;
+  background-color: white;
+  border: 0;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+}
+
+header nav .ham-container .hamburger::before {
+  top: -9px;
+}
+
+header nav .ham-container .hamburger::after {
+  bottom: -9px;
+}
+
+header nav .ham-container.active .hamburger {
+  background-color: transparent;
+}
+
+header nav .ham-container.active .hamburger::before,
+header nav .ham-container.active .hamburger::after {
+  width: 30px;
+  background-color: white;
+  left: 50%;
+}
+
+header nav .ham-container.active .hamburger::before {
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+header nav .ham-container.active .hamburger::after {
+  bottom: 50%;
+  transform: translate(-50%, 50%) rotateZ(-45deg);
+}
+
+header .menulist {
   top: 0px;
   left: -100%;
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   position: fixed;
-  list-style: none;
+  z-index: 910;
   text-align: center;
   padding-top: 50px;
   margin-right: 0px;
   margin-right: 10px;
-  transition: 0.5s;
-  background: #00ccbc;
-}
-
-.menulist li {
-  font-size: 18px;
-  font-weight: bold;
-  position: relative;
-  margin: 10px;
-}
-
-.menulist li a {
-  text-decoration: none;
-  color: #000000;
-}
-
-body > header > nav > ul > li:nth-child(1) > a {
-  background-color: #ffaf53;
-  padding: 10px 50px;
-  border-radius: 3px;
-}
-
-.check {
-  height: 71px;
-  width: 60px;
-  position: absolute;
-  margin: 10px 15px;
-  z-index: 3;
+  background-color: #00ccbc;
+  transition: left 0.5s, visibility 0.5s, opacity 0.5s;
   opacity: 0;
-  cursor: pointer;
-  z-index: 910;
-}
-
-.ham-menu {
-  height: 71px;
-  width: 60px;
-  margin: 0px 20px 3px 15px;
-  display: block;
-}
-
-.menuline {
-  height: 3px;
-  width: 30px;
-  position: relative;
-  margin: auto;
-  display: flex;
-  top: 50%;
-  background: #ffffff;
-  border-radius: 5px;
-  z-index: 901;
-}
-
-.menuline::before {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 30px;
-  top: -8px;
-  background: #ffffff;
-  border-radius: 5px;
-}
-
-.menuline::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 30px;
-  top: 8px;
-  background: #ffffff;
-  border-radius: 5px;
-}
-
-.content-area {
-  height: 1000px;
-  width: 100%;
-  text-align: center;
-}
-
-.menulist {
-  display: block;
-  margin-right: 0px;
-}
-
-ul.menulist {
-  width: 100%;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.menulist li a {
-  font-size: 1.8rem;
-  text-align: center;
+header .menulist.active {
+  left: 0%;
+  visibility: visible;
+  opacity: 1;
 }
 
-.check:checked ~ .menulist {
-  left: 0;
+header .menulist li {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
-.check:checked ~ .ham-menu .menuline {
-  transform: rotate(135deg);
-  transition: 0.3s ease;
+header .menulist li:first-child a {
+  background-color: #ffaf53;
+  padding: 10px 50px;
+  border-radius: 3px;
 }
 
-.check:checked ~ .ham-menu .menuline::before,
-.check:checked ~ .ham-menu .menuline::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-.scroll-color {
-  background-color: #00CCBC;
-  height: 75px;
-  margin-top: -3px;
-  box-shadow: 0 4px 6px -6px #222;
-}
-
-.transparent {
-  background: transparent;
-}
-
-nav {
-  min-height: 75px;
+header .menulist li a {
+  text-decoration: none;
+  color: #000000;
 }
 
 * {

@@ -20,15 +20,15 @@ import Vue from 'vue';
 var cursorFollow = document.querySelectorAll('.popup-note');
 
 //TEST FUNZIONE SCOLL 1
-$(document).on('scroll', function(e) {
-    var value = $(this).scrollTop();
-    if ( value < 100 ){
-        $("header").css("background", "transparent");
-    }
-    else{
-        $("header").css("background", "red");
-    }
-});
+// $(document).on('scroll', function(e) {
+//     var value = $(this).scrollTop();
+//     if ( value < 100 ){
+//         $("header").css("background", "transparent");
+//     }
+//     else{
+//         $("header").css("background", "red");
+//     }
+// });
 
 // TEST FUNZIONE SCOLL 2
 // window.onscroll = function() {scrollFunction()};
