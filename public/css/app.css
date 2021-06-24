@@ -1103,9 +1103,9 @@ header button {
 header #cover {
   padding: 10px;
   background-color: #ffffff;
-  border-radius: 55px;
+  border-radius: 30px;
   color: black;
-  box-shadow: 0 2px 8px 0 #1e988e;
+  border: 8px solid black;
   transform: scale(0.53);
   align-items: stretch;
 }
@@ -1249,6 +1249,102 @@ header p {
   font-size: 49px;
   -webkit-animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
           animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
+}
+
+#restaurant-container {
+  height: 100vh;
+  background-color: #00CCBC;
+  padding-top: 70px;
+}
+
+#restaurant-container #welcome-back {
+  width: 100%;
+  background-color: #8fddd7;
+  height: 40px;
+  font-size: 1.4rem;
+  padding-left: 2%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+#restaurant-container #create-row {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#restaurant-container #create-row #left-create {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#restaurant-container #create-row #right-create {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#restaurant-container #create-row #right-create .fa,
+#restaurant-container #create-row #right-create .fas {
+  font-size: 20px;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+#restaurant-container #create-row #right-create #create-button {
+  padding: 10px;
+  text-decoration: none;
+  color: #202020;
+  background-color: #FAD10A;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#restaurant-container #restaurant-cards {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 30px;
+}
+
+#restaurant-container #restaurant-cards .crd {
+  width: 22%;
+  margin: 0 1%;
+  height: 480px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+#restaurant-container #restaurant-cards .crd li span {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #202020;
+}
+
+#restaurant-container #restaurant-cards .crd li span,
+#restaurant-container #restaurant-cards .crd li p,
+#restaurant-container #restaurant-cards .crd li a {
+  padding: 0 7%;
+}
+
+#restaurant-container #restaurant-cards .crd li img {
+  height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#restaurant-container #restaurant-cards .crd .fa,
+#restaurant-container #restaurant-cards .crd .fas {
+  font-size: 22px;
+  padding-left: 7%;
+}
+
+.side-padding {
+  padding: 0 6%;
 }
 
 footer {
