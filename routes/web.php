@@ -28,8 +28,8 @@ Route::get('/restaurant/profile/{id}', 'RestaurantController@restaurantProfileVi
 Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');
 
 // Route per creazione di Restaurant
-Route::get('restaurant-create', 'AdminController@createRestaurant') -> name('createRestaurant');
-Route::post('restaurant-store', 'AdminController@storeRestaurant') -> name('storeRestaurant');
+Route::get('/create/restaurant', 'AdminController@createRestaurant') -> name('createRestaurant');
+Route::post('/store/restaurant', 'AdminController@storeRestaurant') -> name('storeRestaurant');
 
 // Route per creazione di Product
 Route::get('/create/product', 'AdminController@createProduct') -> name('createProduct');

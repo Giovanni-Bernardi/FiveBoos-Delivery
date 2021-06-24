@@ -11,75 +11,77 @@
     </div>
 @endif
 
-<main>
+<main class="create-restaurant">
     <div class="container">
-        <div class="row ">
-            <div class="col-lg-12">
-                <form method="POST"
-                        action="{{ route('storeRestaurant') }}"
-                        enctype="multipart/form-data">
-    
-                    @csrf
-                    @method('POST')
-                    
-                     <div class="form-group row">
-                        <label for="business_name" class="col-md-4 col-form-label text-md-right">NOME RISTORANTE</label>
-                        <div class="col-md-6">
-                            <input id="business_name" type="text" class="form-control" name="business_name" value="" required>
+        <div class="separation-content">
+            <form method="POST" action="{{ route('storeRestaurant') }}" enctype="multipart/form-data" id="new-restaurant">
+                @csrf
+                @method('POST')
+                <ul>
+                    <li>
+                        <h2>Crea il tuo ristorante)</h2>
+                    </li>
+                    <li>
+                        <label>Nome del ristorante</label>
+                        <div class="">
+                            <input type="text" class="text" name="business_name" required>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="piva" class="col-md-4 col-form-label text-md-right">P. IVA</label>
-                        <div class="col-md-6">
-                            <input id="piva" type="number" class="form-control" name="piva" value="" required>
+                    </li>
+                    <li>
+                        <label>Partita IVA</label>
+                        <div class="">
+                            <input type="number" class="text" name="piva" required>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="address" class="col-md-4 col-form-label text-md-right">INDIRIZZO</label>
-                        <div class="col-md-6">
-                            <input id="address" type="text" class="form-control" name="address" value="" required>
+                    </li>
+                    <li>
+                        <label>Indirizzo</label>
+                        <div class="">
+                            <input type="text" class="text" name="address" required>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="description" class="col-md-4 col-form-label text-md-right">DESCRIZIONE</label>
-                        <div class="col-md-6">
-                            <input id="description" type="text" class="form-control" name="description" value="" required>
+                    </li>
+                    <li>
+                        <label>Descrizione</label>
+                        <div class="">
+                            <textarea spellcheck="false" rows="8" name="description" class="text" required></textarea>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="telephone" class="col-md-4 col-form-label text-md-right">TELEFONO</label>
-                        <div class="col-md-6">
-                            <input id="telephone" type="text" class="form-control" name="telephone" value="" required>
+                    </li>
+                    <li>
+                        <label>Telefono</label>
+                        <div class="">
+                            <input type="text" class="text" name="telephone" required>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="img" class="col-md-4 col-form-label text-md-right">IMG</label>
-                        <div class="col-md-6">
-                            <input id="img" type="file" class="form-control" name="img" value="">
+                    </li>
+                    <li>
+                        <label>Imagine del ristorante</label>
+                        <div class="">
+                            <input type="file" class="text" name="img">
                         </div>
-                    </div> 
-                    <div>
-                        Catrogies:
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-12 text-center">
+                    </li>
+                    <li>
+                        <label>Categorie</label>
+                        <div class="container-categories">
                             @foreach ($categories as $category)
-                                <label for="categories[]">
-                                    {{$category -> name}}
-                                </label>
-                                <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}">
+                                <div class="category">
+                                    <input type="checkbox" name="category_id[]" class="" value="{{$category -> id}}">
+                                    <label for="categories[]">
+                                        {{$category -> name}}
+                                    </label>
+                                </div>
                             @endforeach
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-12 text-center">
-                             <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </form>
+                    </li>
+
+                </ul>
+            </form>
+            <div class="">
+                <h1>Imagine</h1>
+                <img src="" alt="">
             </div>
+        </div>
+        <div class="submit">
+            <a class="button-back" href="#">Lista ristoranti</a>
+            <button class="button-create" type="submit" class="btn btn-primary" form="new-restaurant">Crea Ristorante</button>
         </div>
     </div>
 </main>
-
- @endsection
+@endsection

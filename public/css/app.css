@@ -1347,6 +1347,95 @@ header p {
   padding: 0 6%;
 }
 
+main.create-restaurant div.container {
+  width: 1200px;
+  margin: 30px auto;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+main.create-restaurant div.container div.separation-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+
+main.create-restaurant div.container div.separation-content form ul li {
+  padding: 10px 0;
+}
+
+main.create-restaurant div.container div.separation-content form ul li label {
+  font-family: "Fredoka One", cursive;
+  font-size: 18px;
+}
+
+main.create-restaurant div.container div.separation-content form ul li .text {
+  font-size: 15px;
+  width: 50%;
+  margin-top: 5px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+main.create-restaurant div.container div.separation-content form ul li .container-categories {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+main.create-restaurant div.container div.separation-content form ul li .container-categories .category {
+  background-color: white;
+  width: 162px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+main.create-restaurant div.container div.separation-content form ul li .container-categories .category label {
+  font-family: Inter;
+  font-size: 16px;
+}
+
+main.create-restaurant div.container .submit {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 2px solid grey;
+  padding: 15px 0;
+}
+
+main.create-restaurant div.container .submit .button-back {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: red;
+  font-family: inherit;
+  color: white;
+  text-decoration: none;
+}
+
+main.create-restaurant div.container .submit .button-back:hover {
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+}
+
+main.create-restaurant div.container .submit .button-create {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: red;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+main.create-restaurant div.container .submit .button-create:hover {
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+}
+
 footer {
   width: 100%;
   background-color: black;
