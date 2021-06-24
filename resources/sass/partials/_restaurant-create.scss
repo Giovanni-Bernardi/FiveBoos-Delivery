@@ -1,0 +1,96 @@
+main.create-restaurant{
+
+    div.container{
+        width: 1200px;
+        margin: 30px auto;
+        border: 1px solid black;
+        border-radius: 15px;
+
+        div.separation-content{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 25px;
+            form{
+
+                ul{
+
+                    li{
+                        padding: 10px 0;
+
+                        label{
+                            font-family: "Fredoka One", cursive;
+                            font-size: 18px;
+                        }
+
+                        .text{
+                            font-size: 15px;
+                            width: 50%;
+                            margin-top: 5px;
+                            padding: 5px 15px;
+                            border: none;
+                            border-radius: 5px;
+                        }
+
+                        .container-categories{
+                            display: flex;
+                            flex-wrap: wrap;
+                            width: 60%;
+
+                            .category{
+                                background-color: white;
+                                width: 162px;
+                                border-radius: 5px;
+                                margin: 5px;
+                                padding: 5px;
+
+                                label{
+                                    font-family: Inter;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .submit{
+            display: flex;
+            justify-content: flex-end;
+            border-top: 2px solid grey;
+            padding: 15px 0;
+
+            .button-back{
+                border: 2px solid red;
+                border-radius: 5px;
+                padding: 5px 15px;
+                background-color: red;
+                font-family: inherit;
+                color: white;
+                text-decoration: none;
+
+                  &:hover {
+                    background-color: green;
+                    border: 2px solid green;
+                    color: white;
+                }
+            }
+
+            .button-create{
+                border: 2px solid red;
+                border-radius: 5px;
+                padding: 5px 15px;
+                background-color: red;
+                margin: 0 10px;
+                color: white;
+                text-decoration: none;
+
+                  &:hover {
+                    background-color: green;
+                    border: 2px solid green;
+                    color: white;
+                }
+            }
+        }
+    }
+}

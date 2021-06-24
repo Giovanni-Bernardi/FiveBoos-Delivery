@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 @section('content')
-  <main>
+<main>
     @if ($errors->any())
         <div class="alert alert-danger">
         <ul>
@@ -86,5 +86,5 @@
 
       </form>
     </div>
-  </main>
+</main>
 @endsection
