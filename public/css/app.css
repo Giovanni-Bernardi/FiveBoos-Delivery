@@ -1866,6 +1866,129 @@ nav {
   color: pink;
 }
 
+#login_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f2f2;
+  height: 100vh;
+}
+
+#login_area #box_login {
+  width: 50%;
+  height: 80%;
+  display: flex;
+}
+
+#login_area #box_login .left {
+  height: 100%;
+  width: 40%;
+  background-size: cover;
+  background-position: center;
+}
+
+#login_area #box_login .right {
+  background-color: #fff;
+  height: 100%;
+  width: 60%;
+  padding: 6%;
+  text-align: center;
+}
+
+#login_area #box_login .right h2 {
+  margin-bottom: 50px;
+}
+
+#login_area #box_login .right form button {
+  -webkit-appearance: none;
+  width: auto;
+  min-width: 100px;
+  border-radius: 24px;
+  text-align: center;
+  padding: 15px 40px;
+  margin-top: 5px;
+  background-color: #17dffa;
+  color: #fff;
+  font-size: 14px;
+  margin-left: auto;
+  font-weight: 500;
+  box-shadow: 0px 2px 6px 8px rgba(0, 0, 0, 0.13);
+  border: none;
+  transition: all 0.3s ease;
+  outline: 0;
+}
+
+#login_area #box_login .right form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 6px -1px rgba(59, 196, 214, 0.65);
+}
+
+#login_area #box_login .right form button:hover:active {
+  transform: scale(0.99);
+}
+
+#login_area #box_login .right form .floating-label {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#login_area #box_login .right form .floating-label input {
+  font-size: 16px;
+  padding: 20px 0px;
+  height: 56px;
+  border: none;
+  border-bottom: solid 3px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  min-width: 280px;
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+  color: #000;
+  font-weight: 400;
+  border-radius: 10px;
+  -webkit-appearance: none;
+}
+
+#login_area #box_login .right form .floating-label input:focus {
+  border-bottom: solid 3px #3bc4d6;
+  outline: 0;
+  box-shadow: 0 2px 6px -8px rgba(59, 196, 214, 0.45);
+}
+
+#login_area #box_login .right form .floating-label label {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#login_area #box_login .right form .floating-label input:not(:-moz-placeholder-shown) {
+  padding: 28px 0px 12px 0px;
+}
+
+#login_area #box_login .right form .floating-label input:not(:-ms-input-placeholder) {
+  padding: 28px 0px 12px 0px;
+}
+
+#login_area #box_login .right form .floating-label input:not(:placeholder-shown) {
+  padding: 28px 0px 12px 0px;
+}
+
+#login_area #box_login .right form .floating-label input:not(:-moz-placeholder-shown) + label {
+  transform: translateY(-10px);
+  opacity: 0.7;
+}
+
+#login_area #box_login .right form .floating-label input:not(:-ms-input-placeholder) + label {
+  transform: translateY(-10px);
+  opacity: 0.7;
+}
+
+#login_area #box_login .right form .floating-label input:not(:placeholder-shown) + label {
+  transform: translateY(-10px);
+  opacity: 0.7;
+}
+
 * {
   margin: 0;
   padding: 0;
