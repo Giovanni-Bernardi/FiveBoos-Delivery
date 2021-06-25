@@ -47,6 +47,20 @@ class PaymentController extends Controller
     {
         $order = Order::findOrFail($id);
 
+        $validate = $request -> validate([
+        'firstname' => 'required|string',
+        'lastname' => 'required|string',
+        'email' => 'required|string',
+        'address' => 'required|string',
+        'telephone' => 'required|string',
+        'delivery_date' => 'required|date',
+        'delivery_time' => 'required|string',
+        'total_price' => 'required|numeric',
+        ]);
+
+        $order = Order::make($validate);
+        $order -> save();
+
         $gateway = $this -> braintreeGateway();
 
         $amount = $request -> amount;
