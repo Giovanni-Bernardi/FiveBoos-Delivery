@@ -8,84 +8,26 @@
     <div id="appSearch"> 
         <!-- {{-- restaurant list --}} -->
         <div class="list-container">
-    
             <div id="app-categories" class="list-jumbotron">
-                {{-- <h2>Scegli una categoria: </h2> --}}
                 <ul>
-                    <li class="food-type"> 
-                        {{-- v-on:click="addClass" :class="selected" --}}
-                        <label for="type-pizza">
-                            <input type="checkbox" name="type-pizza" class="type-check" id="type-pizza">
-                            <img src="{{asset('/storage/assets/pizza.png')}}" alt="pizza">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-sushi">
-                            <input type="checkbox" name="type-sushi" class="type-check">
-                            <img src="{{asset('/storage/assets/sushi.png')}}" alt="">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-spaghetti">
-                            <input type="checkbox" name="type-japanese" class="type-check">
-                            <img src="{{asset('/storage/assets/japanese.png')}}" alt="">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-desserts">
-                            <input type="checkbox" name="type-desserts" class="type-check">
-                            <img src="{{asset('/storage/assets/desserts.png')}}" alt="">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-meat">
-                            <input type="checkbox" name="type-meat" class="type-check">
-                            <img src="{{asset('/storage/assets/meat.png')}}" alt="">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-american">
-                            <input type="checkbox" name="type-american" class="type-check">
-                            <img src="{{asset('/storage/assets/american.png')}}" alt="">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-snack">
-                            <input type="checkbox" name="type-snack" class="type-check">
-                            <img src="{{asset('/storage/assets/snack.png')}}" alt="">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-mexican">
-                            <input type="checkbox" name="type-mexican" class="type-check">
-                            <img src="{{asset('/storage/assets/mexican.png')}}" alt="">
-                        </label>
-                    </li>
-                    <li class="food-type">
-                        <label for="type-cake">
-                            <input type="checkbox" name="type-cake" class="type-check">
-                            <img src="{{asset('/storage/assets/cake.png')}}" alt="">
-                        </label>
+                    <li v-for="category in categories" class="food-type" :class="filter.includes(category.id) ? 'active' : ''"> 
+                        <div class="img-container">
+                            <input type="checkbox" name="" class="" :value="category.id" v-model="filter" v-on:change="getFilteredRestaurant()" v-on:click="">
+                            <img :src="'/storage/assets/' + category.img" alt="pizza" :id="category.name">
+                            <p class="cat-name">@{{category.name}}</p>
+                        </div>
                     </li>
                 </ul>
             </div>
 
-            {{-- Lista checkboxes Categorie DB --}}
-            <ul class="category-list">
-                <li v-for="category in categories">
-                    <label :for="category">@{{category.name}}</label>
-                    <input type="checkbox" name="name" id="" :value="category.id" v-model="filter" v-on:change="getFilteredRestaurant()" style="margin-right: 20px">
-                </li>
-            </ul>
         </div>
+
         <div class="titles-restaurant-list">
-            <h2 id="title">FIVEBOO'S</h2>
-            <h4>
-                Scegli il ristorante: 
-            </h4>
+            <h2>Ristoranti</h2>
         </div>
-        <div class="restaurants-box">
-            <ul v-if="filter == false">
+
+        <ul class="restaurants-box" v-if="filter == false">
+            {{-- <ul v-if="filter == false">
                 <li v-for="restaurant in restaurantsList">
                     Name: @{{restaurant.business_name}}
                     <strong v-for="genre in restaurant.categories">
@@ -100,49 +42,91 @@
                         - @{{genre.name}}
                     </strong>)
                 </li>
-            </ul>
-            
-            <hr>
-            <div>------------------------------------LISTA NON VUE------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
-            {{-- @foreach ($restaurants->take(12) as $restaurant) --}}
-            @foreach ($restaurants as $restaurant)
-                <div class="restaurant-card">
-                    <div class="top-info">
-                        <div class="background-image"></div>
-                        <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"> {{$restaurant -> business_name}} </a>
+            </ul> --}}
+            <li class="restaurant-card" v-for="restaurant in restaurantsList">
+                <a :href="'/restaurant/' + restaurant.id">
+                    <div class="background-image">
+                        <img src="{{asset('/storage/assets/pizza-placeholder.jpg')}}" alt="">
+                        
                         <div class="categories-card">
                             {{-- categories placeholder --}}
-                            <div class="cell type-generic">
-                                <a href="#"> Pizza </a>
-                            </div> 
-                            <div class="cell type-generic">
-                                <a href="#"> Panini </a>
-                            </div> 
-                        </div>
+                            <h3>
+                                @{{restaurant.business_name}}
+                            </h3>
+                            <ul class="categories-container">
+                                <li class="category-badge" v-for="category in restaurant.categories">
+                                    @{{category.name}} 
+                                </li>
+                            </ul>
+                        </div> 
                     </div>
-                    <div class="bottom-info">
+                    {{-- <div class="bottom-info"> --}}
                         {{-- <div class="stats">
                             <i class="fas fa-thumbs-up"></i>
                             <span>--</span>
                         </div> --}}
-                        <div class="address-icon">
-                            <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"><i class="fas fa-map-marker-alt"></i></a>
+                    {{-- <div class="address-icon"> --}}
+                            {{-- {{route('restaurantDetailsViewLink', $restaurant -> id)}} --}}
+                            {{-- <a href=""><i class="fas fa-map-marker-alt"></i></a> --}}
                             {{-- <div class="address-show">
                                 {{$restaurant -> address}}
                             </div> --}}
-                        </div>
+                    {{-- </div> --}}
+                        {{-- {{route('restaurantDetailsViewLink', $restaurant -> id)}} --}}
+                    {{-- <a href=""><i class="fas fa-utensils"></i></a>
+                    <div class="delivery">
+                    <img src="{{asset('/storage/assets/scooter.png')}}" alt="icona consegna">
+                    <div class="delivery-checkout active">
+                        &euro; 1,00
+                    </div> 
+                    {{-- </div> 
+                    </div> --}}
+                </a>   
+            </li>
+                
+        </ul>
+        <ul class="restaurants-box" v-else>
+            <li class="restaurant-card" v-for="restaurant in filteredRestaurants">
+                <a :href="'/restaurant/' + restaurant.id">
+                    <div class="background-image">
+                        <img src="{{asset('/storage/assets/pizza-placeholder.jpg')}}" alt="">
                         
-                        {{-- <a href="{{route('restaurantDetailsViewLink', $restaurant -> id)}}"><i class="fas fa-utensils"></i></a> --}}
-                        <div class="delivery">
-                            <img src="{{asset('/storage/assets/scooter.png')}}" alt="icona consegna">
-                            <div class="delivery-checkout active">
-                                &euro; 1,00
-                            </div> 
-                        </div>
+                        <div class="categories-card">
+                            {{-- categories placeholder --}}
+                            <h3>
+                                @{{restaurant.business_name}}
+                            </h3>
+                            <ul class="categories-container">
+                                <li class="category-badge" v-for="category in restaurant.categories">
+                                    @{{category.name}} 
+                                </li>
+                            </ul>
+                        </div> 
                     </div>
-                </div>
-            @endforeach
-        </div>
+                    {{-- <div class="bottom-info"> --}}
+                        {{-- <div class="stats">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>--</span>
+                        </div> --}}
+                    {{-- <div class="address-icon"> --}}
+                            {{-- {{route('restaurantDetailsViewLink', $restaurant -> id)}} --}}
+                            {{-- <a href=""><i class="fas fa-map-marker-alt"></i></a> --}}
+                            {{-- <div class="address-show">
+                                {{$restaurant -> address}}
+                            </div> --}}
+                    {{-- </div> --}}
+                        {{-- {{route('restaurantDetailsViewLink', $restaurant -> id)}} --}}
+                    {{-- <a href=""><i class="fas fa-utensils"></i></a>
+                    <div class="delivery">
+                    <img src="{{asset('/storage/assets/scooter.png')}}" alt="icona consegna">
+                    <div class="delivery-checkout active">
+                        &euro; 1,00
+                    </div> 
+                    {{-- </div> 
+                    </div> --}}
+                </a>   
+            </li>
+        </ul>
     </div>
 </main>
     

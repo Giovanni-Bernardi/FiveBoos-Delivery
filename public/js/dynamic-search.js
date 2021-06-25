@@ -121,14 +121,13 @@ function dynamicSearch() {
           params: {// Parametri
           }
         }).then(function (data) {
-          // this.categories = data.data;
           data.data.forEach(function (element) {
             _this.categories.push({
               'id': element.id,
-              'name': element.name
+              'name': element.name,
+              'img': element.img
             });
           });
-          console.log(_this.categories);
         })["catch"](function (error) {
           console.log(error);
         });
@@ -141,8 +140,7 @@ function dynamicSearch() {
           }
         }).then(function (data) {
           _this2.restaurantsList = data.data[0];
-          _this2.category_restaurant = data.data[1];
-          console.log(_this2.restaurantsList, _this2.category_restaurant);
+          _this2.category_restaurant = data.data[1]; // console.log(this.category_restaurant);
 
           _this2.giveGenres();
         })["catch"](function (error) {
@@ -169,14 +167,10 @@ function dynamicSearch() {
         var _this3 = this;
 
         this.filteredRestaurants = [];
-        console.log(this.filteredRestaurants, 'emptyyy');
         this.restaurantsList.forEach(function (element) {
           var push = false; // console.log( 'RISTORANTE'. element.id);
 
           element.categories.forEach(function (element) {
-            console.log(element.name, element.id, 'CATEGORIA');
-            console.log(_this3.filter, 'FILTRO');
-
             for (var i = 0; i < _this3.filter.length; i++) {
               if (element.id == _this3.filter[i]) {
                 push = true;
@@ -186,10 +180,6 @@ function dynamicSearch() {
 
           if (push) {
             _this3.filteredRestaurants.push(element);
-
-            console.log(element.business_name, 'PUSHATOOOO');
-          } else {
-            console.log('NOOOOOOOOOOOOOOOOOOOOOOO');
           }
         });
       }

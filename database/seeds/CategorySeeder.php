@@ -15,16 +15,46 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories = [
-            ['name' => 'bakery'],
-            ['name' => 'carne'],
-            ['name' => 'cinese'],
-            ['name' => 'fast-food'],
-            ['name' => 'messicano'],
-            ['name' => 'pesce'],
-            ['name' => 'pizza'],
-            ['name' => 'poke'],
-            ['name' => 'sushi'],
-            ['name' => 'vegan'],
+            [
+                'name' => 'bakery',
+                'img' => 'cake.png'
+            ],
+            [
+                'name' => 'carne',
+                'img' => 'meat.png'
+            ],
+            [
+                'name' => 'cinese',
+                'img' => 'japanese.png'
+            ],
+            [
+                'name' => 'fast-food',
+                'img' => 'hamburger.png'
+            ],
+            [
+                'name' => 'messicano',
+                'img' => 'mexican.png'
+            ],
+            [
+                'name' => 'pesce',
+                'img' => 'fish.png'
+            ],
+            [
+                'name' => 'pizza',
+                'img' => 'pizza.png'
+            ],
+            [
+                'name' => 'poke',
+                'img' => 'veg.png'
+            ],
+            [
+                'name' => 'sushi',
+                'img' => 'sushi.png'
+            ],
+            [
+                'name' => 'vegan',
+                'img' => 'apple.png'
+            ],
         ];
 
         foreach ($categories as $category) {

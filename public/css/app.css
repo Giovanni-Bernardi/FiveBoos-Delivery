@@ -248,10 +248,13 @@
 
 header {
   height: 75px;
+  padding: 10px 30px;
   width: 100%;
   z-index: 900;
   background: transparent;
   position: fixed;
+  display: flex;
+  align-items: center;
   transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
 }
 
@@ -262,28 +265,34 @@ header.scrolled {
 }
 
 header nav {
-  padding: 10px 40px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav div.sx-section {
+  padding: 0;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-header nav img {
+header nav div.sx-section img {
   vertical-align: middle;
   width: 200px;
 }
 
-header nav .ham-container {
+header nav div.sx-section .ham-container {
   cursor: pointer;
   height: 30px;
   display: flex;
   align-items: center;
   overflow: visible;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
-header nav .ham-container .hamburger {
+header nav div.sx-section .ham-container .hamburger {
   position: relative;
   z-index: 950;
   line-height: 30px;
@@ -294,8 +303,8 @@ header nav .ham-container .hamburger {
   transition: background-color 0.5s;
 }
 
-header nav .ham-container .hamburger::before,
-header nav .ham-container .hamburger::after {
+header nav div.sx-section .ham-container .hamburger::before,
+header nav div.sx-section .ham-container .hamburger::after {
   content: "";
   height: 4px;
   width: 30px;
@@ -306,36 +315,36 @@ header nav .ham-container .hamburger::after {
   transition: all 0.3s;
 }
 
-header nav .ham-container .hamburger::before {
+header nav div.sx-section .ham-container .hamburger::before {
   top: -9px;
 }
 
-header nav .ham-container .hamburger::after {
+header nav div.sx-section .ham-container .hamburger::after {
   bottom: -9px;
 }
 
-header nav .ham-container.active .hamburger {
+header nav div.sx-section .ham-container.active .hamburger {
   background-color: transparent;
 }
 
-header nav .ham-container.active .hamburger::before,
-header nav .ham-container.active .hamburger::after {
+header nav div.sx-section .ham-container.active .hamburger::before,
+header nav div.sx-section .ham-container.active .hamburger::after {
   width: 30px;
   background-color: white;
   left: 50%;
 }
 
-header nav .ham-container.active .hamburger::before {
+header nav div.sx-section .ham-container.active .hamburger::before {
   top: 50%;
   transform: translate(-50%, -50%) rotateZ(45deg);
 }
 
-header nav .ham-container.active .hamburger::after {
+header nav div.sx-section .ham-container.active .hamburger::after {
   bottom: 50%;
   transform: translate(-50%, 50%) rotateZ(-45deg);
 }
 
-header .menulist {
+header nav .menulist {
   top: 0px;
   left: -100%;
   width: 100%;
@@ -356,158 +365,25 @@ header .menulist {
   justify-content: center;
 }
 
-header .menulist.active {
+header nav .menulist.active {
   left: 0%;
   visibility: visible;
   opacity: 1;
 }
 
-header .menulist li {
+header nav .menulist li {
   font-size: 25px;
   font-weight: bold;
   margin: 10px 0;
 }
 
-header .menulist li:first-child a {
+header nav .menulist li:first-child a {
   background-color: #ffaf53;
   padding: 10px 50px;
   border-radius: 3px;
 }
 
-header .menulist li a {
-  text-decoration: none;
-  color: #000000;
-}
-
-header {
-  height: 75px;
-  width: 100%;
-  z-index: 900;
-  background: transparent;
-  position: fixed;
-  transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
-}
-
-header.scrolled {
-  height: 100px;
-  background-color: #00ccbc;
-  box-shadow: 0 0 10px 0 #5e5e5e;
-}
-
-header nav {
-  padding: 10px 40px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-header nav img {
-  vertical-align: middle;
-  width: 200px;
-}
-
-header nav .ham-container {
-  cursor: pointer;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  overflow: visible;
-  margin-right: 30px;
-}
-
-header nav .ham-container .hamburger {
-  position: relative;
-  z-index: 950;
-  line-height: 30px;
-  height: 4px;
-  width: 30px;
-  background-color: white;
-  border: 0;
-  transition: background-color 0.5s;
-}
-
-header nav .ham-container .hamburger::before,
-header nav .ham-container .hamburger::after {
-  content: "";
-  height: 4px;
-  width: 30px;
-  background-color: white;
-  border: 0;
-  position: absolute;
-  left: 0;
-  transition: all 0.3s;
-}
-
-header nav .ham-container .hamburger::before {
-  top: -9px;
-}
-
-header nav .ham-container .hamburger::after {
-  bottom: -9px;
-}
-
-header nav .ham-container.active .hamburger {
-  background-color: transparent;
-}
-
-header nav .ham-container.active .hamburger::before,
-header nav .ham-container.active .hamburger::after {
-  width: 30px;
-  background-color: white;
-  left: 50%;
-}
-
-header nav .ham-container.active .hamburger::before {
-  top: 50%;
-  transform: translate(-50%, -50%) rotateZ(45deg);
-}
-
-header nav .ham-container.active .hamburger::after {
-  bottom: 50%;
-  transform: translate(-50%, 50%) rotateZ(-45deg);
-}
-
-header .menulist {
-  top: 0px;
-  left: -100%;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  z-index: 910;
-  text-align: center;
-  padding-top: 50px;
-  margin-right: 0px;
-  margin-right: 10px;
-  background-color: #00ccbc;
-  transition: left 0.5s, visibility 0.5s, opacity 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-header .menulist.active {
-  left: 0%;
-  visibility: visible;
-  opacity: 1;
-}
-
-header .menulist li {
-  font-size: 25px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-header .menulist li:first-child a {
-  background-color: #ffaf53;
-  padding: 10px 50px;
-  border-radius: 3px;
-}
-
-header .menulist li a {
+header nav .menulist li a {
   text-decoration: none;
   color: #000000;
 }
@@ -618,227 +494,219 @@ footer .bottom .privacy .copyright {
   align-self: flex-end;
 }
 
-.list-container {
-  min-height: 550px;
+#appSearch {
+  overflow: hidden;
 }
 
-div.list-jumbotron {
+#appSearch div.list-jumbotron {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #00CCBC;
-  padding: 50px 30px 30px 30px;
+  padding: 115px 10% 40px;
 }
 
-div.list-jumbotron h2 {
-  text-align: center;
-}
-
-div.list-jumbotron ul {
-  width: 65%;
+#appSearch div.list-jumbotron ul {
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 120px 100px;
   position: relative;
 }
 
-div.list-jumbotron ul li {
+#appSearch div.list-jumbotron ul li.food-type {
   display: flex;
-  align-self: center;
-  align-content: center;
   justify-content: center;
-  margin: 5px;
+  align-items: center;
+  margin: 8px 6px;
   border-radius: 50%;
-  background-color: whitesmoke;
-  padding: 15px;
-  box-shadow: 0 2px 17px 0 #1e988e;
-  position: relative;
-}
-
-div.list-jumbotron ul li:active {
-  top: 3px;
-  transition: ease-in-out;
-}
-
-div.list-jumbotron ul li:hover {
-  -webkit-animation: float-up 1.3s ease-in-out infinite;
-          animation: float-up 1.3s ease-in-out infinite;
-}
-
-div.list-jumbotron ul li label {
+  background-color: white;
+  padding: 10px 10px 25px;
+  box-shadow: 0 2px 17px 0 #969696;
   cursor: pointer;
   position: relative;
+  width: 115px;
+  height: 115px;
+  transition: transform 0.3s, background-color 0.5s ease, border-width 0.1s, box-shadow 0.3s;
 }
 
-div.list-jumbotron ul li label input {
+#appSearch div.list-jumbotron ul li.food-type.active {
+  background-color: dodgerblue;
+}
+
+#appSearch div.list-jumbotron ul li.food-type:hover {
+  transform: scale(1.1);
+}
+
+#appSearch div.list-jumbotron ul li.food-type div.img-container img {
+  width: 70px;
+}
+
+#appSearch div.list-jumbotron ul li.food-type div.img-container img#carne {
+  width: 85px;
+}
+
+#appSearch div.list-jumbotron ul li.food-type div.img-container img#sushi {
+  width: 90px;
+}
+
+#appSearch div.list-jumbotron ul li.food-type div.img-container img#vegan {
+  width: 50px;
+}
+
+#appSearch div.list-jumbotron ul li.food-type div.img-container input[type=checkbox] {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
   opacity: 0;
+  cursor: pointer;
 }
 
-div.list-jumbotron ul li label img {
-  width: 80px;
-  height: 80px;
-}
-
-.category-list {
-  display: flex;
-}
-
-.titles-restaurant-list {
-  width: 80%;
-  margin: auto;
-}
-
-.titles-restaurant-list h2#title {
+#appSearch div.list-jumbotron ul li.food-type .cat-name {
+  width: 100%;
   text-align: center;
-  font-size: 56px;
+  font-size: 13px;
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+#appSearch .titles-restaurant-list {
+  padding: 60px 10% 30px;
+}
+
+#appSearch .titles-restaurant-list h2 {
+  font-size: 30px;
   font-weight: bold;
 }
 
-.titles-restaurant-list h4 {
-  font-size: 32px;
-  text-align: left;
-  margin-left: 10px;
-  margin: 40px 0 10px 0;
-}
-
-.restaurants-box {
-  width: 80%;
-  margin: auto;
+#appSearch .restaurants-box {
+  padding: 0 10% 20px;
+  margin: 0 -10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.restaurants-box .restaurant-card {
-  width: 30%;
+#appSearch .restaurants-box .restaurant-card {
+  flex-basis: calc(100% / 3 - 20px);
+  max-width: 350px;
   height: 230px;
-  margin: 10px;
+  margin: 0 10px 40px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-.restaurants-box .restaurant-card .top-info {
-  font-family: "Raleway", sans-serif;
+#appSearch .restaurants-box .restaurant-card a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+#appSearch .restaurants-box .restaurant-card a .background-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+}
+
+#appSearch .restaurants-box .restaurant-card a .background-image img {
+  width: 100%;
+  filter: contrast(70%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: transform 0.2s;
+}
+
+#appSearch .restaurants-box .restaurant-card a .background-image .categories-card {
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px 10px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  flex-grow: 1;
-  width: 100%;
-  height: 77%;
-  z-index: 2;
-  position: relative;
+  flex-wrap: wrap;
 }
 
-.restaurants-box .restaurant-card .top-info .background-image {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background-image: url("/storage/assets/pizza-placeholder.jpg");
-  background-size: 100%;
-  background-position: center right;
+#appSearch .restaurants-box .restaurant-card a .background-image .categories-card h3 {
+  text-transform: capitalize;
+  color: white;
   width: 100%;
-  height: 100%;
-  position: absolute;
-  filter: contrast(65%);
-  z-index: 1;
+  text-align: center;
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 
-.restaurants-box .restaurant-card .top-info:hover {
+#appSearch .restaurants-box .restaurant-card a .background-image .categories-card .categories-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+}
+
+#appSearch .restaurants-box .restaurant-card a .background-image .categories-card .categories-container .category-badge {
+  margin: 0 3px 5px;
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 8px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ececec;
+  text-transform: capitalize;
+}
+
+#appSearch .restaurants-box .restaurant-card a:hover {
   cursor: pointer;
 }
 
-.restaurants-box .restaurant-card .top-info:hover .background-image {
-  filter: contrast(90%);
-  background-size: 103%;
-  background-position: center center;
-  transition: all 0.15s ease-in-out;
+#appSearch .restaurants-box .restaurant-card a:hover .background-image img {
+  transform: scale(1.05);
 }
 
-.restaurants-box .restaurant-card .top-info:hover > a {
-  font-size: 42px;
-  text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-  transition: all 0.1s ease-in-out;
-}
-
-.restaurants-box .restaurant-card .top-info a {
-  z-index: 2;
-  text-decoration: none;
-  font-size: 35px;
-  color: whitesmoke;
-  font-weight: 900;
-}
-
-.restaurants-box .restaurant-card .top-info .categories-card {
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-}
-
-.restaurants-box .restaurant-card .top-info .categories-card .cell {
-  margin: 3px;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  border: 1px solid black;
-  text-align: center;
-  border-radius: 4px;
-  padding: 0px 4px;
-}
-
-.restaurants-box .restaurant-card .top-info .categories-card .cell:hover {
-  text-shadow: white 1px 1px;
-  transition: all 0.3s ease-in-out;
-}
-
-.restaurants-box .restaurant-card .top-info .categories-card .cell a {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.restaurants-box .restaurant-card .top-info .categories-card .type-generic {
-  background-color: rgba(255, 255, 255, 0.65);
-}
-
-.restaurants-box .restaurant-card .top-info .categories-card .type-generic:hover {
-  background-color: white;
-  transition: all 0.3s ease-in-out;
-}
-
-.restaurants-box .restaurant-card .bottom-info {
+#appSearch .restaurants-box .restaurant-card a .bottom-info {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
   padding: 5px 15px;
   background-color: white;
-  width: 100%;
-  height: 23%;
-  overflow: hidden;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-.restaurants-box .restaurant-card .bottom-info * {
+#appSearch .restaurants-box .restaurant-card a .bottom-info * {
   align-self: center;
 }
 
-.restaurants-box .restaurant-card .bottom-info .delivery {
+#appSearch .restaurants-box .restaurant-card a .bottom-info .delivery {
   display: flex;
 }
 
-.restaurants-box .restaurant-card .bottom-info .delivery i:hover {
+#appSearch .restaurants-box .restaurant-card a .bottom-info .delivery i:hover {
   text-shadow: 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
   transition: all 0.1s ease-in-out;
 }
 
-.restaurants-box .restaurant-card .bottom-info .delivery .delivery-checkout {
+#appSearch .restaurants-box .restaurant-card a .bottom-info .delivery .delivery-checkout {
   font-size: 12px;
   padding: 5px;
   margin-left: 5px;
@@ -852,20 +720,20 @@ div.list-jumbotron ul li label img {
   border-radius: 8px;
 }
 
-.restaurants-box .restaurant-card .bottom-info .delivery .active {
+#appSearch .restaurants-box .restaurant-card a .bottom-info .delivery .active {
   background-color: rgba(0, 204, 188, 0.7);
 }
 
-.restaurants-box .restaurant-card .bottom-info .delivery .active:hover {
+#appSearch .restaurants-box .restaurant-card a .bottom-info .delivery .active:hover {
   background-color: rgba(0, 204, 188, 0.9);
 }
 
-.restaurants-box .restaurant-card .bottom-info .address-icon a {
+#appSearch .restaurants-box .restaurant-card a .bottom-info .address-icon a {
   text-decoration: none;
   color: black;
 }
 
-.food-type img {
+#appSearch .food-type img {
   padding: 4px;
 }
 
@@ -1014,175 +882,104 @@ main.details .dishes-box ul li .unavailable:hover {
   cursor: pointer;
 }
 
-header .tb {
-  display: table;
-  width: 100%;
-}
-
-header .td {
-  display: table-cell;
-  vertical-align: top;
-  max-width: 600px;
-}
-
-header input,
-header button {
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-header #cover {
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  color: black;
-  border: 8px solid black;
-  transform: scale(0.53);
-  align-items: stretch;
-}
-
-header form {
-  height: 96px;
-}
-
-header input[type=text] {
-  width: 100%;
-  height: 96px;
-  font-size: 49px;
-  line-height: 1;
-  position: absolute;
-  top: 7px;
-  max-width: 570px;
-  color: #000000;
-}
-
-header input[type=text]::-moz-placeholder {
-  color: #000000;
-}
-
-header input[type=text]:-ms-input-placeholder {
-  color: #000000;
-}
-
-header input[type=text]::placeholder {
-  color: #000000;
-}
-
-header #s-cover {
-  width: 1px;
-  padding-left: 35px;
-}
-
-header button {
+header nav .center-section {
+  flex-shrink: 0;
+  flex-basis: 250px;
+  text-align: center;
   position: relative;
-  display: block;
-  width: 84px;
-  height: 96px;
+  overflow: hidden;
+}
+
+header nav .center-section .search-bar {
+  width: 80%;
+  height: 10px;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 5px;
+  height: 50px;
+  border-radius: 0px;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  font-family: "Fredoka One", cursive;
+  text-align: center;
+  transition: width 0.5s;
+}
+
+header nav .center-section .search-bar:not(:-moz-placeholder-shown) {
+  width: 100%;
+}
+
+header nav .center-section .search-bar:not(:-ms-input-placeholder) {
+  width: 100%;
+}
+
+header nav .center-section .search-bar:not(:placeholder-shown) {
+  width: 100%;
+}
+
+header nav .center-section .search-bar:not(:-moz-placeholder-shown) + i {
+  right: 10px;
+}
+
+header nav .center-section .search-bar:not(:-ms-input-placeholder) + i {
+  right: 10px;
+}
+
+header nav .center-section .search-bar:not(:placeholder-shown) + i {
+  right: 10px;
+}
+
+header nav .center-section .search-bar::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+header nav .center-section .search-bar:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+header nav .center-section .search-bar::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+header nav .center-section .search-bar:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black;
+}
+
+header nav .center-section .search-bar::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: black;
+}
+
+header nav .center-section i {
+  color: black;
+  position: absolute;
+  z-index: 100;
+  font-size: 20px;
+  right: 65px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 0.5s;
   cursor: pointer;
 }
 
-header #s-circle {
-  position: relative;
-  top: -7px;
-  left: 6px;
-  width: 65px;
-  height: 62px;
-  margin-top: 0;
-  border-width: 15px;
-  border: 15px solid black;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: 0.5s ease all;
+header nav .rx-section {
+  flex-basis: 250px;
+  text-align: right;
 }
 
-header button span {
-  position: absolute;
-  top: 68px;
-  left: 43px;
-  display: block;
-  width: 45px;
-  height: 15px;
-  background-color: transparent;
-  border-radius: 10px;
-  transform: rotateZ(52deg);
-  transition: 0.5s ease all;
-}
-
-header button span:before,
-header button span:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 45px;
-  height: 15px;
-  background-color: #000000;
-  border-radius: 10px;
-  transform: rotateZ(0);
-  transition: 0.5s ease all;
-}
-
-header #s-cover:hover #s-circle {
-  top: -1px;
-  width: 67px;
-  height: 15px;
-  border-width: 0;
-  background-color: #000000;
-  border-radius: 20px;
-}
-
-header #s-cover:hover span {
-  top: 50%;
-  left: 56px;
-  width: 25px;
-  margin-top: -9px;
-  transform: rotateZ(0);
-}
-
-header #s-cover:hover button span:before {
-  bottom: 11px;
-  transform: rotateZ(52deg);
-}
-
-header #s-cover:hover button span:after {
-  bottom: -11px;
-  transform: rotateZ(-52deg);
-}
-
-header #s-cover:hover button span:before,
-header #s-cover:hover button span:after {
-  right: -6px;
-  width: 40px;
-  background-color: #000000;
-}
-
-header #ytd-url {
-  display: block;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 10px 14px;
-  margin: 20px;
-  color: #000000;
-  font-family: Nunito;
-  font-size: 14px;
-  text-decoration: none;
-  background-color: #ff7575;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
-  z-index: 125;
-}
-
-header p {
-  border-right: solid 3px rgba(0, 0, 0, 0.75);
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 49px;
-  -webkit-animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
-          animation: animated-text 1.6s linear 1s 1 normal both, animated-cursor 600ms linear infinite !important;
+header nav .rx-section i {
+  font-size: 35px;
+  color: white;
 }
 
 #restaurant-container {
@@ -1389,10 +1186,13 @@ footer .bottom .privacy .copyright {
 
 header {
   height: 75px;
+  padding: 10px 30px;
   width: 100%;
   z-index: 900;
   background: transparent;
   position: fixed;
+  display: flex;
+  align-items: center;
   transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
 }
 
@@ -1403,28 +1203,34 @@ header.scrolled {
 }
 
 header nav {
-  padding: 10px 40px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav div.sx-section {
+  padding: 0;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-header nav img {
+header nav div.sx-section img {
   vertical-align: middle;
   width: 200px;
 }
 
-header nav .ham-container {
+header nav div.sx-section .ham-container {
   cursor: pointer;
   height: 30px;
   display: flex;
   align-items: center;
   overflow: visible;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
-header nav .ham-container .hamburger {
+header nav div.sx-section .ham-container .hamburger {
   position: relative;
   z-index: 950;
   line-height: 30px;
@@ -1435,8 +1241,8 @@ header nav .ham-container .hamburger {
   transition: background-color 0.5s;
 }
 
-header nav .ham-container .hamburger::before,
-header nav .ham-container .hamburger::after {
+header nav div.sx-section .ham-container .hamburger::before,
+header nav div.sx-section .ham-container .hamburger::after {
   content: "";
   height: 4px;
   width: 30px;
@@ -1447,36 +1253,36 @@ header nav .ham-container .hamburger::after {
   transition: all 0.3s;
 }
 
-header nav .ham-container .hamburger::before {
+header nav div.sx-section .ham-container .hamburger::before {
   top: -9px;
 }
 
-header nav .ham-container .hamburger::after {
+header nav div.sx-section .ham-container .hamburger::after {
   bottom: -9px;
 }
 
-header nav .ham-container.active .hamburger {
+header nav div.sx-section .ham-container.active .hamburger {
   background-color: transparent;
 }
 
-header nav .ham-container.active .hamburger::before,
-header nav .ham-container.active .hamburger::after {
+header nav div.sx-section .ham-container.active .hamburger::before,
+header nav div.sx-section .ham-container.active .hamburger::after {
   width: 30px;
   background-color: white;
   left: 50%;
 }
 
-header nav .ham-container.active .hamburger::before {
+header nav div.sx-section .ham-container.active .hamburger::before {
   top: 50%;
   transform: translate(-50%, -50%) rotateZ(45deg);
 }
 
-header nav .ham-container.active .hamburger::after {
+header nav div.sx-section .ham-container.active .hamburger::after {
   bottom: 50%;
   transform: translate(-50%, 50%) rotateZ(-45deg);
 }
 
-header .menulist {
+header nav .menulist {
   top: 0px;
   left: -100%;
   width: 100%;
@@ -1497,25 +1303,25 @@ header .menulist {
   justify-content: center;
 }
 
-header .menulist.active {
+header nav .menulist.active {
   left: 0%;
   visibility: visible;
   opacity: 1;
 }
 
-header .menulist li {
+header nav .menulist li {
   font-size: 25px;
   font-weight: bold;
   margin: 10px 0;
 }
 
-header .menulist li:first-child a {
+header nav .menulist li:first-child a {
   background-color: #ffaf53;
   padding: 10px 50px;
   border-radius: 3px;
 }
 
-header .menulist li a {
+header nav .menulist li a {
   text-decoration: none;
   color: #000000;
 }

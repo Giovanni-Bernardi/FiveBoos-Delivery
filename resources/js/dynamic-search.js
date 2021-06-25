@@ -31,16 +31,13 @@ function dynamicSearch() {
                         // Parametri
                     }
                 }).then(data => {
-                    // this.categories = data.data;
-
                     data.data.forEach(element => {
                         this.categories.push({
                             'id': element.id,
-                            'name': element.name
+                            'name': element.name,
+                            'img': element.img
                         });
                     });
-                    console.log(this.categories);
-                   
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -55,7 +52,7 @@ function dynamicSearch() {
                 }).then(data => {
                     this.restaurantsList = data.data[0];
                     this.category_restaurant = data.data[1];
-                    console.log(this.restaurantsList, this.category_restaurant);
+                    // console.log(this.category_restaurant);
                     this.giveGenres();
                 }).catch((error) => {
                     console.log(error);
@@ -70,6 +67,7 @@ function dynamicSearch() {
                         this.restaurantsList[i].categories.push({
                             'id': this.category_restaurant[i][j].id, 
                             'name': this.category_restaurant[i][j].name
+
                         });
                         // console.log(this.restaurantsList[i].categories);
                     }
@@ -78,13 +76,10 @@ function dynamicSearch() {
             },
             getFilteredRestaurant: function(){
                 this.filteredRestaurants = [];
-                console.log(this.filteredRestaurants, 'emptyyy');
                 this.restaurantsList.forEach(element => {
                     let push = false;
                     // console.log( 'RISTORANTE'. element.id);
                     element.categories.forEach(element => {
-                        console.log(element.name, element.id, 'CATEGORIA');
-                        console.log(this.filter , 'FILTRO');
                         for (let i = 0; i < this.filter.length; i++) {
                             if(element.id == this.filter[i]){
                                 push = true;
@@ -93,13 +88,9 @@ function dynamicSearch() {
                     });
                     if (push) {
                         this.filteredRestaurants.push(element);
-                        console.log(element.business_name,'PUSHATOOOO');
-                    }else{
-                        console.log('NOOOOOOOOOOOOOOOOOOOOOOO');
                     }
                 });
-                
-            }
+            },
         }
     });
 }
