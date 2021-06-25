@@ -1,7 +1,7 @@
 //main container
 #restaurant-container {
   // padding: 70px 0;
-  height: 100vh;
+  // height: 100vh;
   background-color: #00CCBC;
   padding-top: 70px;
 
@@ -15,7 +15,7 @@
       display: flex;
       align-items: center;
        span {
-
+        //
        }
     }
     #create-row {
@@ -47,46 +47,72 @@
     }
     #restaurant-cards {
       display: flex;
-      justify-content: space-evenly;
-      width: 100%;
+      // justify-content: space-evenly;
+      flex-wrap: wrap;
+      // width: 100%;
       margin-top: 30px;
       // padding: 0 10%;
       .crd{
         // width: calc(100%/4);
         width: 22%;
-        margin: 0 1%;
+        margin: 0px 14px 30px 14px;
         height: 480px;
         border-radius: 20px;
         background-color: white;
-        li {
-          span {
-            margin-top: 15px;
-            font-size: 1.2rem;
-            color: #202020;
+        position: relative;
+          &.hidden-crd {
+            
+            opacity: 0.6;
+          }    
+        }
+        ul {
+          li {
+            display: flex;
+            span {
+              margin-top: 15px;
+              font-size: 1.2rem;
+              color: #202020;
+            }
+            span, p, a{
+              padding: 0 7%;
+            }
+            img {
+              height: 280px;
+              width: 100%;
+              object-fit: cover;
+              border-top-left-radius: 20px;
+              border-top-right-radius: 20px;
+            }
           }
-          span, p, a{
-            padding: 0 7%;
-          }
-          img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
+          .fa, .fas {
+            font-size: 22px;
+            padding-left: 7%;
           }
         }
-        .fa, .fas {
+        .btn-edit-del {
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
           font-size: 22px;
-          padding-left: 7%;
+          padding: 10px;
         }
+        #delete-button {
+          margin-left: 10px;
+          color: rgb(228, 87, 87);
+        }
+
+      }
+      #delete-button {
+        margin-left: 10px;
+        color: rgb(228, 87, 87);
+      }
+      #restaurant-address {
+        margin-top: 20px;
       }
     }
-  }
 
   //spacing
 .side-padding {
   padding: 0 6%;
 }
-
-
 

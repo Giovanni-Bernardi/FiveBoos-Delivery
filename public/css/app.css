@@ -1252,7 +1252,6 @@ header p {
 }
 
 #restaurant-container {
-  height: 100vh;
   background-color: #00CCBC;
   padding-top: 70px;
 }
@@ -1303,33 +1302,41 @@ header p {
 
 #restaurant-container #restaurant-cards {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  flex-wrap: wrap;
   margin-top: 30px;
 }
 
 #restaurant-container #restaurant-cards .crd {
   width: 22%;
-  margin: 0 1%;
+  margin: 0px 14px 30px 14px;
   height: 480px;
   border-radius: 20px;
   background-color: white;
+  position: relative;
 }
 
-#restaurant-container #restaurant-cards .crd li span {
+#restaurant-container #restaurant-cards .crd.hidden-crd {
+  opacity: 0.6;
+}
+
+#restaurant-container #restaurant-cards ul li {
+  display: flex;
+}
+
+#restaurant-container #restaurant-cards ul li span {
   margin-top: 15px;
   font-size: 1.2rem;
   color: #202020;
 }
 
-#restaurant-container #restaurant-cards .crd li span,
-#restaurant-container #restaurant-cards .crd li p,
-#restaurant-container #restaurant-cards .crd li a {
+#restaurant-container #restaurant-cards ul li span,
+#restaurant-container #restaurant-cards ul li p,
+#restaurant-container #restaurant-cards ul li a {
   padding: 0 7%;
 }
 
-#restaurant-container #restaurant-cards .crd li img {
-  height: 200px;
+#restaurant-container #restaurant-cards ul li img {
+  height: 280px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1337,10 +1344,32 @@ header p {
   border-top-right-radius: 20px;
 }
 
-#restaurant-container #restaurant-cards .crd .fa,
-#restaurant-container #restaurant-cards .crd .fas {
+#restaurant-container #restaurant-cards ul .fa,
+#restaurant-container #restaurant-cards ul .fas {
   font-size: 22px;
   padding-left: 7%;
+}
+
+#restaurant-container #restaurant-cards .btn-edit-del {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 22px;
+  padding: 10px;
+}
+
+#restaurant-container #restaurant-cards #delete-button {
+  margin-left: 10px;
+  color: #e45757;
+}
+
+#restaurant-container #delete-button {
+  margin-left: 10px;
+  color: #e45757;
+}
+
+#restaurant-container #restaurant-address {
+  margin-top: 20px;
 }
 
 .side-padding {
