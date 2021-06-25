@@ -1974,6 +1974,8 @@ nav {
   width: 40%;
   background-size: cover;
   background-position: center;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 #login_area #box_login .right {
@@ -1982,9 +1984,16 @@ nav {
   width: 60%;
   padding: 6%;
   text-align: center;
+  border-right: solid 15px #00ccbc;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#login_area #box_login .right h2 {
+#login_area #box_login .right h2,
+#login_area #box_login .right h4 {
   margin-bottom: 50px;
 }
 
@@ -1995,8 +2004,8 @@ nav {
   border-radius: 24px;
   text-align: center;
   padding: 15px 40px;
-  margin-top: 5px;
-  background-color: #17dffa;
+  margin-top: 20px;
+  background-color: #00ccbc;
   color: #fff;
   font-size: 14px;
   margin-left: auto;
@@ -2005,11 +2014,12 @@ nav {
   border: none;
   transition: all 0.3s ease;
   outline: 0;
+  cursor: pointer;
 }
 
 #login_area #box_login .right form button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 2px 6px -1px rgba(59, 196, 214, 0.65);
+  box-shadow: 0 2px 6px -1px rgba(0, 204, 188, 0.65);
 }
 
 #login_area #box_login .right form button:hover:active {
@@ -2038,9 +2048,9 @@ nav {
 }
 
 #login_area #box_login .right form .floating-label input:focus {
-  border-bottom: solid 3px #3bc4d6;
+  border-bottom: solid 3px #00ccbc;
   outline: 0;
-  box-shadow: 0 2px 6px -8px rgba(59, 196, 214, 0.45);
+  box-shadow: 0 2px 6px -8px rgba(0, 204, 188, 0.45);
 }
 
 #login_area #box_login .right form .floating-label label {
@@ -2064,18 +2074,57 @@ nav {
 }
 
 #login_area #box_login .right form .floating-label input:not(:-moz-placeholder-shown) + label {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
   opacity: 0.7;
 }
 
 #login_area #box_login .right form .floating-label input:not(:-ms-input-placeholder) + label {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
   opacity: 0.7;
 }
 
 #login_area #box_login .right form .floating-label input:not(:placeholder-shown) + label {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
   opacity: 0.7;
+}
+
+#pay_area {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f3f2f2;
+  height: 100vh;
+}
+
+#pay_area #box_list {
+  z-index: 100;
+  transition: 0.5s;
+}
+
+#pay_area #box_list h2 {
+  color: #fff;
+}
+
+#pay_area #box_pay {
+  z-index: 100;
+  width: 30%;
+}
+
+#pay_area #box_pay h2 {
+  color: #fff;
+}
+
+#pay_area #box_pay form button {
+  padding: 3%;
+}
+
+.braintree-sheet__header {
+  background-color: #00ccbc;
+  border: none;
+}
+
+.braintree-sheet__content--form {
+  background-color: #00ccbc;
 }
 
 * {

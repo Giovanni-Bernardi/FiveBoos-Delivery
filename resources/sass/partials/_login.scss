@@ -1,5 +1,5 @@
 
-$primary: rgb(59, 196, 214);
+$primary: #00ccbc;
 
 #login_area {
     // border: solid 2px blue;
@@ -23,6 +23,8 @@ $primary: rgb(59, 196, 214);
             width: 40%;
             background-size: cover;
             background-position: center;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
         }
 
         .right{
@@ -31,8 +33,14 @@ $primary: rgb(59, 196, 214);
             width: 60%;
             padding: 6%;
             text-align: center;
+            border-right: solid 15px $primary;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-            h2{
+            h2, h4{
                 margin-bottom: 50px;
             }
 
@@ -44,7 +52,7 @@ $primary: rgb(59, 196, 214);
                     border-radius: 24px;
                     text-align: center;
                     padding: 15px 40px;
-                    margin-top: 5px;
+                    margin-top: 20px;
                     background-color: saturate($primary, 30%);
                     color: #fff;
                     font-size: 14px;
@@ -54,6 +62,7 @@ $primary: rgb(59, 196, 214);
                     border: none;
                     transition: all .3s ease;
                     outline: 0;
+                    cursor: pointer;
 
                     &:hover {
                         transform: translateY(-3px);
@@ -104,7 +113,7 @@ $primary: rgb(59, 196, 214);
                     }
 
                     input:not(:placeholder-shown)+label {
-                        transform: translateY(-10px);
+                        transform: translateY(-15px);
                         opacity: .7;
                     }
                 }
