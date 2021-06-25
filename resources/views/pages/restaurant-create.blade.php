@@ -62,7 +62,8 @@
                         <div class="container-categories">
                             @foreach ($categories as $category)
                                 <div class="category">
-                                    <input type="checkbox" name="category_id[]" class="" value="{{$category -> id}}">
+                                    <input id="cat-{{$category -> id}}" type="checkbox" name="category_id[]" value="{{$category -> id}}">
+                                    <label for="cat-{{$category -> id}}" class="circle"></label>
                                     <label for="categories[]">
                                         {{$category -> name}}
                                     </label>

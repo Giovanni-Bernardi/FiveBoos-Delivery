@@ -107,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
       currentRestaurantId: '',
       visibility: false,
       quantity: 1,
-      totalPrice: 0
+      totalPrice: 0,
+      percent: 20
     },
     mounted: function mounted() {
       this.currentRestaurantId = window.id;
@@ -185,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\Corso\EserciziGit\proj-final-delivery\resources\js\cart.js */"./resources/js/cart.js");
+module.exports = __webpack_require__(/*! D:\Corso programmazione Boolean\Classe 29\Esercizi Boolean\Esercizi Giugno\proj-final-delivery\resources\js\cart.js */"./resources/js/cart.js");
 
 
 /***/ })

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             visibility: false,
             quantity: 1,
             totalPrice: 0,
+            percent: 20,
         },
         mounted() {
             this.currentRestaurantId = window.id;
