@@ -17,18 +17,17 @@
     {{-- lottie --}}
     {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script> --}}
     {{-- JS/VUE --}}
-    <script src="{{ asset('js/stats.js') }}"></script>
-    {{-- <script src="{{ asset('js/cart.js') }}"></script> --}}
+    {{-- <script src="{{ asset('js/stats.js') }}"></script> --}}
+    <script src="{{ asset('js/cart.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div id="app">
-        {{-- rimosso header e incluso solo in index --}}
-        <div class="container-fixed"> {{-- chi è lo stronzone --}}
-            @include('components.notifications')
-            @yield('content')
-        </div>
-        {{-- @include('components.footer') --}}
+
+    {{-- rimosso header e incluso solo in index --}}
+    <div class="container-fixed"> {{-- chi è lo stronzone --}}
+        @include('components.notifications')
+        @yield('content')
     </div>
+        {{-- @include('components.footer') --}}
 </body>
 </html>

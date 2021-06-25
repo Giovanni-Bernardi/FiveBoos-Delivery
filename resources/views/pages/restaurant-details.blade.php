@@ -1,7 +1,7 @@
 @extends('layouts.restaurant-details-layout')
 
 @section('content')
-    <main class="details">
+    <main class="details" id="app" v-cloak >
         <div class="details-jumbotron">
         </div>
         <div class="restaurant-info">
@@ -40,20 +40,44 @@
                     <a href="">Vai alla Cassa</a>
                 </div>
                 <div class="temp-cart">
-                    <p>Il tuo carrello è vuoto</p>
+                    <ul>
+                        <li v-if="cart == ''">
+                            <p>Il tuo carrello è vuoto</p>
+                        </li>
+                        <li v-for='(plates, index) in cart' class="cartlist">
+                            <div id="name-product">@{{plates.name}}</div>
+                            <div id="modification">
+                                <div>X@{{plates.counter}}</div>
+                                <div>@{{plates.price * plates.counter}} €</div>
+                                <div>
+                                    <i class="fas fa-plus-square" @click="increase(plates.id, index)"></i>
+                                    <i class="fas fa-minus-square" @click="decrease(plates.id, index)"></i>
+                                </div>
+                            </div>
+                            <br>
+                        </li>
+                        <li v-if="cart == ''"></li>
+                        <li v-else class="totalprice">Totale: &euro;@{{totalPrice}}</li>
+                        <li v-if="cart == ''"></li>
+                        <li v-else class="payment"><button type="submit" form="new-order">Pagamento</button></li>
+
+                    </ul>
+                    <form style="display:none" method="POST" action="{{ route('storeOrder') }}" id="new-order">
+                        @csrf
+                        @method('POST')
+                            <input type="text" name="firstname" placeholder="firstname" value="Nan" required>
+                            <input type="text" name="lastname" placeholder="lastname" value="Nan" required>
+                            <input type="text" name="email" placeholder="email" value="Nan" required>
+                            <input type="text" name="telephone" placeholder="telephone" value="Nan" required>
+                            <input type="text" name="address" placeholder="address" value="Nan" required>
+                            <input type="date" name="delivery_date" value="2021-06-25" required>
+                            <input type="time" name="delivery_time" value="12:00" required>
+                            <input v-for="product in numberProduct" type="checkbox" name="products_id[]" :value="product" checked>
+                    </form>
                 </div>
             </div>
         </div>
         <ul>
-             {{-- <li>
-                Categories: 
-            </li>
-            @foreach ($restaurant -> categories as $category)
-            <li>
-                {{$category -> name}}
-            </li>
-            @endforeach --}}
-
             @if (Auth::check())
                 @if (Auth::user()->id == $restaurant -> user_id)
                     <li>
@@ -65,20 +89,46 @@
                 @endif
             @endif
         </ul>
-        
+
         <hr>
         <div class="dishes-box">
             <h4>
                 Products list:
             </h4>
             <ul>
-                @foreach ($restaurant -> products as $product)
+                <li v-for='(product, prIndex) in products'>
+                    <div class="dish">
+                        {{-- @if(!($product -> visible))
+                             <div class="unavailable-dish">
+                                <h3>Non disponibile</h3>
+                            </div>
+                        @endif --}}
+                        <div class="left-side">
+                            <span class="product-name">@{{product.name}}:</span> <span class="prduct-price">&euro;@{{product.price}},00</span>
+                            <div class="description">
+                                Descrizione: @{{product.description.slice(0, 45)}}...
+                            </div>
+                            <div class="ingredients">
+                                Ingredienti: @{{product.ingredients}}
+                            </div>
+                            <div class="button-add">
+                                <button id="to-cart" type="button" @click="addToCart(product.id, product.name, product.price, quantity)">Aggiungi in carello</button>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            {{-- <a href="{{route('productDetailsViewLink', @{{product.id}})}}"> --}}
+                                <img src="{{asset('/storage/placeholder/product.png')}}" alt="placeholder product">
+                            {{-- </a> --}}
+                        </div>
+                    </div>
+                </li>
+                {{-- @foreach ($restaurant -> products as $product)
                 <li>
                     <div class="dish @if(!($product -> visible)) unavailable @endif" >
-                        @if(!($product -> visible)) 
-                            {{-- <div class="unavailable-dish">
+                        @if(!($product -> visible))
+                             <div class="unavailable-dish">
                                 <h3>Non disponibile</h3>
-                            </div>  --}}
+                            </div>
                         @endif
                         <div class="left-side">
                             <span class="product-name">{{$product -> name}}:</span> <span class="prduct-price">&euro;{{$product -> price}},00</span>
@@ -90,7 +140,7 @@
                                     <li>ingrediente, </li>
                                     <li>ingrediente,</li>
                                     <li>ingrediente</li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -99,13 +149,13 @@
                                 <img src="{{asset('/storage/placeholder/product.png')}}" alt="placeholder product">
                             </a>
                         </div>
-                            {{-- details --}}
+                             details
                     </div>
                 </li>
-                @endforeach
+                @endforeach --}}
             </ul>
         </div>
-        
+
         {{-- Controllo se User esiste --}}
         @if (Auth::check())
             {{-- Controllo se User è il porprietario --}}
@@ -131,11 +181,14 @@
         @endif
         <p>
             <u>
-                Owner: {{$restaurant -> user -> email}}
+                Proprietario di questo Ristorante: {{$restaurant -> user -> email}}
             </u>
         </p>
-    
+
     </main>
+    <script>
+        var id = {!! json_encode($restaurant->id) !!};
+    </script>
     {{-- <script>
             function PopupModal(){
         var modal = document.getElementById("myModal");
@@ -155,5 +208,4 @@
     }
     document.addEventListener('DOMContentLoaded', PopupModal);
     </script> --}}
-    @endsection
-    
+@endsection

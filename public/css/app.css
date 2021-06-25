@@ -989,9 +989,8 @@ main.details .restaurant-info .overview {
   width: 30%;
   position: fixed;
   right: 0;
-  padding: 15px;
-  margin-right: 10px;
-  background-color: whitesmoke;
+  top: 251px;
+  border: 1px solid lightgrey;
 }
 
 main.details .restaurant-info .overview .checkout-button {
@@ -1004,8 +1003,70 @@ main.details .restaurant-info .overview .temp-cart {
   vertical-align: middle;
 }
 
+main.details .restaurant-info .overview .temp-cart .cartlist {
+  display: flex;
+  font-size: 18px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  background-color: white;
+  margin: 10px 0;
+  padding: 15px;
+}
+
+main.details .restaurant-info .overview .temp-cart .cartlist #name-product {
+  display: flex;
+  width: 50%;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+main.details .restaurant-info .overview .temp-cart .cartlist #modification {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+main.details .restaurant-info .overview .temp-cart .cartlist .fa-plus-square {
+  color: green;
+  padding: 0 5px;
+}
+
+main.details .restaurant-info .overview .temp-cart .cartlist .fa-minus-square {
+  color: red;
+  padding: 0 5px;
+}
+
+main.details .restaurant-info .overview .temp-cart .totalprice {
+  font-size: 22px;
+  border-top: 1px solid lightgrey;
+  padding-top: 10px;
+  font-weight: bolder;
+}
+
+main.details .restaurant-info .overview .temp-cart .payment {
+  padding: 10px 0;
+}
+
+main.details .restaurant-info .overview .temp-cart .payment button {
+  font-size: 20px;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: red;
+  font-family: inherit;
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+main.details .restaurant-info .overview .temp-cart .payment button:hover {
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+}
+
 main.details .dishes-box {
-  width: 60%;
+  width: 65%;
   margin-left: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -1016,10 +1077,15 @@ main.details .dishes-box ul {
   flex-wrap: wrap;
 }
 
+main.details .dishes-box ul li {
+  width: 50%;
+}
+
 main.details .dishes-box ul li .dish {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  height: 150px;
   margin: 7px;
   padding: 10px;
   border: 1px solid lightgrey;
@@ -1027,6 +1093,14 @@ main.details .dishes-box ul li .dish {
 
 main.details .dishes-box ul li .dish .left-side {
   padding: 8px;
+}
+
+main.details .dishes-box ul li .dish .left-side .description {
+  padding: 10px 0;
+}
+
+main.details .dishes-box ul li .dish .left-side .button-add {
+  padding-top: 25px;
 }
 
 main.details .dishes-box ul li .dish:hover {
@@ -2154,5 +2228,9 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+[v-cloak] {
+  display: none;
 }
 
