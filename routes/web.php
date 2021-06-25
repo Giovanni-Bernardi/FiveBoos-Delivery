@@ -22,7 +22,7 @@ Route::get('/index','RestaurantController@indexView') -> name('indexViewLink');
 Route::get('/restaurant/{id}','RestaurantController@restaurantDetailsView') -> name('restaurantDetailsViewLink');
 
 // Route profilo ristoratore loggato
-Route::get('/restaurant/profile/{id}', 'RestaurantController@restaurantProfileView')->name('restaurantProfileViewLink');
+Route::get('/restaurant/profile/{id}', 'AdminController@restaurantProfileView')->name('restaurantProfileViewLink');
 
 // Route dettaglio piatto
 Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');

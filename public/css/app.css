@@ -1315,6 +1315,10 @@ header p {
   position: relative;
 }
 
+#restaurant-container #restaurant-cards .crd.hidden-crd {
+  opacity: 0.6;
+}
+
 #restaurant-container #restaurant-cards ul li {
   display: flex;
 }
@@ -1332,7 +1336,7 @@ header p {
 }
 
 #restaurant-container #restaurant-cards ul li img {
-  height: 230px;
+  height: 280px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;

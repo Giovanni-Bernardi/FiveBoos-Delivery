@@ -193,4 +193,11 @@ class AdminController extends Controller
 
         return redirect() -> route('restaurantDetailsViewLink', $product -> restaurant -> id);
     }
+    //pagina Profilo Ristoratore loggato
+    public function restaurantProfileView(){
+        $user = Auth::id();
+        $restaurants = DB::table("restaurants") -> where("restaurants.user_id", $user) -> get();
+
+        return view('pages.my-profile', compact('restaurants'));
+    }
 }
