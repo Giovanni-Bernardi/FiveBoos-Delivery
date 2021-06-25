@@ -28,7 +28,7 @@ main.details {
                 display: none;
             }
             h3 {
-                
+
                 cursor: pointer;
                 padding: 5px;
                 width: fit-content;
@@ -44,11 +44,9 @@ main.details {
             width: 30%;
             position: fixed;
             right: 0;
-            padding: 15px;
-            margin-right: 10px;
-            background-color: whitesmoke;
-            // box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 31px, rgba(0, 0, 0, 0.12) 0px -12px 15px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 8px 9px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            
+            top: 251px;
+            border: 1px solid lightgrey;
+
             .checkout-button{
                 background-color: lightgrey;
                 padding: 5px;
@@ -56,12 +54,74 @@ main.details {
             .temp-cart {
                 text-align: center;
                 vertical-align: middle;
+
+                .cartlist{
+                    display: flex;
+                    font-size: 18px;
+                    border: 1px solid lightgrey;
+                    border-radius: 25px;
+                    background-color: white;
+                    margin: 10px 0;
+                    padding: 15px;
+
+                    #name-product{
+                        display: flex;
+                        width: 50%;
+                        font-size: 20px;
+                        font-weight: bolder;
+                    }
+
+                    #modification{
+                        display: flex;
+                        width: 50%;
+                        justify-content: space-around;
+                    }
+
+                    .fa-plus-square{
+                        color: green;
+                        padding: 0 5px;
+                    }
+
+                    .fa-minus-square{
+                        color: red;
+                        padding: 0 5px;
+                    }
+                }
+
+                .totalprice{
+                    font-size: 22px;
+                    border-top: 1px solid lightgrey;
+                    padding-top: 10px;
+                    font-weight: bolder;
+                }
+
+                .payment{
+                    padding: 10px 0;
+
+                    button{
+                        font-size: 20px;
+                        border: 2px solid red;
+                        border-radius: 5px;
+                        padding: 5px 15px;
+                        background-color: red;
+                        font-family: inherit;
+                        color: white;
+                        text-decoration: none;
+                        padding: 0 15px;
+
+                          &:hover {
+                            background-color: green;
+                            border: 2px solid green;
+                            color: white;
+                        }
+                    }
+                }
             }
         }
     }
-    
+
     .dishes-box {
-        width: 60%;
+        width: 65%;
         margin-left: 50px;
         display: flex;
         flex-wrap: wrap;
@@ -69,16 +129,33 @@ main.details {
             display: flex;
             flex-wrap: wrap;
             li {
+                width: 50%;
+
                 .dish {
                     cursor: pointer;
                     display: flex;
                     justify-content: space-between;
+                    height: 150px;
                     margin: 7px;
                     padding: 10px;
                     border: 1px solid lightgrey;
+
                     .left-side {
                         padding: 8px;
+
+                        .description{
+                            padding: 10px 0;
+                        }
+
+                        .button-add{
+                            padding-top: 25px;
+
+                            #to-cart{
+
+                            }
+                        }
                     }
+
                     &:hover {
                         border: 1px solid black;
                         box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 8%);
@@ -123,14 +200,14 @@ main.details {
     height: 100%;
     overflow: auto;
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.6); 
+    background-color: rgba(0,0,0,0.6);
     .modal-content {
         z-index: 10;
         background-color: #fefefe;
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%; 
+        width: 80%;
     }
     .close {
         color: #aaa;
@@ -138,7 +215,7 @@ main.details {
         font-size: 28px;
         font-weight: bold;
     }
-    
+
     .close:hover,
     .close:focus {
         color: black;

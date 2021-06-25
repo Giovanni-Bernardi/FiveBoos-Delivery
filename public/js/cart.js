@@ -107,8 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
       currentRestaurantId: '',
       visibility: false,
       quantity: 1,
-      totalPrice: 0,
-      percent: 20
+      totalPrice: 0
     },
     mounted: function mounted() {
       this.currentRestaurantId = window.id;
