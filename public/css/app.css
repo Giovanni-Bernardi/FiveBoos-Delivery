@@ -2060,15 +2060,25 @@ nav {
   transition: ease-in-out 0.3s;
 }
 
-#scooter {
-  position: absolute;
-  -webkit-animation: run 8s;
-          animation: run 8s;
+#tks_area {
+  background-color: #00ccbc;
+  height: 100vh;
 }
 
-.prova1 {
+#tks_area .tks_text {
   text-align: center;
-  color: pink;
+  padding: 3%;
+  color: #fff;
+}
+
+#tks_area .riders-img {
+  height: 400px;
+}
+
+#tks_area #scooter {
+  position: absolute;
+  -webkit-animation: run 10s;
+          animation: run 10s;
 }
 
 @-webkit-keyframes run {
@@ -2077,24 +2087,17 @@ nav {
   }
 
   to {
-    left: 1200px;
+    left: 90%;
   }
 }
 
-.riders-img {
-  height: 400px;
-  margin-top: 50px;
-  display: block;
-  width: 50%;
-}
-
-.home_route {
+#tks_area .home_route {
   font-size: 3rem;
   text-align: center;
 }
 
-.home_route a {
-  color: pink;
+#tks_area .home_route a {
+  color: #fff;
 }
 
 #login_area {
@@ -2234,7 +2237,6 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #f3f2f2;
   height: 100vh;
 }
 
