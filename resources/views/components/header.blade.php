@@ -15,7 +15,17 @@
             <li><a href='#'>Registrati</a></li>
             <li><a href='#'>Il mio profilo</a></li>
             <li><a href='#'>Aggiungi ristorante</a></li>
-            <li><a href='#'>Logout</a></li>
+            <li>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
         </ul>
     </nav>
 </header>
