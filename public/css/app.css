@@ -2230,7 +2230,7 @@ nav {
   opacity: 0.7;
 }
 
-#pay_area {
+#pay_area form {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -2238,25 +2238,25 @@ nav {
   height: 100vh;
 }
 
-#pay_area #box_list {
+#pay_area form #box_list {
   z-index: 100;
   transition: 0.5s;
 }
 
-#pay_area #box_list h2 {
+#pay_area form #box_list h2 {
   color: #fff;
 }
 
-#pay_area #box_pay {
+#pay_area form #box_pay {
   z-index: 100;
   width: 30%;
 }
 
-#pay_area #box_pay h2 {
+#pay_area form #box_pay h2 {
   color: #fff;
 }
 
-#pay_area #box_pay form button {
+#pay_area form #box_pay form button {
   padding: 3%;
 }
 

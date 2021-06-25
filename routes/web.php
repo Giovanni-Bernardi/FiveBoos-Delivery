@@ -60,7 +60,7 @@ Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');
 Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
 Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');
 
-// Prova di inviare nel database order
+// Route del Ordine
 Route::post('/store/order', 'RestaurantController@storeOrder') -> name('storeOrder');
 
 // Route grafico TEST
