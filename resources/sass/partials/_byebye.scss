@@ -1,44 +1,48 @@
-#scooter {
-    // bottom: 15%;
-    position: absolute;
-    animation: run 8s;
-}
+$general_color: #00ccbc;
 
-.prova1 {
-    text-align: center;
-    color: pink;
-    // background-color: blue;
-}
+#tks_area{
 
-// .movimento {
-//     position: relative;
-// }
+    background-color: $general_color;
+    height: 100vh;
 
-@-webkit-keyframes run {
-   from {
-       left: 0px;
-   }
+    .tks_text{
+        text-align: center;
+        padding: 3%;
+        color: #fff;
+    }
 
-   to {
-       left: 1200px;
-   }
-}
+    .riders-img {
 
-.riders-img {
+        height: 400px;
+        // margin-top: 50px;
+        // display: block;
+        // margin-left: auto;
+        // margin-right: auto;
+        // width: 50%;
+    }
 
-    height: 400px;
-    margin-top: 50px;
-    display: block;
-    // margin-left: auto;
-    // margin-right: auto;
-    width: 50%;
-}
+    #scooter {
+        // bottom: 15%;
+        position: absolute;
+        animation: run 10s;
+    }
 
-.home_route{
-    font-size: 3rem;
-    text-align: center;
-    
-    a{
-        color: pink;
+    @-webkit-keyframes run {
+        from {
+            left: 0px;
+        }
+
+        to {
+            left: 90%;
+        }
+    }
+
+    .home_route {
+        font-size: 3rem;
+        text-align: center;
+
+        a {
+            color: #fff;
+        }
     }
 }

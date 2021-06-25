@@ -1,9 +1,8 @@
 
-$primary: #00ccbc;
+$general_color: #00ccbc;
 
 #login_area {
-    // border: solid 2px blue;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +32,7 @@ $primary: #00ccbc;
             width: 60%;
             padding: 6%;
             text-align: center;
-            border-right: solid 15px $primary;
+            border-right: solid 15px $general_color;
             border-bottom-right-radius: 10px;
             border-top-right-radius: 10px;
             display: flex;
@@ -53,7 +52,7 @@ $primary: #00ccbc;
                     text-align: center;
                     padding: 15px 40px;
                     margin-top: 20px;
-                    background-color: saturate($primary, 30%);
+                    background-color: saturate($general_color, 30%);
                     color: #fff;
                     font-size: 14px;
                     margin-left: auto;
@@ -66,7 +65,7 @@ $primary: #00ccbc;
 
                     &:hover {
                         transform: translateY(-3px);
-                        box-shadow: 0 2px 6px -1px rgba($primary, .65);
+                        box-shadow: 0 2px 6px -1px rgba($general_color, .65);
 
                         &:active {
                         transform: scale(.99);
@@ -94,9 +93,9 @@ $primary: #00ccbc;
                         -webkit-appearance: none;
     
                         &:focus {
-                            border-bottom: solid 3px $primary;
+                            border-bottom: solid 3px $general_color;
                             outline: 0;
-                            box-shadow: 0 2px 6px -8px rgba($primary, .45);
+                            box-shadow: 0 2px 6px -8px rgba($general_color, .45);
                         }
                     }
 

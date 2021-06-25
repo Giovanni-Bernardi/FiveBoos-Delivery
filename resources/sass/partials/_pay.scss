@@ -1,17 +1,15 @@
+$general_color: #00ccbc;
+
 #pay_area{
-    // border: solid 3px blue;
+    // per cambiare il colore di sfondo della pag pay si deve modificare il background nella "lottie-player" nella pag pay.blade.php 
 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    background-color: #f3f2f2;
     height: 100vh;
 
     #box_list{
-        // height: 80%;
-        // border: solid 4px green;
-        // width: 30%;
         z-index: 100;
         transition: .5s;
 
@@ -23,8 +21,6 @@
     #box_pay{
         z-index: 100;
         width: 30%;
-        // height: 80%;
-        // border: solid 4px green;
 
         h2 {
             color: #fff;
@@ -39,10 +35,10 @@
 }
 
 .braintree-sheet__header{
-    background-color: #00ccbc;
+    background-color: $general_color;
     border: none;
 }
 
 .braintree-sheet__content--form{
-    background-color: #00ccbc;
+    background-color: $general_color;
 }
