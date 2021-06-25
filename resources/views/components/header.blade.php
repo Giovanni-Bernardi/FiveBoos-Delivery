@@ -11,6 +11,7 @@
             <div class="menuline"></div>
         </div>
         <ul class='menulist'>
+            <li><a href='{{ route('login') }}'>Accedi</a></li>
             <li><a href='#'>Registrati</a></li>
             <li><a href='#'>Il mio profilo</a></li>
             <li><a href='#'>Aggiungi ristorante</a></li>

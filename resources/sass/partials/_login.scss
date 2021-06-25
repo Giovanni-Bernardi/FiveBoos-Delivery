@@ -1,0 +1,114 @@
+
+$primary: rgb(59, 196, 214);
+
+#login_area {
+    // border: solid 2px blue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f3f2f2;
+    height: 100vh;
+
+    #box_login{
+
+        width: 50%;
+        height: 80%;
+        display: flex;
+
+        // div di sfondo img
+        .left{
+            height: 100%;
+            width: 40%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .right{
+            background-color: #fff;
+            height: 100%;
+            width: 60%;
+            padding: 6%;
+            text-align: center;
+
+            h2{
+                margin-bottom: 50px;
+            }
+
+            form {
+                button {
+                    -webkit-appearance: none;
+                    width: auto;
+                    min-width: 100px;
+                    border-radius: 24px;
+                    text-align: center;
+                    padding: 15px 40px;
+                    margin-top: 5px;
+                    background-color: saturate($primary, 30%);
+                    color: #fff;
+                    font-size: 14px;
+                    margin-left: auto;
+                    font-weight: 500;
+                    box-shadow: 0px 2px 6px 8px rgba(0, 0, 0, .13);
+                    border: none;
+                    transition: all .3s ease;
+                    outline: 0;
+
+                    &:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 2px 6px -1px rgba($primary, .65);
+
+                        &:active {
+                        transform: scale(.99);
+                        }
+                    }
+                }
+                
+                .floating-label {
+                    position: relative;
+                    margin-bottom: 10px;
+                    
+                    input {
+                        font-size: 16px;
+                        padding: 20px 0px;
+                        height: 56px;
+                        border: none;
+                        border-bottom: solid 3px rgba(0, 0, 0, .1);
+                        background: #fff;
+                        min-width: 280px;
+                        box-sizing: border-box;
+                        transition: all .3s linear;
+                        color: #000;
+                        font-weight: 400;
+                        border-radius: 10px;
+                        -webkit-appearance: none;
+    
+                        &:focus {
+                            border-bottom: solid 3px $primary;
+                            outline: 0;
+                            box-shadow: 0 2px 6px -8px rgba($primary, .45);
+                        }
+                    }
+
+                    label {
+                        position: absolute;
+                        top: calc(50% - 7px);
+                        left: 0;
+                        opacity: 0;
+                        transition: all .3s ease;
+                    }
+
+                    input:not(:placeholder-shown) {
+                        padding: 28px 0px 12px 0px;
+                    }
+
+                    input:not(:placeholder-shown)+label {
+                        transform: translateY(-10px);
+                        opacity: .7;
+                    }
+                }
+            }           
+        }
+    }
+}

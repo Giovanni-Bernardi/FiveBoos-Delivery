@@ -20,7 +20,7 @@
                             <span class="input-label">TOTALE ORDINE</span>
 
                             <div class="input-wrapper amount-wrapper">
-                                <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
+                                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
                             </div>
                         </label>
 
