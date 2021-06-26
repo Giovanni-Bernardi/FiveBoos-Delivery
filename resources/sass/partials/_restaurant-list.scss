@@ -119,7 +119,8 @@
                         width: 100%;
                         filter: contrast(70%);
                         object-fit: cover;
-                        object-position: center;
+                        // object-fit: scale-down;
+                        object-position: left;
                         transition: transform .2s;
                     }
                     .categories-card {
@@ -160,7 +161,7 @@
                                 border-radius: 5px;
                                 font-size: 14px;
                                 font-weight: bold;
-                                color: rgb(236, 236, 236);
+                                color: rgb(245, 245, 245);
                                 text-transform: capitalize;
                             }
                         }

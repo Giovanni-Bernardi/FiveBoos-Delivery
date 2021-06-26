@@ -12,7 +12,7 @@
                 <ul>
                     <li v-for="category in categories" class="food-type" :class="filter.includes(category.id) ? 'active' : ''"> 
                         <div class="img-container">
-                            <input type="checkbox" name="" class="" :value="category.id" v-model="filter" v-on:change="getFilteredRestaurant()" v-on:click="">
+                            <input type="checkbox" name="" class="" :value="category.id" v-model="filter" v-on:change="filter != false ? getFilteredRestaurant() : ''">
                             <img :src="'/storage/assets/' + category.img" alt="pizza" :id="category.name">
                             <p class="cat-name">@{{category.name}}</p>
                         </div>

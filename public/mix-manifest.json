@@ -1,8 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
     "/js/cart.js": "/js/cart.js",
     "/js/dynamic-search.js": "/js/dynamic-search.js",
     "/js/header-animation.js": "/js/header-animation.js",
-    "/js/stats.js": "/js/stats.js"
+    "/js/stats.js": "/js/stats.js",
+    "/css/app.css": "/css/app.css"
 }

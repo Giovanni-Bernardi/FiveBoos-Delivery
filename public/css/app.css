@@ -626,8 +626,8 @@ footer .bottom .privacy .copyright {
   filter: contrast(70%);
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: left;
+     object-position: left;
   transition: transform 0.2s;
 }
 
@@ -672,7 +672,7 @@ footer .bottom .privacy .copyright {
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
-  color: #ececec;
+  color: whitesmoke;
   text-transform: capitalize;
 }
 
