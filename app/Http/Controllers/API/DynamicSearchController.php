@@ -12,68 +12,63 @@ class DynamicSearchController extends Controller
 {
     public function getCategories(){
         $categories = Category::all();
-        json_encode($categories);
-        return $categories;
+        return json_encode($categories);
     }
+
+    // Funzione che torna tutti i ristoranti in ordine random
     public function getAllRestaurants(){
-        // $restaurantsList = array();
-        // $prova = [];
-        // $resStructure = [
-        //     'id' => $restaurant -> id,
-        //     'address' => $restaurant -> address,
-        //     'business_name' => $restaurant -> business_name,
-        //     'category'=> [
-        //         'id' => '',
-        //         'name' => ''
-        //     ],
-        //     'description'=> $restaurant -> description,
-        //     'img'=> $restaurant -> img,
-        //     'telephone'=> $restaurant -> telephone,
-        // ];
-        // $prova = [];
+        $restaurants = Restaurant::inRandomOrder() ->get();
 
-        // $restaurants = DB::table('restaurants')
-        //             -> join('category_restaurant', 'restaurants.id', '=', 'category_restaurant.restaurant_id')
-        //             -> join('categories', 'category_restaurant.category_id', '=', 'categories.id')
-        //             -> select('restaurants.id','restaurants.business_name','restaurants.address','restaurants.telephone','restaurants.img', 'restaurants.description', 'categories.name as category_name', 'categories.id as category_id')
-        //             // -> orderBy('restaurants.id', 'asc')
-        //             -> groupBy('restaurants.id')
-        //             -> get();
-
-        $restaurants = Restaurant::all();
-        // $categories = Category::all();
-        $category_restaurant = [];
-        
         foreach ($restaurants as $restaurant) {
-            $query = DB::table('category_restaurant') 
-                                -> join('categories', 'category_restaurant.category_id', '=', 'categories.id')
-                                -> select('category_restaurant.restaurant_id as res_id','categories.id', 'categories.name')
-                                -> where('category_restaurant.restaurant_id', $restaurant -> id)
-                                -> get();
-            array_push($category_restaurant, $query);
+            $restaurant -> categories;
+        }
+        return json_encode($restaurants);
+    }
+
+    public function getFilteredRestaurants($filter){
+        // Ristoranti filtrati da tornare
+        $meltedRestaurants = [];
+        $filteredRestaurants = [];
+        $query = [];
+        $array = [];
+        $cont = 0;
+        $pushIt;
+
+        // Creazione array di ID categoria da stringa di numeri ($filter)
+        $filterArray = explode(',', $filter);
+        
+        for ($i=0; $i < count($filterArray); $i++) { 
+            $category_restaurant = DB::table('restaurants') 
+                        -> join('category_restaurant','restaurants.id', '=', 'category_restaurant.restaurant_id')
+                        -> select('restaurants.id','category_restaurant.category_id')
+                        -> where('category_restaurant.category_id', $filterArray[$i])
+                        -> get();
+            $query [] = $category_restaurant;
         }
 
-        for ($i=0; $i < count($restaurants); $i++) { 
-            // $restaurants[$i]['category'] = [ 'id' => 0];
-            for ($j=0; $j < count($category_restaurant[$i]); $j++) { 
-                // if(count($restaurants[$i]['category']) <1){
-                //     $restaurants[$i]['category'] = [
-                //         'id' => $category_restaurant[$i][$j] ->id
-                //     ];
-                // }
+        // Push elemento solo se è presente in ogni "query" (Filtraggio)
+        foreach ($query[0] as $value) {
+            $cont = 0;
+            foreach ($query as $outerArray) {
+                foreach ($outerArray as $confrontValue) {
+                    if($confrontValue -> id == $value -> id){
+                        $cont ++;
+                    }
+                }
+                if($cont == count($query)){
+                    $meltedRestaurants [] = $value;
+                }
             }
-            // $restaurants[$i]['category'] [] = [ 'id' => 0];
-            // $restaurants[$i]['category'] = [
-            //     'id' => $category_restaurant[$i]['id'],
-            // ];
         }
 
-        // json_encode($restaurants);
-        // json_encode($restaurantsList);
-        return [$restaurants, $category_restaurant];
-        // return $restaurants[0] -> category;
-        // return $category_restaurant[0]['id'];
-        // return json_encode($category_restaurant[0][0] -> id);
-        // return [$restaurants, $restaurantsList, $prova];
+        // Ricerca ristoranti che corrispondono con la query di filtraggio
+        foreach ($meltedRestaurants as $restaurant) {
+            $getRestaurants = Restaurant::where('id', $restaurant -> id)
+                        -> get();
+            $getRestaurants[0] -> categories;
+            $filteredRestaurants[] = $getRestaurants[0];
+        }
+        
+        return  json_encode($filteredRestaurants);
     }
 }

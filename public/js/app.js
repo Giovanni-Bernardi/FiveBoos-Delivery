@@ -49676,16 +49676,16 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  //mouse follow
 
 var cursorFollow = document.querySelectorAll('.popup-note'); //TEST FUNZIONE SCOLL 1
-
-$(document).on('scroll', function (e) {
-  var value = $(this).scrollTop();
-
-  if (value < 100) {
-    $("header").css("background", "transparent");
-  } else {
-    $("header").css("background", "red");
-  }
-}); // TEST FUNZIONE SCOLL 2
+// $(document).on('scroll', function(e) {
+//     var value = $(this).scrollTop();
+//     if ( value < 100 ){
+//         $("header").css("background", "transparent");
+//     }
+//     else{
+//         $("header").css("background", "red");
+//     }
+// });
+// TEST FUNZIONE SCOLL 2
 // window.onscroll = function() {scrollFunction()};
 //  function scrollFunction() {
 //    if (document.body.scrollTop >80 || document.documentElement.scrollTop >80) {
@@ -49782,8 +49782,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Corso programmazione Boolean\Classe 29\Esercizi Boolean\Esercizi Giugno\proj-final-delivery\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Corso programmazione Boolean\Classe 29\Esercizi Boolean\Esercizi Giugno\proj-final-delivery\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -1,166 +1,107 @@
-//searchbar
-header {
-  .tb {
-    display: table;
-    width: 100%;
-    }
-  
-    .td {
-    display: table-cell;
-    vertical-align: top;
-    max-width: 600px;
-    }
-  
-    input, button {
-      color: #fff;
-      padding: 0;
-      margin: 0;
-      border: 0;
-      background-color: transparent;
-    }
-  
-    #cover {
-      padding: 10px;
-      background-color: #ffffff;
-      border-radius: 30px;
-      color: black;
-      border: 8px solid black;
-      transform: scale(0.53);
-      align-items: stretch;
-    }
-  
-    form {
-      height: 96px;
-    }
-  
-    input[type="text"] {
-      width: 100%;
-      height: 96px;
-      font-size: 49px;
-      line-height: 1;
-      position: absolute;
-      top: 7px;
-      max-width: 570px;
-      color: #000000;
-    }
-  
-    input[type="text"]::placeholder {
-      color: #000000;
-    }
-  
-    #s-cover {
-      width: 1px;
-      padding-left: 35px;
-    }
-  
-    button {
-      position: relative;
-      display: block;
-      width: 84px;
-      height: 96px;
-      cursor: pointer;
-    }
-  
-    #s-circle {
-      position: relative;
-      top: -7px;
-      left: 6px;
-      width: 65px;
-      height: 62px;
-      margin-top: 0;
-      border-width: 15px;
-      border: 15px solid rgb(0, 0, 0);
-      background-color: transparent;
-      border-radius: 50%;
-      transition: 0.5s ease all;
-    }
-  
-    button span {
-      position: absolute;
-      top: 68px;
-      left: 43px;
-      display: block;
-      width: 45px;
-      height: 15px;
-      background-color: transparent;
-      border-radius: 10px;
-      transform: rotateZ(52deg);
-      transition: 0.5s ease all;
-    }
-  
-    button span:before, button span:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 45px;
-      height: 15px;
-      background-color: #000000;
-      border-radius: 10px;
-      transform: rotateZ(0);
-      transition: 0.5s ease all;
-    }
-  
-    #s-cover:hover #s-circle {
-      top: -1px;
-      width: 67px;
-      height: 15px;
-      border-width: 0;
-      background-color: #000000;
-      border-radius: 20px;
-    }
-  
-    #s-cover:hover span {
-      top: 50%;
-      left: 56px;
-      width: 25px;
-      margin-top: -9px;
-      transform: rotateZ(0);
-    }
-  
-    #s-cover:hover button span:before {
-      bottom: 11px;
-      transform: rotateZ(52deg);
-    }
-  
-    #s-cover:hover button span:after {
-      bottom: -11px;
-      transform: rotateZ(-52deg);
-    }
-  
-    #s-cover:hover button span:before, #s-cover:hover button span:after {
-      right: -6px;
-      width: 40px;
-      background-color: #000000;
-    }
-  
-    #ytd-url {
-      display: block;
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      padding: 10px 14px;
-      margin: 20px;
-      color: #000000;
-      font-family: Nunito;
-      font-size: 14px;
-      text-decoration: none;
-      background-color: #ff7575;
-      border-radius: 4px;
-      box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
-      z-index: 125;
-    }
-  
-    p {
-      border-right: solid 3px rgba(0, 0, 0, 0.75);
-      white-space: nowrap;
-      overflow: hidden; 
-      font-size: 49px;
-      animation: animated-text 1.6s linear 1s 1 normal both,
-      animated-cursor 600ms linear infinite !important;
-    }
-      // animation: animated-text 4s linear 1s 1 normal both,
-      // animated-cursor 600ms linear infinite;
-    
-}
+header{
+    nav{
+        .center-section{
+            // flex-shrink: 0;
+            flex-basis: 300px;
+            text-align: center;
+            position: relative;
+            // overflow: hidden;
+            
+            .search-bar{
+                box-shadow: 0 2px 17px 0 #e19f17;
+                width: 80%;
+                height: 40px;
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 20px;
+                padding: 5px 10px 5px 25px;
+                font-size: 1rem;
+                // font-family: "Fredoka One", cursive;
+                font-family: "Raleway", sans-serif;
+                text-align: center;
 
+                transition: width 0.5s;
+                &:not(:placeholder-shown){
+                    width: 100%;
+                    &+i{
+                        left: 3%;
+                    }
+                }
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: rgb(173, 173, 173);
+                    opacity: 1; /* Firefox */
+                }
+                  
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: rgb(173, 173, 173);
+                }
+                  
+                &::-ms-input-placeholder { /* Microsoft Edge */
+                    color: rgb(173, 173, 173);
+                }
+            }
+            i{
+                color: rgb(212, 212, 212);
+                position: absolute;
+                z-index: 100;
+                font-size: 15px;
+                left: 37%;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: left 0.5s;
+                cursor: pointer;
+            }
+        }
+        .rx-section{
+            flex-basis: 250px;
+            text-align: right;
+            position: relative;
+
+            i{
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+            }
+            .user-popup{
+                text-align: left;
+                padding: 10px 15px;
+                position: absolute;
+                top: 115%;
+                right: 0px;
+                background-color: white;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 0 2px 17px 0 #e19f17;
+
+                visibility: hidden;
+                opacity: 0;
+                width: 0px;
+                height: 0px;
+                transition: width 0.5s, height 0.5s, opacity 0.5s, visibility 0.5s;
+                &.active{
+                    visibility: visible;
+                    width: 100px;
+                    height: 65px;
+                    opacity: 1;
+                }
+                li{
+                    margin-bottom: 8px;
+                    &:last-of-type{
+                        margin-bottom: 0;
+                    }
+                    a{
+                        font-size: 15px;
+                        font-weight: 600;
+                        color: white;
+                        font-family: "Raleway", sans-serif;
+
+                        transition: color 1s;
+                        &.active{
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

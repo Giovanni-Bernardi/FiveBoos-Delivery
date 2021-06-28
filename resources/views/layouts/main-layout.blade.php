@@ -21,16 +21,14 @@
     {{-- JS/VUE --}}
     {{-- <script src="{{ asset('js/cart.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/stats.js') }}"></script> --}}
+    <script src="{{ asset('js/header-animation.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div id="app">
-        {{-- rimosso header e incluso solo in index --}}
-        <div class="container-sticky-footer"> {{-- chi è lo stronzone --}}
-            @include('components.notifications')
-            @yield('content')
-        </div>
-        @include('components.footer')
-    </div>
+    @include('components.notifications')
+            
+    @yield('content')
+    
+    @include('components.footer')
 </body>
 </html>

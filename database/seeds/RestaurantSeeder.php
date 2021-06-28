@@ -19,7 +19,7 @@ class RestaurantSeeder extends Seeder
             $restaurant -> user() -> associate($user);
             $restaurant -> save();
             $category = Category::inRandomOrder()
-                    -> limit(rand(1, 2))
+                    -> limit(rand(1, 3))
                     -> get();
             $restaurant -> categories() -> attach($category);
             $restaurant -> save();

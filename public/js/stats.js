@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -290,14 +290,14 @@ document.addEventListener('DOMContentLoaded', statisticsChart);
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!*************************************!*\
   !*** multi ./resources/js/stats.js ***!
   \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Corso programmazione Boolean\Classe 29\Esercizi Boolean\Esercizi Giugno\proj-final-delivery\resources\js\stats.js */"./resources/js/stats.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\stats.js */"./resources/js/stats.js");
 
 
 /***/ })
