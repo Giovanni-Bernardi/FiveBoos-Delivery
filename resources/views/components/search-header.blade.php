@@ -22,13 +22,39 @@
 
         <div class="center-section">
             {{-- searchbar --}}
-            <input type="text" class="search-bar" id="merda" placeholder="SEARCH">
+            <input type="text" class="search-bar" id="merda" placeholder="Cerca">
             {{-- <i class="fas fa-pizza-slice"></i> --}}
             <i class="fas fa-search"></i>
         </div>
 
         <div class="rx-section">
-            <i class="far fa-user"></i>
+            <i class="fas fa-user" id="user-icon"></i>
+            <ul class="user-popup">
+                @guest
+                    <li>
+                        <a href="">
+                            Accedi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Registrati
+                        </a>
+                    </li>
+                @endguest
+                @auth
+                    <li>
+                        <a href="">
+                            Profilo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Esci
+                        </a>
+                    </li>
+                @endauth
+            </ul>
         </div>
     </nav>
 </header>

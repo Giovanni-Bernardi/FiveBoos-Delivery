@@ -3,7 +3,8 @@
     div.list-jumbotron {   
         // display: flex;
         height: fit-content;
-        background-color: #00CCBC;
+        // background-color: #00CCBC;
+        background-color: #ffc244;
         padding: 115px 10% 40px;
 
         ul {
@@ -21,9 +22,10 @@
                 border-radius: 50%;
                 background-color: white;
                 padding: 10px 10px 25px;
-                box-shadow: 0 2px 17px 0 #969696;
+                // box-shadow: 0 2px 17px 0 #969696;
                 // box-shadow: 0 2px 17px 0 #1e988e;
                 // box-shadow: 0 0 17px 0 rgb(94, 94, 94);
+                box-shadow: 0 2px 17px 0 #e19f17;
                 cursor: pointer;
                 position: relative;
                 width: 115px;
@@ -83,22 +85,33 @@
         }
     }
     
-    .titles-restaurant-list {
-        padding: 60px 10% 30px;
-        h2 {
-            font-size: 30px;
-            font-weight: bold;
-        }
-    }
-
+    
     .restaurants-box {
         padding: 0 10% 20px;
         margin: 0 -10px;
         @include flex(row, center, center);
         flex-wrap: wrap;
 
+        @media screen and(min-width: 1840px)  {
+            &{
+                max-width: 1840px;
+                margin: 0 auto;
+            }
+        }
+        
+        .titles-restaurant-list {
+            padding: 60px 10% 30px;
+            flex-basis: 100%;
+            h2 {
+                text-align: center;
+                font-size: 28px;
+                font-weight: normal;
+            }
+        }
+
         .restaurant-card {
             flex-basis: calc(100% / 3 - 20px);
+
             max-width: 350px;
             height: 230px;
             margin: 0 10px 40px;

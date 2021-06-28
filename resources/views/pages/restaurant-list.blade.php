@@ -22,11 +22,14 @@
 
         </div>
 
-        <div class="titles-restaurant-list">
-            <h2>Ristoranti</h2>
-        </div>
+        {{-- <div class="titles-restaurant-list">
+            
+        </div> --}}
 
         <ul class="restaurants-box" v-if="filter == false">
+            <li class="titles-restaurant-list">
+                <h2>Ristoranti in zona</h2>
+            </li>
             {{-- <ul v-if="filter == false">
                 <li v-for="restaurant in restaurantsList">
                     Name: @{{restaurant.business_name}}
@@ -86,6 +89,10 @@
                 
         </ul>
         <ul class="restaurants-box" v-else>
+            <li class="titles-restaurant-list">
+                <h2>Risultato riecerca</h2>
+            </li>
+
             <li class="restaurant-card" v-for="restaurant in filteredRestaurants">
                 <a :href="'/restaurant/' + restaurant.id">
                     <div class="background-image">

@@ -114,12 +114,27 @@ function hambugerClick() {
     hambuger.classList.toggle('active');
     hamburgerMenu.classList.toggle('active');
   });
+} // Funzione animazione user menu
+
+
+function userClick() {
+  var userBtn = document.getElementById('user-icon');
+  var userMenu = document.getElementsByClassName('user-popup')[0];
+  var menuListItem = userMenu.children;
+  userBtn.addEventListener('click', function () {
+    userMenu.classList.toggle('active');
+
+    for (var i = 0; i < menuListItem.length; i++) {
+      menuListItem[i].children[0].classList.toggle('active');
+    }
+  });
 }
 
 function init() {
   console.log('JS header attivo');
   window.addEventListener('scroll', scrolledHeader);
   hambugerClick();
+  userClick();
 }
 
 document.addEventListener('DOMContentLoaded', init);
