@@ -47,7 +47,7 @@
                     <input type="time" name="delivery_time" required>
                 </div>
 
-                <input type="hidden" name="total_price" required>
+                <input type="hidden" value="{{ $order -> total_price }}" name="total_price" required>
             </div>
             <div id="box_pay" class="animate__animated animate__swing animate__delay-3s">
                 <section>
@@ -68,7 +68,7 @@
                 </section>
 
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="btn btn-primary" type="submit" form="update-order" form="payment-form"><span>PAGA IL TUO ORDINE</span></button>
+                <button class="btn btn-primary" type="submit" form="payment-form"><span>PAGA IL TUO ORDINE</span></button>
             </div>
         </form>
     </div>
