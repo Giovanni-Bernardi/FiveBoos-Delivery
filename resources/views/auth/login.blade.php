@@ -8,7 +8,7 @@
 <main>
     <div id="login_area">
         <div id="box_login" class="animate__animated animate__zoomInDown animate__delay-1s">
-            <div class="left" style="background-image: url(storage/placeholder/login-page.png)">
+            <div class="left" style="background-image: url(storage/placeholder/login-page.svg)">
             </div>
     
             <div class="right">
