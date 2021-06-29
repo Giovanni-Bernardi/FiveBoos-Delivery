@@ -102,12 +102,18 @@ header{
             height: 100vh;
             position: fixed;
             z-index: 910;
+            font-weight: normal;
             // list-style: none;
             text-align: center;
             padding-top: 50px;
             margin-right: 0px;
             margin-right: 10px;
-            background-color: rgba(0, 204, 188);
+            //background interno hamburger
+            animation-name: bg-landing-rgb;
+            animation-duration: 18s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
             // background: #00ccbc;
             
             transition: left 0.5s, visibility 0.5s, opacity 0.5s;

@@ -4,6 +4,7 @@
 
 @section('content')
 
+@include('components.header')
 <main>
     <div id="login_area">
         <div id="box_login" class="animate__animated animate__zoomInDown animate__delay-1s">
