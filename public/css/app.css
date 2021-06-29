@@ -1988,25 +1988,45 @@ header nav .menulist li a {
   transition: ease-in-out 0.3s;
 }
 
-#tks_area {
-  background-color: #00ccbc;
+main {
+  background-color: #FFC244;
   height: 100vh;
 }
 
-#tks_area .tks_text {
+main #container-result {
+  display: flex;
+  justify-content: center;
+}
+
+main #container-result * {
+  font-family: "Segoe UI";
+}
+
+main #container-result #container-text {
+  margin-top: 50px;
+  width: 450px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+main #container-result #container-text h2 {
   text-align: center;
-  padding: 3%;
-  color: #fff;
 }
 
-#tks_area .riders-img {
-  height: 400px;
+main #container-result #container-text lottie-player {
+  margin: auto;
 }
 
-#tks_area #scooter {
+main #container-result h2 {
+  text-align: center;
+  padding-top: 25px;
+}
+
+main #container-result #scooter {
   position: absolute;
-  -webkit-animation: run 10s;
-          animation: run 10s;
+  -webkit-animation: run 6s;
+          animation: run 6s;
 }
 
 @-webkit-keyframes run {
@@ -2015,17 +2035,8 @@ header nav .menulist li a {
   }
 
   to {
-    left: 90%;
+    left: 100%;
   }
-}
-
-#tks_area .home_route {
-  font-size: 3rem;
-  text-align: center;
-}
-
-#tks_area .home_route a {
-  color: #fff;
 }
 
 #login_area {

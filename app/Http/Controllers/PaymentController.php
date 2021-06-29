@@ -56,8 +56,7 @@ class PaymentController extends Controller
         'total_price' => 'required|numeric',
         ]);
 
-        $order = Order::make($validate);
-        $order -> save();
+        $order -> update($validate);
 
         $gateway = $this -> braintreeGateway();
 

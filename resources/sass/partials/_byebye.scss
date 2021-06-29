@@ -1,48 +1,49 @@
-$general_color: #00ccbc;
-
-#tks_area{
-
-    background-color: $general_color;
+main{
+    background-color: #FFC244;
     height: 100vh;
 
-    .tks_text{
-        text-align: center;
-        padding: 3%;
-        color: #fff;
-    }
-
-    .riders-img {
-
-        height: 400px;
-        // margin-top: 50px;
-        // display: block;
-        // margin-left: auto;
-        // margin-right: auto;
-        // width: 50%;
-    }
-
-    #scooter {
-        // bottom: 15%;
-        position: absolute;
-        animation: run 10s;
-    }
-
-    @-webkit-keyframes run {
-        from {
-            left: 0px;
+    #container-result{
+        display: flex;
+        justify-content: center;
+        *{
+            font-family:'Segoe UI';
         }
 
-        to {
-            left: 90%;
-        }
-    }
+        #container-text{
+            margin-top: 50px;
+            width: 450px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: white;
 
-    .home_route {
-        font-size: 3rem;
-        text-align: center;
+            h2{
+                text-align: center;
+            }
 
-        a {
-            color: #fff;
+            lottie-player{
+                margin: auto;
+            }
         }
+
+        h2{
+            text-align: center;
+            padding-top: 25px;
+        }
+
+        #scooter{
+            position: absolute;
+            animation: run 6s;
+        }
+
+        @-webkit-keyframes run {
+            from {
+                left: 0px;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
     }
 }

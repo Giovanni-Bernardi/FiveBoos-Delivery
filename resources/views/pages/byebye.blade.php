@@ -4,28 +4,36 @@
 
 {{-- funzione che dopo 3 secondi ti porta alla pag 'indexViewLink' --}}
 <head>
-    {{-- <meta http-equiv="refresh" content="3; url={{ route('indexViewLink') }}" /> --}}
+    <meta http-equiv="refresh" content="4   ; url={{ route('indexViewLink') }}" />
 </head>
 
 <main>
-    <div id="tks_area">
-        <h1 class="tks_text">
-            Grazie per aver scelto FIVEBOO'S il tuo ordine partirà a breve..
-        </h1>
-
-        <div class="riders-img">
-            <div id = "scooter">
-               <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_0rxzjosz.json"  background="transparent"
-                speed="1.5"  style="width: 400px; height: 400px;"  loop  autoplay></lottie-player>
-
+    @if (session('message'))
+        <div id="container-result">
+            <div>
+                <div id="container-text">
+                    <h2>Pagamento effettuato con sucesso!</h2>
+                    <lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_v2PAPH.json"  background="transparent"  speed="0.5"  style="width: 150px; height: 150px;" autoplay></lottie-player>
+                </div>
+                <h2>Grazie per aver scelto 5 Boo's Delivery!</h2>
+                <h2>Il tuo ordine sta arrivando!</h2>
+                <div id="scooter">
+                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_0rxzjosz.json"  background="transparent" speed="1"  style="width: 400px; height: 400px;" autoplay></lottie-player>
+                </div>
             </div>
         </div>
+    @endif
 
-        <div class="home_route">
-            <a class="mx-2" href="{{ route('indexViewLink') }}"> <i class="fas fa-home"></i></a>
+    @if ($errors->any())
+        <div id="container-result">
+            <div>
+                <div id="container-text">
+                    <h2>Scusate ma e successo un errore!</h2>
+                    <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_chkimb7d.json"  background="transparent"  speed="0.8"  style="width: 150px; height: 150px;" autoplay></lottie-player>
+                </div>
+            </div>
         </div>
-    </div>
+    @endif
 </main>
-
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 @endsection
