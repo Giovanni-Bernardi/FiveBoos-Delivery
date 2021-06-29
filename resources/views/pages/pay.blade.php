@@ -3,62 +3,68 @@
 @extends('layouts.pay-layout')
 @section('content')
 
-<main>
+<main class="pay-order">
 
-    <div id="pay_area">
-
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_EchaWV.json" background="#00CCBC" speed="0.5" style="width: 100%; height: 100%; position: fixed" loop autoplay></lottie-player>
-
-        <form method="post" id="payment-form" action="{{route ('checkoutOrder', $order -> id)}}">
-            @csrf
-            @method('POST')
-            <div id="box_list" class="animate__animated animate__backInLeft animate__slow">
-
-                <h2>firstname</h2>
-                <div>
-                    <input type="text" name="firstname" placeholder="firstname" required>
-                </div>
-
-                <h2>lastname</h2>
-                <div>
-                    <input type="text" name="lastname" placeholder="lastname" required>
-                </div>
-
-                <h2>email</h2>
-                <div>
-                    <input type="text" name="email" placeholder="email" required>
-                </div>
-
-                <h2>Telefono</h2>
-                <div>
-                    <input type="text" name="telephone" placeholder="telephone" required>
-                </div>
-
-
-                <h2>address</h2>
-                <div>
-                    <input type="text" name="address" placeholder="address" required>
-                </div>
-
-                <h2>delivery_date</h2>
-                <div>
-                    <input type="date" name="delivery_date" required>
-                    <input type="time" name="delivery_time" required>
-                </div>
-
-                <input type="hidden" value="{{ $order -> total_price }}" name="total_price" required>
+    <form method="post" id="payment-form" action="{{route ('checkoutOrder', $order -> id)}}">
+        @csrf
+        @method('POST')
+        <div id="box-left">
+            <div class="container">
+                <h3>Fiveboo's Chackout</h3>
+                <h2><i class="fas fa-euro-sign"></i> {{$order -> total_price}}.00</h2>
+                <img src="{{asset('/storage/product-img/1623846898948.jpg')}}" alt="">
+                <h4>Powered by <strong>Team5</strong></h4>
             </div>
-            <div id="box_pay" class="animate__animated animate__swing animate__delay-3s">
+        </div>
+
+        <div id="box_pay">
+            <div class="box-form">
+
                 <section>
                     <label for="amount">
-                        <h2 class="input-label">Totale Ordine:</h2>
+                        <h2>Informazioni</h2>
+                        <ul>
+                            <li>
+                                <label for="firstname">Nome</label>
+                                <input type="text" name="firstname" required>
+                            </li>
+                            <li>
+                                <label for="lastname">Cognome</label>
+                                <input type="text" name="lastname" required>
+                            </li>
+                            <li>
+                                <label for="email">Email</label>
+                                <input type="text" name="email" required>
+                            </li>
+                            <li>
+                                <label for="telephone">Telefono</label>
+                                <input type="text" name="telephone" required>
+                            </li>
+                            <li>
+                                <label for="address">Indirizzo</label>
+                                <input type="text" name="address" required>
+                            </li>
+                            <li>
+                                <label>Data di consegna</label>
+                                <div class="box-date-format">
+                                    <div class="box-date">
+                                        <input class="date" type="date" name="delivery_date" required>
+                                        <i class="fas fa-calendar-alt date-icon"></i>
+                                    </div>
+                                    <div class="box-date">
+                                        <input class="time" type="time" name="delivery_time" required>
+                                        <i class="fas fa-clock time-icon"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><input type="hidden" value="{{ $order -> total_price }}" name="total_price" required></li>
+                        </ul>
 
-                        <h3> {{$order -> total_price}} <i class="fas fa-euro-sign"></i> </h3>
-
-                        <div class="input-wrapper amount-wrapper">
-                            {{-- campo input messo in 'hidden' per passare il prezzo a Breintree serve cmq lasciarlo --}}
-                            <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
+                        <div class="payment">
+                            <div class="input-wrapper amount-wrapper">
+                                {{-- campo input messo in 'hidden' per passare il prezzo a Breintree serve cmq lasciarlo --}}
+                                <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
+                            </div>
                         </div>
                     </label>
 
@@ -68,10 +74,12 @@
                 </section>
 
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="btn btn-primary" type="submit" form="payment-form"><span>PAGA IL TUO ORDINE</span></button>
+                <button class="btn btn-primary" type="submit" form="payment-form">Termina e paga</button>
+
             </div>
-        </form>
-    </div>
+        </div>
+
+    </form>
 
 </main>
 
@@ -84,9 +92,6 @@
     braintree.dropin.create({
         authorization: client_token,
         selector: '#bt-dropin',
-        //   paypal: {
-        //     flow: 'vault'
-        //   }
     }, function(createErr, instance) {
         if (createErr) {
             console.log('Create Error', createErr);

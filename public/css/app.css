@@ -2161,43 +2161,168 @@ header nav .menulist li a {
   opacity: 0.7;
 }
 
-#pay_area form {
+main.pay-order form {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  background-color: #f3f2f2;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-#pay_area form #box_list {
-  z-index: 100;
-  transition: 0.5s;
+main.pay-order form #box-left {
+  background-color: #fbfbfb;
+  min-height: 100vh;
+  width: 50%;
 }
 
-#pay_area form #box_list h2 {
-  color: #fff;
+main.pay-order form #box-left .container {
+  width: 50%;
+  margin: 10% 0 0 25%;
+  font-family: "Segoe UI";
 }
 
-#pay_area form #box_pay {
-  z-index: 100;
-  width: 30%;
+main.pay-order form #box-left h2 {
+  font-family: "Segoe UI";
+  font-size: 40px;
+  color: #303030;
 }
 
-#pay_area form #box_pay h2 {
-  color: #fff;
+main.pay-order form #box-left h3 {
+  font-family: "Segoe UI";
+  font-size: 28px;
+  color: #727272;
 }
 
-#pay_area form #box_pay form button {
-  padding: 3%;
+main.pay-order form #box-left img {
+  width: 300px;
+  margin: 42% 0;
+  border-radius: 10px;
 }
 
-.braintree-sheet__header {
-  background-color: #00ccbc;
+main.pay-order form #box-left h4 {
+  font-family: "Segoe UI";
+  font-weight: normal;
+  font-size: 20px;
+  color: #acacac;
+  text-align: center;
+}
+
+main.pay-order form #box-left h4 strong {
+  font-size: 22px;
+  color: #acacac;
+}
+
+main.pay-order form #box_pay {
+  background-color: white;
+  min-height: 100vh;
+  width: 50%;
+  box-shadow: 0px 0px 7px 1px rgba(34, 60, 80, 0.2);
+}
+
+main.pay-order form #box_pay .box-form {
+  width: 50%;
+  margin: 10% 0 0 10%;
+}
+
+main.pay-order form #box_pay .box-form h2 {
+  font-family: "Segoe UI";
+}
+
+main.pay-order form #box_pay .box-form ul li {
+  margin-top: 10px;
+  position: relative;
+}
+
+main.pay-order form #box_pay .box-form ul li label {
+  display: block;
+  font-size: 16px;
+  font-family: "Segoe UI";
+}
+
+main.pay-order form #box_pay .box-form ul li input {
+  width: 100%;
+  border: 1px solid #EFEFEF;
+  border-radius: 5px;
+  padding: 5px 5px 5px 12px;
+  margin-top: 4px;
+  font-size: 16px;
+  font-family: "Segoe UI";
+}
+
+main.pay-order form #box_pay .box-form ul li .box-date-format {
+  display: flex;
+  justify-content: space-between;
+}
+
+main.pay-order form #box_pay .box-form ul li .box-date-format .box-date {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #EFEFEF;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+  width: 50%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .date {
+  width: 100%;
+  margin-top: 0px;
   border: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
 }
 
-.braintree-sheet__content--form {
-  background-color: #00ccbc;
+main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .date-icon {
+  background-color: white;
+  border-radius: 0 5px 5px 0;
+  line-height: 31px;
+  margin-right: 5px;
+}
+
+main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .time {
+  width: 100%;
+  margin-top: 0px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+}
+
+main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .time-icon {
+  background-color: white;
+  border-radius: 0 5px 5px 0;
+  line-height: 31px;
+  margin-right: 5px;
+}
+
+main.pay-order form #box_pay .box-form button {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 5px 5px 12px;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5186CA;
+  border-color: #5186CA;
+  color: white;
+  font-family: "Segoe UI";
+}
+
+main.pay-order form #box_pay .box-form button:hover {
+  background-color: #3b79c8;
+  border-color: #3b79c8;
+}
+
+main.pay-order form #box_pay .box-form .braintree-sheet {
+  border: 1px solid #EFEFEF;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+}
+
+main.pay-order form #box_pay .box-form .braintree-sheet .braintree-form__hosted-field {
+  border: 1px solid #EFEFEF;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+  padding: 5px 5px 5px 12px;
+  height: 35px;
 }
 
 * {
