@@ -38,8 +38,6 @@ class PaymentController extends Controller
 
         $order = Order::findOrFail($id);
 
-        // dd($gateway->ClientToken()->generate());
-
         return view('pages.pay', compact('order', 'gateway', 'token'));
     }
 
@@ -58,8 +56,7 @@ class PaymentController extends Controller
         'total_price' => 'required|numeric',
         ]);
 
-        $order = Order::make($validate);
-        $order -> save();
+        $order -> update($validate);
 
         $gateway = $this -> braintreeGateway();
 
@@ -90,7 +87,7 @@ class PaymentController extends Controller
             $order -> save();
 
             $mail = new NewOrderNotify($order);
-            Mail::to('client@mail.com') -> send(new NewOrderNotify($order));
+            Mail::to('client@mail.com') -> send($mail);
 
             return redirect() -> route('byebyeOrder') -> with ('message', 'pagamento andato a buon fine. ID pagamento: ' .
             $transaction -> id);

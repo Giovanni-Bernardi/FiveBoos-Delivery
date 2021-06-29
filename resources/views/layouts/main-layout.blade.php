@@ -26,9 +26,9 @@
 </head>
 <body>
     @include('components.notifications')
-            
+
     @yield('content')
-    
+
     @include('components.footer')
 </body>
 </html>
