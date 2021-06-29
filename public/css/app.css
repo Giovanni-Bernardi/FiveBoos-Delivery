@@ -255,7 +255,6 @@ header {
   position: fixed;
   display: flex;
   align-items: center;
-  overflow: hidden;
   transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
 }
 
@@ -1008,14 +1007,14 @@ main.details .dishes-box .overview .checkout-title {
 
 main.details .dishes-box .overview .temp-cart {
   text-align: center;
-  padding: 20px 15px;
+  padding: 20px 0;
 }
 
 main.details .dishes-box .overview .temp-cart .cartlist {
   display: flex;
   font-size: 18px;
-  background-color: white;
   padding: 0 15px 20px;
+  background-color: white;
 }
 
 main.details .dishes-box .overview .temp-cart .cartlist #name-product {
@@ -1038,7 +1037,11 @@ main.details .dishes-box .overview .temp-cart .cartlist #modification {
   font-size: 14px;
 }
 
-main.details .dishes-box .overview .temp-cart .cartlist #modification p {
+main.details .dishes-box .overview .temp-cart .cartlist #modification .plus-minus {
+  min-width: 50px;
+}
+
+main.details .dishes-box .overview .temp-cart .cartlist #modification .plus-minus p {
   padding-left: 5px;
 }
 
@@ -1051,14 +1054,14 @@ main.details .dishes-box .overview .temp-cart .cartlist .fas {
 
 main.details .dishes-box .overview .temp-cart .totalprice {
   border-top: 1px solid lightgrey;
-  padding-top: 15px;
+  padding: 15px 0;
   font-family: "Fredoka One", cursive;
   font-weight: normal;
   font-size: 18px;
 }
 
 main.details .dishes-box .overview .temp-cart .payment {
-  padding: 15px 0 0;
+  padding: 0 15px 0;
 }
 
 main.details .dishes-box .overview .temp-cart .payment button {
@@ -1075,11 +1078,13 @@ main.details .dishes-box .overview .temp-cart .payment button {
   color: white;
   text-decoration: none;
   padding: 0 15px;
-  transition: background-color 0.5s;
+  transition: background-color 0.5s, color 0.5s;
+  cursor: pointer;
 }
 
 main.details .dishes-box .overview .temp-cart .payment button:hover {
   background-color: #ffd47f;
+  color: #cfcfcf;
 }
 
 .modal {
@@ -1631,7 +1636,6 @@ header {
   position: fixed;
   display: flex;
   align-items: center;
-  overflow: hidden;
   transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
 }
 

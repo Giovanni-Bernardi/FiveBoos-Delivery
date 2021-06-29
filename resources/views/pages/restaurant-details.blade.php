@@ -96,7 +96,7 @@
                             <div id="modification">
                                 <p>x @{{plates.counter}}</p>
                                 <p>&euro; @{{plates.price * plates.counter}},00</p>
-                                <div>
+                                <div class="plus-minus">
                                     <i class="fas fa-plus-circle" @click="increase(plates.id, index)"></i>
                                     <i class="fas fa-minus-circle" @click="decrease(plates.id, index)"></i>
                                 </div>

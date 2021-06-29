@@ -242,14 +242,14 @@ main.details {
             }
             .temp-cart {
                 text-align: center;
-                padding: 20px 15px;
+                padding: 20px 0;
                 .cartlist{
                     display: flex;
                     font-size: 18px;
+                    padding: 0 15px 20px;
                     // border: 1px solid lightgrey;
                     // border-radius: 25px;
                     background-color: white;
-                    padding: 0 15px 20px;
                     #name-product{
                         display: flex;
                         flex-basis: 40%;
@@ -268,8 +268,11 @@ main.details {
                         min-width: 120px;
                         justify-content: space-between;
                         font-size: 14px;
-                        p{
-                            padding-left: 5px;
+                        .plus-minus{
+                            min-width: 50px;
+                            p{
+                                padding-left: 5px;
+                            }
                         }
                     }
         
@@ -283,14 +286,14 @@ main.details {
         
                 .totalprice{
                     border-top: 1px solid lightgrey;
-                    padding-top: 15px;
+                    padding: 15px 0;
                     font-family: "Fredoka One", cursive;
                     font-weight: normal;
                     font-size: 18px;
                 }
         
                 .payment{
-                    padding: 15px 0 0;
+                    padding: 0 15px 0;
                     
                     button{
                         width: 100%;
@@ -306,9 +309,11 @@ main.details {
                         color: white;
                         text-decoration: none;
                         padding: 0 15px;
-                        transition: background-color 0.5s;
+                        transition: background-color 0.5s, color 0.5s;
+                        cursor: pointer;
                         &:hover {
                             background-color: #ffd47f;
+                            color: rgb(207, 207, 207);
                         }
                     }
                 }
