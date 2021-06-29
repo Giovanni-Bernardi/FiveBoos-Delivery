@@ -20,7 +20,6 @@
                     </li>
                 </ul>
             </div>
-
         </div>
 
         {{-- <div class="titles-restaurant-list">
@@ -135,7 +134,7 @@
                 </a>   
             </li>
         </ul>
-    </div>
+    </div> {{-- /app search --}}
 </main>
     
 @endsection

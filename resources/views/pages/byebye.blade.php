@@ -7,7 +7,7 @@
     <meta http-equiv="refresh" content="4   ; url={{ route('indexViewLink') }}" />
 </head>
 
-<main>
+<main id="bye-container">
     @if (session('message'))
         <div id="container-result">
             <div>

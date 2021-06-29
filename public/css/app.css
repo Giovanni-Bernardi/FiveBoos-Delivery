@@ -2036,21 +2036,21 @@ header nav .menulist li a {
   transition: ease-in-out 0.3s;
 }
 
-main {
+main#bye-container {
   background-color: #FFC244;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-main #container-result {
+main#bye-container #container-result {
   display: flex;
   justify-content: center;
 }
 
-main #container-result * {
+main#bye-container #container-result * {
   font-family: "Segoe UI";
 }
 
-main #container-result #container-text {
+main#bye-container #container-result #container-text {
   margin-top: 50px;
   width: 450px;
   height: 200px;
@@ -2058,20 +2058,20 @@ main #container-result #container-text {
   background-color: white;
 }
 
-main #container-result #container-text h2 {
+main#bye-container #container-result #container-text h2 {
   text-align: center;
 }
 
-main #container-result #container-text lottie-player {
+main#bye-container #container-result #container-text lottie-player {
   margin: auto;
 }
 
-main #container-result h2 {
+main#bye-container #container-result h2 {
   text-align: center;
   padding-top: 25px;
 }
 
-main #container-result #scooter {
+main#bye-container #container-result #scooter {
   position: absolute;
   -webkit-animation: run 6s;
           animation: run 6s;
@@ -2092,7 +2092,6 @@ main #container-result #scooter {
   justify-content: center;
   align-items: center;
   background-color: #FFC244;
-  height: 100vh;
 }
 
 #login_area #box_login {
