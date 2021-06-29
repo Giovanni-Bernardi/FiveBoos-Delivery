@@ -36,18 +36,8 @@ main.details {
                 text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
             }
             .info-badge{
-                height: 23px;
                 flex-basis: 23px;
-                padding-top: 3px;
-                margin: 10px 5px;
-                border-radius: 50%;
-                background-color: rgba(0, 0 ,0, 0.45);
-                text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-                font-size: 13px;
-                font-weight: bold;
-                color: rgb(245, 245, 245);
-                text-transform: capitalize;
-                cursor: pointer;
+                @include info-details;
                 text-align: center;
                 overflow: hidden;
                 position: relative;
@@ -149,12 +139,21 @@ main.details {
                 .right-side{
                     flex-basis: 50%;
                     overflow: hidden;
+                    position: relative;
                     img{
                         min-width: 150px;
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                         object-position: center;
+                    }
+                    .product-info-badge {
+                        text-align: center;
+                        width: 23px;
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        @include info-details;
                     }
                 }
                 
@@ -322,10 +321,13 @@ main.details {
     }
 
 }
-
+.modal.active {
+    display: block;
+}
 .modal {
     display: none;
     position: fixed;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
@@ -334,13 +336,14 @@ main.details {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.6);
     .modal-content {
-        z-index: 10;
+        z-index: 80;
         background-color: #fefefe;
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
     }
+        
     .close {
         color: #aaa;
         float: right;
@@ -355,3 +358,12 @@ main.details {
         cursor: pointer;
     }
   }
+  .product-details{
+    
+    .modal-content {
+        width: 50%;
+        position: relative;
+        right: 200px;
+        top: 25px;
+    }
+}

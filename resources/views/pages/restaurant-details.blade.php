@@ -72,11 +72,23 @@
                                 <i class="fas fa-plus"></i>
                             </span>
                         </div>
-                        
                     </div>
                     <div class="right-side">
                         {{-- <a href="{{route('productDetailsViewLink', @{{product.id}})}}"> --}}
                         <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+                        <div class="product-info-badge">
+                            <i class="fas fa-info" @click="popupDetails(product.id)"></i>
+                        </div>
+                        <div class="modal product-details" :class="btnID==product.id ? 'active' : ''">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="info-box">    
+                                    <h3> <i class="fas fa-pencil-alt"></i> @{{product.name}}</h3>
+                                    <p> <i class="fas fa-utensils"></i> @{{product.ingredients}}</p>
+                                    <p> <i class="fab fa-readme"></i> @{{product.description.slice(0, 45)}}...</p>
+                                </div>
+                            </div>
+                        </div>
                         {{-- </a> --}}
                     </div>
                 </li>

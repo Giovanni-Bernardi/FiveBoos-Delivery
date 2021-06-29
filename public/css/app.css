@@ -788,8 +788,8 @@ main.details .details-jumbotron .jumbo-img h2 {
 }
 
 main.details .details-jumbotron .jumbo-img .info-badge {
-  height: 23px;
   flex-basis: 23px;
+  height: 23px;
   padding-top: 3px;
   margin: 10px 5px;
   border-radius: 50%;
@@ -909,6 +909,7 @@ main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side .a
 main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side {
   flex-basis: 50%;
   overflow: hidden;
+  position: relative;
 }
 
 main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side img {
@@ -919,6 +920,25 @@ main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side i
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side .product-info-badge {
+  text-align: center;
+  width: 23px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 23px;
+  padding-top: 3px;
+  margin: 10px 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  font-size: 13px;
+  font-weight: bold;
+  color: whitesmoke;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 
 main.details .dishes-box ul:not(.overview ul) li:not(.overview li):hover {
@@ -1087,9 +1107,14 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
   color: #cfcfcf;
 }
 
+.modal.active {
+  display: block;
+}
+
 .modal {
   display: none;
   position: fixed;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -1100,7 +1125,7 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 .modal .modal-content {
-  z-index: 10;
+  z-index: 80;
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
@@ -1120,6 +1145,13 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.product-details .modal-content {
+  width: 50%;
+  position: relative;
+  right: 200px;
+  top: 25px;
 }
 
 header nav .center-section {

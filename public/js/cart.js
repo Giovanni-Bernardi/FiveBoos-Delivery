@@ -107,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
       currentRestaurantId: '',
       visibility: false,
       quantity: 1,
-      totalPrice: 0
+      totalPrice: 0,
+      btnID: ''
     },
     mounted: function mounted() {
       this.currentRestaurantId = window.id;
@@ -171,6 +172,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           }
         }
+      },
+      popupDetails: function popupDetails(productId) {
+        this.btnID = productId;
+        console.log(this.btnID, productId);
       }
     }
   });
@@ -185,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\cart.js */"./resources/js/cart.js");
+module.exports = __webpack_require__(/*! C:\Boolean\Corso\EserciziGit\proj-final-delivery\resources\js\cart.js */"./resources/js/cart.js");
 
 
 /***/ })

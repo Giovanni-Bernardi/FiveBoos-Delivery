@@ -1,37 +1,52 @@
 
 // flex
 @mixin flex($direction, $justify, $align){
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
 }
 
 // buttons
 @mixin link($color, $bg-color, $padding){
-  text-decoration: none;
-  padding: $padding;
-  border-radius: 10px;
-  background-color: $bg-color;
-  color: $color;
+    text-decoration: none;
+    padding: $padding;
+    border-radius: 10px;
+    background-color: $bg-color;
+    color: $color;
 }
 
 // categorie
 @mixin food-type($bg-color, $padding){
-  border-radius: 20px;
-  color: $color;
-  background-color: $bg-color;
+    border-radius: 20px;
+    color: $color;
+    background-color: $bg-color;
 }
 
 //searchbar
 @mixin search-bar($bg-color, $padding){
-  color: $color;
-  background-color: $bg-color;
-  border-radius: 10px;
+    color: $color;
+    background-color: $bg-color;
+    border-radius: 10px;
 }
 
 //border radius restaurant cards
 @mixin border-r-c {
-  border: 1px solid black;
-  border-radius: 8px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+// info badge restaurant details 
+@mixin info-details {
+    height: 23px;
+    padding-top: 3px;
+    margin: 10px 5px;
+    border-radius: 50%;
+    background-color: rgba(0, 0 ,0, 0.45);
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(245, 245, 245);
+    text-transform: capitalize;
+    cursor: pointer;
 }
