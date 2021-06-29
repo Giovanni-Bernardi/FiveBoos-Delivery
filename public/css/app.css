@@ -247,7 +247,7 @@
 }
 
 header {
-  height: 75px;
+  height: 100px;
   padding: 10px 30px;
   width: 100%;
   z-index: 900;
@@ -259,7 +259,7 @@ header {
 }
 
 header.scrolled {
-  height: 100px;
+  height: 75px;
   background-color: #ffc244;
   box-shadow: 0 0 10px 0 #5e5e5e;
 }
@@ -392,6 +392,7 @@ footer {
   width: 100%;
   background-color: black;
   padding: 50px 30px 30px;
+  overflow: hidden;
 }
 
 footer .border-footer-divider {
@@ -501,9 +502,6 @@ footer .bottom .privacy .copyright {
 }
 
 #appSearch div.list-jumbotron {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   background-color: #ffc244;
   padding: 115px 10% 40px;
 }
@@ -748,13 +746,69 @@ footer .bottom .privacy .copyright {
   padding: 4px;
 }
 
+main.details {
+  background-color: whitesmoke;
+}
+
 main.details .details-jumbotron {
   width: 100%;
-  height: 200px;
+  height: 220px;
+  background-color: #ffc244;
+  padding: 20px 10% 0px;
+}
+
+main.details .details-jumbotron .jumbo-img {
+  height: 100%;
+  max-width: 1840px;
+  margin: 0 auto;
+  padding-top: 30px;
+  position: relative;
+  bottom: -80px;
+  background-image: url("/storage/restaurant-img/restaurant1.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
   display: flex;
   justify-content: center;
-  background-image: url("/storage/restaurant-img/162400364131.jpeg");
-  background-position: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+main.details .details-jumbotron .jumbo-img h2 {
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+
+main.details .details-jumbotron .jumbo-img .info-badge {
+  height: 23px;
+  flex-basis: 23px;
+  padding-top: 3px;
+  margin: 10px 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  font-size: 13px;
+  font-weight: bold;
+  color: whitesmoke;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  bottom: 12px;
+}
+
+main.details .details-jumbotron .jumbo-img .info-badge i {
+  vertical-align: middle;
+  color: white;
 }
 
 main.details .restaurant-info {
@@ -772,10 +826,6 @@ main.details .restaurant-info {
 main.details .restaurant-info .info {
   display: flex;
   justify-content: center;
-}
-
-main.details .restaurant-info .info #myBtn {
-  color: black;
 }
 
 main.details .restaurant-info .info .info-box {
@@ -798,138 +848,243 @@ main.details .restaurant-info #info-box {
   display: block;
 }
 
-main.details .restaurant-info .overview {
-  width: 30%;
-  position: fixed;
-  right: 0;
-  top: 251px;
-  border: 1px solid lightgrey;
-}
-
-main.details .restaurant-info .overview .checkout-button {
-  background-color: lightgrey;
-  padding: 5px;
-}
-
-main.details .restaurant-info .overview .temp-cart {
-  text-align: center;
-  vertical-align: middle;
-}
-
-main.details .restaurant-info .overview .temp-cart .cartlist {
-  display: flex;
-  font-size: 18px;
-  border: 1px solid lightgrey;
-  border-radius: 25px;
-  background-color: white;
-  margin: 10px 0;
-  padding: 15px;
-}
-
-main.details .restaurant-info .overview .temp-cart .cartlist #name-product {
-  display: flex;
-  width: 50%;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-main.details .restaurant-info .overview .temp-cart .cartlist #modification {
-  display: flex;
-  width: 50%;
-  justify-content: space-around;
-}
-
-main.details .restaurant-info .overview .temp-cart .cartlist .fa-plus-square {
-  color: green;
-  padding: 0 5px;
-}
-
-main.details .restaurant-info .overview .temp-cart .cartlist .fa-minus-square {
-  color: red;
-  padding: 0 5px;
-}
-
-main.details .restaurant-info .overview .temp-cart .totalprice {
-  font-size: 22px;
-  border-top: 1px solid lightgrey;
-  padding-top: 10px;
-  font-weight: bolder;
-}
-
-main.details .restaurant-info .overview .temp-cart .payment {
-  padding: 10px 0;
-}
-
-main.details .restaurant-info .overview .temp-cart .payment button {
-  font-size: 20px;
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 5px 15px;
-  background-color: red;
-  font-family: inherit;
-  color: white;
-  text-decoration: none;
-  padding: 0 15px;
-}
-
-main.details .restaurant-info .overview .temp-cart .payment button:hover {
-  background-color: green;
-  border: 2px solid green;
-  color: white;
-}
-
 main.details .dishes-box {
-  width: 65%;
-  margin-left: 50px;
+  min-height: 500px;
+  margin: 120px 10%;
+  max-width: 1840px;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
 }
 
-main.details .dishes-box ul {
+main.details .dishes-box h3 {
+  font-weight: normal;
+  margin-bottom: 20px;
+  flex-basis: 100%;
+}
+
+main.details .dishes-box ul:not(.overview ul) {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  flex-basis: calc(100% / 3 * 2);
+  margin: 0 -10px;
 }
 
-main.details .dishes-box ul li {
-  width: 50%;
-}
-
-main.details .dishes-box ul li .dish {
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  flex-basis: calc(100% / 2 - 20px);
+  min-width: 320px;
+  height: 150px;
+  margin: 0 10px 20px;
+  padding: 15px;
+  border-radius: 5px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  height: 150px;
-  margin: 7px;
-  padding: 10px;
-  border: 1px solid lightgrey;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
 }
 
-main.details .dishes-box ul li .dish .left-side {
-  padding: 8px;
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side {
+  flex-basis: 50%;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 10px;
 }
 
-main.details .dishes-box ul li .dish .left-side .description {
-  padding: 10px 0;
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side .product-name {
+  text-transform: capitalize;
+  word-wrap: break-word;
 }
 
-main.details .dishes-box ul li .dish .left-side .button-add {
-  padding-top: 25px;
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side .add span {
+  font-family: "Raleway", sans-serif;
 }
 
-main.details .dishes-box ul li .dish:hover {
-  border: 1px solid black;
-  box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.08);
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side {
+  flex-basis: 50%;
+  overflow: hidden;
 }
 
-main.details .dishes-box ul li .unavailable {
-  cursor: auto;
-  color: lightgrey;
-  background-color: rgba(0, 0, 0, 0.3);
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side img {
+  min-width: 150px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
-main.details .dishes-box ul li .unavailable:hover {
-  border: 1px solid lightgrey;
-  box-shadow: none;
+main.details .dishes-box ul:not(.overview ul) li:not(.overview li):hover {
+  box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.04);
+}
+
+main.details .dishes-box .green-btn {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 172, 0, 0.178);
+  text-align: center;
+  overflow: hidden;
+  vertical-align: middle;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+main.details .dishes-box .green-btn i {
+  color: rgba(0, 180, 60, 0.76);
+  font-size: 20px;
+  vertical-align: middle;
+  transition: color 0.3s;
+}
+
+main.details .dishes-box .green-btn:hover {
+  transform: scale(1.2);
+  background-color: rgba(0, 172, 0, 0.521);
+}
+
+main.details .dishes-box .green-btn:hover i {
+  color: white;
+}
+
+main.details .dishes-box .red-btn {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(172, 0, 9, 0.178);
+  text-align: center;
+  overflow: hidden;
+  vertical-align: middle;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+main.details .dishes-box .red-btn i {
+  color: rgba(180, 0, 60, 0.76);
+  font-size: 20px;
+  vertical-align: middle;
+  transition: color 0.3s;
+}
+
+main.details .dishes-box .red-btn:hover {
+  transform: scale(1.2);
+  background-color: #58001d;
+}
+
+main.details .dishes-box .red-btn:hover i {
+  color: white;
+}
+
+main.details .dishes-box .overview {
+  width: calc(100% / 3);
+  min-width: 260px;
+  position: sticky;
+  top: 100px;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+main.details .dishes-box .overview .checkout-title {
+  padding: 15px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: "Fredoka One", cursive;
+  font-weight: normal;
+}
+
+main.details .dishes-box .overview .temp-cart {
+  text-align: center;
+  padding: 20px 0;
+}
+
+main.details .dishes-box .overview .temp-cart .cartlist {
+  display: flex;
+  font-size: 18px;
+  padding: 0 15px 20px;
+  background-color: white;
+}
+
+main.details .dishes-box .overview .temp-cart .cartlist #name-product {
+  display: flex;
+  flex-basis: 40%;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: capitalize;
+  padding-right: 10px;
+  word-wrap: break-word;
+  flex-shrink: 1;
+  font-family: "Raleway", sans-serif;
+}
+
+main.details .dishes-box .overview .temp-cart .cartlist #modification {
+  display: flex;
+  flex-basis: 60%;
+  min-width: 120px;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+main.details .dishes-box .overview .temp-cart .cartlist #modification .plus-minus {
+  min-width: 50px;
+}
+
+main.details .dishes-box .overview .temp-cart .cartlist #modification .plus-minus p {
+  padding-left: 5px;
+}
+
+main.details .dishes-box .overview .temp-cart .cartlist .fas {
+  margin-left: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+main.details .dishes-box .overview .temp-cart .totalprice {
+  border-top: 1px solid lightgrey;
+  padding: 15px 0;
+  font-family: "Fredoka One", cursive;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+main.details .dishes-box .overview .temp-cart .payment {
+  padding: 0 15px 0;
+}
+
+main.details .dishes-box .overview .temp-cart .payment button {
+  width: 100%;
+  font-size: 20px;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: #ffc244;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+  transition: background-color 0.5s, color 0.5s;
+  cursor: pointer;
+}
+
+main.details .dishes-box .overview .temp-cart .payment button:hover {
+  background-color: #ffd47f;
+  color: #cfcfcf;
 }
 
 .modal {
@@ -1367,6 +1522,7 @@ footer {
   width: 100%;
   background-color: black;
   padding: 50px 30px 30px;
+  overflow: hidden;
 }
 
 footer .border-footer-divider {
@@ -1472,7 +1628,7 @@ footer .bottom .privacy .copyright {
 }
 
 header {
-  height: 75px;
+  height: 100px;
   padding: 10px 30px;
   width: 100%;
   z-index: 900;
@@ -1484,7 +1640,7 @@ header {
 }
 
 header.scrolled {
-  height: 100px;
+  height: 75px;
   background-color: #ffc244;
   box-shadow: 0 0 10px 0 #5e5e5e;
 }
@@ -2009,6 +2165,7 @@ header nav .menulist li a {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #f3f2f2;
   height: 100vh;
 }
 
@@ -2082,10 +2239,11 @@ a {
   text-decoration: none;
 }
 
-[v-cloak] {
-  display: none;
-}
 main {
   min-height: 100vh;
+}
+
+[v-cloak] {
+  display: none;
 }
 

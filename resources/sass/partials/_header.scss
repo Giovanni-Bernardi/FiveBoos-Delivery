@@ -1,5 +1,5 @@
 header{
-    height: 75px;
+    height: 100px;
     padding: 10px 30px;
     width: 100%;
     z-index: 900;
@@ -8,10 +8,9 @@ header{
     position: fixed;
     display: flex;
     align-items: center;
-
     transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
     &.scrolled {
-        height: 100px;
+        height: 75px;
         background-color:#ffc244;
         // background-color: #00ccbc; // aquamarine
         // border-bottom: 4px solid black;

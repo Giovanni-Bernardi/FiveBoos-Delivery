@@ -18,16 +18,16 @@
     {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script> --}}
     {{-- JS/VUE --}}
     {{-- <script src="{{ asset('js/stats.js') }}"></script> --}}
+    <script src="{{ asset('js/header-animation.js') }}"></script>
     <script src="{{ asset('js/cart.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
+    @include('components.header')
+    @include('components.notifications')
 
-    {{-- rimosso header e incluso solo in index --}}
-    <div class="container-fixed"> {{-- chi è lo stronzone --}}
-        @include('components.notifications')
-        @yield('content')
-    </div>
-        {{-- @include('components.footer') --}}
+    @yield('content')
+
+    @include('components.footer')
 </body>
 </html>
