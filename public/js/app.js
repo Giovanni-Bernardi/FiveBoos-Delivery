@@ -49715,7 +49715,12 @@ function PopupModal() {
   };
 }
 
-document.addEventListener('DOMContentLoaded', PopupModal);
+document.addEventListener('DOMContentLoaded', PopupModal); //page preloader
+
+window.addEventListener('load', function () {
+  var preloader = document.querySelector('.preloader');
+  preloader.classList.add('preloader-hide'); // setTimeout(location.reload.bind(location), 3000);
+});
 
 /***/ }),
 

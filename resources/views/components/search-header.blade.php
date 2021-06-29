@@ -15,7 +15,7 @@
                 <li><a href='#'>Logout</a></li>
             </ul>
             <a href="{{route('indexViewLink')}}">
-                <img src="{{asset('/storage/assets/five-bool.svg')}}" alt="site-logo">
+                <img src="{{asset('/storage/assets/site-logo/site-logo.svg')}}" alt="site-logo">
                 {{-- FIVEBOO'S --}}
              </a>
         </div>

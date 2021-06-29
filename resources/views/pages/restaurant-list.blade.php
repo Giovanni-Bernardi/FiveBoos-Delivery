@@ -1,6 +1,7 @@
 @extends('layouts.search-layout')
 
 @include('components.search-header')
+@include('components.preloader')
     
 @section('content')
 <main>
