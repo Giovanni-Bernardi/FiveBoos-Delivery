@@ -820,24 +820,17 @@ main.details .restaurant-info {
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 31px, rgba(0, 0, 0, 0.12) 0px -12px 15px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 8px 9px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   text-align: center;
-  opacity: 0.87;
 }
 
-main.details .restaurant-info .info {
-  display: flex;
-  justify-content: center;
-}
-
-main.details .restaurant-info .info .info-box {
+main.details .restaurant-info #info-box {
   display: none;
 }
 
-main.details .restaurant-info .info h3 {
+main.details .restaurant-info #info-box h3:first-child {
+  border-bottom: 1px solid lightgrey;
   cursor: pointer;
   padding: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 
 main.details .restaurant-info p {
@@ -1111,6 +1104,16 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
   display: block;
 }
 
+#myModal #info-box {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+}
+
+#myModal #info-box p {
+  padding: 5px 0;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -1125,6 +1128,7 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 .modal .modal-content {
+  position: relative;
   z-index: 80;
   background-color: #fefefe;
   margin: 15% auto;

@@ -176,6 +176,9 @@ document.addEventListener('DOMContentLoaded', function () {
       popupDetails: function popupDetails(productId) {
         this.btnID = productId;
         console.log(this.btnID, productId);
+      },
+      closePopup: function closePopup() {
+        this.btnID = '';
       }
     }
   });
