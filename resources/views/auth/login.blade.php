@@ -7,14 +7,12 @@
 <main>
     <div id="login_area">
         <div id="box_login" class="animate__animated animate__zoomInDown animate__delay-1s">
-            <div class="left" style="background-image: url(storage/placeholder/sfondo_login.jpg)">
+            <div class="left" style="background-image: url(storage/placeholder/login-page.png)">
             </div>
     
             <div class="right">
     
-                <h2>Benvenuto !!</h2>
-                <h4>Accedi e scopri un mondo di vantaggi.. </h4>
-    
+                <h2>Login</h2>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
     
@@ -31,7 +29,7 @@
                         
                         <label for="password">Password:</label>               
                     </div>
-                    <button type="submit">Log in</button>
+                    <button type="submit">ACCEDI</button>
                 </form>                
                 
                 {{-- <div>
