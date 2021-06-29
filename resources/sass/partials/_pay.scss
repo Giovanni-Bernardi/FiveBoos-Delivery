@@ -1,51 +1,165 @@
-$general_color: #00ccbc;
-
-#pay_area{
+main.pay-order{
 
     form{
-
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
-        background-color: #f3f2f2;
-        height: 100vh;
+        min-height: 100vh;
 
-        #box_list{
-            // height: 80%;
-            // border: solid 4px green;
-            // width: 30%;
-            z-index: 100;
-            transition: .5s;
+        #box-left{
+            background-color: #fbfbfb;
+            min-height: 100vh;
+            width: 50%;
+
+            .container{
+                width: 50%;
+                margin: 10% 0 0 25%;
+                font-family:'Segoe UI';
+            }
 
             h2{
-                color: #fff;
+                font-family:'Segoe UI';
+                font-size: 40px;
+                color: #303030;
+            }
+
+            h3{
+                font-family:'Segoe UI';
+                font-size: 28px;
+                color: #727272;
+            }
+
+            img{
+                width: 300px;
+                margin: 42% 0;
+                border-radius: 10px;
+            }
+
+            h4{
+                font-family:'Segoe UI';
+                font-weight: normal;
+                font-size: 20px;
+                color: #acacac;
+                text-align: center;
+
+                strong{
+                    font-size: 22px;
+                    color: #acacac;
+                }
             }
         }
 
         #box_pay{
-            z-index: 100;
-            width: 30%;
-            // height: 80%;
-            // border: solid 4px green;
+            background-color: white;
+            min-height: 100vh;
+            width: 50%;
+            box-shadow: 0px 0px 7px 1px rgba(34, 60, 80, 0.2);
 
-            h2 {
-                color: #fff;
-            }
+            .box-form{
+                width: 50%;
+                margin: 10% 0 0 10%;
 
-            form{
+                h2{
+                    font-family:'Segoe UI';
+                }
+
+                ul{
+                    li{
+                        margin-top: 10px;
+                        position: relative;
+
+                        label{
+                            display: block;
+                            font-size: 16px;
+                            font-family:'Segoe UI';
+                        }
+
+                        input{
+                            width: 100%;
+                            border: 1px solid #EFEFEF;
+                            border-radius: 5px;
+                            padding: 5px 5px 5px 12px;
+                            margin-top: 4px;
+                            font-size: 16px;
+                            font-family:'Segoe UI';
+                        }
+                        .box-date-format{
+                            display: flex;
+                            justify-content: space-between;
+
+                            .box-date{
+                                display: flex;
+                                justify-content: space-between;
+                                border: 1px solid #EFEFEF;
+                                box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+                                width: 50%;
+                                border-radius: 5px 5px 5px 5px;
+
+                                .date{
+                                    width: 100%;
+                                    margin-top: 0px;
+                                    border: none;
+                                    border-radius: 5px 0 0 5px;
+                                    box-shadow: none;
+                                }
+
+                                .date-icon{
+                                    background-color: white;
+                                    border-radius: 0 5px 5px 0;
+                                    line-height: 31px;
+                                    margin-right: 5px;
+                                }
+
+                                .time{
+                                    width: 100%;
+                                    margin-top: 0px;
+                                    border: none;
+                                    border-radius: 5px 0 0 5px;
+                                    box-shadow: none;
+                                }
+
+                                .time-icon{
+                                    background-color: white;
+                                    border-radius: 0 5px 5px 0;
+                                    line-height: 31px;
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
                 button{
-                    padding: 3%;
+                    width: 100%;
+                    border: 1px solid grey;
+                    border-radius: 5px;
+                    padding: 5px 5px 5px 12px;
+                    margin-top: 4px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    background-color: #5186CA;
+                    border-color: #5186CA;
+                    color: white;
+                    font-family:'Segoe UI';
+                    &:hover {
+                        background-color: #3b79c8;
+                        border-color: #3b79c8;
+                    }
+                }
+
+                .braintree-sheet{
+                    border: 1px solid #EFEFEF;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+
+                    .braintree-form__hosted-field{
+                        border: 1px solid #EFEFEF;
+                        border-radius: 5px;
+                        box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+                        padding: 5px 5px 5px 12px;
+                        height: 35px;
+                    }
                 }
             }
         }
     }
-}
-
-.braintree-sheet__header{
-    background-color: $general_color;
-    border: none;
-}
-
-.braintree-sheet__content--form{
-    background-color: $general_color;
 }
