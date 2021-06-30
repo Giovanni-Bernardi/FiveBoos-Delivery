@@ -207,7 +207,7 @@ class AdminController extends Controller
     public function restaurantDetailsProfileView($restaurantId){
         $restaurantId = Crypt::decrypt($restaurantId);
         $restaurant = Restaurant::findOrFail($restaurantId );
-
+        $categories = Category::all();
         $orders = Order::select('orders.id' ,'orders.total_price', 'orders.delivery_date', 'orders.payment_status')
         -> groupBy('orders.id')
         -> join('order_product', 'orders.id', '=', 'order_product.order_id')
@@ -216,6 +216,6 @@ class AdminController extends Controller
         -> orderBy('orders.id', 'DESC')
         -> get();
 
-        return view('pages.restaurant-profile-details', compact('restaurant', 'orders'));
+        return view('pages.restaurant-profile-details', compact('restaurant', 'orders', 'categories'));
     }
 }

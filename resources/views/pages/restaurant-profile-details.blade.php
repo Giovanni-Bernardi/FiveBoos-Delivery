@@ -24,21 +24,74 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <div id="info-box">
-                            <p>
-                                Business name: {{$restaurant -> business_name}}
-                            </p>
-                            <p>
-                                Address: {{$restaurant -> address}}
-                            </p>
-                            <p>
-                                P-IVA: {{$restaurant -> piva}}
-                            </p>
-                            <p>
-                                Telephone: {{$restaurant -> telephone}}
-                            </p>
-                            <p>
-                                Description: {{$restaurant -> description}}
-                            </p>
+                            <form  method="POST" enctype="multipart/form-data">
+                                @method('POST')
+                                @csrf
+                                <h4>
+                                    Restaurant '{{$restaurant -> business_name}}' Edit
+                                </h4>
+                                <p>
+                                    <label for="business_name">
+                                        Business name: 
+                                    </label>
+                                    <input type="text" name="business_name" value="{{$restaurant -> business_name}}">
+                                </p>
+                                <p>
+                                    <label for="address">
+                                        Address: 
+                                    </label>
+                                    <textarea name="address" cols="50" rows="2">{{$restaurant -> address}}</textarea> 
+                                </p>
+                                <p>
+                                    <label for="piva">
+                                        P-IVA: 
+                                    </label>
+                                    <input type="text" name="piva" value="{{$restaurant -> piva}}">
+                                </p>
+                                <p>
+                                    <label for="telephone">
+                                        Telephone: 
+                                    </label>
+                                    <input type="text" name="telephone" value="{{$restaurant -> telephone}}">
+                                </p>
+                                <p>
+                                    <label for="description">
+                                        Description: 
+                                    </label>
+                                    <textarea name="description" cols="50" rows="7">{{$restaurant -> description}}</textarea>
+                                </p>
+                                <p>
+                                    <label for="img">
+                                        IMG: 
+                                        <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px">
+                                    </label>
+                                    <input type="file" name="img">
+                                </p>
+                                <p>
+                                    Categories:
+                                    <ul>
+                                        <li>
+                                            @foreach ($categories as $category)
+                                        </li>
+                                        <li>
+                                            <label for="categories[]">
+                                                {{$category -> name}}
+                                                {{$category -> id}}
+                                            </label>
+                                            <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}"
+                                                @foreach ($restaurant -> categories as $restaurantType)
+                                                    @if ($restaurantType -> id == $category -> id)
+                                                        checked
+                                                    @endif
+                                                @endforeach>
+                                        </li>
+                                            @endforeach
+                                    </ul>
+                                </p>
+                                <p>
+                                    <button type="submit">Save edit</button>
+                                </p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -73,6 +126,22 @@
                         </div>
                         <div class="right-side">
                             <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+                            {{-- <div class="badge" @click="popupDetails(product.id)">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="modal product-details" :class="btnID==product.id ? 'active' : ''">
+                                <div class="modal-content" @click="closePopup">
+                                    <span class="close" @click="closePopup">&times;</span>
+                                    <div class="info-box">    
+                                        <form  method="POST" enctype="multipart/form-data">
+                                            @method('POST')
+                                            @csrf
+                                
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                     </li>
                     @endforeach

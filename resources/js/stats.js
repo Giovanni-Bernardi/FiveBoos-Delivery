@@ -24,7 +24,8 @@ function statisticsChart() {
             currentYear: new Date().getFullYear(),
             myChart: '',
             ordersNumberList: [],
-            monthsNames12: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            monthsNames12: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            btnID: '',
         },
         mounted: function(){
             console.log('VUE Connected');
@@ -200,7 +201,14 @@ function statisticsChart() {
                 }
 
                 this.apiChartUpdate();
-            }
+            },
+            popupDetails: function popupDetails(productId) {
+                this.btnID = productId;
+                console.log(this.btnID, productId);
+              },
+              closePopup: function(){
+                  this.btnID = '';
+              }
         }
     });
 }
