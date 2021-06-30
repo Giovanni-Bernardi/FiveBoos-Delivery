@@ -38,7 +38,7 @@ function dynamicSearch() {
                 axios.get('/api/get/all/restaurants/' + this.filter
                 ).then(data => {
                     this.restaurantsList = data.data;
-                    // console.log(this.restaurantsList);
+                    console.log(this.restaurantsList);
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -48,7 +48,7 @@ function dynamicSearch() {
                 axios.get('/api/get/filtered/restaurants/' + this.filter
                 ).then(data => {
                     this.filteredRestaurants = data.data;
-                    // console.log(this.filteredRestaurants);
+                    console.log(this.filteredRestaurants);
                 }).catch((error) => {
                     console.log(error);
                 });

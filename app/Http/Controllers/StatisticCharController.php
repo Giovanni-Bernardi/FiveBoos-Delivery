@@ -37,7 +37,7 @@ class StatisticCharController extends Controller
     }
 
     // Funzione che ritorna i mesi degli ordini al grafico (ASC, no doppioni)
-    public function getOrdersMonths($restaurantId, $selectedYear = 0){
+    public function getOrdersMonths($restaurantId, $selectedYear = 0, $type){
         $monthsList = [];
         $countsPerMont = [];
 
@@ -54,34 +54,65 @@ class StatisticCharController extends Controller
             $monthName = $date -> format('M');
             $monthsList [$monthNumber] =  $monthName; // Sovrascrive i mesi uguali (Key => Value | MonthName => MonthNumber)
         }
-
-        foreach ($monthsList as $monthNumber => $month) {
-            $countsPerMont [] = $this -> getOrdersCount($monthNumber, $restaurantId, $selectedYear);   
+        if($type == 0){
+            foreach ($monthsList as $monthNumber => $month) {
+                $countsPerMont [] = $this -> getOrdersCount($monthNumber, $restaurantId, $selectedYear);   
+            }
+        }else{
+            foreach ($monthsList as $monthNumber => $month) {
+                $countsPerMont [] = $this -> getOrdersValue($monthNumber, $restaurantId, $selectedYear);   
+            }
         }
+        // dd($countsPerMont);
 
         // Trasformo obj monthsNameList da Obj in array per encode migliore
         $monthsListNoObj = [];
         foreach ($monthsList as $key => $value) {
             $monthsListNoObj [] = $value;
         }
-
+        // dd($countsPerMont);
         return json_encode([$monthsListNoObj ,$countsPerMont]);
     }
 
-    // Funzione che ritorna il count degil ordini per mese
+    // Funzione che ritorna il count degli ordini per mese
     public function getOrdersCount($monthNumber, $restaurantId, $selectedYear){
-        // $month = '08';
         $id = Auth::id();
 
         $orderPerMonth = DB::table('orders')
+                        -> select('orders.id')
+                        
                         -> join('order_product', 'orders.id', '=', 'order_product.order_id')
                         -> join('products', 'order_product.product_id', '=', 'products.id')
                         -> where ('products.restaurant_id', $restaurantId)
                         -> whereMonth('orders.delivery_date', $monthNumber)
                         -> whereYear('orders.delivery_date', $selectedYear)
-                        -> get()
-                        -> count();
-        // dd($orderPerMonth);
-        return $orderPerMonth;
+                        -> get();
+        // $orderPerMonth = count($orderPerMonth);
+        // dd(count($orderPerMonth));
+        return count($orderPerMonth);
+    }
+
+    // Funzione che ritorna il valore in eruo delle vendite per mese
+    public function getOrdersValue($monthNumber, $restaurantId, $selectedYear){
+        $id = Auth::id();
+        $total_price = 0;
+
+        $valuePerMonth = DB::table('orders')
+                        -> select('orders.total_price')
+                        -> groupBy('orders.id')
+                        -> join('order_product', 'orders.id', '=', 'order_product.order_id')
+                        -> join('products', 'order_product.product_id', '=', 'products.id')
+                        -> where ('products.restaurant_id', $restaurantId)
+                        -> whereMonth('orders.delivery_date', $monthNumber)
+                        -> whereYear('orders.delivery_date', $selectedYear)
+                        -> get();
+                        // -> sum('orders.total_price');
+                        // -> count('orders.total_price');
+
+
+        foreach ($valuePerMonth as $value) {
+            $total_price += $value -> total_price;
+        }
+        return $total_price;
     }
 }

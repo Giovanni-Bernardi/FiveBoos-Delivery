@@ -13,9 +13,10 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 250) -> create() -> each(function ($order){
+        factory(Order::class, 1000) -> create() -> each(function ($order){
             $products = Product::inRandomOrder()
-                    -> limit(rand(1, 10))
+                    -> limit(rand(1, 5))
+                    -> where('products.restaurant_id', rand(1,25))
                     -> get();
             $order -> products() -> attach($products);
             $order -> save();

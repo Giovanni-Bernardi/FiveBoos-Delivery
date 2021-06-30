@@ -29,10 +29,10 @@
                     <li id="restaurant-address"><i class="fas fa-map-marker-alt"></i><p>{{$restaurant -> address}}</p></li>
                   </ul>
                   <div class="btn-edit-del">
-                    <a id="edit-button" href={{ route('editRestaurantViewLink', $restaurant -> id)}}><i class="fas fa-edit"></i></a>
+                    <a id="edit-button" href={{ route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id))}}><i class="fas fa-edit"></i></a>
                     <a id="delete-button" href={{ route('deleteRestaurantLink', $restaurant -> id)}}><i class="fas fa-trash-alt"></i></a>
                   </div>
-                </li>   
+                </li>
                 @endif
             @endif
           @endforeach

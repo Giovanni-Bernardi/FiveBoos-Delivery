@@ -17409,7 +17409,8 @@ function dynamicSearch() {
         var _this2 = this;
 
         axios.get('/api/get/all/restaurants/' + this.filter).then(function (data) {
-          _this2.restaurantsList = data.data; // console.log(this.restaurantsList);
+          _this2.restaurantsList = data.data;
+          console.log(_this2.restaurantsList);
         })["catch"](function (error) {
           console.log(error);
         });
@@ -17419,7 +17420,8 @@ function dynamicSearch() {
 
         this.filteredRestaurants = [];
         axios.get('/api/get/filtered/restaurants/' + this.filter).then(function (data) {
-          _this3.filteredRestaurants = data.data; // console.log(this.filteredRestaurants);
+          _this3.filteredRestaurants = data.data;
+          console.log(_this3.filteredRestaurants);
         })["catch"](function (error) {
           console.log(error);
         });

@@ -8,10 +8,12 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 
 use App\Restaurant;
 use App\Product;
 use App\Category;
+use App\Order;
 
 class AdminController extends Controller
 {
@@ -193,11 +195,27 @@ class AdminController extends Controller
 
         return redirect() -> route('restaurantDetailsViewLink', $product -> restaurant -> id);
     }
-    //pagina Profilo Ristoratore loggato
+
+    // Pagina profilo ristoratore loggato
     public function restaurantProfileView(){
-        $user = Auth::id();
-        $restaurants = DB::table("restaurants") -> where("restaurants.user_id", $user) -> get();
+        $userId = Auth::id();
+        $restaurants = Restaurant::where("restaurants.user_id", $userId) -> get();
 
         return view('pages.my-profile', compact('restaurants'));
+    }
+
+    public function restaurantDetailsProfileView($restaurantId){
+        $restaurantId = Crypt::decrypt($restaurantId);
+        $restaurant = Restaurant::findOrFail($restaurantId );
+
+        $orders = Order::select('orders.id' ,'orders.total_price', 'orders.delivery_date', 'orders.payment_status')
+        -> groupBy('orders.id')
+        -> join('order_product', 'orders.id', '=', 'order_product.order_id')
+        -> join('products', 'order_product.product_id', '=', 'products.id')
+        -> where ('products.restaurant_id', $restaurantId)
+        -> orderBy('orders.id', 'DESC')
+        -> get();
+
+        return view('pages.restaurant-profile-details', compact('restaurant', 'orders'));
     }
 }
