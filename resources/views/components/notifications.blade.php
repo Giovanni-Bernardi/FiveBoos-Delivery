@@ -1,4 +1,4 @@
-{{-- @if (session('message'))
+@if (session('message'))
    <div class="alert alert-success">
        {{ session('message') }}
     </div>
@@ -13,4 +13,4 @@
             @endforeach
         </ul>
     </div>
-@endif --}}
+@endif
