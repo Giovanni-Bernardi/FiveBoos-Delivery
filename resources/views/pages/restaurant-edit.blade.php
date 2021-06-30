@@ -19,37 +19,37 @@
                     </li>
                     <li>
                         <label for="business_name">
-                            Business name: 
+                            Business name:
                         </label>
                         <input type="text" name="business_name" value="{{$restaurant -> business_name}}">
                     </li>
                     <li>
                         <label for="address">
-                            Address: 
+                            Address:
                         </label>
                         <textarea name="address" cols="50" rows="2">{{$restaurant -> address}}</textarea>
                     </li>
                     <li>
                         <label for="piva">
-                            P-IVA: 
+                            P-IVA:
                         </label>
                         <input type="text" name="piva" value="{{$restaurant -> piva}}">
                     </li>
                     <li>
                         <label for="telephone">
-                            Telephone: 
+                            Telephone:
                         </label>
                         <input type="text" name="telephone" value="{{$restaurant -> telephone}}">
                     </li>
                     <li>
                         <label for="description">
-                            Description: 
+                            Description:
                         </label>
                         <textarea name="description" cols="50" rows="7">{{$restaurant -> description}}</textarea>
                     </li>
                     <li>
                         <label for="img">
-                            IMG: 
+                            IMG:
                             <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px">
                         </label>
                         <input type="file" name="img">
@@ -79,9 +79,10 @@
                     </li>
                 </ul>
             </form>
-            
+
         @else
             <h2>Non sei il proprietario di: {{$restaurant -> business_name}}</h2>
         @endif
     </main>
+
 @endsection

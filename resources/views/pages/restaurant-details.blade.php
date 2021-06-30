@@ -33,7 +33,7 @@
                             <i class="fas fa-phone-alt"></i> Chiama il ristorante <strong>{{$restaurant -> business_name}}</strong> al numero {{$restaurant -> telephone}} per prenotare un tavolo al più presto!
                         </p>
                         <p>
-                            <i class="fas fa-file-alt"></i> {{$restaurant -> description}} 
+                            <i class="fas fa-file-alt"></i> {{$restaurant -> description}}
                         </p>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
             @endif
         </ul> --}}
 
-        
+
         <div class="dishes-box">
             <h3>
                 Scegli i tuoi piatti
@@ -60,7 +60,7 @@
             <ul>
                 <li v-for='(product, prIndex) in products'  v-if="product.visible">
                     <div class="left-side">
-                        <h3 class="product-name">@{{product.name}}</h3> 
+                        <h3 class="product-name">@{{product.name}}</h3>
                         {{-- <div class="description">
                             Descrizione: @{{product.description.slice(0, 45)}}...
                         </div> --}}
@@ -83,10 +83,10 @@
                         <div class="modal product-details" :class="btnID==product.id ? 'active' : ''">
                             <div class="modal-content" @click="closePopup">
                                 <span class="close" @click="closePopup">&times;</span>
-                                <div class="info-box">    
+                                <div class="info-box">
                                     <h3> <i class="fas fa-pencil-alt"></i> @{{product.name}}</h3>
                                     <p> <i class="fas fa-utensils"></i> @{{product.ingredients}}</p>
-                                    <p> <i class="fab fa-readme"></i> @{{product.description.slice(0, 45)}}...</p>                                    
+                                    <p> <i class="fab fa-readme"></i> @{{product.description.slice(0, 45)}}...</p>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                     </div>
                 </li>
             </ul>
-            
+
             <div class="overview">
                 <h3 class="checkout-title">
                     Riepilogo
@@ -119,7 +119,7 @@
                         <li v-else class="totalprice">Totale: &euro;@{{totalPrice}},00</li>
                         <li v-if="cart == ''"></li>
                         <li v-else class="payment"><button type="submit" form="new-order">Check-out</button></li>
-            
+
                     </ul>
                     <form style="display:none" method="POST" action="{{ route('storeOrder') }}" id="new-order">
                         @csrf
@@ -136,32 +136,6 @@
                 </div>
             </div>
         </div>
-            
-            
-            {{-- Controllo se User esiste --}}
-        @if (Auth::check())
-            {{-- Controllo se User è il porprietario --}}
-            @if (Auth::user()->id == $restaurant -> user_id)
-                <h3>
-                    <a href="{{route('statsMonthLink', ['restaurantId' => $restaurant -> id, 'selectedYear' => 2020])}}">Statistics Chart Route: CLICK HERE</a>
-                </h3>
-                <div id="appChart" style="width: 60%">
-                    <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
-            
-                    <select name="year" id="yearOrder" v-model="year" v-on:change="updateMonthsChart()">
-                        <option :value="currentYear">@{{currentYear}}</option>
-                        <option :value="currentYear - 1">@{{currentYear - 1}}</option>
-                        <option :value="currentYear - 2">@{{currentYear - 2}}</option>
-                    </select>
-            
-                    {{-- -------------- CHART ---------------- --}}
-                    <canvas id="myChart">
-                        Your browser does not support the canvas element.
-                    </canvas>
-                </div>
-            @endif
-        @endif
-            
     </main>
     <script>
     var id = {!! json_encode($restaurant->id) !!};

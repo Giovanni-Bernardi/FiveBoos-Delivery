@@ -4,7 +4,7 @@
 
 {{-- funzione che dopo 3 secondi ti porta alla pag 'indexViewLink' --}}
 <head>
-    {{-- <meta http-equiv="refresh" content="4; url={{ route('indexViewLink') }}" /> --}}
+    <meta http-equiv="refresh" content="4; url={{ route('indexViewLink') }}" />
 </head>
 
 <main id="bye-container">
