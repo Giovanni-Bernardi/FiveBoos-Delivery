@@ -13,10 +13,10 @@ Auth::routes();
 Route::get('/restaurant/list', 'RestaurantController@restaurantListView')->name('restaurantListLink');
 
 // Route per pagina di Login
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'RestaurantController@indexView') -> name('indexViewLink');
 
 // Route principale (Home)
-Route::get('/index','RestaurantController@indexView') -> name('indexViewLink');
+Route::get('/','RestaurantController@indexView') -> name('indexViewLink');
 
 // Route dettaglio ristorante con lista prodotti
 Route::get('/restaurant/{id}','RestaurantController@restaurantDetailsView') -> name('restaurantDetailsViewLink');
