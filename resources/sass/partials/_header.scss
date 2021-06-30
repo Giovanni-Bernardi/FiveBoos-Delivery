@@ -16,7 +16,7 @@ header{
         // border-bottom: 4px solid black;
         box-shadow: 0 0 10px 0 rgb(94, 94, 94);
     }
-    
+
     nav{
         width: 100%;
         display: flex;
@@ -28,13 +28,13 @@ header{
             height: 100%;
             display: flex;
             align-items: center;
-    
+
             // Logo
             img{
                 vertical-align: middle;
                 width: 200px;
             }
-    
+
             // Hamburger con animazione
             .ham-container{
                 cursor: pointer;
@@ -43,7 +43,7 @@ header{
                 align-items: center;
                 overflow: visible;
                 margin-right: 20px;
-    
+
                 // Riga centrale
                 .hamburger{
                     position: relative;
@@ -85,13 +85,13 @@ header{
                     &::before{
                         top: 50%;
                         transform: translate(-50%,-50%) rotateZ(45deg) ;
-                    } 
+                    }
                     &::after{
                         bottom: 50%;
                         transform: translate(-50%, 50%) rotateZ(-45deg);
                     }
                 }
-                
+
             }
         }
         .menulist {
@@ -114,22 +114,22 @@ header{
             animation-direction: alternate;
             animation-timing-function: linear;
             // background: #00ccbc;
-            
+
             transition: left 0.5s, visibility 0.5s, opacity 0.5s;
             opacity: 0;
             visibility: hidden;
-    
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-    
+
             &.active{
                 left: 0%;
                 visibility: visible;
                 opacity: 1;
             }
-    
+
             li{
                 font-size: 25px;
                 font-weight: bold;

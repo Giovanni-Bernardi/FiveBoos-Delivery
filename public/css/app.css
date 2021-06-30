@@ -1416,37 +1416,27 @@ header nav .rx-section .user-popup li a.active {
 }
 
 #restaurant-container {
-  background-color: #00CCBC;
+  background-color: whitesmoke;
   padding-top: 70px;
-}
-
-#restaurant-container #welcome-back {
-  width: 100%;
-  background-color: #8fddd7;
-  height: 40px;
-  font-size: 1.4rem;
-  padding-left: 2%;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
 }
 
 #restaurant-container #create-row {
   margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 #restaurant-container #create-row #left-create {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+#restaurant-container #create-row #left-create h1 {
+  font-size: 30px;
 }
 
 #restaurant-container #create-row #right-create {
   display: flex;
   justify-content: flex-end;
+  padding-right: 95px;
 }
 
 #restaurant-container #create-row #right-create .fa,
@@ -1460,24 +1450,24 @@ header nav .rx-section .user-popup li a.active {
   padding: 10px;
   text-decoration: none;
   color: #202020;
-  background-color: #FAD10A;
+  background-color: #FFC244;
   text-align: center;
   border-radius: 20px;
 }
 
 #restaurant-container #restaurant-cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 30px;
 }
 
 #restaurant-container #restaurant-cards .crd {
-  width: 22%;
+  width: 350px;
   margin: 0px 14px 30px 14px;
-  height: 345px;
+  height: 305px;
   border-radius: 20px;
   background-color: white;
-  position: relative;
 }
 
 #restaurant-container #restaurant-cards .crd.hidden-crd {
@@ -1485,7 +1475,7 @@ header nav .rx-section .user-popup li a.active {
 }
 
 #restaurant-container #restaurant-cards ul {
-  position: relative;
+  width: 340px;
 }
 
 #restaurant-container #restaurant-cards ul li {
@@ -1503,25 +1493,30 @@ header nav .rx-section .user-popup li a.active {
   padding: 0 0 0 15px;
 }
 
-#restaurant-container #restaurant-cards ul li img {
+#restaurant-container #restaurant-cards ul li p {
+  font-size: 14px;
+}
+
+#restaurant-container #restaurant-cards ul .image-relative {
+  position: relative;
+}
+
+#restaurant-container #restaurant-cards ul .image-relative img {
   filter: contrast(70%);
-  height: 250px;
-  width: 100%;
+  height: 233px;
+  width: 350px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-#restaurant-container #restaurant-cards ul .name-restaurant {
+#restaurant-container #restaurant-cards ul .image-relative span {
   position: absolute;
   z-index: 10;
-  top: 41%;
-  left: 52%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-}
-
-#restaurant-container #restaurant-cards ul .name-restaurant span {
   text-transform: capitalize;
   color: white;
   padding: 0;
@@ -1535,19 +1530,23 @@ header nav .rx-section .user-popup li a.active {
 }
 
 #restaurant-container #restaurant-cards .btn-edit-del {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 10px 0 0;
+  font-size: 18px;
 }
 
-#restaurant-container #restaurant-cards #delete-button {
+#restaurant-container #restaurant-cards .hide-button {
   margin-left: 10px;
-  color: #e45757;
+  color: black;
+}
+
+#restaurant-container #restaurant-cards #edit-button {
+  color: black;
 }
 
 #restaurant-container #restaurant-address {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .side-padding {
