@@ -101,8 +101,8 @@ function statisticsChart() {
   // Input invisibile, value = restaurant_id
 
   var restaurantId = document.getElementById('d_elem').value;
-  console.log('Restaurant id: ' + restaurantId);
-  var monthsNames12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; // var myChart;
+  console.log('Restaurant id: ' + restaurantId); // var monthsNames12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  // var myChart;
   // -- Vue Class --
 
   var chart = new Vue({
@@ -110,11 +110,13 @@ function statisticsChart() {
     data: {
       monthsName: [],
       monthsOrders: [],
+      title: '',
       year: 0,
+      type: 0,
       currentYear: new Date().getFullYear(),
       myChart: '',
-      ordersNumberList: [] // monthsNames12: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
+      ordersNumberList: [],
+      monthsNames12: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     },
     mounted: function mounted() {
       console.log('VUE Connected');
@@ -130,7 +132,8 @@ function statisticsChart() {
         }
 
         console.log('Year selected:' + this.year);
-        axios.get('/stats/month/' + restaurantId + '/' + this.year, {
+        this.title = "Ordini mensili - Anno " + this.year;
+        axios.get('/stats/month/' + restaurantId + '/' + this.year + '/' + this.type, {
           params: {// Parametri
           }
         }).then(function (data) {
@@ -142,8 +145,8 @@ function statisticsChart() {
           _this.monthsOrders = datas[1];
           console.log(_this.monthsName, 'API Axios 2'); // Assegnamento valori in lista finale
 
-          for (var i = 0; i < monthsNames12.length; i++) {
-            var month = monthsNames12[i];
+          for (var i = 0; i < _this.monthsNames12.length; i++) {
+            var month = _this.monthsNames12[i];
 
             if (month == _this.monthsName[cont]) {
               _this.ordersNumberList.push(_this.monthsOrders[cont]);
@@ -162,11 +165,12 @@ function statisticsChart() {
           console.log(data);
         });
       },
+      // Update chart anno e tipologia (order number/sum)
       apiChartUpdate: function apiChartUpdate() {
         var _this2 = this;
 
         console.log(this.year, 'api 3 year');
-        axios.get('/stats/month/' + restaurantId + '/' + this.year, {
+        axios.get('/stats/month/' + restaurantId + '/' + this.year + '/' + this.type, {
           params: {// Parametri
           }
         }).then(function (data) {
@@ -179,11 +183,10 @@ function statisticsChart() {
           _this2.monthsName = datas[0];
           _this2.monthsOrders = datas[1];
           _this2.ordersNumberList = [];
-          monthsNames12 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
           console.log(_this2.monthsName, _this2.monthsOrders, 'API Axios 3'); // Assegnamento valori in lista finale
 
-          for (var i = 0; i < monthsNames12.length; i++) {
-            var month = monthsNames12[i];
+          for (var i = 0; i < _this2.monthsNames12.length; i++) {
+            var month = _this2.monthsNames12[i];
 
             if (month == _this2.monthsName[cont]) {
               _this2.ordersNumberList.push(_this2.monthsOrders[cont]);
@@ -198,12 +201,12 @@ function statisticsChart() {
           console.log(_this2.myChart.data.datasets[0].data);
           _this2.myChart.data.datasets[0].data = _this2.ordersNumberList;
           console.log(_this2.myChart.data.datasets[0].data);
+          _this2.myChart.data.datasets[0].label = _this2.title;
 
           _this2.myChart.update();
         })["catch"](function (error) {
           console.log(error);
         });
-        return 'ciao';
       },
       // Istanza classe - Grafico statistiche n°ordini per 12 mesi
       chart12: function chart12(newOrdersNumberList) {
@@ -211,18 +214,31 @@ function statisticsChart() {
         this.myChart = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: this.monthsNames12,
             datasets: [{
-              label: 'Orders per month',
+              label: this.title,
               data: newOrdersNumberList,
-              backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-              borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+              backgroundColor: [// 'rgba(0, 0, 0, 0.1)',
+              'rgba(220, 20, 60, 0.2)' // 'rgba(255, 99, 132, 0.2)',
+              // 'rgba(54, 162, 235, 0.2)',
+              // 'rgba(255, 206, 86, 0.2)',
+              // 'rgba(75, 192, 192, 0.2)',
+              // 'rgba(153, 102, 255, 0.2)',
+              // 'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: ['rgba(0, 0, 0, 0.6)' // 'rgba(220, 20, 60, 0.2)'
+              // 'rgba(255, 99, 132, 1)',
+              // 'rgba(54, 162, 235, 1)',
+              // 'rgba(255, 206, 86, 1)',
+              // 'rgba(75, 192, 192, 1)',
+              // 'rgba(153, 102, 255, 1)',
+              // 'rgba(255, 159, 64, 1)'
+              ],
               borderWidth: 1,
               fill: {
                 target: 'origin',
-                above: 'rgba(255, 0, 0, 0.2)',
-                // Area will be red above the origin
-                below: 'rgb(0, 0, 255)' // And blue below the origin
+                above: 'rgba(255, 194, 68, 0.5)' // above: 'rgba(255, 0, 0, 0.2)',   // Area will be red above the origin
+                // below: 'rgb(0, 0, 255)',    // And blue below the origin
 
               }
             }]
@@ -234,7 +250,7 @@ function statisticsChart() {
               }
             },
             layout: {
-              padding: 50
+              padding: 0
             },
             plugins: {
               legend: {
@@ -259,28 +275,14 @@ function statisticsChart() {
           }
         });
       },
-      tryIt: function tryIt() {
-        console.log(this.year);
-      },
-      // deleteMonthsChart: function (){
-      //     while( this.myChart.data.labels.length > 0){
-      //         this.myChart.data.labels.pop();
-      //     }
-      //     this.myChart.data.datasets.forEach((dataset) => {
-      //         dataset.data.pop();
-      //     });
-      //     this.myChart.update();
-      // },
       updateMonthsChart: function updateMonthsChart() {
-        var variabile = this.apiChartUpdate(); // console.log(this.ordersNumberList, monthsNames12);
+        if (this.type == 0) {
+          this.title = 'Ordini mensili - Anno ' + this.year;
+        } else {
+          this.title = 'Saldo mensile - Anno ' + this.year;
+        }
 
-        console.log(variabile); // console.log(this.myChart.data.datasets[0].data);
-        // this.myChart.data.datasets.data = this.ordersNumberList;
-        // this.myChart.data.labels.push(monthsNames12);
-        // this.myChart.data.datasets.forEach((dataset) => {
-        //     dataset.data.push(this.ordersNumberList);
-        // });
-        // this.myChart.update();
+        this.apiChartUpdate();
       }
     }
   });

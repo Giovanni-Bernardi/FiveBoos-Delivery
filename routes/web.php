@@ -22,7 +22,10 @@ Route::get('/index','RestaurantController@indexView') -> name('indexViewLink');
 Route::get('/restaurant/{id}','RestaurantController@restaurantDetailsView') -> name('restaurantDetailsViewLink');
 
 // Route profilo ristoratore loggato
-Route::get('/restaurant/profile/{id}', 'AdminController@restaurantProfileView')->name('restaurantProfileViewLink');
+Route::get('/user/profile', 'AdminController@restaurantProfileView')->name('restaurantProfileViewLink');
+
+// Route profilo ristoratore loggato
+Route::get('/user/profile/restaurant/{restaurantId}', 'AdminController@restaurantDetailsProfileView')->name('restaurantDetailsProfileLink');
 
 // Route dettaglio piatto
 Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');
@@ -60,8 +63,8 @@ Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');
 Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
 Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');
 
-// Route del Ordine
+// Route dell'ordine
 Route::post('/store/order', 'RestaurantController@storeOrder') -> name('storeOrder');
 
-// Route grafico TEST
-Route::get('/stats/month/{restaurantId}/{selectedYear}','StatisticCharController@getOrdersMonths') -> name('statsMonthLink');
+// Route grafico ordini 12 mesi per anno
+Route::get('/stats/month/{restaurantId}/{selectedYear}/{type}','StatisticCharController@getOrdersMonths') -> name('statsMonthLink');

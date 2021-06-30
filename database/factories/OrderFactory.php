@@ -15,5 +15,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'delivery_date' => $faker -> dateTimeBetween("-3 years"),
         'delivery_time' => $faker -> time(),
         'total_price' => $faker -> numberBetween(1, 200),
+        'payment_status' => $faker -> numberBetween(0, 1),
     ];
 });
