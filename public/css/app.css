@@ -1976,18 +1976,14 @@ header nav .menulist li a {
 }
 
 #landing-jumbo #background-jumbo {
-  background-image: url(/images/background-landing.png?b13fd6cc8729ea0cbf60ce8b03cbe494);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
-  min-height: 115vh;
+  min-height: 100vh;
   width: 100%;
   margin-top: -100px;
   padding: 0 3%;
   -webkit-animation-name: bg-landing-rgb;
           animation-name: bg-landing-rgb;
-  -webkit-animation-duration: 18s;
-          animation-duration: 18s;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
@@ -2013,28 +2009,30 @@ header nav .menulist li a {
 
 #landing-jumbo #background-jumbo #pizzeria {
   position: absolute;
-  top: 80px;
-  left: 500px;
+  top: 19%;
+  left: 42%;
 }
 
 #landing-jumbo #background-jumbo #fastfood {
   position: absolute;
-  top: 120px;
-  left: 230px;
+  top: 20%;
+  left: 22%;
 }
 
 #landing-jumbo #background-jumbo #sushi {
   position: absolute;
-  right: 150px;
+  top: 42%;
+  left: 76%;
 }
 
 #landing-jumbo #background-jumbo #sushi img {
-  width: 140px;
+  width: 160px;
 }
 
 #landing-jumbo #background-jumbo #messicano {
   position: absolute;
-  left: 100px;
+  top: 38%;
+  left: 10%;
 }
 
 #landing-jumbo #background-jumbo #messicano img {
@@ -2044,8 +2042,8 @@ header nav .menulist li a {
 
 #landing-jumbo #background-jumbo #cinese {
   position: absolute;
-  bottom: 40px;
-  left: 500px;
+  top: 76%;
+  left: 31%;
 }
 
 #landing-jumbo #background-jumbo #cinese img {
@@ -2055,8 +2053,8 @@ header nav .menulist li a {
 
 #landing-jumbo #background-jumbo #carne {
   position: absolute;
-  bottom: 50px;
-  left: 90px;
+  top: 67%;
+  left: 10%;
 }
 
 #landing-jumbo #background-jumbo #carne img {
@@ -2065,20 +2063,20 @@ header nav .menulist li a {
 
 #landing-jumbo #background-jumbo #pesce {
   position: absolute;
-  top: 80px;
-  right: 250px;
+  top: 62%;
+  left: 77%;
 }
 
 #landing-jumbo #background-jumbo #pasticceria {
   position: absolute;
-  bottom: 40px;
-  right: 500px;
+  top: 79%;
+  left: 52%;
 }
 
 #landing-jumbo #background-jumbo #vegan {
   position: absolute;
-  right: 160px;
-  bottom: 60px;
+  top: 77%;
+  left: 71%;
 }
 
 #landing-jumbo #background-jumbo #vegan img {
@@ -2089,8 +2087,8 @@ header nav .menulist li a {
 
 #landing-jumbo #background-jumbo #poke {
   position: absolute;
-  top: 80px;
-  right: 500px;
+  top: 20%;
+  left: 66%;
 }
 
 #landing-jumbo #background-jumbo #poke img {
@@ -2103,6 +2101,9 @@ header nav .menulist li a {
   font-weight: bold;
   z-index: 10;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #landing-jumbo #landing-title h1 {

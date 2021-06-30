@@ -6,17 +6,13 @@
 // Sezione landing container
 #landing-jumbo {
     #background-jumbo {
-        background-image: url("../storage/app/public/assets/background-landing.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
-        min-height: 115vh;
+        min-height: 100vh;
         width: 100%;
         margin-top: -100px;
         padding: 0 3%;
         //partials/animations
         animation-name: bg-landing-rgb;
-        animation-duration: 18s;
+        animation-duration: 60s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
         animation-timing-function: linear;
@@ -25,6 +21,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
 
         //types img
         .type {
@@ -38,27 +35,29 @@
 
         #pizzeria {
             position: absolute;
-            top: 80px;
-            left: 500px;
+            top: 19%;
+            left: 42%;
         }
 
         #fastfood {
             position: absolute;
-            top: 120px;
-            left: 230px;
+            top: 20%;
+            left: 22%;
         }
 
         #sushi {
             position: absolute;
-            right: 150px;
+            top: 42%;
+            left: 76%;
             img {
-                width: 140px;
+                width: 160px;
             }
         }
 
         #messicano {
             position: absolute;
-            left: 100px;
+            top: 38%;
+            left: 10%;
             img {
                 animation: float-down 5s ease-in-out infinite;
             }
@@ -66,8 +65,8 @@
 
         #cinese {
             position: absolute;
-            bottom: 40px;
-            left: 500px;
+            top: 76%;
+            left: 31%;
             img {
                 animation: float-down 5s ease-in-out infinite;
             }
@@ -75,8 +74,8 @@
 
         #carne {
             position: absolute;
-            bottom: 50px;
-            left: 90px;
+            top: 67%;
+            left: 10%;
             img {
                 width: 140px;
             }
@@ -84,20 +83,20 @@
 
         #pesce {
             position: absolute;
-            top: 80px;
-            right: 250px;
+            top: 62%;
+            left: 77%;
         }
 
         #pasticceria {
             position: absolute;
-            bottom: 40px;
-            right: 500px;
+            top: 79%;
+            left: 52%;
         }
 
         #vegan {
             position: absolute;
-            right: 160px;
-            bottom: 60px;
+            top: 77%;
+            left: 71%;
             img {
                 animation: float-down 5s ease-in-out infinite;
                 width: 100px;
@@ -106,8 +105,8 @@
 
         #poke {
             position: absolute;
-            top: 80px;
-            right: 500px;
+            top: 20%;
+            left: 66%;
             img {
                 animation: float-down 5s ease-in-out infinite;
             }
@@ -119,6 +118,9 @@
         font-weight: bold;
         z-index: 10;
         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         h1 {
             font-size: 6rem;
