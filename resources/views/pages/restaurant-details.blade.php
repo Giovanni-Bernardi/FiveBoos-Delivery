@@ -124,31 +124,6 @@
             </div>
         </div>
             
-            
-            {{-- Controllo se User esiste --}}
-        @if (Auth::check())
-            {{-- Controllo se User è il porprietario --}}
-            @if (Auth::user()->id == $restaurant -> user_id)
-                <h3>
-                    <a href="{{route('statsMonthLink', ['restaurantId' => $restaurant -> id, 'selectedYear' => 2020])}}">Statistics Chart Route: CLICK HERE</a>
-                </h3>
-                <div id="appChart" style="width: 60%">
-                    <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
-            
-                    <select name="year" id="yearOrder" v-model="year" v-on:change="updateMonthsChart()">
-                        <option :value="currentYear">@{{currentYear}}</option>
-                        <option :value="currentYear - 1">@{{currentYear - 1}}</option>
-                        <option :value="currentYear - 2">@{{currentYear - 2}}</option>
-                    </select>
-            
-                    {{-- -------------- CHART ---------------- --}}
-                    <canvas id="myChart">
-                        Your browser does not support the canvas element.
-                    </canvas>
-                </div>
-            @endif
-        @endif
-            
     </main>
     <script>
     var id = {!! json_encode($restaurant->id) !!};

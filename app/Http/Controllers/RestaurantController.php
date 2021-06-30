@@ -13,7 +13,9 @@ use App\Order;
 class RestaurantController extends Controller
 {
     //pagina landing page
-    public function indexView(){
+    public function indexView(Request $request){
+        $request->session()->flush();
+
         $restaurants = Restaurant::all();
         $categories = Category::all();
 
@@ -21,6 +23,8 @@ class RestaurantController extends Controller
     }
     //pagina restaurant list
     public function restaurantListView(){
+        session()->flush();
+
         $restaurants = Restaurant::all();
         $categories = Category::all();
 
@@ -28,9 +32,10 @@ class RestaurantController extends Controller
     }
     //pagina restaurant details
     public function restaurantDetailsView($id){
+        // session()->flush();
+
         $restaurant = Restaurant::findOrFail($id);
         $products = DB::table("products") -> where("restaurant_id", $id) -> get();
-
         return view('pages.restaurant-details', compact('restaurant', 'products'));
     }
     //pagina product details
@@ -55,21 +60,23 @@ class RestaurantController extends Controller
         return view('pages.restaurant-product-public', compact('restaurant', 'products'));
     }
 
+    //
     public function storeOrder(Request $request) {
+        // Pulizia session
+        $request->session()->flush();
+        $productsArray = [];
 
-        $validate = $request -> validate([
-          'firstname' => 'required|string|min:3',
-          'lastname' => 'required|string|min:3',
-          'email' => 'required|string',
-          'telephone' => 'required|string',
-          'address' => 'required|string',
-          'delivery_date' => 'required|date',
-          'delivery_time' => 'required|string',
-        ]);
+        // Push prodotti del carrello in array fittizio
+        foreach ($request -> products_id as $product_id) {
+            $productsArray [] = $product_id;
+        }
+        sort($productsArray);
 
-        $order = Order::make($validate);
+        // Push id prodotti (ordinati ASC) del carrello in session (array)
+        foreach ($productsArray as $product) {
+            session() -> push('products', $product);
+        }
 
-        // Funzione per calcolare il prezzo, che non si puo modificare.
         $totalPrice = 0;
         for($i=0;$i<count($request->products_id);$i++){
             $productId = $request->products_id[$i];
@@ -78,12 +85,7 @@ class RestaurantController extends Controller
             $totalPrice += $price;
         }
 
-        $order -> total_price = $totalPrice;
-        $order -> save();
-
-        $order -> products() -> attach($request -> get('products_id'));
-        $order -> save();
-
-        return redirect() -> route('payOrder', $order -> id);
+        $request -> session() -> push('total_price', $totalPrice);
+        return redirect() -> route('payOrder');
     }
 }

@@ -5,13 +5,25 @@
 
 <main class="pay-order">
 
-    <form method="post" id="payment-form" action="{{route ('checkoutOrder', $order -> id)}}">
+    <form method="post" id="payment-form" action="{{route ('checkoutOrder')}}">
+    {{-- <form method="post" id="payment-form" action="{{route ('checkoutOrder', $order -> id)}}"> --}}
         @csrf
         @method('POST')
         <div id="box-left">
             <div class="container">
                 <h3>Fiveboo's Chackout</h3>
-                <h2><i class="fas fa-euro-sign"></i> {{$order -> total_price}}.00</h2>
+                <h2>
+                    <i class="fas fa-euro-sign"></i> {{$total_price}}
+                </h2>
+                <ul>
+                    <li>Riepilogo ordine:</li>
+                    @foreach ($products as $product)
+                        <li>
+                            {{$product['name']}} {{$product['price']}},00 &euro; - Q.tà {{$product['count']}}
+                            {{-- {{($product['price'] * $product['count'])}},00 &euro; --}}
+                        </li>
+                    @endforeach
+                </ul>
                 <img src="{{asset('/storage/product-img/1623846898948.jpg')}}" alt="">
                 <h4>Powered by <strong>Team5</strong></h4>
             </div>
@@ -48,24 +60,12 @@
                                 <label>Data di consegna</label>
                                 <div class="box-date-format">
                                     <div class="box-date">
-                                        <input class="date" type="date" name="delivery_date" required>
-                                        <i class="fas fa-calendar-alt date-icon"></i>
-                                    </div>
-                                    <div class="box-date">
                                         <input class="time" type="time" name="delivery_time" required>
                                         <i class="fas fa-clock time-icon"></i>
                                     </div>
                                 </div>
                             </li>
-                            <li><input type="hidden" value="{{ $order -> total_price }}" name="total_price" required></li>
                         </ul>
-
-                        <div class="payment">
-                            <div class="input-wrapper amount-wrapper">
-                                {{-- campo input messo in 'hidden' per passare il prezzo a Breintree serve cmq lasciarlo --}}
-                                <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{ $order -> total_price}}" readonly>
-                            </div>
-                        </div>
                     </label>
 
                     <div class="bt-drop-in-wrapper">
@@ -80,7 +80,6 @@
         </div>
 
     </form>
-
 </main>
 
 <script src="https://js.braintreegateway.com/web/dropin/1.30.0/js/dropin.min.js"></script>
