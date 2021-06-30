@@ -19,20 +19,21 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <div id="info-box">
+                        <h3>Informazioni sul ristorante</h3>
+                        <h3>
+                            <i class="fas fa-user-tie"></i> {{$restaurant -> business_name}}
+                        </h3>
                         <p>
-                            Business name: {{$restaurant -> business_name}}
+                            <i class="fas fa-map-marked-alt"></i> {{$restaurant -> address}}
                         </p>
                         <p>
-                            Address: {{$restaurant -> address}}
+                            <i class="fas fa-wallet"></i> {{$restaurant -> piva}}
                         </p>
                         <p>
-                            P-IVA: {{$restaurant -> piva}}
+                            <i class="fas fa-phone-alt"></i> Chiama il ristorante <strong>{{$restaurant -> business_name}}</strong> al numero {{$restaurant -> telephone}} per prenotare un tavolo al più presto!
                         </p>
                         <p>
-                            Telephone: {{$restaurant -> telephone}}
-                        </p>
-                        <p>
-                            Description: {{$restaurant -> description}}
+                            <i class="fas fa-file-alt"></i> {{$restaurant -> description}} 
                         </p>
                     </div>
                 </div>
@@ -72,11 +73,23 @@
                                 <i class="fas fa-plus"></i>
                             </span>
                         </div>
-                        
                     </div>
                     <div class="right-side">
                         {{-- <a href="{{route('productDetailsViewLink', @{{product.id}})}}"> --}}
                         <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+                        <div class="product-info-badge">
+                            <i class="fas fa-info" @click="popupDetails(product.id)"></i>
+                        </div>
+                        <div class="modal product-details" :class="btnID==product.id ? 'active' : ''">
+                            <div class="modal-content" @click="closePopup">
+                                <span class="close" @click="closePopup">&times;</span>
+                                <div class="info-box">    
+                                    <h3> <i class="fas fa-pencil-alt"></i> @{{product.name}}</h3>
+                                    <p> <i class="fas fa-utensils"></i> @{{product.ingredients}}</p>
+                                    <p> <i class="fab fa-readme"></i> @{{product.description.slice(0, 45)}}...</p>                                    
+                                </div>
+                            </div>
+                        </div>
                         {{-- </a> --}}
                     </div>
                 </li>

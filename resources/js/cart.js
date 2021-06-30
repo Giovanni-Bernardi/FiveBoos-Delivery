@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             visibility: false,
             quantity: 1,
             totalPrice: 0,
+            btnID: '',
         },
         mounted() {
             this.currentRestaurantId = window.id;
@@ -86,6 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             },
+            popupDetails: function popupDetails(productId) {
+              this.btnID = productId;
+              console.log(this.btnID, productId);
+            },
+            closePopup: function(){
+                this.btnID = '';
+            }
         },
     });
 })

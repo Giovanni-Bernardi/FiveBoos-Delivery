@@ -17441,7 +17441,7 @@ document.addEventListener('DOMContentLoaded', dynamicSearch);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\dynamic-search.js */"./resources/js/dynamic-search.js");
+module.exports = __webpack_require__(/*! C:\Boolean\Corso\EserciziGit\proj-final-delivery\resources\js\dynamic-search.js */"./resources/js/dynamic-search.js");
 
 
 /***/ })
