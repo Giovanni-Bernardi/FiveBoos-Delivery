@@ -112,17 +112,6 @@
             </lottie-player>
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             </ul>
-            
-            
-            
-            
-           
-            
-            
-            
-            
-            
-           
         </div> <!-- /background-jumbo -->
     </section> <!-- /landing-jumbo -->
 </main>
