@@ -47,7 +47,7 @@ class AdminController extends Controller
         $restaurant -> save();
 
         $restaurant -> categories() -> attach($request -> category_id);
-        
+
         if ($request -> file('img')) {
             $img = $request -> file('img');
             $imgExt = $img -> getClientOriginalExtension();
@@ -57,7 +57,7 @@ class AdminController extends Controller
             $restaurant -> img = $imgNewName;
         }
         $restaurant -> save();
-        
+
         return redirect() -> route('indexViewLink');
     }
 
@@ -174,7 +174,7 @@ class AdminController extends Controller
         if($user_id == $restaurant -> user_id){
             $restaurant -> visible = !($restaurant -> visible);
             $restaurant -> save();
-            return redirect() -> route('indexViewLink');
+            return redirect() -> route('restaurantProfileViewLink', $restaurant -> id);
         }else{
             return redirect() -> route('editRestaurantViewLink', $id);
         }
