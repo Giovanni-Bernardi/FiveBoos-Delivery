@@ -186,7 +186,7 @@
         .pop {
             display: block;
             transform: scale(1.2);
-            z-index: 20;
+            z-index: 9998;
         }
         .up {
             bottom: 100px;
@@ -211,3 +211,326 @@
         transition: ease-in-out 0.3s;
     }
 }
+
+// MEDIA QUERY
+@media screen and(max-width:576px)  {  
+    #dotted-button {
+        display: none;
+    }
+    
+    // resize pop hovers
+    .popup-note {
+        .pop {
+            display: none;
+            position: absolute;
+            z-index: 20;
+        }
+        &:hover {
+            .pop {
+                display: block;
+                transform: scale(0.8);
+                z-index: 9998;
+            }
+            .up {
+                bottom: 60px;
+            }
+            .right {
+                left: 100px;
+                bottom: 30px;
+            }
+        }
+    }
+    
+    #landing-jumbo {
+        #background-jumbo {
+            #or {
+                display: none;
+            }
+            .type {
+                z-index: 1;
+                img {
+                animation: float-up 5s ease-in-out infinite;
+                width: 80px;
+                height: auto;
+                }
+            }
+            #pizzeria {
+                position: absolute;
+                top: 17%;
+                left: 38%;
+            }
+            #fastfood {
+                position: absolute;
+                top: 25%;
+                left: 10%;
+            }
+            #sushi {
+                position: absolute;
+                top: 58%;
+                left: 64%;
+                img {
+                    width: 100px;
+                }
+            }
+            #messicano {
+                position: absolute;
+                top: 26%;
+                left: 33%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+            #cinese {
+                position: absolute;
+                top: 83%;
+                left: 18%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+            #carne {
+                position: absolute;
+                top: 71%;
+                left: 6%;
+                img {
+                    width: 90px;
+                }
+            }
+            #pesce {
+                position: absolute;
+                top: 70%;
+                left: 70%;
+            }
+            #pasticceria {
+                position: absolute;
+                top: 74%;
+                left: 40%;
+            }
+            #vegan {
+                position: absolute;
+                top: 84%;
+                left: 69%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                    width: 60px;
+                }
+            }
+            #poke {
+                position: absolute;
+                top: 21%;
+                left: 66%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+        }
+        #landing-title {
+            h1 {
+                font-size: 4.8rem;
+            }
+            h2 {
+               
+            }
+        }
+    }
+  } // /@<576px
+
+  @media (max-width:1192px) and (min-width:873px) {
+    #dotted-button {
+        display: flex;
+        margin-left: 0px;
+        margin-top: 33px;
+        flex-direction: column;
+    }
+    #landing-jumbo {
+        #background-jumbo {
+            .type {
+                img {
+                width: 110px;
+                height: auto;
+                }
+            }
+            #pizzeria {
+                position: absolute;
+                top: 17%;
+                left: 42%;
+            }
+    
+            #fastfood {
+                position: absolute;
+                top: 19%;
+                left: 22%;
+            }
+    
+            #sushi {
+                position: absolute;
+                top: 42%;
+                left: 76%;
+                img {
+                    width: 140px;
+                }
+            }
+    
+            #messicano {
+                position: absolute;
+                top: 38%;
+                left: 6%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+    
+            #cinese {
+                position: absolute;
+                top: 79%;
+                left: 28%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+    
+            #carne {
+                position: absolute;
+                top: 70%;
+                left: 7%;
+                img {
+                    width: 120px;
+                }
+            }
+    
+            #pesce {
+                position: absolute;
+                top: 62%;
+                left: 77%;
+            }
+    
+            #pasticceria {
+                position: absolute;
+                top: 79%;
+                left: 56%;
+            }
+    
+            #vegan {
+                position: absolute;
+                top: 77%;
+                left: 71%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                    width: 85px;
+                }
+            }
+    
+            #poke {
+                position: absolute;
+                top: 20%;
+                left: 66%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+        }  
+    }
+  }
+
+  @media (max-width:872px) and (min-width:577px) {
+    #dotted-button {
+        display: none;
+    }
+    #landing-jumbo {
+        #background-jumbo {
+            #or {
+                display: none;
+            }
+            .type {
+                img {
+                width: 100px;
+                height: auto;
+                }
+            }
+            #pizzeria {
+                position: absolute;
+                top: 15%;
+                left: 42%;
+            }
+    
+            #fastfood {
+                position: absolute;
+                top: 19%;
+                left: 18%;
+            }
+    
+            #sushi {
+                position: absolute;
+                top: 42%;
+                left: 76%;
+                img {
+                    width: 130px;
+                }
+            }
+    
+            #messicano {
+                position: absolute;
+                top: 38%;
+                left: 4%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+    
+            #cinese {
+                position: absolute;
+                top: 79%;
+                left: 24%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+    
+            #carne {
+                position: absolute;
+                top: 70%;
+                left: 4%;
+                img {
+                    width: 110px;
+                }
+            }
+    
+            #pesce {
+                position: absolute;
+                top: 62%;
+                left: 77%;
+            }
+    
+            #pasticceria {
+                position: absolute;
+                top: 79%;
+                left: 54%;
+            }
+    
+            #vegan {
+                position: absolute;
+                top: 77%;
+                left: 71%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                    width: 75px;
+                }
+            }
+    
+            #poke {
+                position: absolute;
+                top: 20%;
+                left: 66%;
+                img {
+                    animation: float-down 5s ease-in-out infinite;
+                }
+            }
+        }
+        #landing-title {
+            h1 {
+                font-size: 5.5rem;
+            }
+        }  
+    }
+  }
+  
