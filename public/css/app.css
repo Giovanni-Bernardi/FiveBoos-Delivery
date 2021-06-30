@@ -1289,6 +1289,7 @@ header nav .rx-section .user-popup li a.active {
   border-radius: 8px;
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 #restaurant-container #create-row {
@@ -1333,7 +1334,7 @@ header nav .rx-section .user-popup li a.active {
 #restaurant-container #restaurant-cards .crd {
   width: 22%;
   margin: 0px 14px 30px 14px;
-  height: 480px;
+  height: 345px;
   border-radius: 20px;
   background-color: white;
   position: relative;
@@ -1343,24 +1344,28 @@ header nav .rx-section .user-popup li a.active {
   opacity: 0.6;
 }
 
+#restaurant-container #restaurant-cards ul {
+  position: relative;
+}
+
 #restaurant-container #restaurant-cards ul li {
   display: flex;
 }
 
 #restaurant-container #restaurant-cards ul li span {
-  margin-top: 15px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #202020;
 }
 
 #restaurant-container #restaurant-cards ul li span,
 #restaurant-container #restaurant-cards ul li p,
 #restaurant-container #restaurant-cards ul li a {
-  padding: 0 7%;
+  padding: 0 0 0 15px;
 }
 
 #restaurant-container #restaurant-cards ul li img {
-  height: 280px;
+  filter: contrast(70%);
+  height: 250px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1368,26 +1373,35 @@ header nav .rx-section .user-popup li a.active {
   border-top-right-radius: 20px;
 }
 
+#restaurant-container #restaurant-cards ul .name-restaurant {
+  position: absolute;
+  z-index: 10;
+  top: 41%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+#restaurant-container #restaurant-cards ul .name-restaurant span {
+  text-transform: capitalize;
+  color: white;
+  padding: 0;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+
 #restaurant-container #restaurant-cards ul .fa,
 #restaurant-container #restaurant-cards ul .fas {
-  font-size: 22px;
-  padding-left: 7%;
+  font-size: 20px;
+  padding-left: 15px;
 }
 
 #restaurant-container #restaurant-cards .btn-edit-del {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  font-size: 22px;
-  padding: 10px;
+  font-size: 20px;
 }
 
 #restaurant-container #restaurant-cards #delete-button {
-  margin-left: 10px;
-  color: #e45757;
-}
-
-#restaurant-container #delete-button {
   margin-left: 10px;
   color: #e45757;
 }
