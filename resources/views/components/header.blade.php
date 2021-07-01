@@ -9,21 +9,26 @@
             </div>
 
             <ul class='menulist'>
-                <li><a href='{{ route('login') }}'>Accedi</a></li>
-                <li><a href='#'>Registrati</a></li>
-                <li><a href='#'>Il mio profilo</a></li>
-                <li><a href='#'>Aggiungi ristorante</a></li>
-                <li>
-                    <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                @auth
+                    <li><a href='{{ route('restaurantProfileViewLink')}}'>Il mio profilo</a></li>
+                    {{-- <li><a href='#'>Aggiungi ristorante</a></li> --}}
+                    <li>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                @endauth
+
+                @guest
+                    <li><a href='{{ route('login') }}'>Accedi</a></li>
+                    <li><a href='{{ route('register') }}'>Registrati</a></li>
+                @endguest
             </ul>
 
             <a href="{{route('indexViewLink')}}">
