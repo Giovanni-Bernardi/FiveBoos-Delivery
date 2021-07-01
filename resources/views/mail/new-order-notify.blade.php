@@ -29,21 +29,24 @@
             color: #F85B59;
             margin-top: 20px;
             font-size: 40px;
+            font-family: 'Fredoka One', cursive;
         }
         #recap{
             text-align: center;
             margin-top: 50px;
             margin-bottom: 20px;
             font-size: 35px;
+            font-family: 'Fredoka One', cursive;
         }
         #container-info{
             display: flex;
             justify-content: space-between;
-            margin: 0 15px;
+            margin: 0 15px 20px 15px;
         }
         .font-size-text{
             font-size: 20px;
             text-transform: capitalize;
+            font-family: 'Raleway', sans-serif;
         }
         #table-name{
             display: flex;
@@ -62,6 +65,7 @@
             color: whitesmoke;
             padding: 0px;
             margin: 0px;
+            font-family: 'Raleway', sans-serif;
         }
         #table-products{
             display: flex;
@@ -83,23 +87,27 @@
             padding: 0px 10px;
             text-transform: capitalize;
             color: #343434;
+            font-family: 'Raleway', sans-serif;
         }
         #total-price{
             margin: 50px 0;
             display: flex;
             justify-content: flex-end;
             font-size: 28px;
+            font-family: 'Fredoka One', cursive;
         }
         h3{
             font-size: 23px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
         }
     </style>
   </head>
   <body>
-        <main id="mail-main">
+        <div id="mail-main">
             <div id="content-container">
                 <div id="container-logo">
-                    <img id="logo-img" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="">
+                    <img id="logo-img" src="{{asset('/storage/assets/site-logo/mail-logo.jpg')}}" alt="">
                 </div>
 
                 <div>
@@ -118,18 +126,18 @@
 
                     <div>
                         <h3>ID ORDINE</h3>
-                        <p class="">#{{$order -> id}}</p>
+                        <p class="font-size-text">#{{$order -> id}}</p>
                     </div>
 
                     <div>
                         <h3>DATA DI CONSEGNA</h3>
-                        <p class="">{{$order -> delivery_date}} {{$order -> delivery_time}}</p>
+                        <p class="font-size-text">{{$order -> delivery_date}} / {{$order -> delivery_time}}</p>
                     </div>
                 </div>
 
                 <div id="table-name">
                     <div id="table-part-left">
-                        <h4 class="color-white">DESCRIZIONE</h4>
+                        <h4 class="color-white">TITOLO</h4>
                     </div>
 
                     <div id="table-part-right">
@@ -138,19 +146,40 @@
                         <h4 class="color-white">TOTALE</h4>
                     </div>
                 </div>
+                {{-- Serve per aggiungere count --}}
+                @php
+                    $plates = [];
+                    for ($i=0; $i < count($order -> products); $i++) {
+                        if($i == 0){
+                            $plates[$i] ['id'] = $order -> products[$i] -> id;
+                            $plates[$i] ['name'] = $order -> products[$i] -> name;
+                            $plates[$i] ['price'] = $order -> products[$i] -> price;
+                            $plates[$i] ['count'] = 1;
 
+                        }
+                        else if($order -> products[$i] -> id == $plates[count($plates) - 1]['id']){
+                            $plates[count($plates) - 1]['count'] ++;
+                        }
+                        else{
+                            $plates[count($plates)] ['id'] = $order -> products[$i] -> id;
+                            $plates[count($plates) - 1] ['name'] = $order -> products[$i] -> name;
+                            $plates[count($plates) - 1] ['price'] = $order -> products[$i] -> price;
+                            $plates[count($plates) - 1] ['count'] = 1;
+                        }
+                    }
+                @endphp
                 <div>
-                    @foreach ($order -> products as $plate)
+                    @foreach ($plates as $plate)
                         <div id="table-products">
 
                             <div id="table-products-left">
-                                <p class="product">{{$plate -> name}}</p>
+                                <p class="product">{{$plate ['name']}}</p>
                             </div>
 
                             <div id="table-products-right">
-                                <p class="product">1</p>
-                                <p class="product">{{$plate -> price}} €</p>
-                                <p class="product">{{$plate -> price * 2}} €</p>
+                                <p class="product">{{$plate ['count']}}</p>
+                                <p class="product">{{$plate ['price']}} €</p>
+                                <p class="product">{{$plate ['price'] * $plate ['count']}} €</p>
                             </div>
 
                         </div>
@@ -161,7 +190,7 @@
                     <h2>TOTALE: <strong>{{$order -> total_price}} €</strong></h2>
                 </div>
             </div>
-        </main>
+        </div>
   </body>
 </html>
 {{-- <h1>Abbiamo ricevuto il vostro ordine N{{ $order -> id }}</h1>
