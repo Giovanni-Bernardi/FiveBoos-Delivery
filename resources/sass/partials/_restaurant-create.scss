@@ -99,11 +99,12 @@ main.create-restaurant{
             padding: 15px 0;
 
             .button-back{
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
                 border: 2px solid red;
                 border-radius: 5px;
                 padding: 5px 15px;
                 background-color: red;
-                font-family: inherit;
                 color: white;
                 text-decoration: none;
 
@@ -115,6 +116,8 @@ main.create-restaurant{
             }
 
             .button-create{
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
                 border: 2px solid red;
                 border-radius: 5px;
                 padding: 5px 15px;
@@ -122,6 +125,7 @@ main.create-restaurant{
                 margin: 0 10px;
                 color: white;
                 text-decoration: none;
+                cursor: pointer;
 
                   &:hover {
                     background-color: green;

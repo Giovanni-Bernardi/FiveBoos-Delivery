@@ -143,8 +143,10 @@ document.addEventListener('DOMContentLoaded', function () {
             id: platesId
           };
           this.numberProduct.splice(index, 1);
-        } else if (this.cart[index].counter < 1) {
-          this.cart.splice(index, 1);
+
+          if (this.cart[index].counter < 1) {
+            this.cart.splice(index, 1);
+          }
         }
       },
       addToCart: function addToCart(productId, productName, productPrice, counter) {

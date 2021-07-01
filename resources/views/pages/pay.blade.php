@@ -6,27 +6,45 @@
 <main class="pay-order">
 
     <form method="post" id="payment-form" action="{{route ('checkoutOrder')}}">
-    {{-- <form method="post" id="payment-form" action="{{route ('checkoutOrder', $order -> id)}}"> --}}
+
         @csrf
         @method('POST')
+
         <div id="box-left">
             <div class="container">
                 <h3>Fiveboo's Chackout</h3>
                 <h2>
-                    <i class="fas fa-euro-sign"></i> {{$total_price}}
+                    {{$total_price}} &euro;
                 </h2>
-                <ul>
-                    <li>Riepilogo ordine:</li>
-                    @foreach ($products as $product)
-                        <li>
-                            {{$product['name']}} {{$product['price']}},00 &euro; - Q.tà {{$product['count']}}
-                            {{-- {{($product['price'] * $product['count'])}},00 &euro; --}}
-                        </li>
-                    @endforeach
-                </ul>
-                <img src="{{asset('/storage/product-img/1623846898948.jpg')}}" alt="">
+
+                <h4 id="title-recap">Riepilogo ordine:</h4>
+
+                <div class="container-order">
+                    <div>
+                        <ul class="recap-order">
+                            <li>Titolo</li>
+                            <li>Qta</li>
+                            <li>Prezzo</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        @foreach ($products as $product)
+                            <ul class="plates">
+                                <li>{{$product['name']}}</li>
+                                <li>{{$product['count']}}</li>
+                                <li>{{$product['price']}},00 &euro;</li>
+                            </ul>
+                        @endforeach
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="powered">
                 <h4>Powered by <strong>Team5</strong></h4>
             </div>
+
         </div>
 
         <div id="box_pay">
@@ -59,9 +77,16 @@
                             <li>
                                 <label>Data di consegna</label>
                                 <div class="box-date-format">
+                                    <div class="box-time">
+                                        <p>{{date("j-n-Y")}}</p>
+                                    </div>
                                     <div class="box-date">
-                                        <input class="time" type="time" name="delivery_time" required>
-                                        <i class="fas fa-clock time-icon"></i>
+                                        @php
+                                            date_default_timezone_set("Europe/Rome");
+                                            $now = date("H:i");
+                                            $firstAvailable = date('H:i', strtotime('+30 minutes', strtotime($now)));
+                                        @endphp
+                                        <input class="time" type="time" name="delivery_time" min="{{$firstAvailable}}" value= "{{$firstAvailable}}" required>
                                     </div>
                                 </div>
                             </li>

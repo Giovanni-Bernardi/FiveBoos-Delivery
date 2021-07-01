@@ -46,16 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (this.cart[index].counter > 0) {
                     this.cart[index].counter--;
                     this.totalPrice -= (this.cart[index].price);
+
                     let product = {
                         id: platesId,
                     };
                     this.numberProduct.splice(index, 1);
-                }
-                else if (this.cart[index].counter < 1) {
 
-                    this.cart.splice(index, 1);
+                    if (this.cart[index].counter < 1) {
+                        this.cart.splice(index, 1);
+                    }
                 }
-
             },
             addToCart(productId, productName, productPrice, counter) {
 

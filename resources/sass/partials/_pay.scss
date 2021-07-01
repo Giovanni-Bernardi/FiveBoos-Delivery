@@ -5,44 +5,86 @@ main.pay-order{
         min-height: 100vh;
 
         #box-left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: #fbfbfb;
             min-height: 100vh;
             width: 50%;
 
             .container{
-                width: 50%;
-                margin: 10% 0 0 25%;
+                width: 65%;
+                margin: 10% 0 0 20%;
                 font-family:'Segoe UI';
+
+                h2{
+                    font-family:'Segoe UI';
+                    font-size: 40px;
+                    color: #303030;
+                    padding: 10px 0;
+                }
+
+                h3{
+                    font-family:'Segoe UI';
+                    font-size: 27px;
+                    color: #727272;
+                }
+
+                #title-recap{
+                    font-family:'Segoe UI';
+                    font-size: 24px;
+                    color: #303030;
+                    text-align: left;
+                    font-weight: bold;
+                    padding: 15px 0;
+                }
+
+                .container-order{
+                    border: 1px solid black;
+
+                    .recap-order{
+                        display: flex;
+
+                        li{
+                            width: 35%;
+                            text-align: center;
+                            font-family:'Segoe UI';
+                            font-size: 21px;
+                            border: 1px solid black;
+                        }
+                    }
+
+                    .plates{
+                        display: flex;
+
+                        li{
+                            width: 35%;
+                            text-align: center;
+                            font-family:'Segoe UI';
+                            font-size: 18px;
+                            border-bottom: 1px solid black;
+                            border-left: 1px solid black;
+                            border-right: 1px solid black;
+                        }
+                    }
+
+                }
             }
 
-            h2{
-                font-family:'Segoe UI';
-                font-size: 40px;
-                color: #303030;
-            }
+            .powered{
+                padding-bottom: 15px;
 
-            h3{
-                font-family:'Segoe UI';
-                font-size: 28px;
-                color: #727272;
-            }
-
-            img{
-                width: 300px;
-                margin: 42% 0;
-                border-radius: 10px;
-            }
-
-            h4{
-                font-family:'Segoe UI';
-                font-weight: normal;
-                font-size: 20px;
-                color: #acacac;
-                text-align: center;
-
-                strong{
-                    font-size: 22px;
+                h4{
+                    font-family:'Segoe UI';
+                    font-weight: normal;
+                    font-size: 20px;
                     color: #acacac;
+                    text-align: center;
+                    height: 100%;
+                    strong{
+                        font-size: 22px;
+                        color: #acacac;
+                    }
                 }
             }
         }
@@ -80,67 +122,42 @@ main.pay-order{
                             margin-top: 4px;
                             font-size: 16px;
                             font-family:'Segoe UI';
+                            box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
                         }
                         .box-date-format{
                             display: flex;
-                            justify-content: space-between;
+
+                            .box-time{
+                                border: 1px solid #EFEFEF;
+                                box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+                                width: 50%;
+                                border-radius: 5px 5px 5px 5px;
+                                background-color: lightgrey;
+
+                                p{
+                                    padding: 5px 15px;
+                                    font-family: "Segoe UI";
+                                    font-size: 16px;
+                                }
+                            }
 
                             .box-date{
-                                display: flex;
-                                justify-content: space-between;
                                 border: 1px solid #EFEFEF;
                                 box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
                                 width: 50%;
                                 border-radius: 5px 5px 5px 5px;
 
-                                .date{
-                                    width: 100%;
-                                    margin-top: 0px;
-                                    border: none;
-                                    border-radius: 5px 0 0 5px;
-                                    box-shadow: none;
-                                }
-
-                                .date-icon{
-                                    background-color: white;
-                                    border-radius: 0 5px 5px 0;
-                                    line-height: 31px;
-                                    margin-right: 5px;
-                                }
-
                                 .time{
                                     width: 100%;
                                     margin-top: 0px;
                                     border: none;
-                                    border-radius: 5px 0 0 5px;
+                                    border-radius: 5px 5px 5px 5px;
                                     box-shadow: none;
-                                }
-
-                                .time-icon{
-                                    background-color: white;
-                                    border-radius: 0 5px 5px 0;
-                                    line-height: 31px;
-                                    margin-right: 5px;
+                                    font-family: "Segoe UI";
+                                    font-size: 16px;
                                 }
                             }
                         }
-                    }
-                }
-                button{
-                    width: 100%;
-                    border: 1px solid grey;
-                    border-radius: 5px;
-                    padding: 5px 5px 5px 12px;
-                    margin-top: 4px;
-                    font-size: 16px;
-                    font-weight: bold;
-                    background-color: #5186CA;
-                    border-color: #5186CA;
-                    color: white;
-                    font-family:'Segoe UI';
-                    &:hover {
-                        background-color: #3b79c8;
-                        border-color: #3b79c8;
                     }
                 }
 
@@ -155,6 +172,240 @@ main.pay-order{
                         box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
                         padding: 5px 5px 5px 12px;
                         height: 35px;
+                    }
+                }
+
+                button{
+                    width: 100%;
+                    border: 1px solid grey;
+                    border-radius: 5px;
+                    padding: 5px 5px 5px 12px;
+                    margin-top: 4px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    background-color: #5186CA;
+                    border-color: #5186CA;
+                    color: white;
+                    font-family:'Segoe UI';
+                    margin-bottom: 15px;
+                    &:hover {
+                        background-color: #3b79c8;
+                        border-color: #3b79c8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Extra Large
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+    main.pay-order{
+
+        form{
+            #box-left{
+                .container{
+                    width: 80%;
+                    margin: 5% 0 0 5%;
+                }
+            }
+
+            #box_pay{
+
+                .box-form{
+                    width: 80%;
+                    margin: 5% 0 0 5%;
+
+                    ul{
+                        li{
+                            input{
+                                width: 80%;
+                            }
+
+                            .box-date-format{
+
+                                .box-time{
+                                    width: 40%;
+                                }
+
+                                .box-date{
+                                    width: 40%;
+                                }
+                            }
+                        }
+                    }
+                    .braintree-sheet__container{
+                        background-color: white;
+
+                        .braintree-sheet{
+                            width: 80%;
+                            margin-right: 20%;
+                        }
+                    }
+
+                    button{
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+// Large
+@media screen and (max-width: 992px) and (min-width: 769px) {
+    main.pay-order{
+
+        form{
+
+            #box-left{
+
+                .container{
+                    width: 90%;
+                    margin: 5% 5% 0 5%;
+                }
+            }
+
+            #box_pay{
+
+                .box-form{
+                    width: 95%;
+                    margin: 5% 0 0 5%;
+
+                    ul{
+                        li{
+                            input{
+                                width: 95%;
+                            }
+
+                            .box-date-format{
+
+                                .box-time{
+                                    width: 47%;
+                                }
+
+                                .box-date{
+                                    width: 48%;
+                                }
+                            }
+                        }
+                    }
+                    .braintree-sheet__container{
+                        background-color: white;
+
+                        .braintree-sheet{
+                            width: 95%;
+                            margin-right: 5%;
+                        }
+                    }
+
+                    button{
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Medium
+@media screen and (max-width: 768px) {
+    main.pay-order{
+        min-width: 350px;
+
+        form{
+            display: block;
+
+            h4{
+                padding-top: 30px;
+            }
+
+            #box-left{
+                width: 100%;
+                min-height: 1vh;
+
+                .container{
+                    width: 95%;
+                    margin: 0px 15px 0px 15px;
+                }
+
+                .container-order{
+                    height: auto;
+                }
+            }
+
+            #box_pay{
+                width: 100%;
+                min-height: 1vh;
+
+                .box-form{
+                    width: 95%;
+                    margin: 0px 15px 0px 15px;
+
+                    ul{
+                        li{
+                            input{
+                                width: 95%;
+                            }
+
+                            .box-date-format{
+
+                                .box-time{
+                                    width: 47%;
+                                }
+
+                                .box-date{
+                                    width: 48%;
+                                }
+                            }
+                        }
+                    }
+                    .braintree-sheet__container{
+                        background-color: white;
+
+                        .braintree-sheet{
+                            width: 95%;
+                            margin-right: 5%;
+                        }
+                    }
+
+                    button{
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+}
+// Small
+@media screen and (max-width: 576px) {
+    main.pay-order{
+
+        form{
+
+            #box-left{
+
+                .container{
+                    width: 90%;
+                    margin: 5% 5% 0 5%;
+
+                    .container-order{
+                        border: 1px solid black;
+
+                        .recap-order{
+
+                            li{
+                                font-size: 19px;
+                            }
+                        }
+
+                        .plates{
+
+
+                            li{
+                                font-size: 16px;
+                            }
+                        }
+
                     }
                 }
             }
