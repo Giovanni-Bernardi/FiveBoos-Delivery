@@ -18,7 +18,7 @@
                 <h2>Grazie per aver scelto 5 Boo's Delivery!</h2>
                 <h2>Il tuo ordine sta arrivando!</h2>
                 <div id="scooter">
-                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_0rxzjosz.json"  background="transparent" speed="1"  style="width: 400px; height: 400px;" autoplay></lottie-player>
+                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_0rxzjosz.json"  background="transparent" speed="1"  style="width: 300px; height: 300px;" autoplay></lottie-player>
                 </div>
             </div>
         </div>

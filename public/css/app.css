@@ -2608,8 +2608,35 @@ main#bye-container #container-result #scooter {
   }
 
   to {
-    left: 100%;
+    left: 90%;
   }
+}
+
+@media screen and (max-width: 576px) {
+  main#bye-container {
+    min-width: 350px;
+  }
+
+  main#bye-container #container-result #container-text {
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+    height: 200px;
+  }
+
+  main#bye-container #container-result h2 {
+    font-size: 20px;
+  }
+
+@-webkit-keyframes run {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: 80%;
+    }
+}
 }
 
 #login_area {
