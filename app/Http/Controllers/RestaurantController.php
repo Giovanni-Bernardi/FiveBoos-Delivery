@@ -13,8 +13,8 @@ use App\Order;
 class RestaurantController extends Controller
 {
     //pagina landing page
-    public function indexView(Request $request){
-        $request->session()->flush();
+    public function indexView(){
+        //session()->flush();
 
         $restaurants = Restaurant::all();
         $categories = Category::all();
@@ -23,7 +23,7 @@ class RestaurantController extends Controller
     }
     //pagina restaurant list
     public function restaurantListView(){
-        session()->flush();
+        // session()->flush();
 
         $restaurants = Restaurant::all();
         $categories = Category::all();

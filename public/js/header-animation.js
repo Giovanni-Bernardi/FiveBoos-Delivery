@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', init);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\Corso\EserciziGit\proj-final-delivery\resources\js\header-animation.js */"./resources/js/header-animation.js");
+module.exports = __webpack_require__(/*! D:\Boolean\Esercizi Corso\proj-final-delivery\resources\js\header-animation.js */"./resources/js/header-animation.js");
 
 
 /***/ })
