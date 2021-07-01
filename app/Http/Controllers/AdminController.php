@@ -58,7 +58,7 @@ class AdminController extends Controller
         }
         $restaurant -> save();
         
-        return redirect() -> route('indexViewLink');
+        return redirect() -> route('restaurantDetailsProfileLink');
     }
 
     public function createProduct() {
@@ -106,7 +106,7 @@ class AdminController extends Controller
     }
     // ----------------------
     public function updateRestaurantView(Request $request, $id) {
-
+        
         $validate = $request -> validate([
             'business_name' => 'required|string',
             'piva' => 'required|string',
@@ -131,7 +131,7 @@ class AdminController extends Controller
             $restaurant -> save();
         }
 
-        return redirect() -> route('restaurantDetailsViewLink', $restaurant -> id);
+        return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id));
     }
 
     public function editProductView($id){
@@ -163,7 +163,7 @@ class AdminController extends Controller
         $product -> update($validate);
         $product -> save();
 
-        return redirect() -> route('productDetailsViewLink', $product -> id);
+        return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($product -> restaurant -> id));
     }
 
     // Soft delete ristorante

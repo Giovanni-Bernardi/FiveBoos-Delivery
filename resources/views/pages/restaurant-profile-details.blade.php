@@ -24,7 +24,7 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <div id="info-box">
-                            <form  method="POST" enctype="multipart/form-data">
+                            <form  method="POST" action="{{ route('updateRestaurantViewLink', $restaurant -> id) }}" enctype="multipart/form-data">
                                 @method('POST')
                                 @csrf
                                 <h4>
@@ -133,7 +133,7 @@
                                 <div class="modal-content" >
                                     <span class="close" @click="closePopup">&times;</span>
                                     <div class="info-box">    
-                                        <form  method="POST" enctype="multipart/form-data">
+                                        <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data" >
                                             @method('POST')
                                             @csrf
                                             <h4> Modifica {{$product -> name}}  </h4>
@@ -194,7 +194,7 @@
                                                 <label for="0">
                                                     Non Visible:
                                                 </label>
-                                                <input type="radio" name="visible" value="0" @if(!$product -> visible) checked @endif>
+                                                <input type="radio" name="visible" value="0" @if(!($product -> visible)) checked @endif>
                                             </p>
                                             <p>
                                                 <button type="submit">Salva le modifiche</button>
@@ -214,7 +214,7 @@
                             <div class="modal-content">
                                 <span class="close" @click="closePopup">&times;</span>
                                 <div class="info-box">
-                                    <form method="POST" enctype="multipart/form-data">
+                                    <form method="POST" enctype="multipart/form-data" action="{{ route('storeProduct') }}">
                                         @method('POST')
                                         @csrf
 
