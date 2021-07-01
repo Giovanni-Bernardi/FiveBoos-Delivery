@@ -9,14 +9,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route Lista Ristoranti
-Route::get('/restaurant/list', 'RestaurantController@restaurantListView')->name('restaurantListLink');
-
 // Route per pagina di Login
 Route::get('/home', 'RestaurantController@indexView') -> name('indexViewLink');
 
 // Route principale (Home)
 Route::get('/','RestaurantController@indexView') -> name('indexViewLink');
+
+// Route Lista Ristoranti
+Route::get('/restaurant/list', 'RestaurantController@restaurantListView')->name('restaurantListLink');
+
+// !!!Route Lista Ristoranti PROVA PRE FILTRO!!!!!
+Route::get('/restaurant/list/{filter}', 'RestaurantController@restaurantListView')->name('restaurantListLink');
 
 // Route dettaglio ristorante con lista prodotti
 Route::get('/restaurant/{id}','RestaurantController@restaurantDetailsView') -> name('restaurantDetailsViewLink');

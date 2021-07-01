@@ -16,6 +16,13 @@ function dynamicSearch() {
             console.log('VUE Connected');
             this.getCategories();
             this.getAllRestaurants();
+
+            // if (thi) {
+                
+                // }
+        },
+        computed: function (){
+            
         },
         methods:{
             getCategories: function(){
@@ -34,12 +41,21 @@ function dynamicSearch() {
                 });
 			},
             getAllRestaurants: function(){
-
+                console.log('PRE FILTRO VUE:' +  this.filter);
+                
                 axios.get('/api/get/all/restaurants/' + this.filter
                 ).then(data => {
                     this.restaurantsList = data.data;
-                    this.filteredRestaurants = data.data;
-                    console.log(this.restaurantsList);
+                    
+                    if (window.landingFilter == undefined) {
+                        this.filteredRestaurants = data.data;
+                        console.log('VUOTOOOOO');
+                    }else{
+                        this.filter.push(window.landingFilter);
+                        this.getFilteredRestaurant();
+                        console.log('PIENOOO', window.landingFilter);
+                    }
+                    // console.log(this.restaurantsList);
                 }).catch((error) => {
                     console.log(error);
                 });

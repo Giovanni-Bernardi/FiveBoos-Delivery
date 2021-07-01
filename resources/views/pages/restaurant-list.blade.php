@@ -51,5 +51,10 @@
         </ul>
     </div>
 </main>
+
+<script>
+    window.landingFilter = {{$filter}};
+    console.log('PREFILTRO:' + window.landingFilter);
+</script>
     
 @endsection
