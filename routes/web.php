@@ -53,10 +53,10 @@ Route::get('/delete/restaurant/{id}','AdminController@deleteRestaurant') -> name
 Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('deleteProductLink');
 
 // Route pay
-Route::get('pay/{id}','PaymentController@payOrder') -> name('payOrder');
+Route::get('pay/','PaymentController@payOrder') -> name('payOrder');
 
 // Route checkout
-Route::post('checkout/{id}','PaymentController@checkoutOrder') -> name('checkoutOrder');
+Route::post('checkout/','PaymentController@checkoutOrder') -> name('checkoutOrder');
 Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');
 
 // 2 Route per carello temporanee

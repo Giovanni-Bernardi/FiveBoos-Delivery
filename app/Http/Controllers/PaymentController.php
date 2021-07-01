@@ -30,37 +30,78 @@ class PaymentController extends Controller
         return $gateway;
     }
 
-    public function payOrder($id)
+    public function payOrder(Request $request)
     {
+        if(!session() -> has('products')){
+            return redirect() -> route('indexViewLink');
+        }
+        $total_price = session('total_price')[0];
+        $sessionProducts = session('products');
+
         $gateway = $this -> braintreeGateway();
 
         $token = $gateway->ClientToken()->generate();
 
-        $order = Order::findOrFail($id);
+        $productsList = [];
+        // Creo un array con i prod. già ordinati
+        foreach ($sessionProducts as $product_id) {
+            $query = Product::findOrFail($product_id);
+            $productsList [] = $query;
+        }
 
-        return view('pages.pay', compact('order', 'gateway', 'token'));
+        // Nuovo array con nome e quanità per riepilogo carrello
+        $products = [];
+        for ($i=0; $i < count($productsList) ; $i++) { 
+            if($i == 0){
+                $products[$i] ['id'] = $productsList[$i] -> id;
+                $products[$i] ['name'] = $productsList[$i] -> name;
+                $products[$i] ['price'] = $productsList[$i] -> price;
+                $products[$i] ['count'] = 1;
+                
+            }
+            else if($productsList[$i] -> id == $products[count($products) - 1]['id']){
+                $products[count($products) - 1]['count'] ++;
+            }
+            else{
+                $products[count($products)] ['id'] = $productsList[$i] -> id;
+                $products[count($products) - 1] ['name'] = $productsList[$i] -> name;
+                $products[count($products) - 1] ['price'] = $productsList[$i] -> price;
+                $products[count($products) - 1] ['count'] = 1;
+            }
+        }
+
+        return view('pages.pay', compact('gateway', 'token', 'total_price', 'products'));
     }
 
-    public function checkoutOrder(Request $request, $id)
+    public function checkoutOrder(Request $request)
     {
-        $order = Order::findOrFail($id);
-
+        // $order = Order::findOrFail($id);
+        
+        
         $validate = $request -> validate([
-        'firstname' => 'required|string',
-        'lastname' => 'required|string',
-        'email' => 'required|string',
-        'address' => 'required|string',
-        'telephone' => 'required|string',
-        'delivery_date' => 'required|date',
-        'delivery_time' => 'required|string',
-        'total_price' => 'required|numeric',
+            'firstname' => 'required|string',
+            'lastname' => 'required|string',
+            'email' => 'required|string',
+            'address' => 'required|string',
+            'telephone' => 'required|string',
+            // 'delivery_date' => 'required|date',
+            'delivery_time' => 'required|string',
+            // 'total_price' => 'required|numeric',
         ]);
-
-        $order -> update($validate);
+        
+        $order = Order::make($validate);
+        
+        $order -> delivery_date = date('Y-m-d');
+        $order -> total_price = session('total_price')[0];
 
         $gateway = $this -> braintreeGateway();
 
-        $amount = $request -> amount;
+        $products = session('products');
+        sort($products);
+
+        // $amount = $request -> amount;
+        // Amount adesso viene passato dalla session (input non necessario)
+        $amount = session('total_price')[0];
         $nonce = $request -> payment_method_nonce;
 
         $result = $gateway->transaction()->sale([
@@ -71,30 +112,35 @@ class PaymentController extends Controller
             // 'firstName' => Auth::user() -> name,
             // 'email' => Auth::user() -> email,
             // ],
+            // 'customer' => [
+            //     'firstName' => 'Mario',
+            //     'lastName' => 'Rossi',
+            //     'email' => 'mail@gmail.com'
+            // ],
             'customer' => [
-                'firstName' => 'Mario',
-                'lastName' => 'Rossi',
-                'email' => 'mail@gmail.com'
+                    'firstName' => $order -> firstname,
+                    'lastName' => $order -> lastname,
+                    'email' => $order -> email
             ],
             'options' => ['submitForSettlement' => true]
         ]);
         // dd($result);
 
-        // situazione di successo
+        // Situazione di successo
         if ($result->success) {
             $transaction = $result->transaction;
             $order -> payment_status = 1;
             $order -> save();
+            $order -> products() -> attach($products);
+            $order -> save();
 
             $mail = new NewOrderNotify($order);
-            Mail::to('client@mail.com') -> send($mail);
+            Mail::to($order -> email) -> send($mail);
 
-            return redirect() -> route('byebyeOrder') -> with ('message', 'pagamento andato a buon fine. ID pagamento: ' .
+            return redirect() -> route('byebyeOrder') -> with ('message', 'Pagamento effettuato con successo. ID pagamento: ' .
             $transaction -> id);
-
-
-            // situazione di errore
         }
+        // Situazione di errore
         else {
             $errorString = "";
 
@@ -102,7 +148,7 @@ class PaymentController extends Controller
                 $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
             }
 
-            return redirect() -> route('byebyeOrder') -> withErrors('errore di pagamento: ' . $result -> message);
+            return redirect() -> route('byebyeOrder') -> withErrors('Errore nel pagamento: ' . $result -> message);
         }
     }
 

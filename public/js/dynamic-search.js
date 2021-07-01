@@ -17410,6 +17410,7 @@ function dynamicSearch() {
 
         axios.get('/api/get/all/restaurants/' + this.filter).then(function (data) {
           _this2.restaurantsList = data.data;
+          _this2.filteredRestaurants = data.data;
           console.log(_this2.restaurantsList);
         })["catch"](function (error) {
           console.log(error);
@@ -17418,13 +17419,19 @@ function dynamicSearch() {
       getFilteredRestaurant: function getFilteredRestaurant() {
         var _this3 = this;
 
-        this.filteredRestaurants = [];
-        axios.get('/api/get/filtered/restaurants/' + this.filter).then(function (data) {
-          _this3.filteredRestaurants = data.data;
-          console.log(_this3.filteredRestaurants);
-        })["catch"](function (error) {
-          console.log(error);
-        });
+        console.log(this.filter);
+
+        if (this.filter.length < 1) {
+          this.filteredRestaurants = this.restaurantsList;
+        } else {
+          axios.get('/api/get/filtered/restaurants/' + this.filter).then(function (data) {
+            _this3.filteredRestaurants = [];
+            _this3.filteredRestaurants = data.data;
+            console.log(_this3.filteredRestaurants);
+          })["catch"](function (error) {
+            console.log(error);
+          });
+        }
       }
     }
   });

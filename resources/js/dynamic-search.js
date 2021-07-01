@@ -38,20 +38,26 @@ function dynamicSearch() {
                 axios.get('/api/get/all/restaurants/' + this.filter
                 ).then(data => {
                     this.restaurantsList = data.data;
+                    this.filteredRestaurants = data.data;
                     console.log(this.restaurantsList);
                 }).catch((error) => {
                     console.log(error);
                 });
 			},
             getFilteredRestaurant: function(){
-                this.filteredRestaurants = [];
-                axios.get('/api/get/filtered/restaurants/' + this.filter
-                ).then(data => {
-                    this.filteredRestaurants = data.data;
-                    console.log(this.filteredRestaurants);
-                }).catch((error) => {
-                    console.log(error);
-                });
+                console.log(this.filter);
+                if (this.filter.length < 1) {
+                    this.filteredRestaurants = this.restaurantsList;
+                }else{
+                    axios.get('/api/get/filtered/restaurants/' + this.filter
+                    ).then(data => {
+                        this.filteredRestaurants = [];
+                        this.filteredRestaurants = data.data;
+                        console.log(this.filteredRestaurants);
+                    }).catch((error) => {
+                        console.log(error);
+                    });
+                }
             }
         }
     });
