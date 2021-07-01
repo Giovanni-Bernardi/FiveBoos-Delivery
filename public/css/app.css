@@ -1651,11 +1651,12 @@ main.create-restaurant div.container .submit {
 }
 
 main.create-restaurant div.container .submit .button-back {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
   border: 2px solid red;
   border-radius: 5px;
   padding: 5px 15px;
   background-color: red;
-  font-family: inherit;
   color: white;
   text-decoration: none;
 }
@@ -1667,6 +1668,8 @@ main.create-restaurant div.container .submit .button-back:hover {
 }
 
 main.create-restaurant div.container .submit .button-create {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
   border: 2px solid red;
   border-radius: 5px;
   padding: 5px 15px;
@@ -1674,6 +1677,7 @@ main.create-restaurant div.container .submit .button-create {
   margin: 0 10px;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 main.create-restaurant div.container .submit .button-create:hover {
@@ -2751,44 +2755,86 @@ main.pay-order form {
 }
 
 main.pay-order form #box-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fbfbfb;
   min-height: 100vh;
   width: 50%;
 }
 
 main.pay-order form #box-left .container {
-  width: 50%;
-  margin: 10% 0 0 25%;
+  width: 65%;
+  margin: 10% 0 0 20%;
   font-family: "Segoe UI";
 }
 
-main.pay-order form #box-left h2 {
+main.pay-order form #box-left .container h2 {
   font-family: "Segoe UI";
   font-size: 40px;
   color: #303030;
+  padding: 10px 0;
 }
 
-main.pay-order form #box-left h3 {
+main.pay-order form #box-left .container h3 {
   font-family: "Segoe UI";
-  font-size: 28px;
+  font-size: 27px;
   color: #727272;
 }
 
-main.pay-order form #box-left img {
-  width: 300px;
-  margin: 42% 0;
-  border-radius: 10px;
+main.pay-order form #box-left .container #title-recap {
+  font-family: "Segoe UI";
+  font-size: 24px;
+  color: #303030;
+  text-align: left;
+  font-weight: bold;
+  padding: 15px 0;
 }
 
-main.pay-order form #box-left h4 {
+main.pay-order form #box-left .container .container-order {
+  border: 1px solid black;
+}
+
+main.pay-order form #box-left .container .container-order .recap-order {
+  display: flex;
+}
+
+main.pay-order form #box-left .container .container-order .recap-order li {
+  width: 35%;
+  text-align: center;
+  font-family: "Segoe UI";
+  font-size: 21px;
+  border: 1px solid black;
+}
+
+main.pay-order form #box-left .container .container-order .plates {
+  display: flex;
+}
+
+main.pay-order form #box-left .container .container-order .plates li {
+  width: 35%;
+  text-align: center;
+  font-family: "Segoe UI";
+  font-size: 18px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+main.pay-order form #box-left .powered {
+  padding-bottom: 15px;
+}
+
+main.pay-order form #box-left .powered h4 {
   font-family: "Segoe UI";
   font-weight: normal;
   font-size: 20px;
   color: #acacac;
   text-align: center;
+  height: 100%;
 }
 
-main.pay-order form #box-left h4 strong {
+main.pay-order form #box-left .powered h4 strong {
   font-size: 22px;
   color: #acacac;
 }
@@ -2828,69 +2874,42 @@ main.pay-order form #box_pay .box-form ul li input {
   margin-top: 4px;
   font-size: 16px;
   font-family: "Segoe UI";
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
 }
 
 main.pay-order form #box_pay .box-form ul li .box-date-format {
   display: flex;
-  justify-content: space-between;
+}
+
+main.pay-order form #box_pay .box-form ul li .box-date-format .box-time {
+  border: 1px solid #EFEFEF;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+  width: 50%;
+  border-radius: 5px 5px 5px 5px;
+  background-color: lightgrey;
+}
+
+main.pay-order form #box_pay .box-form ul li .box-date-format .box-time p {
+  padding: 5px 15px;
+  font-family: "Segoe UI";
+  font-size: 16px;
 }
 
 main.pay-order form #box_pay .box-form ul li .box-date-format .box-date {
-  display: flex;
-  justify-content: space-between;
   border: 1px solid #EFEFEF;
   box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
   width: 50%;
   border-radius: 5px 5px 5px 5px;
 }
 
-main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .date {
-  width: 100%;
-  margin-top: 0px;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  box-shadow: none;
-}
-
-main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .date-icon {
-  background-color: white;
-  border-radius: 0 5px 5px 0;
-  line-height: 31px;
-  margin-right: 5px;
-}
-
 main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .time {
   width: 100%;
   margin-top: 0px;
   border: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px 5px 5px 5px;
   box-shadow: none;
-}
-
-main.pay-order form #box_pay .box-form ul li .box-date-format .box-date .time-icon {
-  background-color: white;
-  border-radius: 0 5px 5px 0;
-  line-height: 31px;
-  margin-right: 5px;
-}
-
-main.pay-order form #box_pay .box-form button {
-  width: 100%;
-  border: 1px solid grey;
-  border-radius: 5px;
-  padding: 5px 5px 5px 12px;
-  margin-top: 4px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #5186CA;
-  border-color: #5186CA;
-  color: white;
   font-family: "Segoe UI";
-}
-
-main.pay-order form #box_pay .box-form button:hover {
-  background-color: #3b79c8;
-  border-color: #3b79c8;
+  font-size: 16px;
 }
 
 main.pay-order form #box_pay .box-form .braintree-sheet {
@@ -2905,6 +2924,182 @@ main.pay-order form #box_pay .box-form .braintree-sheet .braintree-form__hosted-
   box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
   padding: 5px 5px 5px 12px;
   height: 35px;
+}
+
+main.pay-order form #box_pay .box-form button {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 5px 5px 12px;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5186CA;
+  border-color: #5186CA;
+  color: white;
+  font-family: "Segoe UI";
+  margin-bottom: 15px;
+}
+
+main.pay-order form #box_pay .box-form button:hover {
+  background-color: #3b79c8;
+  border-color: #3b79c8;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+  main.pay-order form #box-left .container {
+    width: 80%;
+    margin: 5% 0 0 5%;
+  }
+
+  main.pay-order form #box_pay .box-form {
+    width: 80%;
+    margin: 5% 0 0 5%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li input {
+    width: 80%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li .box-date-format .box-time {
+    width: 40%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li .box-date-format .box-date {
+    width: 40%;
+  }
+
+  main.pay-order form #box_pay .box-form .braintree-sheet__container {
+    background-color: white;
+  }
+
+  main.pay-order form #box_pay .box-form .braintree-sheet__container .braintree-sheet {
+    width: 80%;
+    margin-right: 20%;
+  }
+
+  main.pay-order form #box_pay .box-form button {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+  main.pay-order form #box-left .container {
+    width: 90%;
+    margin: 5% 5% 0 5%;
+  }
+
+  main.pay-order form #box_pay .box-form {
+    width: 95%;
+    margin: 5% 0 0 5%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li input {
+    width: 95%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li .box-date-format .box-time {
+    width: 47%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li .box-date-format .box-date {
+    width: 48%;
+  }
+
+  main.pay-order form #box_pay .box-form .braintree-sheet__container {
+    background-color: white;
+  }
+
+  main.pay-order form #box_pay .box-form .braintree-sheet__container .braintree-sheet {
+    width: 95%;
+    margin-right: 5%;
+  }
+
+  main.pay-order form #box_pay .box-form button {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.pay-order {
+    min-width: 350px;
+  }
+
+  main.pay-order form {
+    display: block;
+  }
+
+  main.pay-order form h4 {
+    padding-top: 30px;
+  }
+
+  main.pay-order form #box-left {
+    width: 100%;
+    min-height: 1vh;
+  }
+
+  main.pay-order form #box-left .container {
+    width: 95%;
+    margin: 0px 15px 0px 15px;
+  }
+
+  main.pay-order form #box-left .container-order {
+    height: auto;
+  }
+
+  main.pay-order form #box_pay {
+    width: 100%;
+    min-height: 1vh;
+  }
+
+  main.pay-order form #box_pay .box-form {
+    width: 95%;
+    margin: 0px 15px 0px 15px;
+  }
+
+  main.pay-order form #box_pay .box-form ul li input {
+    width: 95%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li .box-date-format .box-time {
+    width: 47%;
+  }
+
+  main.pay-order form #box_pay .box-form ul li .box-date-format .box-date {
+    width: 48%;
+  }
+
+  main.pay-order form #box_pay .box-form .braintree-sheet__container {
+    background-color: white;
+  }
+
+  main.pay-order form #box_pay .box-form .braintree-sheet__container .braintree-sheet {
+    width: 95%;
+    margin-right: 5%;
+  }
+
+  main.pay-order form #box_pay .box-form button {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main.pay-order form #box-left .container {
+    width: 90%;
+    margin: 5% 5% 0 5%;
+  }
+
+  main.pay-order form #box-left .container .container-order {
+    border: 1px solid black;
+  }
+
+  main.pay-order form #box-left .container .container-order .recap-order li {
+    font-size: 19px;
+  }
+
+  main.pay-order form #box-left .container .container-order .plates li {
+    font-size: 16px;
+  }
 }
 
 * {

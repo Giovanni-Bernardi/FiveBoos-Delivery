@@ -70,7 +70,6 @@
         #table-products{
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
             border-bottom: 5px solid #343434;
             padding-bottom: 5px;
         }
@@ -131,7 +130,7 @@
 
                     <div>
                         <h3>DATA DI CONSEGNA</h3>
-                        <p class="font-size-text">{{$order -> delivery_date}} / {{$order -> delivery_time}}</p>
+                        <p class="font-size-text">{{date("j-n-Y")}} / {{$order -> delivery_time}}</p>
                     </div>
                 </div>
 

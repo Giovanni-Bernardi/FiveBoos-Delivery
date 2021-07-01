@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="submit">
-            <a class="button-back" href="#">Lista ristoranti</a>
+            <a class="button-back" href='{{ route('restaurantProfileViewLink')}}'>Lista ristoranti</a>
             <button class="button-create" type="submit" class="btn btn-primary" form="new-restaurant">Crea Ristorante</button>
         </div>
     </div>
