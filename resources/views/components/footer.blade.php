@@ -2,7 +2,7 @@
     <div class="top">
         <div class="logo">
             <h3>
-                Delive<span>Boo</span> 
+                Five<span>Boo's</span> 
             </h3>
 
             <a href=""> <img src="{{ asset('/storage/assets/applestore.svg') }}" alt="logo apple store"> </a> 
@@ -46,7 +46,7 @@
             <div class="copyright">
                 <span>
                     <i class="far fa-copyright"></i>
-                    DeliveBoo Technologies, Team 5 Inc.
+                    FiveBoo's Technologies, Team 5 Inc.
                 </span>
             </div>
         </div>
