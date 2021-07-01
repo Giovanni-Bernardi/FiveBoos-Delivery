@@ -538,11 +538,12 @@ footer .bottom .privacy .copyright {
   position: relative;
   width: 115px;
   height: 115px;
-  transition: transform 0.3s, background-color 0.5s ease, border-width 0.1s, box-shadow 0.3s;
+  transition: transform 0.3s, background-color 0.5s ease, border-width 0.1s, box-shadow 0.3s, color 0.5s;
 }
 
 #appSearch div.list-jumbotron ul li.food-type.active {
-  background-color: dodgerblue;
+  background-color: #FF5757;
+  color: white;
 }
 
 #appSearch div.list-jumbotron ul li.food-type:hover {

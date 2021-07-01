@@ -22,13 +22,16 @@ class RestaurantController extends Controller
         return view('pages.index', compact('restaurants', 'categories'));
     }
     //pagina restaurant list
-    public function restaurantListView(){
+    public function restaurantListView($filter){
         // session()->flush();
+        if ($filter == 'all') {
+            $filter = '';
+        }
 
         $restaurants = Restaurant::all();
         $categories = Category::all();
 
-        return view('pages.restaurant-list', compact('restaurants', 'categories'));
+        return view('pages.restaurant-list', compact('restaurants', 'categories', 'filter'));
     }
     //pagina restaurant details
     public function restaurantDetailsView($id){

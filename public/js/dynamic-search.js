@@ -17387,8 +17387,10 @@ function dynamicSearch() {
     mounted: function mounted() {
       console.log('VUE Connected');
       this.getCategories();
-      this.getAllRestaurants();
+      this.getAllRestaurants(); // if (thi) {
+      // }
     },
+    computed: function computed() {},
     methods: {
       getCategories: function getCategories() {
         var _this = this;
@@ -17408,10 +17410,21 @@ function dynamicSearch() {
       getAllRestaurants: function getAllRestaurants() {
         var _this2 = this;
 
+        console.log('PRE FILTRO VUE:' + this.filter);
         axios.get('/api/get/all/restaurants/' + this.filter).then(function (data) {
           _this2.restaurantsList = data.data;
-          _this2.filteredRestaurants = data.data;
-          console.log(_this2.restaurantsList);
+
+          if (window.landingFilter == undefined) {
+            _this2.filteredRestaurants = data.data;
+            console.log('VUOTOOOOO');
+          } else {
+            _this2.filter.push(window.landingFilter);
+
+            _this2.getFilteredRestaurant();
+
+            console.log('PIENOOO', window.landingFilter);
+          } // console.log(this.restaurantsList);
+
         })["catch"](function (error) {
           console.log(error);
         });
