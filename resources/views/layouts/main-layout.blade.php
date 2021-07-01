@@ -18,6 +18,8 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
     {{-- animate --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    {{-- favicon --}}
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     {{-- JS/VUE --}}
     {{-- <script src="{{ asset('js/cart.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/stats.js') }}"></script> --}}

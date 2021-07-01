@@ -1975,18 +1975,14 @@ header nav .menulist li a {
 }
 
 #landing-jumbo #background-jumbo {
-  background-image: url(/images/background-landing.png?b13fd6cc8729ea0cbf60ce8b03cbe494);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
-  min-height: 115vh;
+  min-height: 100vh;
   width: 100%;
   margin-top: -100px;
   padding: 0 3%;
   -webkit-animation-name: bg-landing-rgb;
           animation-name: bg-landing-rgb;
-  -webkit-animation-duration: 18s;
-          animation-duration: 18s;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
@@ -2010,89 +2006,91 @@ header nav .menulist li a {
   height: auto;
 }
 
-#landing-jumbo #background-jumbo #pizzeria {
+#landing-jumbo #background-jumbo #cat-pizza {
   position: absolute;
-  top: 80px;
-  left: 500px;
+  top: 19%;
+  left: 42%;
 }
 
-#landing-jumbo #background-jumbo #fastfood {
+#landing-jumbo #background-jumbo #cat-fast-food {
   position: absolute;
-  top: 120px;
-  left: 230px;
+  top: 20%;
+  left: 22%;
 }
 
-#landing-jumbo #background-jumbo #sushi {
+#landing-jumbo #background-jumbo #cat-sushi {
   position: absolute;
-  right: 150px;
+  top: 42%;
+  left: 76%;
 }
 
-#landing-jumbo #background-jumbo #sushi img {
-  width: 140px;
+#landing-jumbo #background-jumbo #cat-sushi img {
+  width: 160px;
 }
 
-#landing-jumbo #background-jumbo #messicano {
+#landing-jumbo #background-jumbo #cat-messicano {
   position: absolute;
-  left: 100px;
+  top: 38%;
+  left: 10%;
 }
 
-#landing-jumbo #background-jumbo #messicano img {
+#landing-jumbo #background-jumbo #cat-messicano img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
 }
 
-#landing-jumbo #background-jumbo #cinese {
+#landing-jumbo #background-jumbo #cat-cinese {
   position: absolute;
-  bottom: 40px;
-  left: 500px;
+  top: 76%;
+  left: 31%;
 }
 
-#landing-jumbo #background-jumbo #cinese img {
+#landing-jumbo #background-jumbo #cat-cinese img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
 }
 
-#landing-jumbo #background-jumbo #carne {
+#landing-jumbo #background-jumbo #cat-carne {
   position: absolute;
-  bottom: 50px;
-  left: 90px;
+  top: 67%;
+  left: 10%;
 }
 
-#landing-jumbo #background-jumbo #carne img {
+#landing-jumbo #background-jumbo #cat-carne img {
   width: 140px;
 }
 
-#landing-jumbo #background-jumbo #pesce {
+#landing-jumbo #background-jumbo #cat-pesce {
   position: absolute;
-  top: 80px;
-  right: 250px;
+  top: 62%;
+  left: 77%;
 }
 
-#landing-jumbo #background-jumbo #pasticceria {
+#landing-jumbo #background-jumbo #cat-bakery {
   position: absolute;
-  bottom: 40px;
-  right: 500px;
+  top: 79%;
+  left: 52%;
 }
 
-#landing-jumbo #background-jumbo #vegan {
+#landing-jumbo #background-jumbo #cat-vegan {
   position: absolute;
-  right: 160px;
-  bottom: 60px;
+  top: 77%;
+  left: 71%;
 }
 
-#landing-jumbo #background-jumbo #vegan img {
+#landing-jumbo #background-jumbo #cat-vegan img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
   width: 100px;
 }
 
-#landing-jumbo #background-jumbo #poke {
+#landing-jumbo #background-jumbo #cat-poke {
   position: absolute;
-  top: 80px;
-  right: 500px;
+  top: 20%;
+  left: 66%;
 }
 
-#landing-jumbo #background-jumbo #poke img {
+#landing-jumbo #background-jumbo #cat-poke img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
 }
@@ -2102,6 +2100,9 @@ header nav .menulist li a {
   font-weight: bold;
   z-index: 10;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #landing-jumbo #landing-title h1 {
@@ -2167,7 +2168,7 @@ header nav .menulist li a {
 .popup-note:hover .pop {
   display: block;
   transform: scale(1.2);
-  z-index: 20;
+  z-index: 9998;
 }
 
 .popup-note:hover .up {
@@ -2180,13 +2181,379 @@ header nav .menulist li a {
 }
 
 #lottie-player {
-  width: 100%;
-  height: 115vh;
+  width: 1900px;
+  height: 116vh;
 }
 
 .scale:hover {
   transform: scale(0.9);
   transition: ease-in-out 0.3s;
+}
+
+@media screen and (max-width: 576px) {
+  #dotted-button {
+    display: none;
+  }
+
+  #lottie-player {
+    width: 800px;
+    height: 116vh;
+  }
+
+  .popup-note .pop {
+    display: none;
+    position: absolute;
+    z-index: 20;
+  }
+
+  .popup-note:hover .pop {
+    display: block;
+    transform: scale(0.8);
+    z-index: 9998;
+  }
+
+  .popup-note:hover .up {
+    bottom: 60px;
+  }
+
+  .popup-note:hover .right {
+    left: 100px;
+    bottom: 30px;
+  }
+
+  #landing-jumbo {
+    overflow-x: hidden;
+  }
+
+  #landing-jumbo #background-jumbo #or {
+    display: none;
+  }
+
+  #landing-jumbo #background-jumbo .type {
+    z-index: 20;
+  }
+
+  #landing-jumbo #background-jumbo .type img {
+    -webkit-animation: float-up 5s ease-in-out infinite;
+            animation: float-up 5s ease-in-out infinite;
+    width: 80px;
+    height: auto;
+  }
+
+  #landing-jumbo #background-jumbo #cat-pizza {
+    position: absolute;
+    top: 17%;
+    left: 38%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-fast-food {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-sushi {
+    position: absolute;
+    top: 58%;
+    left: 64%;
+    z-index: 999;
+  }
+
+  #landing-jumbo #background-jumbo #cat-sushi img {
+    width: 100px;
+  }
+
+  #landing-jumbo #background-jumbo #messicano {
+    position: absolute;
+    top: 26%;
+    left: 33%;
+  }
+
+  #landing-jumbo #background-jumbo #messicano img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #background-jumbo #cat-cinese {
+    position: absolute;
+    top: 83%;
+    left: 18%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-cinese img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #background-jumbo #cat-carne {
+    position: absolute;
+    top: 71%;
+    left: 6%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-carne img {
+    width: 90px;
+  }
+
+  #landing-jumbo #background-jumbo #cat-pesce {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-bakery {
+    position: absolute;
+    top: 74%;
+    left: 40%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-vegan {
+    position: absolute;
+    top: 84%;
+    left: 69%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-vegan img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+    width: 60px;
+  }
+
+  #landing-jumbo #background-jumbo #cat-poke {
+    position: absolute;
+    top: 21%;
+    left: 66%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-poke img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #landing-title h1 {
+    font-size: 4.8rem;
+  }
+}
+
+@media (max-width: 1192px) and (min-width: 873px) {
+  #lottie-player {
+    width: 900px;
+    height: 116vh;
+  }
+
+  #dotted-button {
+    display: flex;
+    margin-left: 0px;
+    margin-top: 33px;
+    flex-direction: column;
+  }
+
+  #landing-jumbo #background-jumbo .type img {
+    width: 110px;
+    height: auto;
+  }
+
+  #landing-jumbo #background-jumbo #cat-pizza {
+    position: absolute;
+    top: 17%;
+    left: 42%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-fast-food {
+    position: absolute;
+    top: 19%;
+    left: 22%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-sushi {
+    position: absolute;
+    top: 42%;
+    left: 76%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-sushi img {
+    width: 140px;
+  }
+
+  #landing-jumbo #background-jumbo #messicano {
+    position: absolute;
+    top: 38%;
+    left: 6%;
+  }
+
+  #landing-jumbo #background-jumbo #messicano img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #background-jumbo #cat-cinese {
+    position: absolute;
+    top: 79%;
+    left: 28%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-cinese img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #background-jumbo #cat-carne {
+    position: absolute;
+    top: 70%;
+    left: 7%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-carne img {
+    width: 120px;
+  }
+
+  #landing-jumbo #background-jumbo #cat-pesce {
+    position: absolute;
+    top: 62%;
+    left: 77%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-bakery {
+    position: absolute;
+    top: 79%;
+    left: 56%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-vegan {
+    position: absolute;
+    top: 77%;
+    left: 71%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-vegan img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+    width: 85px;
+  }
+
+  #landing-jumbo #background-jumbo #cat-poke {
+    position: absolute;
+    top: 20%;
+    left: 66%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-poke img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 872px) and (min-width: 577px) {
+  #lottie-player {
+    width: 872px;
+    height: 116vh;
+  }
+
+  #dotted-button {
+    display: none;
+  }
+
+  #landing-jumbo #background-jumbo #or {
+    display: none;
+  }
+
+  #landing-jumbo #background-jumbo .type img {
+    width: 100px;
+    height: auto;
+  }
+
+  #landing-jumbo #background-jumbo #cat-pizza {
+    position: absolute;
+    top: 15%;
+    left: 42%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-fast-food {
+    position: absolute;
+    top: 19%;
+    left: 18%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-sushi {
+    position: absolute;
+    top: 42%;
+    left: 76%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-sushi img {
+    width: 130px;
+  }
+
+  #landing-jumbo #background-jumbo #messicano {
+    position: absolute;
+    top: 38%;
+    left: 4%;
+  }
+
+  #landing-jumbo #background-jumbo #messicano img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #background-jumbo #cat-cinese {
+    position: absolute;
+    top: 79%;
+    left: 24%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-cinese img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #background-jumbo #cat-carne {
+    position: absolute;
+    top: 70%;
+    left: 4%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-carne img {
+    width: 110px;
+  }
+
+  #landing-jumbo #background-jumbo #cat-pesce {
+    position: absolute;
+    top: 62%;
+    left: 77%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-bakery {
+    position: absolute;
+    top: 79%;
+    left: 54%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-vegan {
+    position: absolute;
+    top: 77%;
+    left: 71%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-vegan img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+    width: 75px;
+  }
+
+  #landing-jumbo #background-jumbo #cat-poke {
+    position: absolute;
+    top: 20%;
+    left: 66%;
+  }
+
+  #landing-jumbo #background-jumbo #cat-poke img {
+    -webkit-animation: float-down 5s ease-in-out infinite;
+            animation: float-down 5s ease-in-out infinite;
+  }
+
+  #landing-jumbo #landing-title h1 {
+    font-size: 5.5rem;
+  }
 }
 
 main#bye-container {
