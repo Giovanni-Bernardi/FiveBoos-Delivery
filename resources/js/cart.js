@@ -93,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             closePopup: function(){
                 this.btnID = '';
+            },
+            popupCreate: function() {
+                this.btnID = 'create';
             }
         },
     });

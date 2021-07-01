@@ -13,7 +13,7 @@
                         {{$restaurant -> business_name}}
                     </h2>
                     <div class="info-badge" id="myBtn">
-                        <i class="fas fa-info"></i>
+                        <i class="fas fa-cog"></i>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                                 @method('POST')
                                 @csrf
                                 <h4>
-                                    Restaurant '{{$restaurant -> business_name}}' Edit
+                                    Modifica il tuo ristorante: '{{$restaurant -> business_name}}'
                                 </h4>
                                 <p>
                                     <label for="business_name">
@@ -126,25 +126,161 @@
                         </div>
                         <div class="right-side">
                             <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
-                            {{-- <div class="badge" @click="popupDetails(product.id)">
-                                <i class="fas fa-cog"></i>
+                            <div class="info-badge" @click="popupDetails({{$product -> id}})">
+                                <i class="fas fa-cog" ></i>
                             </div>
-                            <div class="modal product-details" :class="btnID==product.id ? 'active' : ''">
-                                <div class="modal-content" @click="closePopup">
+                           <div class="modal product-edit" :class="btnID == {{$product -> id}} ? 'active' : ''">
+                                <div class="modal-content" >
                                     <span class="close" @click="closePopup">&times;</span>
                                     <div class="info-box">    
                                         <form  method="POST" enctype="multipart/form-data">
                                             @method('POST')
                                             @csrf
-                                
-                                            
+                                            <h4> Modifica {{$product -> name}}  </h4>
+                                            <p>
+                                                <label for="name">
+                                                    Nome piatto:
+                                                </label>
+                                                <input type="text" name="name" value="{{$product -> name}}">
+                                            </p>
+                                            <p>
+                                                <label for="ingredients">
+                                                    Ingredienti:
+                                                </label>
+                                                <textarea name="ingredients" cols="40" rows="5">{{$product -> ingredients}}</textarea>
+                                            </p>
+                                            <p>
+                                                <label for="description">
+                                                    Descrizione:
+                                                </label>
+                                                <textarea name="description" cols="40" rows="5">{{$product -> description}}</textarea>
+                                            </p>
+                                            <p>
+                                                <label for="price">
+                                                    Prezzo:
+                                                </label>
+                                                <input type="text" name="price" value="{{$product -> price}}">
+                                            </p>
+                                            <p>
+                                                <label for="img">
+                                                    Immagine del piatto:
+                                                </label>
+                                                <input type="file" name="img" value="{{$product -> img}}">
+                                            </p>
+                                            <p>
+                                                <label>Categorie</label>
+                                                <div class="category-box">
+                                                    @foreach ($categories as $category)
+                                                    <div class="edit-prod">
+                                                        <label for="categories[]">
+                                                            {{$category -> name}}
+                                                            {{$category -> id}}
+                                                        </label>
+                                                        <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}"
+                                                        @foreach ($restaurant -> categories as $restaurantType)
+                                                            @if ($restaurantType -> id == $category -> id)
+                                                                checked
+                                                            @endif
+                                                        @endforeach>
+                                                    </div>
+                                                    @endforeach
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <label for="1">
+                                                    Visible:
+                                                </label>
+                                                <input type="radio" name="visible" value="1" @if($product -> visible) checked @endif>
+                                                <label for="0">
+                                                    Non Visible:
+                                                </label>
+                                                <input type="radio" name="visible" value="0" @if(!$product -> visible) checked @endif>
+                                            </p>
+                                            <p>
+                                                <button type="submit">Salva le modifiche</button>
+                                            </p>
                                         </form>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </li>
                     @endforeach
+                    <li id="new-product" class="new-product">
+                        <div class="add-new" @click="popupCreate">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="modal create-product" :class="btnID == 'create' ? 'active' : ''">
+                            <div class="modal-content">
+                                <span class="close" @click="closePopup">&times;</span>
+                                <div class="info-box">
+                                    <form method="POST" enctype="multipart/form-data">
+                                        @method('POST')
+                                        @csrf
+
+                                        <h4> Crea un nuovo piatto!</h4>
+                                        <p>
+                                            <label for="name">
+                                                Nome del piatto:
+                                            </label>
+                                            <input type="text" name="name" placeholder="Name" required>
+                                        </p>
+                                        <p>
+                                            <label for="ingredients">
+                                                Ingredienti:
+                                            </label>
+                                            <textarea name="ingredients" id="" cols="30" rows="10" required> Inserisci qui gli ingredienti</textarea>
+                                        </p>
+                                        <p>
+                                            <label for="description">
+                                                Descrizione
+                                            </label>
+                                            <textarea name="description" id="" cols="30" rows="10" required> Inserisci una breve descrizione del piatto/allergeni</textarea>
+                                        </p>
+                                        <p>
+                                            <label for="price">
+                                                Prezzo
+                                            </label>
+                                            <input type="number" name="price" placeholder="mille lire" required>
+                                        </p>
+                                        <p>
+                                            <label>Categorie</label>
+                                            <div class="category-box">
+                                                @foreach ($categories as $category)
+                                                <div class="edit-prod">
+                                                    <label for="categories[]">
+                                                        {{$category -> name}}
+                                                        {{$category -> id}}
+                                                    </label>
+                                                    <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}">
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </p>
+                                        <p>
+                                            <label for="visible">
+                                                Disponibilità
+                                            </label>
+                                            <input type="radio" name="visible" value="0">No
+                                            <input type="radio" name="visible" value="1">Si
+                                        </p>
+                                        <p class="restaurant-id" hidden>
+                                            <input type="text" name="restaurant_id" id="" value="{{$restaurant -> id}}">
+                                        </p>
+                                        <p>
+                                            <label for="img">
+                                                Carica la foto del tuo nuovo piatto!
+                                            </label>
+                                            <input type="file" name="img">
+                                        </p>
+                                        <button type="submit">
+                                            Crea piatto
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
