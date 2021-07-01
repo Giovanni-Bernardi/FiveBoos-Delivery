@@ -2007,91 +2007,91 @@ header nav .menulist li a {
   height: auto;
 }
 
-#landing-jumbo #background-jumbo #pizzeria {
+#landing-jumbo #background-jumbo #cat-pizza {
   position: absolute;
   top: 19%;
   left: 42%;
 }
 
-#landing-jumbo #background-jumbo #fastfood {
+#landing-jumbo #background-jumbo #cat-fast-food {
   position: absolute;
   top: 20%;
   left: 22%;
 }
 
-#landing-jumbo #background-jumbo #sushi {
+#landing-jumbo #background-jumbo #cat-sushi {
   position: absolute;
   top: 42%;
   left: 76%;
 }
 
-#landing-jumbo #background-jumbo #sushi img {
+#landing-jumbo #background-jumbo #cat-sushi img {
   width: 160px;
 }
 
-#landing-jumbo #background-jumbo #messicano {
+#landing-jumbo #background-jumbo #cat-messicano {
   position: absolute;
   top: 38%;
   left: 10%;
 }
 
-#landing-jumbo #background-jumbo #messicano img {
+#landing-jumbo #background-jumbo #cat-messicano img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
 }
 
-#landing-jumbo #background-jumbo #cinese {
+#landing-jumbo #background-jumbo #cat-cinese {
   position: absolute;
   top: 76%;
   left: 31%;
 }
 
-#landing-jumbo #background-jumbo #cinese img {
+#landing-jumbo #background-jumbo #cat-cinese img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
 }
 
-#landing-jumbo #background-jumbo #carne {
+#landing-jumbo #background-jumbo #cat-carne {
   position: absolute;
   top: 67%;
   left: 10%;
 }
 
-#landing-jumbo #background-jumbo #carne img {
+#landing-jumbo #background-jumbo #cat-carne img {
   width: 140px;
 }
 
-#landing-jumbo #background-jumbo #pesce {
+#landing-jumbo #background-jumbo #cat-pesce {
   position: absolute;
   top: 62%;
   left: 77%;
 }
 
-#landing-jumbo #background-jumbo #pasticceria {
+#landing-jumbo #background-jumbo #cat-bakery {
   position: absolute;
   top: 79%;
   left: 52%;
 }
 
-#landing-jumbo #background-jumbo #vegan {
+#landing-jumbo #background-jumbo #cat-vegan {
   position: absolute;
   top: 77%;
   left: 71%;
 }
 
-#landing-jumbo #background-jumbo #vegan img {
+#landing-jumbo #background-jumbo #cat-vegan img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
   width: 100px;
 }
 
-#landing-jumbo #background-jumbo #poke {
+#landing-jumbo #background-jumbo #cat-poke {
   position: absolute;
   top: 20%;
   left: 66%;
 }
 
-#landing-jumbo #background-jumbo #poke img {
+#landing-jumbo #background-jumbo #cat-poke img {
   -webkit-animation: float-down 5s ease-in-out infinite;
           animation: float-down 5s ease-in-out infinite;
 }
@@ -2241,26 +2241,26 @@ header nav .menulist li a {
     height: auto;
   }
 
-  #landing-jumbo #background-jumbo #pizzeria {
+  #landing-jumbo #background-jumbo #cat-pizza {
     position: absolute;
     top: 17%;
     left: 38%;
   }
 
-  #landing-jumbo #background-jumbo #fastfood {
+  #landing-jumbo #background-jumbo #cat-fast-food {
     position: absolute;
     top: 25%;
     left: 10%;
   }
 
-  #landing-jumbo #background-jumbo #sushi {
+  #landing-jumbo #background-jumbo #cat-sushi {
     position: absolute;
     top: 58%;
     left: 64%;
     z-index: 999;
   }
 
-  #landing-jumbo #background-jumbo #sushi img {
+  #landing-jumbo #background-jumbo #cat-sushi img {
     width: 100px;
   }
 
@@ -2275,58 +2275,58 @@ header nav .menulist li a {
             animation: float-down 5s ease-in-out infinite;
   }
 
-  #landing-jumbo #background-jumbo #cinese {
+  #landing-jumbo #background-jumbo #cat-cinese {
     position: absolute;
     top: 83%;
     left: 18%;
   }
 
-  #landing-jumbo #background-jumbo #cinese img {
+  #landing-jumbo #background-jumbo #cat-cinese img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
   }
 
-  #landing-jumbo #background-jumbo #carne {
+  #landing-jumbo #background-jumbo #cat-carne {
     position: absolute;
     top: 71%;
     left: 6%;
   }
 
-  #landing-jumbo #background-jumbo #carne img {
+  #landing-jumbo #background-jumbo #cat-carne img {
     width: 90px;
   }
 
-  #landing-jumbo #background-jumbo #pesce {
+  #landing-jumbo #background-jumbo #cat-pesce {
     position: absolute;
     top: 70%;
     left: 70%;
   }
 
-  #landing-jumbo #background-jumbo #pasticceria {
+  #landing-jumbo #background-jumbo #cat-bakery {
     position: absolute;
     top: 74%;
     left: 40%;
   }
 
-  #landing-jumbo #background-jumbo #vegan {
+  #landing-jumbo #background-jumbo #cat-vegan {
     position: absolute;
     top: 84%;
     left: 69%;
   }
 
-  #landing-jumbo #background-jumbo #vegan img {
+  #landing-jumbo #background-jumbo #cat-vegan img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
     width: 60px;
   }
 
-  #landing-jumbo #background-jumbo #poke {
+  #landing-jumbo #background-jumbo #cat-poke {
     position: absolute;
     top: 21%;
     left: 66%;
   }
 
-  #landing-jumbo #background-jumbo #poke img {
+  #landing-jumbo #background-jumbo #cat-poke img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
   }
@@ -2354,25 +2354,25 @@ header nav .menulist li a {
     height: auto;
   }
 
-  #landing-jumbo #background-jumbo #pizzeria {
+  #landing-jumbo #background-jumbo #cat-pizza {
     position: absolute;
     top: 17%;
     left: 42%;
   }
 
-  #landing-jumbo #background-jumbo #fastfood {
+  #landing-jumbo #background-jumbo #cat-fast-food {
     position: absolute;
     top: 19%;
     left: 22%;
   }
 
-  #landing-jumbo #background-jumbo #sushi {
+  #landing-jumbo #background-jumbo #cat-sushi {
     position: absolute;
     top: 42%;
     left: 76%;
   }
 
-  #landing-jumbo #background-jumbo #sushi img {
+  #landing-jumbo #background-jumbo #cat-sushi img {
     width: 140px;
   }
 
@@ -2387,58 +2387,58 @@ header nav .menulist li a {
             animation: float-down 5s ease-in-out infinite;
   }
 
-  #landing-jumbo #background-jumbo #cinese {
+  #landing-jumbo #background-jumbo #cat-cinese {
     position: absolute;
     top: 79%;
     left: 28%;
   }
 
-  #landing-jumbo #background-jumbo #cinese img {
+  #landing-jumbo #background-jumbo #cat-cinese img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
   }
 
-  #landing-jumbo #background-jumbo #carne {
+  #landing-jumbo #background-jumbo #cat-carne {
     position: absolute;
     top: 70%;
     left: 7%;
   }
 
-  #landing-jumbo #background-jumbo #carne img {
+  #landing-jumbo #background-jumbo #cat-carne img {
     width: 120px;
   }
 
-  #landing-jumbo #background-jumbo #pesce {
+  #landing-jumbo #background-jumbo #cat-pesce {
     position: absolute;
     top: 62%;
     left: 77%;
   }
 
-  #landing-jumbo #background-jumbo #pasticceria {
+  #landing-jumbo #background-jumbo #cat-bakery {
     position: absolute;
     top: 79%;
     left: 56%;
   }
 
-  #landing-jumbo #background-jumbo #vegan {
+  #landing-jumbo #background-jumbo #cat-vegan {
     position: absolute;
     top: 77%;
     left: 71%;
   }
 
-  #landing-jumbo #background-jumbo #vegan img {
+  #landing-jumbo #background-jumbo #cat-vegan img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
     width: 85px;
   }
 
-  #landing-jumbo #background-jumbo #poke {
+  #landing-jumbo #background-jumbo #cat-poke {
     position: absolute;
     top: 20%;
     left: 66%;
   }
 
-  #landing-jumbo #background-jumbo #poke img {
+  #landing-jumbo #background-jumbo #cat-poke img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
   }
@@ -2463,25 +2463,25 @@ header nav .menulist li a {
     height: auto;
   }
 
-  #landing-jumbo #background-jumbo #pizzeria {
+  #landing-jumbo #background-jumbo #cat-pizza {
     position: absolute;
     top: 15%;
     left: 42%;
   }
 
-  #landing-jumbo #background-jumbo #fastfood {
+  #landing-jumbo #background-jumbo #cat-fast-food {
     position: absolute;
     top: 19%;
     left: 18%;
   }
 
-  #landing-jumbo #background-jumbo #sushi {
+  #landing-jumbo #background-jumbo #cat-sushi {
     position: absolute;
     top: 42%;
     left: 76%;
   }
 
-  #landing-jumbo #background-jumbo #sushi img {
+  #landing-jumbo #background-jumbo #cat-sushi img {
     width: 130px;
   }
 
@@ -2496,58 +2496,58 @@ header nav .menulist li a {
             animation: float-down 5s ease-in-out infinite;
   }
 
-  #landing-jumbo #background-jumbo #cinese {
+  #landing-jumbo #background-jumbo #cat-cinese {
     position: absolute;
     top: 79%;
     left: 24%;
   }
 
-  #landing-jumbo #background-jumbo #cinese img {
+  #landing-jumbo #background-jumbo #cat-cinese img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
   }
 
-  #landing-jumbo #background-jumbo #carne {
+  #landing-jumbo #background-jumbo #cat-carne {
     position: absolute;
     top: 70%;
     left: 4%;
   }
 
-  #landing-jumbo #background-jumbo #carne img {
+  #landing-jumbo #background-jumbo #cat-carne img {
     width: 110px;
   }
 
-  #landing-jumbo #background-jumbo #pesce {
+  #landing-jumbo #background-jumbo #cat-pesce {
     position: absolute;
     top: 62%;
     left: 77%;
   }
 
-  #landing-jumbo #background-jumbo #pasticceria {
+  #landing-jumbo #background-jumbo #cat-bakery {
     position: absolute;
     top: 79%;
     left: 54%;
   }
 
-  #landing-jumbo #background-jumbo #vegan {
+  #landing-jumbo #background-jumbo #cat-vegan {
     position: absolute;
     top: 77%;
     left: 71%;
   }
 
-  #landing-jumbo #background-jumbo #vegan img {
+  #landing-jumbo #background-jumbo #cat-vegan img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
     width: 75px;
   }
 
-  #landing-jumbo #background-jumbo #poke {
+  #landing-jumbo #background-jumbo #cat-poke {
     position: absolute;
     top: 20%;
     left: 66%;
   }
 
-  #landing-jumbo #background-jumbo #poke img {
+  #landing-jumbo #background-jumbo #cat-poke img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
   }
