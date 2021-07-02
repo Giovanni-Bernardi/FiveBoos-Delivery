@@ -224,19 +224,19 @@
                                                 <label for="name">
                                                     Nome del piatto:
                                                 </label>
-                                                <input type="text" name="name" placeholder="Name" required>
+                                                <input type="text" name="name" placeholder="nome" required>
                                             </p>
                                             <p>
                                                 <label for="ingredients">
                                                     Ingredienti:
                                                 </label>
-                                                <textarea name="ingredients" id="" cols="30" rows="10" required> Inserisci qui gli ingredienti</textarea>
+                                                <textarea name="ingredients" id="" cols="30" rows="10" placeholder="Inserisci qui gli ingredienti" required > </textarea>
                                             </p>
                                             <p>
                                                 <label for="description">
                                                     Descrizione
                                                 </label>
-                                                <textarea name="description" id="" cols="30" rows="10" required> Inserisci una breve descrizione del piatto/allergeni</textarea>
+                                                <textarea name="description" id="" cols="30" rows="10"  placeholder="Inserisci una breve descrizione del piatto/allergeni" required> </textarea>
                                             </p>
                                             <p>
                                                 <label for="price">
@@ -258,7 +258,7 @@
                                                     @endforeach
                                                 </div>
                                             </p>
-                                            <p>
+                                            <p class="visibility">
                                                 <label for="visible">
                                                     Disponibilità
                                                 </label>
@@ -284,8 +284,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-                
+            </div>    
 
             <section id="appChart">
                 {{-- <h3>

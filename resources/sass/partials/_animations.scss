@@ -100,3 +100,10 @@
   from{border-right-color: rgb(250, 210, 10);}
   to{border-right-color: transparent;}
 }
+
+// modal show animation
+
+@keyframes modal-fade-in {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}

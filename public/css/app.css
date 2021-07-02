@@ -246,6 +246,26 @@
   }
 }
 
+@-webkit-keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 header {
   height: 100px;
   padding: 10px 30px;
@@ -2182,6 +2202,9 @@ main.create-restaurant div.container .submit .button-create:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  transition: 0.3s ease-in-out;
+  -webkit-animation: modal-fade-in 1s ease-in-out;
+          animation: modal-fade-in 1s ease-in-out;
 }
 
 .modal .close {
@@ -2201,8 +2224,39 @@ main.create-restaurant div.container .submit .button-create:hover {
 .product-details .modal-content {
   width: 50%;
   position: relative;
-  right: 200px;
   top: 25px;
+}
+
+@media screen and (max-width: 991px) {
+  main .modal .modal-content,
+  main #myModal .modal-content,
+  main.details .modal .modal-content,
+  main.details #myModal .modal-content {
+    width: 80%;
+  }
+
+  main .modal .modal-content .close,
+  main #myModal .modal-content .close,
+  main.details .modal .modal-content .close,
+  main.details #myModal .modal-content .close {
+    font-size: 34;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main .modal .modal-content,
+  main #myModal .modal-content,
+  main.details .modal .modal-content,
+  main.details #myModal .modal-content {
+    width: 100%;
+  }
+
+  main .modal .modal-content .close,
+  main #myModal .modal-content .close,
+  main.details .modal .modal-content .close,
+  main.details #myModal .modal-content .close {
+    font-size: 40px;
+  }
 }
 
 footer {

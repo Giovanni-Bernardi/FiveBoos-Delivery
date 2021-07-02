@@ -24,6 +24,20 @@ main.user.details{
                     right: 5px;
                 }
             }
+            p.visibility {
+                display: flex;
+                justify-content: flex-start;
+                width: fit-content;
+                label {
+                    align-self: center;
+                    margin: 5px;
+                }
+                input {
+                    align-self: center;
+                    margin: 5px;
+                }
+                align-items: center;
+            }
         }
         li#new-product.new-product {
             display: flex;
@@ -143,12 +157,6 @@ main.user.details{
     }
 }
 
-// checkbox style
-// input[type=checkbox]{
-//     position:absolute;
-//     opacity: 0;
-//     z-index: -9999;
-// }
 
 // input[type=checkbox] + label{
 //     position: relative;
