@@ -5,11 +5,12 @@ main.details {
         width: 100%;
         height: 220px;
         background-color: #ffc244;
-        padding: 20px 10% 0px;
+        padding: 20px 0 0px;
+        // padding: 20px 0 0;
         .jumbo-img{
             height: 100%;
-            max-width: 1840px;
-            margin: 0 auto;
+            max-width: 1270px;
+            margin: 0 10%;
             padding-top: 30px;
             position: relative;
             bottom: -80px;
@@ -84,8 +85,9 @@ main.details {
     
     .dishes-box{
         min-height: 500px;
-        margin: 120px 10%;
-        max-width: 1840px;
+        margin: 120px 10% 50px;
+        // max-width: 1840px;
+        max-width: 1270px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -106,11 +108,11 @@ main.details {
             margin:0 -10px ;
             li:not(.overview li) {
                 flex-basis: calc(100% / 2 - 20px);
-                min-width: 320px;
-                height: 150px;
+                // min-width: 320px;
+                height: 170px;
                 margin: 0 10px 20px;
                 padding: 15px;
-                border-radius: 5px;
+                border-radius: 8px;
                 cursor: pointer;
                 display: flex;
                 justify-content: space-between;
@@ -133,13 +135,13 @@ main.details {
                             font-family: "Raleway", sans-serif;
                         }
                     }
-                    margin-right: 10px;
                 }
                 
                 .right-side{
                     flex-basis: 50%;
                     overflow: hidden;
                     position: relative;
+                    margin-left: 10px;
                     img{
                         min-width: 150px;
                         width: 100%;
@@ -222,17 +224,17 @@ main.details {
 
         .overview {
             width: calc(100% / 3);
-            min-width: 260px;
+            // min-width: 260px;
             position: -webkit-sticky;
             position: sticky;
             top: 100px;
             background-color: white;
             box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
-            border-radius: 5px;
+            border-radius: 8px;
             overflow: hidden;
 
             .checkout-title{
-                padding: 15px;
+                padding: 20px 15px;
                 border-bottom: 1px solid lightgrey;
                 margin-bottom: 0;
                 text-align: center;
@@ -241,51 +243,64 @@ main.details {
             }
             .temp-cart {
                 text-align: center;
-                padding: 20px 0;
-                .cartlist{
-                    display: flex;
-                    font-size: 18px;
-                    padding: 0 15px 20px;
-                    // border: 1px solid lightgrey;
-                    // border-radius: 25px;
-                    background-color: white;
-                    #name-product{
+                padding: 20px 0 30px;
+                min-height: 200px;
+                position: relative;
+                img {
+                    position: absolute;
+                    height: 72%;
+                    top: 55%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0.4;
+                    max-height: 160px;
+                }
+
+                ul.lista-carrello{
+                    min-height: 170px;
+                    .cartlist{
                         display: flex;
-                        flex-basis: 40%;
-                        font-size: 14px;
-                        font-weight: normal;
-                        text-transform: capitalize;
-                        padding-right: 10px;
-                        word-wrap: break-word;
-                        flex-shrink: 1;
-                        font-family: "Raleway", sans-serif;
-                    }
-        
-                    #modification{
-                        display: flex;
-                        flex-basis: 60%;
-                        min-width: 120px;
-                        justify-content: space-between;
-                        font-size: 14px;
-                        .plus-minus{
-                            min-width: 50px;
-                            p{
-                                padding-left: 5px;
+                        font-size: 18px;
+                        padding: 0 15px 20px;
+                        background-color: white;
+                        #name-product{
+                            display: flex;
+                            flex-basis: 40%;
+                            font-size: 14px;
+                            font-weight: normal;
+                            text-transform: capitalize;
+                            padding-right: 10px;
+                            word-wrap: break-word;
+                            flex-shrink: 1;
+                            font-family: "Raleway", sans-serif;
+                        }
+            
+                        #modification{
+                            display: flex;
+                            flex-basis: 60%;
+                            min-width: 120px;
+                            justify-content: space-between;
+                            font-size: 14px;
+                            .plus-minus{
+                                min-width: 50px;
+                                p{
+                                    padding-left: 5px;
+                                }
                             }
                         }
-                    }
-        
-                    .fas{
-                        margin-left: 5px;
-                        font-size: 18px;
-                        cursor: pointer;
-                        vertical-align: middle;
+            
+                        .fas{
+                            margin-left: 5px;
+                            font-size: 18px;
+                            cursor: pointer;
+                            vertical-align: middle;
+                        }
                     }
                 }
         
                 .totalprice{
                     border-top: 1px solid lightgrey;
-                    padding: 15px 0;
+                    padding: 30px 0 15px;
                     font-family: "Fredoka One", cursive;
                     font-weight: normal;
                     font-size: 18px;
@@ -377,5 +392,98 @@ main.details {
         position: relative;
         right: 200px;
         top: 25px;
+    }
+}
+
+// --- Media query sopra i 1588px Speciale ---
+@media screen and (min-width: 1588px) {
+    main.details {
+        .details-jumbotron {
+            .jumbo-img{
+                margin: 0 auto;
+            }
+        }
+        .dishes-box{
+            margin: 120px auto 50px;
+            ul:not(.overview ul){
+                // flex-basis: calc(100% / 2);
+                li:not(.overview li) {
+                    // flex-basis: calc(100% / 1 - 20px);
+                }
+            }
+        }
+    }
+}
+
+// --- Media query soto i 1350px Speciale ---
+@media screen and (max-width: 1350px) {
+    main.details {
+        .dishes-box{
+            ul:not(.overview ul){
+                flex-basis: calc(100% / 2);
+                li:not(.overview li) {
+                    flex-basis: calc(100% / 1 - 20px);
+                }
+            }
+            .overview {
+                width: calc(100% / 2 - 20px);
+            }
+        }
+    }
+}
+
+
+// --- Media query md fino a 991px---
+@media screen and (max-width: 991px) {
+    main.details {
+        .dishes-box{
+            ul:not(.overview ul){
+                flex-basis: calc(100% / 1);
+                li:not(.overview li) {
+                    flex-basis: calc(100% / 1 - 20px);
+                    height: 200px;
+                }
+            }
+            .overview {
+                width: calc(100% / 1 - 20px);
+            }
+        }
+    }
+}
+
+// --- Media query sm fino a 768px---
+@media screen and (max-width: 767px) {
+    main.details {
+        .dishes-box{
+            ul:not(.overview ul){
+                li:not(.overview li) {
+                    height: 170px;
+                }
+            }
+        }
+    }
+}
+
+// --- Media query xs fino a 576px ---
+@media screen and (max-width: 576px) {
+    main.details {
+        .details-jumbotron {
+            .jumbo-img{
+                margin: 0 20px;
+            }
+        }
+        .dishes-box{
+            margin: 120px 20px 50px;
+            justify-content: center;
+            ul:not(.overview ul){
+                li:not(.overview li) {
+                    flex-basis: calc(100% / 1);
+                    margin: 0 0 20px;
+                }
+            }
+            .overview {
+                width: calc(100% / 1);
+            }
+        }
     }
 }

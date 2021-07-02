@@ -63,7 +63,7 @@
                     </div>
                     <div class="right-side">
                         {{-- <a href="{{route('productDetailsViewLink', @{{product.id}})}}"> --}}
-                        <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+                        <img src="{{asset('/storage/product-img/11.jpg')}}" alt="placeholder product">
                         <div class="product-info-badge">
                             <i class="fas fa-info" @click="popupDetails(product.id)"></i>
                         </div>
@@ -87,7 +87,8 @@
                     Riepilogo
                 </h3>
                 <div class="temp-cart">
-                    <ul>
+                    <img v-if="cart == ''" src="{{asset('/storage/assets/placeholder-cart.png')}}" alt="Immagine carrello">
+                    <ul class="lista-carrello">
                         <li v-if="cart == ''">
                             <p>Il tuo carrello è vuoto</p>
                         </li>
