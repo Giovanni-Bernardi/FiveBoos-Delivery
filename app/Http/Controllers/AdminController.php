@@ -57,8 +57,8 @@ class AdminController extends Controller
             $restaurant -> img = $imgNewName;
         }
         $restaurant -> save();
-        
-        return redirect() -> route('restaurantDetailsProfileLink');
+
+        return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id));
     }
 
     public function createProduct() {
@@ -106,7 +106,7 @@ class AdminController extends Controller
     }
     // ----------------------
     public function updateRestaurantView(Request $request, $id) {
-        
+
         $validate = $request -> validate([
             'business_name' => 'required|string',
             'piva' => 'required|string',
