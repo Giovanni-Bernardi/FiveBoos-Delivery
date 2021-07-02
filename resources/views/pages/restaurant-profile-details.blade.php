@@ -69,24 +69,28 @@
                                 </p>
                                 <p>
                                     Categories:
-                                    <ul>
-                                        <li>
-                                            @foreach ($categories as $category)
-                                        </li>
-                                        <li>
-                                            <label for="categories[]">
-                                                {{$category -> name}}
-                                                {{$category -> id}}
-                                            </label>
-                                            <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}"
-                                                @foreach ($restaurant -> categories as $restaurantType)
-                                                    @if ($restaurantType -> id == $category -> id)
-                                                        checked
-                                                    @endif
-                                                @endforeach>
-                                        </li>
-                                            @endforeach
-                                    </ul>
+                                    <div>
+                                        <ul class="category-box">
+                                            <li>
+                                                @foreach ($categories as $category)
+                                            </li>
+                                            <li>
+                                                <div class="edit-prod">
+                                                    <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}"
+                                                        @foreach ($restaurant -> categories as $restaurantType)
+                                                            @if ($restaurantType -> id == $category -> id)
+                                                                checked
+                                                            @endif
+                                                        @endforeach>
+                                                    <label for="categories[]">
+                                                        {{$category -> name}}
+                                                        {{$category -> id}}
+                                                    </label>
+                                                </div>
+                                            </li>
+                                                @endforeach
+                                        </ul>
+                                    </div>
                                 </p>
                                 <p>
                                     <button type="submit">Save edit</button>
@@ -172,29 +176,31 @@
                                                 <div class="category-box">
                                                     @foreach ($categories as $category)
                                                     <div class="edit-prod">
-                                                        <label for="categories[]">
-                                                            {{$category -> name}}
-                                                            {{$category -> id}}
-                                                        </label>
                                                         <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}"
                                                         @foreach ($restaurant -> categories as $restaurantType)
                                                             @if ($restaurantType -> id == $category -> id)
                                                                 checked
                                                             @endif
                                                         @endforeach>
+                                                        <label for="categories[]">
+                                                            {{-- <div class="check"></div> --}}
+                                                            {{$category -> name}}
+                                                            {{$category -> id}}
+                                                        </label>
                                                     </div>
                                                     @endforeach
                                                 </div>
                                             </p>
                                             <p>
-                                                <label for="1">
-                                                    Visible:
-                                                </label>
                                                 <input type="radio" name="visible" value="1" @if($product -> visible) checked @endif>
-                                                <label for="0">
-                                                    Non Visible:
+                                                <label for="1">
+                                                    Visibile:
                                                 </label>
+
                                                 <input type="radio" name="visible" value="0" @if(!($product -> visible)) checked @endif>
+                                                <label for="0">
+                                                    Non visibile:
+                                                </label>
                                             </p>
                                             <p>
                                                 <button type="submit">Salva le modifiche</button>
@@ -248,11 +254,11 @@
                                             <div class="category-box">
                                                 @foreach ($categories as $category)
                                                 <div class="edit-prod">
+                                                    <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}">
                                                     <label for="categories[]">
                                                         {{$category -> name}}
                                                         {{$category -> id}}
                                                     </label>
-                                                    <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}">
                                                 </div>
                                                 @endforeach
                                             </div>

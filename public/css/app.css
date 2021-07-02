@@ -1124,10 +1124,30 @@ main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
   cursor: default;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) .info-badge i {
+main.user.details .dishes-box ul:not(.overview ul) .info-badge {
+  width: 23px;
+  height: 23px;
+  padding-top: 3px;
+  margin: 10px 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  font-size: 13px;
+  font-weight: bold;
+  color: whitesmoke;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) .info-badge i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 main.user.details .dishes-box li#new-product.new-product {
@@ -1138,20 +1158,28 @@ main.user.details .dishes-box li#new-product.new-product {
 main.user.details .dishes-box li#new-product.new-product .add-new {
   display: flex;
   justify-content: center;
-  background-color: lightgrey;
-  border-radius: 50%;
-  width: 150px;
+  background-color: rgba(0, 172, 0, 0.178);
+  border-radius: 3px;
+  width: 100%;
   padding: 10px;
-}
-
-main.user.details .dishes-box li#new-product.new-product .add-new:hover {
-  cursor: pointer;
-  background-color: #acabab;
 }
 
 main.user.details .dishes-box li#new-product.new-product .add-new i {
   align-self: center;
   font-size: 35px;
+  color: rgba(0, 180, 60, 0.76);
+  vertical-align: middle;
+  transition: color 0.3s;
+}
+
+main.user.details .dishes-box li#new-product.new-product .add-new:hover {
+  cursor: pointer;
+  background-color: rgba(0, 172, 0, 0.521);
+}
+
+main.user.details .dishes-box li#new-product.new-product .add-new:hover i {
+  transform: scale(1.2);
+  color: white;
 }
 
 main.user.details #appChart {
@@ -1670,7 +1698,6 @@ main.create-restaurant div.container .submit .button-create:hover {
 
 .modal .modal-content #info-box,
 .modal .modal-content .info-box {
-  width: 60%;
   margin: auto;
 }
 
@@ -1713,7 +1740,6 @@ main.create-restaurant div.container .submit .button-create:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 10px;
 }
 
 .modal .modal-content #info-box .category-box .edit-prod,
@@ -1729,7 +1755,6 @@ main.create-restaurant div.container .submit .button-create:hover {
 }
 
 #myModal #info-box {
-  width: 50%;
   margin: auto;
   text-align: left;
 }
@@ -1758,7 +1783,7 @@ main.create-restaurant div.container .submit .button-create:hover {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
 
 .modal .close {
