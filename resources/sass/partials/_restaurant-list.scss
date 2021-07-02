@@ -91,7 +91,7 @@
         // padding: 0 10% 20px;
         margin: 0 auto;
         max-width: 1270px;
-        @include flex(row, center, center);
+        @include flex(row, flex-start, center);
         flex-wrap: wrap;
 
         .titles-restaurant-list {
@@ -192,6 +192,7 @@
 @media screen and (max-width: 991px) {
     #appSearch{
         .restaurants-box {
+            justify-content: flex-start;
             .restaurant-card {
                 flex-basis: calc(100% / 2 - 20px);
             }
