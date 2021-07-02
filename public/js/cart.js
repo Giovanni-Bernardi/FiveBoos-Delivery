@@ -129,24 +129,29 @@ document.addEventListener('DOMContentLoaded', function () {
       increase: function increase(platesId, index) {
         this.cart[index].counter++;
         this.totalPrice += this.cart[index].price;
-        var product = {
-          id: platesId
-        };
         this.numberProduct.push(platesId);
-        console.log(this.numberProduct);
+        console.log(this.numberProduct, this.cart, index, 'increase');
       },
       decrease: function decrease(platesId, index) {
+        console.log(platesId, index, 'indiceee');
+
         if (this.cart[index].counter > 0) {
           this.cart[index].counter--;
           this.totalPrice -= this.cart[index].price;
-          var product = {
-            id: platesId
-          };
-          this.numberProduct.splice(index, 1);
+
+          for (var i = 0; i < this.numberProduct.length; i++) {
+            if (this.cart[index].id == this.numberProduct[i]) {
+              console.log(this.numberProduct[i], i, 'tolto');
+              this.numberProduct.splice(i, 1);
+              break;
+            }
+          }
 
           if (this.cart[index].counter < 1) {
             this.cart.splice(index, 1);
           }
+
+          console.log(this.numberProduct, this.cart, index, 'Decrese');
         }
       },
       addToCart: function addToCart(productId, productName, productPrice, counter) {
@@ -161,9 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
           this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
           this.cart.push(object);
           this.numberProduct.push(productId);
-          console.log(this.numberProduct);
+          console.log(this.numberProduct, this.cart, 'ADD');
         } else {
-          // se id presente nel cart non deve pushiare piatto
+          // se id presente nel cart non deve pushare piatto
           for (var i = 0; i <= this.cart.length; i++) {
             if (this.cart[i].id == object.id) {
               break;
@@ -171,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
               this.totalPrice = Number((this.totalPrice + productPrice * counter).toFixed(2));
               this.cart.push(object);
               this.numberProduct.push(productId);
+              console.log(this.numberProduct, this.cart, 'ADD');
             }
           }
         }
