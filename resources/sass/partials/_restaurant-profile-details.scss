@@ -3,7 +3,9 @@ main.user.details{
         margin-bottom: 40px;
         ul:not(.overview ul){
             flex-basis: 100%;
-            justify-content: flex-start;
+            h3{
+                margin: 0 0 20px;
+            }
             li:not(.overview li) {
                 flex-basis: calc(100% / 3 - 20px);
                 cursor: default;
@@ -14,8 +16,8 @@ main.user.details{
                 text-align: center;
                 overflow: hidden;
                 position: absolute;
-                top: 10px;
-                right: 10px;
+                top: -2%;
+                right: 1%;
                 i {
                     position: absolute;
                     top: 5px;
@@ -33,12 +35,13 @@ main.user.details{
                 border-radius: 3px;
                 width: 100%;
                 padding: 10px;
+                transition: background-color .3s;
                 i {
                     align-self: center;
                     font-size: 35px;
                     color:rgba(0, 180, 60, 0.76);
                     vertical-align: middle;
-                    transition: color .3s;
+                    transition: color .3s, transform .3s;
                     
                 }
                 &:hover {
@@ -54,16 +57,19 @@ main.user.details{
     }
     #appChart{
         text-align: left;
-        max-width: 1840px;
-        width: 80%;
+        max-width: 1240px;
         margin: 0 10% 100px;
         font-family: "Raleway", sans-serif;
         h3 {
             font-weight: normal;
-            margin-bottom: 20px;
+            margin:0 0 20px;
         }
-        label{
-            font-size: 18px;
+        div.options{
+            margin-bottom: 20px;
+            label{
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
         }
         #yearOrder{
             font-family: "Raleway", sans-serif;
@@ -77,18 +83,21 @@ main.user.details{
         }
         #myChart{
             max-height: 500px;
-            padding: 0 50px;
         }
     }
 
-    h3{
-        font-weight: normal;
-        margin: 0 10% 20px;
-    }
 
     .orders-tab{
+        &.title{
+            height: auto;
+            margin-bottom: 0px;
+            h3{
+                margin-bottom: 20px;
+            }
+        }
         margin: 0 10% 50px;
         width: 80%;
+        max-width: 1240px;
         height: 500px;
         overflow: auto;
         table{
@@ -109,6 +118,7 @@ main.user.details{
                     border-bottom: 1px solid rgba(0, 0, 0, 0.048);
                     text-align: center;
                     padding: 10px;
+                    background-color: rgba(255, 255, 255, 0.3);
                     li{
                         text-transform: capitalize;
                     }
@@ -193,3 +203,92 @@ main.user.details{
 //   content: '&#10004;';  
         
 // }
+
+// --- Media query soto i 1350px Speciale ---
+@media screen and (max-width: 1350px) {
+    main.user.details {
+        .dishes-box{
+            ul:not(.overview ul){
+                li:not(.overview li) {
+                    flex-basis: calc(100% / 2 - 20px);
+                }
+            }
+        }
+    }
+}
+
+
+// --- Media query md fino a 991px---
+@media screen and (max-width: 991px) {
+    main.user.details {
+        .dishes-box{
+            ul:not(.overview ul){
+                li:not(.overview li) {
+                    flex-basis: calc(100% / 1 - 20px);
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+// --- Media query sm fino a 768px---
+@media screen and (max-width: 767px) {
+    main.user.details {
+        .dishes-box{
+            ul:not(.overview ul){
+                li:not(.overview li) {
+                    height: 170px;
+                }
+            }
+        }
+        #appChart{
+            margin: 0 20px 50px;
+        }
+        .orders-tab{
+            height: 400px;
+        }
+    }
+}
+
+// --- Media query xs fino a 576px ---
+@media screen and (max-width: 576px) {
+    main.user.details {
+        .dishes-box{
+            margin: 120px 20px 50px;
+            justify-content: center;
+            ul:not(.overview ul){
+                li:not(.overview li) {
+                    flex-basis: calc(100% / 1);
+                    margin: 0 0 20px;
+                }
+            }
+        }
+        #appChart{
+            margin: 0 20px 30px;
+            // overflow-x: scroll;
+            #myChart{
+                // min-width: 430px!important;
+                // min-height: 280px!important;
+            }
+        }
+        .orders-tab{
+            width: calc(100% - 40px);
+            margin: 0 20px 50px;
+            height: 300px;
+        }
+    }
+}
+
+// --- Media query sopra i 1588px Speciale ---
+@media screen and (min-width: 1550px) {
+    main.user.details {
+        #appChart{
+            margin: 0 auto 100px;
+            // overflow-x: scroll;
+        }
+        .orders-tab{
+            margin: 0 auto 50px;
+        }
+    }
+}
