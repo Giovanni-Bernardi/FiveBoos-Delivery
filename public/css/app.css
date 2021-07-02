@@ -1110,6 +1110,10 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
   color: #cfcfcf;
 }
 
+#img-edit-product {
+  min-width: 120px;
+}
+
 main.user.details .dishes-box {
   margin-bottom: 40px;
 }
@@ -1733,6 +1737,24 @@ main.create-restaurant div.container .submit .button-create:hover {
   margin-top: 4px;
   font-size: 16px;
   font-family: "Segoe UI";
+}
+
+.modal .modal-content #info-box .title-card,
+.modal .modal-content .info-box .title-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal .modal-content #info-box .title-card img,
+.modal .modal-content #info-box .title-card #img-edit-product,
+.modal .modal-content .info-box .title-card img,
+.modal .modal-content .info-box .title-card #img-edit-product {
+  align-self: center;
+  width: 120px;
+  height: auto;
+  padding: 5px;
+  margin: 10px 0;
 }
 
 .modal .modal-content #info-box .category-box,

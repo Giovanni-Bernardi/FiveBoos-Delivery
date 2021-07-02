@@ -30,6 +30,19 @@
                     font-family:'Segoe UI';
                 }
             }
+            .title-card{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                img , #img-edit-product{
+                    align-self: center;
+                    width: 120px;
+                    height: auto;
+                    padding: 5px;
+                    margin: 10px 0;
+                    
+                }
+            }
             .category-box {
                 display: flex;
                 flex-wrap: wrap;

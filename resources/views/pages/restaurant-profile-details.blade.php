@@ -27,18 +27,21 @@
                             <form  method="POST" action="{{ route('updateRestaurantViewLink', $restaurant -> id) }}" enctype="multipart/form-data">
                                 @method('POST')
                                 @csrf
-                                <h4>
-                                    Modifica il tuo ristorante: '{{$restaurant -> business_name}}'
-                                </h4>
+                                <div class="title-card">
+                                    <img src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
+                                    <h4>
+                                        Modifica il tuo ristorante: '{{$restaurant -> business_name}}'
+                                    </h4>
+                                </div>
                                 <p>
                                     <label for="business_name">
-                                        Business name: 
+                                        Nome del ristorante: 
                                     </label>
                                     <input type="text" name="business_name" value="{{$restaurant -> business_name}}">
                                 </p>
                                 <p>
                                     <label for="address">
-                                        Address: 
+                                        Indirizzo: 
                                     </label>
                                     <textarea name="address" cols="50" rows="2">{{$restaurant -> address}}</textarea> 
                                 </p>
@@ -50,25 +53,25 @@
                                 </p>
                                 <p>
                                     <label for="telephone">
-                                        Telephone: 
+                                        Recapito telefonico: 
                                     </label>
                                     <input type="text" name="telephone" value="{{$restaurant -> telephone}}">
                                 </p>
                                 <p>
                                     <label for="description">
-                                        Description: 
+                                        Descrizione: 
                                     </label>
                                     <textarea name="description" cols="50" rows="7">{{$restaurant -> description}}</textarea>
                                 </p>
                                 <p>
                                     <label for="img">
-                                        IMG: 
+                                        Immagine ristorante: 
                                         <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px">
                                     </label>
                                     <input type="file" name="img">
                                 </p>
                                 <p>
-                                    Categories:
+                                    <label>Categorie:</label> 
                                     <div>
                                         <ul class="category-box">
                                             <li>
@@ -140,7 +143,10 @@
                                         <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data" >
                                             @method('POST')
                                             @csrf
-                                            <h4> Modifica {{$product -> name}}  </h4>
+                                            <div class="title-card">
+                                                <img id="img-edit-product" class="img-edit" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
+                                                <h4> Modifica {{$product -> name}}  </h4>
+                                            </div>
                                             <p>
                                                 <label for="name">
                                                     Nome piatto:
@@ -223,8 +229,10 @@
                                     <form method="POST" enctype="multipart/form-data" action="{{ route('storeProduct') }}">
                                         @method('POST')
                                         @csrf
-
-                                        <h4> Crea un nuovo piatto!</h4>
+                                        <div class="title-card">
+                                            <img src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
+                                            <h4> Crea un nuovo piatto!</h4>
+                                        </div>
                                         <p>
                                             <label for="name">
                                                 Nome del piatto:
