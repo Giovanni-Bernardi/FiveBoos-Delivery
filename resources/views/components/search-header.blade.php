@@ -11,7 +11,6 @@
             <ul class='menulist'>
                 @auth
                     <li><a href='{{ route('restaurantProfileViewLink')}}'>Il mio profilo</a></li>
-                    {{-- <li><a href='#'>Aggiungi ristorante</a></li> --}}
                     <li>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -37,12 +36,12 @@
              </a>
         </div>
 
-        <div class="center-section">
+        {{-- NON TOCCARE (search bar) --}}
+        {{-- <div class="center-section"> --}}
             {{-- searchbar --}}
-            <input type="text" class="search-bar" id="merda" placeholder="Cerca">
-            {{-- <i class="fas fa-pizza-slice"></i> --}}
+            {{-- <input type="text" class="search-bar" id="merda" placeholder="Cerca">
             <i class="fas fa-search"></i>
-        </div>
+        </div> --}}
 
         <div class="rx-section">
             <i class="fas fa-user" id="user-icon"></i>

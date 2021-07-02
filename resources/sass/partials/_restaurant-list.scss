@@ -5,7 +5,7 @@
         // height: fit-content;
         // background-color: #00CCBC;
         background-color: #ffc244;
-        padding: 115px 10% 40px;
+        padding: 115px 0 40px;
 
         ul {
             width: 100%;
@@ -28,7 +28,7 @@
                 box-shadow: 0 2px 17px 0 #e19f17;
                 cursor: pointer;
                 position: relative;
-                width: 115px;
+                flex-basis: 115px;
                 height: 115px;
                 transition: transform 0.3s, background-color 0.5s ease, border-width 0.1s, box-shadow 0.3s, color 0.5s;
     
@@ -76,7 +76,7 @@
                     position: absolute;
                     z-index: 0;
                     left: 50%;
-                    bottom: 15px;
+                    bottom: 12%;
                     transform: translateX(-50%);
                     font-weight: 600;
                     text-transform: capitalize;
@@ -88,23 +88,18 @@
     
     
     .restaurants-box {
-        padding: 0 10% 20px;
-        margin: 0 -10px;
+        // padding: 0 10% 20px;
+        margin: 0 auto;
+        max-width: 1270px;
         @include flex(row, center, center);
         flex-wrap: wrap;
 
-        @media screen and(min-width: 1840px)  {
-            &{
-                max-width: 1840px;
-                margin: 0 auto;
-            }
-        }
-        
         .titles-restaurant-list {
-            padding: 60px 10% 30px;
+            padding: 50px 0 30px;
             flex-basis: 100%;
+            text-align: left;
             h2 {
-                text-align: center;
+                padding-left: 10px;
                 font-size: 28px;
                 font-weight: normal;
             }
@@ -112,12 +107,10 @@
 
         .restaurant-card {
             flex-basis: calc(100% / 3 - 20px);
-
-            max-width: 350px;
-            height: 230px;
+            height: 215px;
             margin: 0 10px 40px;
             overflow: hidden;
-            // border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
             a{
                 display: inline-block;
@@ -128,13 +121,13 @@
                     height: 100%;
                     overflow: hidden;
                     position: relative;
-                    background-color: black;
+                    background-color: whitesmoke;
                     img{
                         width: 100%;
+                        height: 100%;
                         filter: contrast(70%);
                         object-fit: cover;
-                        // object-fit: scale-down;
-                        object-position: left;
+                        object-position: center;
                         transition: transform .2s;
                     }
                     .categories-card {
@@ -181,6 +174,7 @@
                         }
                     }
                 }
+
                 &:hover{
                     cursor: pointer;
                     .background-image {
@@ -189,101 +183,67 @@
                         }
                     }
                 }
-
-                .bottom-info {
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 1.5em;
-                    padding: 5px 15px;
-                    background-color: white;
-                    // height: 23%;
-                    // overflow: hidden;
-                    // // border-radius: 8px;
-                    // border-bottom-left-radius: 8px;
-                    // border-bottom-right-radius: 8px;
-                    // box-shadow: 0 2px 20px 0 rgba(0, 0 ,0,10%);
-                    * {
-                        align-self: center;
-        
-                    }
-                    .delivery {
-                        display: flex;
-                        i {
-                            &:hover {
-                            text-shadow:  0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-                            transition: all .1s ease-in-out;                         
-                            }
-                            // position: relative;
-                            // top: 5px;
-                            // align-self: center;
-                        }
-                        .delivery-checkout {
-                            // align-self: center;
-                            font-size: 12px;
-                            padding: 5px;
-                            margin-left: 5px;
-                            width: fit-content;
-                            height: fit-content;
-                            background-color: transparent;
-                            border-radius: 8px;
-                        }
-                        .active {
-                            background-color: rgba(#00CCBC, 0.7);
-                            &:hover {
-                                background-color:rgba(#00CCBC, 0.9);
-                            }
-                        }
-                    }
-                    // .stats {
-                    //     i {
-                    //         &:hover {
-                    //             font-size: 1.56em;
-                    //             transition: all .1s ease-in-out;                         
-                    //         }
-                    //     }
-                    // }
-        
-                    // .address-show { 
-                    //     display: none;
-                    //     position: relative;
-                    //     width: min-content;
-        
-                    // }
-                    .address-icon {
-                        a{
-                            text-decoration: none;
-                            color: black;
-                            // &:hover {
-                            //     text-decoration: none;
-                            //     color: #C0F7B6;
-                            //     // .address-show{
-                            //     //     display: block;
-                            //     //     color: black;
-                            //     // }
-                            // }                        
-                        }
-                    }
-                }
-            }    
-            // a {
-            //     z-index: 2;
-            //     text-decoration: none;
-            //     font-size: 35px;
-            //     color: whitesmoke;
-            //     font-weight: 900;
-            // }
-            // }
-    
+            } 
         }
     }   
-    
-    // }
-    
-    
-    .food-type {
-        img {
-            padding: 4px;
+}
+
+// --- Media query md fino a 991px---
+@media screen and (max-width: 991px) {
+    #appSearch{
+        .restaurants-box {
+            .restaurant-card {
+                flex-basis: calc(100% / 2 - 20px);
+            }
+        }
+    }
+}
+
+// --- Media query sm fino a 768px---
+@media screen and (max-width: 767px) {
+    #appSearch {
+        div.list-jumbotron {
+            ul {
+                li.food-type {
+                    flex-basis: 100px;
+                    height: 100px;
+                    div.img-container{
+                        img {
+                            width: 60px;
+        
+                            // Fix img width categorie
+                            &#carne{
+                                width: 75px;
+                            }
+                            &#sushi{
+                                width: 80px;
+                            }
+                            &#vegan{
+                                width: 40px;
+                            }
+                        }
+                    }
+                    .cat-name{
+                        
+                    }
+                }
+            }
+        }
+        .restaurants-box {
+            .titles-restaurant-list {
+                text-align: center;
+            }
+        }
+    }
+}
+
+// --- Media query xs fino a 576px ---
+@media screen and (max-width: 576px) {
+    #appSearch{
+        .restaurants-box {
+            .restaurant-card {
+                flex-basis: calc(100% / 1 - 20px);
+            }
         }
     }
 }
