@@ -12,6 +12,8 @@
 
             h1{
                 font-size: 30px;
+                padding-top: 15px;
+                padding-bottom: 10px;
             }
         }
 
@@ -41,7 +43,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin-top: 30px;
+        margin-top: 20px;
 
         .crd{
             width: 350px;
@@ -136,7 +138,67 @@
 
 }
 
-  //spacing
+// Spacing
 .side-padding {
   padding: 0 6%;
+}
+
+// Small
+@media screen and (max-width: 576px) {
+
+    #restaurant-container {
+        min-width: 350px;
+
+        #create-row {
+            margin-top: 30px;
+
+          #left-create{
+
+                h1{
+                    font-size: 30px;
+                    padding-top: 20px;
+                    padding-bottom: 15px;
+                }
+            }
+
+          #right-create {
+                display: flex;
+                justify-content: center;
+                padding-right: 0;
+            }
+        }
+
+        #restaurant-cards {
+
+            .crd{
+                width: 320px;
+                margin: 15px 0;
+                height: 305px;
+
+            }
+
+            ul {
+
+                .image-relative{
+
+                    img {
+                        height: 233px;
+                        width: 320px;
+                    }
+                }
+            }
+
+        }
+
+
+        #restaurant-address {
+            margin-top: 10px;
+            width: 320px;
+
+            i{
+                line-height: 30px;
+            }
+        }
+
+    }
 }
