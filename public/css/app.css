@@ -251,7 +251,7 @@ header {
   padding: 10px 30px;
   width: 100%;
   z-index: 900;
-  background: transparent;
+  background-color: #ffc244;
   position: fixed;
   display: flex;
   align-items: center;
@@ -1432,6 +1432,8 @@ header nav .rx-section .user-popup li a.active {
 
 #restaurant-container #create-row #left-create h1 {
   font-size: 30px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 #restaurant-container #create-row #right-create {
@@ -1460,7 +1462,7 @@ header nav .rx-section .user-popup li a.active {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 #restaurant-container #restaurant-cards .crd {
@@ -1552,6 +1554,48 @@ header nav .rx-section .user-popup li a.active {
 
 .side-padding {
   padding: 0 6%;
+}
+
+@media screen and (max-width: 576px) {
+  #restaurant-container {
+    min-width: 350px;
+  }
+
+  #restaurant-container #create-row {
+    margin-top: 30px;
+  }
+
+  #restaurant-container #create-row #left-create h1 {
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+
+  #restaurant-container #create-row #right-create {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  #restaurant-container #restaurant-cards .crd {
+    width: 320px;
+    margin: 15px 0;
+    height: 305px;
+  }
+
+  #restaurant-container #restaurant-cards ul .image-relative img {
+    height: 233px;
+    width: 320px;
+  }
+
+  #restaurant-container #restaurant-address {
+    margin-top: 10px;
+    width: 320px;
+  }
+
+  #restaurant-container #restaurant-address i {
+    line-height: 30px;
+  }
 }
 
 main.create-restaurant div.container {
@@ -1828,7 +1872,7 @@ header {
   padding: 10px 30px;
   width: 100%;
   z-index: 900;
-  background: transparent;
+  background-color: #ffc244;
   position: fixed;
   display: flex;
   align-items: center;
