@@ -1149,64 +1149,70 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
   color: #cfcfcf;
 }
 
-.modal.active {
-  display: block;
+#img-edit-product {
+  min-width: 120px;
 }
 
-#myModal #info-box {
-  width: 50%;
-  margin: auto;
-  text-align: left;
+main.user.details .dishes-box {
+  margin-bottom: 40px;
 }
 
-#myModal #info-box p {
-  padding: 5px 0;
+main.user.details .dishes-box ul:not(.overview ul) {
+  flex-basis: 100%;
+  justify-content: flex-start;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.6);
+main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  flex-basis: calc(100% / 3 - 20px);
+  cursor: default;
 }
 
-.modal .modal-content {
-  position: relative;
-  z-index: 80;
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.modal .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
+main.user.details .dishes-box ul:not(.overview ul) .info-badge {
+  width: 23px;
+  height: 23px;
+  padding-top: 3px;
+  margin: 10px 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+  font-size: 13px;
   font-weight: bold;
-}
-
-.modal .close:hover,
-.modal .close:focus {
-  color: black;
-  text-decoration: none;
+  color: whitesmoke;
+  text-transform: capitalize;
   cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.product-details .modal-content {
-  width: 50%;
-  position: relative;
-  right: 200px;
-  top: 25px;
+main.user.details .dishes-box ul:not(.overview ul) .info-badge i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
+main.user.details .dishes-box li#new-product.new-product {
+  display: flex;
+  justify-content: center;
+}
+
+main.user.details .dishes-box li#new-product.new-product .add-new {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 172, 0, 0.178);
+  border-radius: 3px;
+  width: 100%;
+  padding: 10px;
+}
+
+main.user.details .dishes-box li#new-product.new-product .add-new i {
+  align-self: center;
+  font-size: 35px;
+  color: rgba(0, 180, 60, 0.76);
+  vertical-align: middle;
+  transition: color 0.3s;
 @media screen and (min-width: 1588px) {
   main.details .details-jumbotron .jumbo-img {
     margin: 0 auto;
@@ -1276,14 +1282,14 @@ main.user.details .dishes-box {
   margin-bottom: 40px;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) {
-  flex-basis: 100%;
-  justify-content: flex-start;
+main.user.details .dishes-box li#new-product.new-product .add-new:hover {
+  cursor: pointer;
+  background-color: rgba(0, 172, 0, 0.521);
 }
 
-main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
-  flex-basis: calc(100% / 3 - 20px);
-  cursor: default;
+main.user.details .dishes-box li#new-product.new-product .add-new:hover i {
+  transform: scale(1.2);
+  color: white;
 }
 
 main.user.details #appChart {
@@ -1859,6 +1865,135 @@ main.create-restaurant div.container .submit .button-create:hover {
 #site-logo {
   width: 300px;
   height: 300px;
+}
+
+.modal .modal-content #info-box,
+.modal .modal-content .info-box {
+  margin: auto;
+}
+
+.modal .modal-content #info-box h4,
+.modal .modal-content .info-box h4 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.modal .modal-content #info-box p,
+.modal .modal-content .info-box p {
+  margin-top: 10px;
+  position: relative;
+}
+
+.modal .modal-content #info-box p label,
+.modal .modal-content .info-box p label {
+  margin-right: 10px;
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Segoe UI";
+}
+
+.modal .modal-content #info-box p input,
+.modal .modal-content #info-box p textarea,
+.modal .modal-content .info-box p input,
+.modal .modal-content .info-box p textarea {
+  width: 100%;
+  border: 1px solid #EFEFEF;
+  border-radius: 5px;
+  padding: 5px 5px 5px 12px;
+  margin-top: 4px;
+  font-size: 16px;
+  font-family: "Segoe UI";
+}
+
+.modal .modal-content #info-box .title-card,
+.modal .modal-content .info-box .title-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal .modal-content #info-box .title-card img,
+.modal .modal-content #info-box .title-card #img-edit-product,
+.modal .modal-content .info-box .title-card img,
+.modal .modal-content .info-box .title-card #img-edit-product {
+  align-self: center;
+  width: 120px;
+  height: auto;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.modal .modal-content #info-box .category-box,
+.modal .modal-content .info-box .category-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod,
+.modal .modal-content .info-box .category-box .edit-prod {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid lightgrey;
+}
+
+.modal.active {
+  display: block;
+}
+
+#myModal #info-box {
+  margin: auto;
+  text-align: left;
+}
+
+#myModal #info-box p {
+  padding: 5px 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal .modal-content {
+  position: relative;
+  z-index: 80;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.product-details .modal-content {
+  width: 50%;
+  position: relative;
+  right: 200px;
+  top: 25px;
 }
 
 footer {

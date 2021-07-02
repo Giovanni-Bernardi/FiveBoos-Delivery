@@ -57,8 +57,8 @@ class AdminController extends Controller
             $restaurant -> img = $imgNewName;
         }
         $restaurant -> save();
-
-        return redirect() -> route('indexViewLink');
+        
+        return redirect() -> route('restaurantDetailsProfileLink');
     }
 
     public function createProduct() {
@@ -106,7 +106,7 @@ class AdminController extends Controller
     }
     // ----------------------
     public function updateRestaurantView(Request $request, $id) {
-
+        
         $validate = $request -> validate([
             'business_name' => 'required|string',
             'piva' => 'required|string',
@@ -131,7 +131,7 @@ class AdminController extends Controller
             $restaurant -> save();
         }
 
-        return redirect() -> route('restaurantDetailsViewLink', $restaurant -> id);
+        return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id));
     }
 
     public function editProductView($id){
@@ -163,7 +163,7 @@ class AdminController extends Controller
         $product -> update($validate);
         $product -> save();
 
-        return redirect() -> route('productDetailsViewLink', $product -> id);
+        return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($product -> restaurant -> id));
     }
 
     // Soft delete ristorante
@@ -207,7 +207,7 @@ class AdminController extends Controller
     public function restaurantDetailsProfileView($restaurantId){
         $restaurantId = Crypt::decrypt($restaurantId);
         $restaurant = Restaurant::findOrFail($restaurantId );
-
+        $categories = Category::all();
         $orders = Order::select('orders.id' ,'orders.total_price', 'orders.delivery_date', 'orders.payment_status')
         -> groupBy('orders.id')
         -> join('order_product', 'orders.id', '=', 'order_product.order_id')
@@ -216,6 +216,6 @@ class AdminController extends Controller
         -> orderBy('orders.id', 'DESC')
         -> get();
 
-        return view('pages.restaurant-profile-details', compact('restaurant', 'orders'));
+        return view('pages.restaurant-profile-details', compact('restaurant', 'orders', 'categories'));
     }
 }

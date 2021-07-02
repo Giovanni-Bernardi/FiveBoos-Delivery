@@ -63,9 +63,9 @@
                     </div>
                     <div class="right-side">
                         {{-- <a href="{{route('productDetailsViewLink', @{{product.id}})}}"> --}}
-                        <img src="{{asset('/storage/product-img/11.jpg')}}" alt="placeholder product">
-                        <div class="product-info-badge">
-                            <i class="fas fa-info" @click="popupDetails(product.id)"></i>
+                        <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+                        <div class="product-info-badge" @click="popupDetails(product.id)">
+                            <i class="fas fa-info"></i>
                         </div>
                         <div class="modal product-details" :class="btnID==product.id ? 'active' : ''">
                             <div class="modal-content" @click="closePopup">
