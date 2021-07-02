@@ -6,10 +6,10 @@
 @include('components.header')
 <main>
     <div id="login_area">
-        <div id="box_login" class="animate__animated animate__zoomInDown animate__delay-1s">
-            <div class="left" style="background-image: url(storage/placeholder/register-page.svg)"></div>
-
+        <div id="box_login" class="animate__animated animate__zoomInDown animate__delay-1s">    
+            <div class="left" style="background-image: url(storage/placeholder/register-page.svg)"></div> 
             <div class="right">
+                <img id="hidden-logo" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="">
                 {{-- titolo --}}
                 <h2>Registrazione</h2>
                 <form method="POST" action="{{ route('register') }}">
