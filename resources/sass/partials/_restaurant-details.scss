@@ -86,7 +86,6 @@ main.details {
     .dishes-box{
         min-height: 500px;
         margin: 120px 10% 50px;
-        // max-width: 1840px;
         max-width: 1270px;
         display: flex;
         justify-content: space-between;
@@ -104,7 +103,6 @@ main.details {
             justify-content: space-between;
             flex-wrap: wrap;
             flex-basis: calc(100% / 3 * 2);
-            // justify-content: space-between;
             margin:0 -10px ;
             li:not(.overview li) {
                 flex-basis: calc(100% / 2 - 20px);
@@ -117,7 +115,6 @@ main.details {
                 display: flex;
                 justify-content: space-between;
                 background-color: white;
-                // box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 4%);
                 box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
                 transition: box-shadow 0.3s;
                 .left-side {
