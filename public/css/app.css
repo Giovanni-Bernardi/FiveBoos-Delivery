@@ -1782,20 +1782,24 @@ header nav .rx-section .user-popup li a.active {
 }
 
 main.create-restaurant div.container {
-  width: 1200px;
+  width: 75%;
   margin: 30px auto;
   border: 1px solid black;
   border-radius: 15px;
+  background-color: white;
 }
 
 main.create-restaurant div.container div.separation-content {
   display: flex;
   justify-content: space-between;
-  padding: 15px 25px;
+}
+
+main.create-restaurant div.container div.separation-content form {
+  width: 55%;
 }
 
 main.create-restaurant div.container div.separation-content form ul li {
-  padding: 10px 0;
+  padding: 10px 30px;
 }
 
 main.create-restaurant div.container div.separation-content form ul li label {
@@ -1805,30 +1809,32 @@ main.create-restaurant div.container div.separation-content form ul li label {
 
 main.create-restaurant div.container div.separation-content form ul li .text {
   font-size: 15px;
-  width: 50%;
+  width: 90%;
   margin-top: 5px;
   padding: 5px 15px;
   border: none;
   border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
 }
 
 main.create-restaurant div.container div.separation-content form ul li textarea {
   font-family: fantasy;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
 }
 
 main.create-restaurant div.container div.separation-content form ul li .container-categories {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
 }
 
 main.create-restaurant div.container div.separation-content form ul li .container-categories .category {
   background-color: white;
-  width: 162px;
+  width: 138px;
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
   position: relative;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
 }
 
 main.create-restaurant div.container div.separation-content form ul li .container-categories .category .circle {
@@ -1870,37 +1876,55 @@ main.create-restaurant div.container div.separation-content form ul li .containe
   opacity: 1;
 }
 
+main.create-restaurant div.container div.separation-content form ul li .container-categories .category .name-category {
+  text-transform: capitalize;
+}
+
+main.create-restaurant div.container div.separation-content .logo-image {
+  width: 45%;
+  background-color: #FF5757;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+main.create-restaurant div.container div.separation-content .logo-image #logo-img {
+  width: 90%;
+  background-color: #FF5757;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
 main.create-restaurant div.container .submit {
-  display: flex;
-  justify-content: flex-end;
   border-top: 2px solid grey;
-  padding: 15px 0;
+  padding: 15px 30PX;
 }
 
 main.create-restaurant div.container .submit .button-back {
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
   font-size: 16px;
-  border: 2px solid red;
+  border: 2px solid #ffc244;
   border-radius: 5px;
-  padding: 5px 15px;
-  background-color: red;
+  padding: 10px 15px;
+  background-color: #ffc244;
   color: white;
   text-decoration: none;
 }
 
 main.create-restaurant div.container .submit .button-back:hover {
-  background-color: green;
-  border: 2px solid green;
+  background-color: #feb622;
+  border: 2px solid #feb622;
   color: white;
 }
 
 main.create-restaurant div.container .submit .button-create {
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
   font-size: 16px;
-  border: 2px solid red;
+  border: 2px solid #ffc244;
   border-radius: 5px;
-  padding: 5px 15px;
-  background-color: red;
+  padding: 10px 15px;
+  background-color: #ffc244;
   margin: 0 10px;
   color: white;
   text-decoration: none;
@@ -1908,9 +1932,120 @@ main.create-restaurant div.container .submit .button-create {
 }
 
 main.create-restaurant div.container .submit .button-create:hover {
-  background-color: green;
-  border: 2px solid green;
+  background-color: #feb622;
+  border: 2px solid #feb622;
   color: white;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+  main.create-restaurant div.container div.separation-content .logo-image {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+  main.create-restaurant div.container {
+    width: 95%;
+  }
+
+  main.create-restaurant div.container div.separation-content form {
+    width: 55%;
+  }
+
+  main.create-restaurant div.container div.separation-content form ul li .text {
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content .logo-image {
+    width: 55%;
+  }
+
+  main.create-restaurant div.container .submit {
+    padding: 15px 10px 15px 30px;
+  }
+
+  main.create-restaurant div.container .submit .button-create {
+    margin: 0 0 0 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.create-restaurant div.container {
+    width: 95%;
+  }
+
+  main.create-restaurant div.container div.separation-content {
+    display: block;
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content form {
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content form ul li .text {
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content .logo-image {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+  }
+
+  main.create-restaurant div.container div.separation-content .logo-image #logo-img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+  }
+
+  main.create-restaurant div.container .submit {
+    padding: 15px 10px 15px 30px;
+  }
+
+  main.create-restaurant div.container .submit .button-create {
+    margin: 0 0 0 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main.create-restaurant {
+    min-width: 350px;
+  }
+
+  main.create-restaurant div.container {
+    width: 95%;
+  }
+
+  main.create-restaurant div.container div.separation-content {
+    display: block;
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content form {
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content form ul li .text {
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content form ul li .container-categories .category {
+    width: 100%;
+  }
+
+  main.create-restaurant div.container div.separation-content .logo-image {
+    width: 100%;
+  }
+
+  main.create-restaurant div.container .submit {
+    padding: 15px 10px 15px 10px;
+  }
+
+  main.create-restaurant div.container .submit .button-create {
+    margin: 0 0 0 10px;
+  }
 }
 
 .preloader {
