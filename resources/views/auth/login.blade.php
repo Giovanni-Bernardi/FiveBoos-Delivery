@@ -12,7 +12,7 @@
             </div>
 
             <div class="right">
-
+                <img id="hidden-logo" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="">
                 <h2>Login</h2>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf

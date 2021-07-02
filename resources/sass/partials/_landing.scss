@@ -5,6 +5,7 @@
 
 // Sezione landing container
 #landing-jumbo {
+    overflow-x: hidden;
     #background-jumbo {
         min-height: 100vh;
         width: 100%;
@@ -25,7 +26,7 @@
 
         //types img
         .type {
-            z-index: 1;
+            z-index: 20;
             img {
                 animation: float-up 5s ease-in-out infinite;
                 width: 120px;
@@ -35,14 +36,14 @@
 
         #cat-pizza {
             position: absolute;
-            top: 19%;
-            left: 42%;
+            top: 18%;
+            left: 48%;
         }
 
         #cat-fast-food {
             position: absolute;
-            top: 20%;
-            left: 22%;
+            top: 18%;
+            left: 18%;
         }
 
         #cat-sushi {
@@ -75,7 +76,7 @@
         #cat-carne {
             position: absolute;
             top: 67%;
-            left: 10%;
+            left: 6%;
             img {
                 width: 140px;
             }
@@ -84,7 +85,7 @@
         #cat-pesce {
             position: absolute;
             top: 62%;
-            left: 77%;
+            left: 83%;
         }
 
         #cat-bakery {
@@ -105,8 +106,8 @@
 
         #cat-poke {
             position: absolute;
-            top: 20%;
-            left: 66%;
+            top: 14%;
+            left: 68%;
             img {
                 animation: float-down 5s ease-in-out infinite;
             }
@@ -116,7 +117,7 @@
     #landing-title {
         color: #000000; //$text-color-light
         font-weight: bold;
-        z-index: 10;
+        z-index: 21;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -180,13 +181,13 @@
         background: rgb(255, 255, 255);
         padding: 15px 35px;
         text-align: center;
-        z-index: 20;
+        z-index: 40;
     }
     &:hover {
         .pop {
             display: block;
             transform: scale(1.2);
-            z-index: 9998;
+            z-index: 40;
         }
         .up {
             bottom: 100px;
@@ -336,9 +337,6 @@
         #landing-title {
             h1 {
                 font-size: 4.8rem;
-            }
-            h2 {
-               
             }
         }
     }

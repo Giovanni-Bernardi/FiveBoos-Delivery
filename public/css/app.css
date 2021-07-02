@@ -805,6 +805,22 @@ footer .bottom .privacy .copyright {
   }
 }
 
+#appSearch .list-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20%;
+  border-radius: 20px;
+  margin: 30px 0;
+}
+
+#appSearch .list-cards .list-card {
+  margin: 0 20px;
+  background-color: #ffc244;
+  min-height: 400px;
+  width: 100%;
+}
+
 main.details {
   background-color: whitesmoke;
 }
@@ -2567,6 +2583,10 @@ header nav .menulist li a {
   outline: none;
 }
 
+#landing-jumbo {
+  overflow-x: hidden;
+}
+
 #landing-jumbo #background-jumbo {
   min-height: 100vh;
   width: 100%;
@@ -2589,7 +2609,7 @@ header nav .menulist li a {
 }
 
 #landing-jumbo #background-jumbo .type {
-  z-index: 1;
+  z-index: 20;
 }
 
 #landing-jumbo #background-jumbo .type img {
@@ -2601,14 +2621,14 @@ header nav .menulist li a {
 
 #landing-jumbo #background-jumbo #cat-pizza {
   position: absolute;
-  top: 19%;
-  left: 42%;
+  top: 18%;
+  left: 48%;
 }
 
 #landing-jumbo #background-jumbo #cat-fast-food {
   position: absolute;
-  top: 20%;
-  left: 22%;
+  top: 18%;
+  left: 18%;
 }
 
 #landing-jumbo #background-jumbo #cat-sushi {
@@ -2646,7 +2666,7 @@ header nav .menulist li a {
 #landing-jumbo #background-jumbo #cat-carne {
   position: absolute;
   top: 67%;
-  left: 10%;
+  left: 6%;
 }
 
 #landing-jumbo #background-jumbo #cat-carne img {
@@ -2656,7 +2676,7 @@ header nav .menulist li a {
 #landing-jumbo #background-jumbo #cat-pesce {
   position: absolute;
   top: 62%;
-  left: 77%;
+  left: 83%;
 }
 
 #landing-jumbo #background-jumbo #cat-bakery {
@@ -2679,8 +2699,8 @@ header nav .menulist li a {
 
 #landing-jumbo #background-jumbo #cat-poke {
   position: absolute;
-  top: 20%;
-  left: 66%;
+  top: 14%;
+  left: 68%;
 }
 
 #landing-jumbo #background-jumbo #cat-poke img {
@@ -2691,7 +2711,7 @@ header nav .menulist li a {
 #landing-jumbo #landing-title {
   color: #000000;
   font-weight: bold;
-  z-index: 10;
+  z-index: 21;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2755,13 +2775,13 @@ header nav .menulist li a {
   background: white;
   padding: 15px 35px;
   text-align: center;
-  z-index: 20;
+  z-index: 40;
 }
 
 .popup-note:hover .pop {
   display: block;
   transform: scale(1.2);
-  z-index: 9998;
+  z-index: 40;
 }
 
 .popup-note:hover .up {
@@ -3234,6 +3254,7 @@ main#bye-container #container-result #scooter {
   padding-top: 30px;
   background-color: #FFC244;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 #login_area #box_login {
@@ -3245,10 +3266,16 @@ main#bye-container #container-result #scooter {
 #login_area #box_login .left {
   height: 100%;
   width: 40%;
-  background-size: cover;
+  background-color: #FF5757;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+}
+
+#login_area #box_login img#hidden-logo {
+  display: none;
 }
 
 #login_area #box_login .right {
@@ -3262,6 +3289,7 @@ main#bye-container #container-result #scooter {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #login_area #box_login .right h2 {
@@ -3277,7 +3305,7 @@ main#bye-container #container-result #scooter {
   min-width: 100px;
   border-radius: 4px;
   text-align: center;
-  padding: 15px 100px;
+  padding: 15px 80px;
   margin-top: 30px;
   background-color: #000;
   color: #fff;
@@ -3310,7 +3338,6 @@ main#bye-container #container-result #scooter {
 #login_area #box_login .right form .floating-label input {
   font-size: 16px;
   padding: 20px 0px;
-  height: 56px;
   border: none;
   border-bottom: solid 3px rgba(0, 0, 0, 0.1);
   background: #fff;
@@ -3362,6 +3389,84 @@ main#bye-container #container-result #scooter {
 #login_area #box_login .right form .floating-label input:not(:placeholder-shown) + label {
   transform: translateY(-15px);
   opacity: 0.7;
+}
+
+@media (max-width: 1010px) and (min-width: 769px) {
+  #login_area #box_login {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #login_area #box_login .left {
+    display: none;
+  }
+
+  #login_area #box_login img#hidden-logo {
+    display: block;
+    width: 130px;
+    height: auto;
+    z-index: 999;
+  }
+
+  #login_area #box_login .right {
+    height: 100%;
+    width: 60%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #login_area #box_login .right h2 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  #login_area {
+    padding: 25px;
+  }
+
+  #login_area #box_login {
+    min-width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #login_area #box_login .left {
+    display: none;
+  }
+
+  #login_area #box_login img#hidden-logo {
+    display: block;
+    width: 130px;
+    height: auto;
+    z-index: 999;
+  }
+
+  #login_area #box_login .right {
+    height: 100%;
+    min-width: 95%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #login_area #box_login .right h2 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding-top: 50px;
+  }
 }
 
 main.pay-order form {
