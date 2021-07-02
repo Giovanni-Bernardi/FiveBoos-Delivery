@@ -805,22 +805,6 @@ footer .bottom .privacy .copyright {
   }
 }
 
-#appSearch .list-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20%;
-  border-radius: 20px;
-  margin: 30px 0;
-}
-
-#appSearch .list-cards .list-card {
-  margin: 0 20px;
-  background-color: #ffc244;
-  min-height: 400px;
-  width: 100%;
-}
-
 main.details {
   background-color: whitesmoke;
 }
@@ -1299,6 +1283,25 @@ main.user.details .dishes-box ul:not(.overview ul) .info-badge i {
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility {
+  display: flex;
+  justify-content: flex-start;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility label {
+  align-self: center;
+  margin: 5px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility input {
+  align-self: center;
+  margin: 5px;
 }
 
 main.user.details .dishes-box li#new-product.new-product {
