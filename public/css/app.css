@@ -944,7 +944,7 @@ main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side {
 }
 
 main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side img {
-  min-width: 150px;
+  min-width: 140px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1224,6 +1224,7 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 
 main.user.details .dishes-box {
   margin-bottom: 40px;
+  justify-content: flex-start;
 }
 
 main.user.details .dishes-box ul:not(.overview ul) {
@@ -1274,7 +1275,7 @@ main.user.details .dishes-box li#new-product.new-product .add-new {
   display: flex;
   justify-content: center;
   background-color: rgba(0, 172, 0, 0.178);
-  border-radius: 3px;
+  border-radius: 5px;
   width: 100%;
   padding: 10px;
   transition: background-color 0.3s;
@@ -1300,7 +1301,7 @@ main.user.details .dishes-box li#new-product.new-product .add-new:hover i {
 
 main.user.details #appChart {
   text-align: left;
-  max-width: 1240px;
+  max-width: 1270px;
   margin: 0 10% 100px;
   font-family: "Raleway", sans-serif;
 }
@@ -1338,7 +1339,7 @@ main.user.details #appChart #myChart {
 main.user.details .orders-tab {
   margin: 0 10% 50px;
   width: 80%;
-  max-width: 1240px;
+  max-width: 1270px;
   height: 500px;
   overflow: auto;
 }
@@ -1599,105 +1600,104 @@ header nav .rx-section .user-popup li a.active {
   color: black;
 }
 
-#restaurant-container {
+main#profile {
   background-color: whitesmoke;
-  padding-top: 70px;
 }
 
-#restaurant-container #create-row {
-  margin-top: 30px;
-}
-
-#restaurant-container #create-row #left-create {
-  display: flex;
-  justify-content: center;
-}
-
-#restaurant-container #create-row #left-create h1 {
-  font-size: 30px;
+main#profile h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin: 120px 10% 10px;
   padding-top: 15px;
   padding-bottom: 10px;
+  max-width: 1270px;
 }
 
-#restaurant-container #create-row #right-create {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 95px;
+main#profile div.create-restaurant {
+  margin: 0 10% 20px;
+  text-align: right;
+  max-width: 1270px;
 }
 
-#restaurant-container #create-row #right-create .fa,
-#restaurant-container #create-row #right-create .fas {
+main#profile div.create-restaurant .fa,
+main#profile div.create-restaurant .fas {
   font-size: 20px;
   padding-left: 10px;
   vertical-align: middle;
 }
 
-#restaurant-container #create-row #right-create #create-button {
-  padding: 10px;
+main#profile div.create-restaurant #create-button {
+  display: inline-block;
+  padding: 10px 15px;
   text-decoration: none;
-  color: #202020;
+  color: black;
   background-color: #FFC244;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
+  transition: 0.3s color, 0.3s background-color;
 }
 
-#restaurant-container #restaurant-cards {
+main#profile div.create-restaurant #create-button:hover {
+  background-color: #ffd47f;
+  color: #cfcfcf;
+}
+
+main#profile .restaurant-container {
+  margin: 20px 10%;
+  text-align: center;
+  max-width: 1270px;
+}
+
+main#profile .restaurant-container #restaurant-cards {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin: 0 -10px;
+  flex-basis: 100%;
 }
 
-#restaurant-container #restaurant-cards .crd {
-  width: 350px;
-  margin: 0px 14px 30px 14px;
-  height: 305px;
-  border-radius: 20px;
+main#profile .restaurant-container #restaurant-cards .crd {
+  flex-basis: calc(100% / 3 - 20px);
+  margin: 0px 10px 30px;
+  height: 300px;
+  border-radius: 10px;
   background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  cursor: default;
 }
 
-#restaurant-container #restaurant-cards .crd.hidden-crd {
+main#profile .restaurant-container #restaurant-cards .crd.hidden-crd {
   opacity: 0.6;
 }
 
-#restaurant-container #restaurant-cards ul {
-  width: 340px;
+main#profile .restaurant-container #restaurant-cards .crd:hover {
+  box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.04);
 }
 
-#restaurant-container #restaurant-cards ul li {
-  display: flex;
-}
-
-#restaurant-container #restaurant-cards ul li span {
-  font-size: 1.6rem;
-  color: #202020;
-}
-
-#restaurant-container #restaurant-cards ul li span,
-#restaurant-container #restaurant-cards ul li p,
-#restaurant-container #restaurant-cards ul li a {
-  padding: 0 0 0 15px;
-}
-
-#restaurant-container #restaurant-cards ul li p {
-  font-size: 14px;
-}
-
-#restaurant-container #restaurant-cards ul .image-relative {
+main#profile .restaurant-container #restaurant-cards .crd ul {
+  height: 100%;
   position: relative;
 }
 
-#restaurant-container #restaurant-cards ul .image-relative img {
-  filter: contrast(70%);
-  height: 233px;
-  width: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+main#profile .restaurant-container #restaurant-cards .crd ul li.image-relative {
+  position: relative;
+  height: 73%;
 }
 
-#restaurant-container #restaurant-cards ul .image-relative span {
+main#profile .restaurant-container #restaurant-cards .crd ul li.image-relative img {
+  filter: contrast(70%);
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+main#profile .restaurant-container #restaurant-cards .crd ul li.image-relative span {
+  font-size: 30px;
   position: absolute;
   z-index: 10;
   top: 50%;
@@ -1709,75 +1709,63 @@ header nav .rx-section .user-popup li a.active {
   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 
-#restaurant-container #restaurant-cards ul .fa,
-#restaurant-container #restaurant-cards ul .fas {
-  font-size: 20px;
-  padding-left: 15px;
+main#profile .restaurant-container #restaurant-cards .crd ul li#restaurant-address {
+  text-align: left;
+  padding: 15px;
 }
 
-#restaurant-container #restaurant-cards .btn-edit-del {
-  display: flex;
-  justify-content: flex-end;
-  padding: 5px 10px 0 0;
+main#profile .restaurant-container #restaurant-cards .crd ul li#restaurant-address .fa,
+main#profile .restaurant-container #restaurant-cards .crd ul li#restaurant-address .fas {
   font-size: 18px;
 }
 
-#restaurant-container #restaurant-cards .hide-button {
-  margin-left: 10px;
+main#profile .restaurant-container #restaurant-cards .crd ul li#restaurant-address p {
+  font-size: 14px;
+}
+
+main#profile .restaurant-container #restaurant-cards .crd ul .btn-edit-del {
+  text-align: right;
+  font-size: 18px;
+  position: absolute;
+  bottom: 4%;
+  right: 13px;
+}
+
+main#profile .restaurant-container #restaurant-cards .hide-button {
+  margin-left: 6px;
   color: black;
 }
 
-#restaurant-container #restaurant-cards #edit-button {
+main#profile .restaurant-container #restaurant-cards #edit-button {
   color: black;
 }
 
-#restaurant-container #restaurant-address {
-  margin-top: 10px;
+@media screen and (max-width: 1350px) {
+  main#profile .restaurant-container #restaurant-cards .crd {
+    flex-basis: calc(100% / 2 - 20px);
+  }
 }
 
-.side-padding {
-  padding: 0 6%;
+@media screen and (max-width: 991px) {
+  main#profile .restaurant-container #restaurant-cards .crd {
+    height: 320px;
+    flex-basis: calc(100% / 1 - 20px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main#profile .restaurant-container #restaurant-cards .crd {
+    height: 300px;
+  }
 }
 
 @media screen and (max-width: 576px) {
-  #restaurant-container {
-    min-width: 350px;
+  main#profile .restaurant-container {
+    margin: 20px 20px;
   }
 
-  #restaurant-container #create-row {
-    margin-top: 30px;
-  }
-
-  #restaurant-container #create-row #left-create h1 {
-    font-size: 30px;
-    padding-top: 20px;
-    padding-bottom: 15px;
-  }
-
-  #restaurant-container #create-row #right-create {
-    display: flex;
-    justify-content: center;
-    padding-right: 0;
-  }
-
-  #restaurant-container #restaurant-cards .crd {
-    width: 320px;
-    margin: 15px 0;
-    height: 305px;
-  }
-
-  #restaurant-container #restaurant-cards ul .image-relative img {
-    height: 233px;
-    width: 320px;
-  }
-
-  #restaurant-container #restaurant-address {
-    margin-top: 10px;
-    width: 320px;
-  }
-
-  #restaurant-container #restaurant-address i {
-    line-height: 30px;
+  main#profile .restaurant-container #restaurant-cards .crd {
+    height: 300px;
   }
 }
 
