@@ -35,43 +35,43 @@
                                     </div>
                                     <p>
                                         <label for="business_name">
-                                            Nome del ristorante: 
+                                            Nome del ristorante:
                                         </label>
                                         <input type="text" name="business_name" value="{{$restaurant -> business_name}}">
                                     </p>
                                     <p>
                                         <label for="address">
-                                            Indirizzo: 
+                                            Indirizzo:
                                         </label>
-                                        <textarea name="address" cols="50" rows="2">{{$restaurant -> address}}</textarea> 
+                                        <textarea name="address" cols="50" rows="2">{{$restaurant -> address}}</textarea>
                                     </p>
                                     <p>
                                         <label for="piva">
-                                            P-IVA: 
+                                            P-IVA:
                                         </label>
                                         <input type="text" name="piva" value="{{$restaurant -> piva}}">
                                     </p>
                                     <p>
                                         <label for="telephone">
-                                            Recapito telefonico: 
+                                            Recapito telefonico:
                                         </label>
                                         <input type="text" name="telephone" value="{{$restaurant -> telephone}}">
                                     </p>
                                     <p>
                                         <label for="description">
-                                            Descrizione: 
+                                            Descrizione:
                                         </label>
                                         <textarea name="description" cols="50" rows="7">{{$restaurant -> description}}</textarea>
                                     </p>
                                     <p>
                                         <label for="img">
-                                            Immagine ristorante: 
+                                            Immagine ristorante:
                                             <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px">
                                         </label>
                                         <input type="file" name="img">
                                     </p>
                                     <p>
-                                        <label>Categorie:</label> 
+                                        <label>Categorie:</label>
                                         <div>
                                             <ul class="category-box">
                                                 <li>
@@ -103,17 +103,17 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="dishes-box">
                     <h3>
                         I tuoi piatti
                     </h3>
                     <ul>
                         @foreach ($restaurant -> products as $product)
-                            
+
                         <li>
                             <div class="left-side">
-                                <h3 class="product-name">{{$product -> name}}</h3> 
+                                <h3 class="product-name">{{$product -> name}}</h3>
                                 <div class="add">
                                     <span class="prduct-price">&euro; {{$product -> price}},00</span>
                                 </div>
@@ -126,7 +126,7 @@
                             <div class="modal product-edit" :class="btnID == {{$product -> id}} ? 'active' : ''">
                                     <div class="modal-content" >
                                         <span class="close" @click="closePopup">&times;</span>
-                                        <div class="info-box">    
+                                        <div class="info-box">
                                             <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data" >
                                                 @method('POST')
                                                 @csrf
@@ -164,26 +164,7 @@
                                                     </label>
                                                     <input type="file" name="img" value="{{$product -> img}}">
                                                 </p>
-                                                <p>
-                                                    <label>Categorie</label>
-                                                    <div class="category-box">
-                                                        @foreach ($categories as $category)
-                                                        <div class="edit-prod">
-                                                            <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}"
-                                                            @foreach ($restaurant -> categories as $restaurantType)
-                                                                @if ($restaurantType -> id == $category -> id)
-                                                                    checked
-                                                                @endif
-                                                            @endforeach>
-                                                            <label for="categories[]">
-                                                                {{-- <div class="check"></div> --}}
-                                                                {{$category -> name}}
-                                                                {{$category -> id}}
-                                                            </label>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </p>
+
                                                 <p>
                                                     <input type="radio" name="visible" value="1" @if($product -> visible) checked @endif>
                                                     <label for="1">
@@ -284,7 +265,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>    
+            </div>
 
             <section id="appChart">
                 {{-- <h3>
@@ -294,7 +275,7 @@
                     Grafici ristorante
                 </h3>
                 <input name="d_elem" type="hidden" value="{{$restaurant -> id}}" id="d_elem"/>
-                
+
                 <div class="options">
                     <label for="year">Anno:</label>
 
@@ -306,12 +287,12 @@
 
                     <label for="type0">N° Ordini</label>
                     <input type="radio" name="type1" id="" value="0" checked v-model="type" v-on:change="updateMonthsChart()">
-    
+
                     <label for="type0">Saldo</label>
                     <input type="radio" name="type" id="" value="1" v-model="type" v-on:change="updateMonthsChart()">
                 </div>
-                
-        
+
+
                 {{-- -------------- CHART ---------------- --}}
                 <canvas id="myChart">
                     Your browser does not support the canvas element.
@@ -331,14 +312,14 @@
                         <th>Totale &euro;</th>
                         <th>Stato</th>
                     </tr>
-            
+
                      @foreach ($orders as $order)
                         <tr>
                             <td>{{$order -> id}}</td>
                             <td>{{$order -> delivery_date}}</td>
                             <td>
                                 <ul>
-                                    @foreach ($order -> products as $product) 
+                                    @foreach ($order -> products as $product)
                                     <li>
                                         {{$product -> name}}
                                     </li>
