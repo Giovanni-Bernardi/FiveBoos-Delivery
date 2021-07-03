@@ -7,7 +7,7 @@
                 text-align: center;
                 font-size: 1.5rem;
             }
-            p {
+            li {
                 // display: flex;
                 margin-top: 10px;
                 position: relative;
@@ -16,7 +16,7 @@
                     margin-right: 10px;
                     display: block;
                     font-weight: 600;
-                    font-size: 16px;
+                    font-size: 18px;
                     font-family:'Segoe UI';
                 }
 
@@ -28,6 +28,26 @@
                     margin-top: 4px;
                     font-size: 16px;
                     font-family:'Segoe UI';
+                    box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+                }
+
+                button{
+                    font-family:'Segoe UI';
+                    font-weight: bold;
+                    font-size: 16px;
+                    border: 2px solid #ffc244;
+                    border-radius: 5px;
+                    padding: 10px 15px;
+                    background-color: #ffc244;
+                    color: white;
+                    text-decoration: none;
+                    cursor: pointer;
+
+                    &:hover {
+                      background-color: #feb622;
+                      border: 2px solid #feb622;
+                      color: white;
+                    }
                 }
             }
             .title-card{
@@ -40,19 +60,88 @@
                     height: auto;
                     padding: 5px;
                     margin: 10px 0;
-                    
+
                 }
             }
             .category-box {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: flex-start;
-                // padding: 10px;
+
                 .edit-prod {
+                    display: flex;
+                    background-color: white;
+                    width: 138px;
+                    border-radius: 5px;
                     margin: 5px;
                     padding: 5px;
-                    background-color: white;
-                    border: 1px solid lightgrey;
+                    position: relative;
+                    box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+                    border: 1px solid #EFEFEF;
+
+                    input{
+                        width: auto;
+                        margin-left: 5px;
+                    }
+
+                    .circle{
+
+                        background-color: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        height: 16px;
+                        left: 3px;
+                        position: absolute;
+                        top: 9px;
+                        width: 16px;
+                    }
+
+                    .circle:after{
+                        border: 2px solid #fff;
+                        border-top: none;
+                        border-right: none;
+                        content: "";
+                        height: 4px;
+                        left: 2px;
+                        opacity: 0;
+                        position: absolute;
+                        top: 4px;
+                        transform: rotate(-45deg);
+                        width: 8px;
+                    }
+
+                    input[type="checkbox"] {
+                        visibility: hidden;
+                    }
+
+                    input[type="checkbox"]:checked + .circle {
+                        background-color: #66bb6a;
+                        border-color: #66bb6a;
+                    }
+
+                    input[type="checkbox"]:checked + .circle:after {
+                        opacity: 1;
+                    }
+
+                    .name-category{
+                        text-transform: capitalize;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .box-visible{
+                width: 12%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 5px;
+
+                label{
+                    margin-left: 10px;
+                }
+
+                input{
+                    width: 50px;
+                    height: 18px;
                 }
             }
         }
@@ -95,7 +184,7 @@
         transition: .3s ease-in-out;
         animation: modal-fade-in 1s ease-in-out;
     }
-        
+
     .close {
         color: #aaa;
         float: right;
@@ -111,7 +200,7 @@
     }
   }
   .product-details{
-    
+
     .modal-content {
         width: 50%;
         position: relative;

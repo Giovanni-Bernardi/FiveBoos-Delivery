@@ -6,7 +6,7 @@ main.details {
         height: 220px;
         background-color: #ffc244;
         padding: 20px 0 0px;
-        // padding: 20px 0 0;
+
         .jumbo-img{
             height: 100%;
             max-width: 1270px;
@@ -60,29 +60,25 @@ main.details {
         border-radius: 2px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 31px, rgba(0, 0, 0, 0.12) 0px -12px 15px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 8px 9px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         text-align: center;
-        // .info {
-        //     display: flex;
-        //     justify-content: center;
-            #info-box{
-                display: none;
-                h3:first-child {
-                    border-bottom: 1px solid lightgrey;
-                    cursor: pointer;
-                    padding: 5px;
-                    width: 100%;
-                }
 
+        #info-box{
+            display: none;
+            h3:first-child {
+                border-bottom: 1px solid lightgrey;
+                cursor: pointer;
+                padding: 5px;
+                width: 100%;
             }
-        // }
-        p {
-            margin: 0;
+
         }
+
         #info-box {
             display: block;
         }
+
     }
 
-    
+
     .dishes-box{
         min-height: 500px;
         margin: 120px 10% 50px;
@@ -98,13 +94,13 @@ main.details {
             margin-bottom: 20px;
             flex-basis: 100%;
         }
-        ul:not(.overview ul){
+        ul:not(.overview ul, .modal ul){
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             flex-basis: calc(100% / 3 * 2);
             margin:0 -10px ;
-            li:not(.overview li) {
+            li:not(.overview li, .modal li) {
                 flex-basis: calc(100% / 2 - 20px);
                 // min-width: 320px;
                 height: 170px;
@@ -133,7 +129,7 @@ main.details {
                         }
                     }
                 }
-                
+
                 .right-side{
                     flex-basis: 50%;
                     overflow: hidden;
@@ -155,14 +151,14 @@ main.details {
                         @include info-details;
                     }
                 }
-                
+
                 &:hover {
                     // box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
                     box-shadow: 0px 22px 24px 0px rgb(0 0 0 / 4%);
                 }
             }
         }
-        
+
         // Bottone aggiungi al carrello/aumenta quantità prodotto
         .green-btn{
             display: inline-block;
@@ -271,7 +267,7 @@ main.details {
                             flex-shrink: 1;
                             font-family: "Raleway", sans-serif;
                         }
-            
+
                         #modification{
                             display: flex;
                             flex-basis: 60%;
@@ -285,7 +281,7 @@ main.details {
                                 }
                             }
                         }
-            
+
                         .fas{
                             margin-left: 5px;
                             font-size: 18px;
@@ -294,7 +290,7 @@ main.details {
                         }
                     }
                 }
-        
+
                 .totalprice{
                     border-top: 1px solid lightgrey;
                     padding: 30px 0 15px;
@@ -302,10 +298,10 @@ main.details {
                     font-weight: normal;
                     font-size: 18px;
                 }
-        
+
                 .payment{
                     padding: 0 15px 0;
-                    
+
                     button{
                         width: 100%;
                         font-size: 20px;
