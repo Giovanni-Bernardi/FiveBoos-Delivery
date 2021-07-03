@@ -27,7 +27,7 @@ Route::get('/restaurant/{id}','RestaurantController@restaurantDetailsView') -> n
 // Route profilo ristoratore loggato
 Route::get('/user/profile', 'AdminController@restaurantProfileView')->name('restaurantProfileViewLink');
 
-// Route profilo ristoratore loggato
+// Route ristorante user loggato
 Route::get('/user/profile/restaurant/{restaurantId}', 'AdminController@restaurantDetailsProfileView')->name('restaurantDetailsProfileLink');
 
 // Route dettaglio piatto

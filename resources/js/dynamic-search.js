@@ -46,16 +46,14 @@ function dynamicSearch() {
                 axios.get('/api/get/all/restaurants/' + this.filter
                 ).then(data => {
                     this.restaurantsList = data.data;
-                    
+
                     if (window.landingFilter == undefined) {
                         this.filteredRestaurants = data.data;
-                        console.log('VUOTOOOOO');
                     }else{
                         this.filter.push(window.landingFilter);
                         this.getFilteredRestaurant();
-                        console.log('PIENOOO', window.landingFilter);
                     }
-                    // console.log(this.restaurantsList);
+                    console.log(this.restaurantsList);
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -63,7 +61,7 @@ function dynamicSearch() {
             getFilteredRestaurant: function(){
                 console.log(this.filter);
                 if (this.filter.length < 1) {
-                    this.filteredRestaurants = this.restaurantsList;
+                    this.filteredRestaurants = [...this.restaurantsList];
                 }else{
                     axios.get('/api/get/filtered/restaurants/' + this.filter
                     ).then(data => {

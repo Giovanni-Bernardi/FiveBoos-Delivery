@@ -15,20 +15,33 @@ class DynamicSearchController extends Controller
         return json_encode($categories);
     }
 
-    // Funzione che torna tutti i ristoranti in ordine random
+    // Funzione che torna tutti i ristoranti con almeno 1 product (visible) in ordine random
     public function getAllRestaurants(){
         $restaurants = Restaurant::inRandomOrder() ->get();
+        $restaurantsWithProducts = [];
 
         foreach ($restaurants as $restaurant) {
-            $restaurant -> categories;
+            $cont = 0;
+            foreach ($restaurant -> products as $product) {
+                if ($product -> visible == 1) {
+                    $cont++;
+                }
+            }
+            if ($cont > 0) {
+                $restaurant -> categories;
+                $restaurant -> products;
+                $restaurantsWithProducts[] = $restaurant;
+            }
         }
-        return json_encode($restaurants);
+
+        return $restaurantsWithProducts;
     }
 
     public function getFilteredRestaurants($filter){
         // Ristoranti filtrati da tornare
         $meltedRestaurants = [];
         $filteredRestaurants = [];
+        $finalFilteredRestaurants = [];
         $query = [];
         $array = [];
         $cont = 0;
@@ -68,7 +81,21 @@ class DynamicSearchController extends Controller
             $getRestaurants[0] -> categories;
             $filteredRestaurants[] = $getRestaurants[0];
         }
+
+        // Array finale con ristoranti che hanno almeno 1 prod. visible
+        foreach ($filteredRestaurants as $restaurant) {
+            $cont = 0;
+            foreach ($restaurant -> products as $product) {
+                if ($product -> visible == 1) {
+                    $cont++;
+                }
+            }
+            if ($cont > 0) {
+                $restaurant -> products;
+                $finalFilteredRestaurants[] = $restaurant;
+            }
+        }
         
-        return  json_encode($filteredRestaurants);
+        return $finalFilteredRestaurants;
     }
 }

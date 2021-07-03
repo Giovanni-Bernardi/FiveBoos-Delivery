@@ -1,12 +1,16 @@
 main.user.details{
     .dishes-box{
         margin-bottom: 40px;
+        justify-content: flex-start;
         ul:not(.overview ul){
             flex-basis: 100%;
             h3{
                 margin: 0 0 20px;
             }
             li:not(.overview li) {
+                &.hide{
+                    opacity: .6;
+                }
                 flex-basis: calc(100% / 3 - 20px);
                 cursor: default;
             }
@@ -16,12 +20,24 @@ main.user.details{
                 text-align: center;
                 overflow: hidden;
                 position: absolute;
-                top: -2%;
-                right: 1%;
+                right: -.1%;
+                &.edit-product{
+                    top: -5px;
+                }
+                &.hide-product{
+                    top: 22px;
+                    a{
+                        display: inline-block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
                 i {
+                    color: white;
                     position: absolute;
-                    top: 5px;
-                    right: 5px;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, -50%);
                 }
             }
             p.visibility {
@@ -46,7 +62,7 @@ main.user.details{
                 display: flex;
                 justify-content: center;
                 background-color: rgba(0, 172, 0, 0.178);
-                border-radius: 3px;
+                border-radius: 5px;
                 width: 100%;
                 padding: 10px;
                 transition: background-color .3s;
@@ -56,7 +72,6 @@ main.user.details{
                     color:rgba(0, 180, 60, 0.76);
                     vertical-align: middle;
                     transition: color .3s, transform .3s;
-                    
                 }
                 &:hover {
                     cursor: pointer;
@@ -71,7 +86,7 @@ main.user.details{
     }
     #appChart{
         text-align: left;
-        max-width: 1240px;
+        max-width: 1270px;
         margin: 0 10% 100px;
         font-family: "Raleway", sans-serif;
         h3 {
@@ -100,7 +115,6 @@ main.user.details{
         }
     }
 
-
     .orders-tab{
         &.title{
             height: auto;
@@ -111,7 +125,7 @@ main.user.details{
         }
         margin: 0 10% 50px;
         width: 80%;
-        max-width: 1240px;
+        max-width: 1270px;
         height: 500px;
         overflow: auto;
         table{
@@ -119,7 +133,6 @@ main.user.details{
             font-size: 14px;
             width: 100%;
             border: 1px solid rgba(0, 0, 0, 0.205);
-            // border: 1px solid transparent;
             border-radius: 5px;
             border-spacing: 0;
             tr{

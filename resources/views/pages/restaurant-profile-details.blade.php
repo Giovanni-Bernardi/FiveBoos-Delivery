@@ -110,8 +110,8 @@
                     </h3>
                     <ul>
                         @foreach ($restaurant -> products as $product)
-
-                        <li>
+                            
+                        <li class="@if(!$product -> visible) hide @endif">
                             <div class="left-side">
                                 <h3 class="product-name">{{$product -> name}}</h3>
                                 <div class="add">
@@ -120,8 +120,17 @@
                             </div>
                             <div class="right-side">
                                 <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
-                                <div class="info-badge" @click="popupDetails({{$product -> id}})">
+                                <div class="info-badge edit-product" @click="popupDetails({{$product -> id}})">
                                     <i class="fas fa-cog" ></i>
+                                </div>
+                                <div class="info-badge hide-product">
+                                    <a href="{{route('deleteProductLink', $product -> id)}}">
+                                        @if ($product -> visible)
+                                            <i class="fas fa-eye"></i>
+                                        @else
+                                            <i class="fas fa-eye-slash"></i>
+                                        @endif
+                                    </a>
                                 </div>
                             <div class="modal product-edit" :class="btnID == {{$product -> id}} ? 'active' : ''">
                                     <div class="modal-content" >
