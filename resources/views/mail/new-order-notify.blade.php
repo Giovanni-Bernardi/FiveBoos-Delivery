@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New-Order-Message</title>
+
     <style>
 
         #mail-main{
-            width: 1200px;
+            width: 95%;
             margin: 30px auto;
             border: 20px solid #F85B59;
         }
         #content-container{
-            width: 1100px;
+            width: 95%;
             margin: auto;
         }
         #container-logo{
@@ -99,6 +100,51 @@
             font-size: 23px;
             font-family: 'Raleway', sans-serif;
             font-weight: bold;
+        }
+        @media screen and (max-width: 576px) {
+            #mail-main{
+                width: 100%
+                margin: 15px auto;
+                border: 10px solid #F85B59;
+            }
+            #content-container{
+                width: 100%;
+            }
+            #thanksgiving{
+                font-size: 30px;
+            }
+            #recap{
+                font-size: 25px;
+            }
+            #container-info{
+                display: block;
+                text-align: center;
+            }
+            #table-name{
+                padding: 10px 5px;
+            }
+            #table-part-left{
+                width: 28%;
+            }
+            #table-part-right{
+                width: 70%;
+            }
+            .color-white{
+                font-size: 16px;
+            }
+            #table-products-left{
+                width: 28%;
+            }
+            #table-products-right{
+                width: 70%;
+                padding-right: 10px;
+            }
+            .product{
+                padding: 0px 5px;
+            }
+            #total-price{
+                font-size: 18px;
+            }
         }
     </style>
   </head>
@@ -192,10 +238,3 @@
         </div>
   </body>
 </html>
-{{-- <h1>Abbiamo ricevuto il vostro ordine N{{ $order -> id }}</h1>
-@foreach ($order -> products as $plate)
-<h1>{{$plate -> name}} : {{$plate -> price}}€</h1>
-@endforeach
-<h1>Totale Pagato: {{$order -> total_price}}€</h1>
-<h1>La consegna avvera al indirizzo: {{$order -> address}}</h1>
-<h1>Tempo di Consegna: {{$order -> delivery_date}}  {{$order -> delivery_time}}</h1> --}}
