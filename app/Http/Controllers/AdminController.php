@@ -174,9 +174,9 @@ class AdminController extends Controller
         if($user_id == $restaurant -> user_id){
             $restaurant -> visible = !($restaurant -> visible);
             $restaurant -> save();
-            return redirect() -> route('restaurantProfileViewLink', $restaurant -> id);
+            return redirect() -> route('restaurantProfileViewLink');
         }else{
-            return redirect() -> route('editRestaurantViewLink', $id);
+            return redirect() -> route('indexViewLink', $id);
         }
     }
 
@@ -189,11 +189,11 @@ class AdminController extends Controller
         if($user_id == $product -> restaurant -> user_id){
             $product -> visible = !($product -> visible);
             $product -> save();
+            return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($product -> restaurant -> id));
         }else{
-            return redirect() -> route('editRestaurantViewLink', $product -> restaurant -> id);
+            return redirect() -> route('indexView');
         }
 
-        return redirect() -> route('restaurantDetailsViewLink', $product -> restaurant -> id);
     }
 
     // Pagina profilo ristoratore loggato

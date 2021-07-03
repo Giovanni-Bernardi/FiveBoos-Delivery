@@ -8,6 +8,9 @@ main.user.details{
                 margin: 0 0 20px;
             }
             li:not(.overview li) {
+                &.hide{
+                    opacity: .6;
+                }
                 flex-basis: calc(100% / 3 - 20px);
                 cursor: default;
             }
@@ -17,12 +20,24 @@ main.user.details{
                 text-align: center;
                 overflow: hidden;
                 position: absolute;
-                top: -2%;
-                right: 1%;
+                right: -.1%;
+                &.edit-product{
+                    top: -5px;
+                }
+                &.hide-product{
+                    top: 22px;
+                    a{
+                        display: inline-block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
                 i {
+                    color: white;
                     position: absolute;
-                    top: 5px;
-                    right: 5px;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, -50%);
                 }
             }
         }

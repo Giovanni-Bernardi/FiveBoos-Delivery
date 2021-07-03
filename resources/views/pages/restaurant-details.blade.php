@@ -48,12 +48,6 @@
                 <li v-for='(product, prIndex) in products'  v-if="product.visible">
                     <div class="left-side">
                         <h3 class="product-name">@{{product.name}}</h3>
-                        {{-- <div class="description">
-                            Descrizione: @{{product.description.slice(0, 45)}}...
-                        </div> --}}
-                        {{-- <div class="ingredients">
-                            Ingredienti: @{{product.ingredients}}
-                        </div> --}}
                         <div class="add">
                             <span class="prduct-price">&euro; @{{product.price}},00</span>
                             <span class="green-btn" id="to-cart" @click="addToCart(product.id, product.name, product.price, quantity)">

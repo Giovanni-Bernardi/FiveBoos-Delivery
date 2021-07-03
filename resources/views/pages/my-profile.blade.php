@@ -18,7 +18,7 @@
                 @foreach ($restaurants as $restaurant)
                     <li class="crd  @if(!$restaurant -> visible) hidden-crd @endif" >
                         <ul>
-                            <li class="image-relative">
+                            <li class="background-image">
                                 <img src="{{asset('/storage/assets/pizza-try.jpg')}}" alt="copertina ristorante">
                                 <span>{{$restaurant -> business_name}}</span>
                             </li>

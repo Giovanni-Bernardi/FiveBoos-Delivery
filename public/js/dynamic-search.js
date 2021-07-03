@@ -17370,6 +17370,18 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
     isSet = _require.isSet;
 
@@ -17416,15 +17428,13 @@ function dynamicSearch() {
 
           if (window.landingFilter == undefined) {
             _this2.filteredRestaurants = data.data;
-            console.log('VUOTOOOOO');
           } else {
             _this2.filter.push(window.landingFilter);
 
             _this2.getFilteredRestaurant();
+          }
 
-            console.log('PIENOOO', window.landingFilter);
-          } // console.log(this.restaurantsList);
-
+          console.log(_this2.restaurantsList);
         })["catch"](function (error) {
           console.log(error);
         });
@@ -17435,7 +17445,7 @@ function dynamicSearch() {
         console.log(this.filter);
 
         if (this.filter.length < 1) {
-          this.filteredRestaurants = this.restaurantsList;
+          this.filteredRestaurants = _toConsumableArray(this.restaurantsList);
         } else {
           axios.get('/api/get/filtered/restaurants/' + this.filter).then(function (data) {
             _this3.filteredRestaurants = [];

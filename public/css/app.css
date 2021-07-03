@@ -1240,6 +1240,10 @@ main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
   cursor: default;
 }
 
+main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li).hide {
+  opacity: 0.6;
+}
+
 main.user.details .dishes-box ul:not(.overview ul) .info-badge {
   width: 23px;
   height: 23px;
@@ -1256,14 +1260,29 @@ main.user.details .dishes-box ul:not(.overview ul) .info-badge {
   text-align: center;
   overflow: hidden;
   position: absolute;
-  top: -2%;
-  right: 1%;
+  right: -0.1%;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) .info-badge.edit-product {
+  top: -5px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) .info-badge.hide-product {
+  top: 22px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) .info-badge.hide-product a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
 }
 
 main.user.details .dishes-box ul:not(.overview ul) .info-badge i {
+  color: white;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
 }
 
 main.user.details .dishes-box li#new-product.new-product {
@@ -1681,12 +1700,12 @@ main#profile .restaurant-container #restaurant-cards .crd ul {
   position: relative;
 }
 
-main#profile .restaurant-container #restaurant-cards .crd ul li.image-relative {
+main#profile .restaurant-container #restaurant-cards .crd ul li.background-image {
   position: relative;
   height: 73%;
 }
 
-main#profile .restaurant-container #restaurant-cards .crd ul li.image-relative img {
+main#profile .restaurant-container #restaurant-cards .crd ul li.background-image img {
   filter: contrast(70%);
   height: 100%;
   width: 100%;
@@ -1696,7 +1715,7 @@ main#profile .restaurant-container #restaurant-cards .crd ul li.image-relative i
      object-position: center;
 }
 
-main#profile .restaurant-container #restaurant-cards .crd ul li.image-relative span {
+main#profile .restaurant-container #restaurant-cards .crd ul li.background-image span {
   font-size: 30px;
   position: absolute;
   z-index: 10;
