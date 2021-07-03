@@ -1320,6 +1320,25 @@ main.user.details .dishes-box ul:not(.overview ul) p.visibility input {
   margin: 5px;
 }
 
+main.user.details .dishes-box ul:not(.overview ul) p.visibility {
+  display: flex;
+  justify-content: flex-start;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility label {
+  align-self: center;
+  margin: 5px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility input {
+  align-self: center;
+  margin: 5px;
+}
+
 main.user.details .dishes-box li#new-product.new-product {
   display: flex;
   justify-content: center;
