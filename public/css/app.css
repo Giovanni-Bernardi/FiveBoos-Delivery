@@ -915,13 +915,13 @@ main.details .dishes-box h3 {
 
 main.details .dishes-box ul:not(.overview ul, .modal ul) {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   flex-basis: calc(100% / 3 * 2);
   margin: 0 -10px;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
   flex-basis: calc(100% / 2 - 20px);
   height: 170px;
   margin: 0 10px 20px;
@@ -935,7 +935,7 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
   transition: box-shadow 0.3s;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .left-side {
   flex-basis: 50%;
   min-width: 150px;
   display: flex;
@@ -943,24 +943,24 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
   justify-content: space-between;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side .product-name {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .left-side .product-name {
   text-transform: capitalize;
   word-wrap: break-word;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side .add span {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .left-side .add span {
   font-family: "Raleway", sans-serif;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-side {
   flex-basis: 50%;
   overflow: hidden;
   position: relative;
   margin-left: 10px;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side img {
-  min-width: 150px;
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-side img {
+  min-width: 140px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -969,7 +969,7 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
      object-position: center;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side .product-info-badge {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-side .product-info-badge {
   text-align: center;
   width: 23px;
   position: absolute;
@@ -988,7 +988,7 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
   cursor: pointer;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li):hover {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element:hover {
   box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.04);
 }
 
@@ -1184,11 +1184,11 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 @media screen and (max-width: 1350px) {
-  main.details .dishes-box ul:not(.overview ul) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) {
     flex-basis: calc(100% / 2);
   }
 
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
     flex-basis: calc(100% / 1 - 20px);
   }
 
@@ -1198,11 +1198,11 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 @media screen and (max-width: 991px) {
-  main.details .dishes-box ul:not(.overview ul) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) {
     flex-basis: calc(100% / 1);
   }
 
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
     flex-basis: calc(100% / 1 - 20px);
     height: 200px;
   }
@@ -1213,7 +1213,7 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 @media screen and (max-width: 767px) {
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul .modal ul) .dish-element {
     height: 170px;
   }
 }
@@ -1228,7 +1228,7 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
     justify-content: center;
   }
 
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
     flex-basis: calc(100% / 1);
     margin: 0 0 20px;
   }
@@ -1251,12 +1251,12 @@ main.user.details .dishes-box ul:not(.overview ul) h3 {
   margin: 0 0 20px;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+main.user.details .dishes-box ul:not(.overview ul) .dish-element {
   flex-basis: calc(100% / 3 - 20px);
   cursor: default;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li).hide {
+main.user.details .dishes-box ul:not(.overview ul) .dish-element.hide {
   opacity: 0.6;
 }
 
@@ -1453,25 +1453,21 @@ main.user.details .orders-tab::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1350px) {
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     flex-basis: calc(100% / 2 - 20px);
   }
 }
 
 @media screen and (max-width: 991px) {
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     flex-basis: calc(100% / 1 - 20px);
     height: 200px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     height: 170px;
-  }
-
-  main.user.details #appChart {
-    margin: 0 20px 50px;
   }
 
   main.user.details .orders-tab {
@@ -1485,7 +1481,7 @@ main.user.details .orders-tab::-webkit-scrollbar-thumb {
     justify-content: center;
   }
 
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     flex-basis: calc(100% / 1);
     margin: 0 0 20px;
   }
@@ -2275,21 +2271,29 @@ main.create-restaurant div.container .submit .button-create:hover {
 
 .modal .modal-content #info-box .box-visible,
 .modal .modal-content .info-box .box-visible {
-  width: 12%;
-  display: flex;
-  justify-content: space-between;
   margin-top: 5px;
 }
 
 .modal .modal-content #info-box .box-visible label,
 .modal .modal-content .info-box .box-visible label {
+  display: inline;
+  margin-right: 0;
+  font-weight: normal;
+  font-size: 16px !important;
+}
+
+.modal .modal-content #info-box .box-visible label:last-of-type,
+.modal .modal-content .info-box .box-visible label:last-of-type {
   margin-left: 10px;
 }
 
 .modal .modal-content #info-box .box-visible input,
 .modal .modal-content .info-box .box-visible input {
-  width: 50px;
+  width: 20px;
   height: 18px;
+  border: 0;
+  box-shadow: none;
+  vertical-align: bottom;
 }
 
 .modal.active {
@@ -2322,13 +2326,14 @@ main.create-restaurant div.container .submit .button-create:hover {
   position: relative;
   z-index: 80;
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 130px auto 30px;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
   transition: 0.3s ease-in-out;
   -webkit-animation: modal-fade-in 1s ease-in-out;
           animation: modal-fade-in 1s ease-in-out;
+  border-radius: 10px;
 }
 
 .modal .close {

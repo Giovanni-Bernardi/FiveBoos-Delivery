@@ -130,18 +130,25 @@
                 }
             }
             .box-visible{
-                width: 12%;
-                display: flex;
-                justify-content: space-between;
                 margin-top: 5px;
 
                 label{
-                    margin-left: 10px;
+                    // margin-left: 10px;
+                    display: inline;
+                    margin-right: 0;
+                    font-weight: normal;
+                    font-size: 16px!important;
+                    &:last-of-type{
+                        margin-left: 10px
+                    }
                 }
-
+                
                 input{
-                    width: 50px;
+                    width: 20px;
                     height: 18px;
+                    border: 0;
+                    box-shadow: none;
+                    vertical-align: bottom;
                 }
             }
         }
@@ -177,12 +184,13 @@
         position: relative;
         z-index: 80;
         background-color: #fefefe;
-        margin: 15% auto;
+        margin: 130px auto 30px;
         padding: 20px;
         border: 1px solid #888;
         width: 50%;
         transition: .3s ease-in-out;
         animation: modal-fade-in 1s ease-in-out;
+        border-radius: 10px;
     }
 
     .close {

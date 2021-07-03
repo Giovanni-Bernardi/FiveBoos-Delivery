@@ -96,6 +96,6 @@ class DynamicSearchController extends Controller
             }
         }
         
-        return $finalFilteredRestaurants;
+        return $finalFilteredRestaurants    ;
     }
 }

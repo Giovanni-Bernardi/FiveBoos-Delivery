@@ -45,11 +45,11 @@
                 Scegli i tuoi piatti
             </h3>
             <ul>
-                <li v-for='(product, prIndex) in products'  v-if="product.visible">
+                <li v-for='(product, prIndex) in products' class="dish-element" v-if="product.visible">
                     <div class="left-side">
                         <h3 class="product-name">@{{product.name}}</h3>
                         <div class="add">
-                            <span class="prduct-price">&euro; @{{product.price}},00</span>
+                            <span class="prduct-price">&euro; @{{(product.price / 100).toFixed(2) }}</span>
                             <span class="green-btn" id="to-cart" @click="addToCart(product.id, product.name, product.price, quantity)">
                                 <i class="fas fa-plus"></i>
                             </span>
@@ -90,7 +90,7 @@
                             <h4 id="name-product">@{{plates.name}}</h4>
                             <div id="modification">
                                 <p>x @{{plates.counter}}</p>
-                                <p>&euro; @{{plates.price * plates.counter}},00</p>
+                                <p>&euro; @{{(plates.price * plates.counter / 100).toFixed(2)}}</p>
                                 <div class="plus-minus">
                                     <i class="fas fa-plus-circle" @click="increase(plates.id, index)"></i>
                                     <i class="fas fa-minus-circle" @click="decrease(plates.id, index)"></i>
@@ -98,7 +98,8 @@
                             </div>
                         </li>
                         <li v-if="cart == ''"></li>
-                        <li v-else class="totalprice">Totale: &euro;@{{totalPrice}},00</li>
+                        @{{(product.price / 100).toFixed(2) }}
+                        <li v-else class="totalprice">Totale: &euro; @{{(totalPrice / 100).toFixed(2)}}</li>
                         <li v-if="cart == ''"></li>
                         <li v-else class="payment"><button type="submit" form="new-order">Check-out</button></li>
 
