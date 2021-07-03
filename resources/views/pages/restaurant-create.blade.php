@@ -68,7 +68,7 @@
                                 <div class="category">
                                     <input id="cat-{{$category -> id}}" type="checkbox" name="category_id[]" value="{{$category -> id}}">
                                     <label for="cat-{{$category -> id}}" class="circle"></label>
-                                    <label class="name-category" for="categories[]">
+                                    <label class="name-category" for="cat-{{$category -> id}}">
                                         {{$category -> name}}
                                     </label>
                                 </div>

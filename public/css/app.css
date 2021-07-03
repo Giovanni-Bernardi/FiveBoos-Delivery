@@ -805,22 +805,6 @@ footer .bottom .privacy .copyright {
   }
 }
 
-#appSearch .list-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20%;
-  border-radius: 20px;
-  margin: 30px 0;
-}
-
-#appSearch .list-cards .list-card {
-  margin: 0 20px;
-  background-color: #ffc244;
-  min-height: 400px;
-  width: 100%;
-}
-
 main.details {
   background-color: whitesmoke;
 }
@@ -908,10 +892,6 @@ main.details .restaurant-info #info-box h3:first-child {
   width: 100%;
 }
 
-main.details .restaurant-info p {
-  margin: 0;
-}
-
 main.details .restaurant-info #info-box {
   display: block;
 }
@@ -933,7 +913,7 @@ main.details .dishes-box h3 {
   flex-basis: 100%;
 }
 
-main.details .dishes-box ul:not(.overview ul) {
+main.details .dishes-box ul:not(.overview ul, .modal ul) {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -941,7 +921,7 @@ main.details .dishes-box ul:not(.overview ul) {
   margin: 0 -10px;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) {
   flex-basis: calc(100% / 2 - 20px);
   height: 170px;
   margin: 0 10px 20px;
@@ -955,7 +935,7 @@ main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
   transition: box-shadow 0.3s;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side {
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side {
   flex-basis: 50%;
   min-width: 150px;
   display: flex;
@@ -963,24 +943,24 @@ main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side {
   justify-content: space-between;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side .product-name {
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side .product-name {
   text-transform: capitalize;
   word-wrap: break-word;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .left-side .add span {
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side .add span {
   font-family: "Raleway", sans-serif;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side {
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side {
   flex-basis: 50%;
   overflow: hidden;
   position: relative;
   margin-left: 10px;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side img {
-  min-width: 140px;
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side img {
+  min-width: 150px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -989,7 +969,7 @@ main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side i
      object-position: center;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side .product-info-badge {
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side .product-info-badge {
   text-align: center;
   width: 23px;
   position: absolute;
@@ -1008,7 +988,7 @@ main.details .dishes-box ul:not(.overview ul) li:not(.overview li) .right-side .
   cursor: pointer;
 }
 
-main.details .dishes-box ul:not(.overview ul) li:not(.overview li):hover {
+main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li):hover {
   box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.04);
 }
 
@@ -1319,6 +1299,25 @@ main.user.details .dishes-box ul:not(.overview ul) .info-badge i {
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility {
+  display: flex;
+  justify-content: flex-start;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility label {
+  align-self: center;
+  margin: 5px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) p.visibility input {
+  align-self: center;
+  margin: 5px;
 }
 
 main.user.details .dishes-box li#new-product.new-product {
@@ -1852,7 +1851,7 @@ main.create-restaurant div.container div.separation-content form ul li label {
 
 main.create-restaurant div.container div.separation-content form ul li .text {
   font-size: 15px;
-  width: 90%;
+  width: 87%;
   margin-top: 5px;
   padding: 5px 15px;
   border: none;
@@ -1921,6 +1920,7 @@ main.create-restaurant div.container div.separation-content form ul li .containe
 
 main.create-restaurant div.container div.separation-content form ul li .container-categories .category .name-category {
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 main.create-restaurant div.container div.separation-content .logo-image {
@@ -2130,25 +2130,25 @@ main.create-restaurant div.container .submit .button-create:hover {
   font-size: 1.5rem;
 }
 
-.modal .modal-content #info-box p,
-.modal .modal-content .info-box p {
+.modal .modal-content #info-box li,
+.modal .modal-content .info-box li {
   margin-top: 10px;
   position: relative;
 }
 
-.modal .modal-content #info-box p label,
-.modal .modal-content .info-box p label {
+.modal .modal-content #info-box li label,
+.modal .modal-content .info-box li label {
   margin-right: 10px;
   display: block;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Segoe UI";
 }
 
-.modal .modal-content #info-box p input,
-.modal .modal-content #info-box p textarea,
-.modal .modal-content .info-box p input,
-.modal .modal-content .info-box p textarea {
+.modal .modal-content #info-box li input,
+.modal .modal-content #info-box li textarea,
+.modal .modal-content .info-box li input,
+.modal .modal-content .info-box li textarea {
   width: 100%;
   border: 1px solid #EFEFEF;
   border-radius: 5px;
@@ -2156,6 +2156,28 @@ main.create-restaurant div.container .submit .button-create:hover {
   margin-top: 4px;
   font-size: 16px;
   font-family: "Segoe UI";
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+}
+
+.modal .modal-content #info-box li button,
+.modal .modal-content .info-box li button {
+  font-family: "Segoe UI";
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #ffc244;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: #ffc244;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .modal-content #info-box li button:hover,
+.modal .modal-content .info-box li button:hover {
+  background-color: #feb622;
+  border: 2px solid #feb622;
+  color: white;
 }
 
 .modal .modal-content #info-box .title-card,
@@ -2180,15 +2202,94 @@ main.create-restaurant div.container .submit .button-create:hover {
 .modal .modal-content .info-box .category-box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 .modal .modal-content #info-box .category-box .edit-prod,
 .modal .modal-content .info-box .category-box .edit-prod {
+  display: flex;
+  background-color: white;
+  width: 138px;
+  border-radius: 5px;
   margin: 5px;
   padding: 5px;
-  background-color: white;
-  border: 1px solid lightgrey;
+  position: relative;
+  box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
+  border: 1px solid #EFEFEF;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod input,
+.modal .modal-content .info-box .category-box .edit-prod input {
+  width: auto;
+  margin-left: 5px;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod .circle,
+.modal .modal-content .info-box .category-box .edit-prod .circle {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 16px;
+  left: 3px;
+  position: absolute;
+  top: 9px;
+  width: 16px;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod .circle:after,
+.modal .modal-content .info-box .category-box .edit-prod .circle:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 4px;
+  left: 2px;
+  opacity: 0;
+  position: absolute;
+  top: 4px;
+  transform: rotate(-45deg);
+  width: 8px;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod input[type=checkbox],
+.modal .modal-content .info-box .category-box .edit-prod input[type=checkbox] {
+  visibility: hidden;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod input[type=checkbox]:checked + .circle,
+.modal .modal-content .info-box .category-box .edit-prod input[type=checkbox]:checked + .circle {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod input[type=checkbox]:checked + .circle:after,
+.modal .modal-content .info-box .category-box .edit-prod input[type=checkbox]:checked + .circle:after {
+  opacity: 1;
+}
+
+.modal .modal-content #info-box .category-box .edit-prod .name-category,
+.modal .modal-content .info-box .category-box .edit-prod .name-category {
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.modal .modal-content #info-box .box-visible,
+.modal .modal-content .info-box .box-visible {
+  width: 12%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.modal .modal-content #info-box .box-visible label,
+.modal .modal-content .info-box .box-visible label {
+  margin-left: 10px;
+}
+
+.modal .modal-content #info-box .box-visible input,
+.modal .modal-content .info-box .box-visible input {
+  width: 50px;
+  height: 18px;
 }
 
 .modal.active {
