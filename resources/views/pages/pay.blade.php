@@ -12,9 +12,9 @@
 
         <div id="box-left">
             <div class="container">
-                <h3>Fiveboo's Chackout</h3>
+                <h3>Check-out</h3>
                 <h2>
-                    {{$total_price}} &euro;
+                    Totale: {{number_format($prezzo = (floatval($total_price / 100 )), 2)}} &euro;
                 </h2>
 
                 <h4 id="title-recap">Riepilogo ordine:</h4>
@@ -22,8 +22,8 @@
                 <div class="container-order">
                     <div>
                         <ul class="recap-order">
-                            <li>Titolo</li>
-                            <li>Qta</li>
+                            <li>Prodotto</li>
+                            <li>Q.tà</li>
                             <li>Prezzo</li>
                         </ul>
                     </div>
@@ -33,7 +33,7 @@
                             <ul class="plates">
                                 <li>{{$product['name']}}</li>
                                 <li>{{$product['count']}}</li>
-                                <li>{{$product['price']}},00 &euro;</li>
+                                <li>{{number_format($prezzo = (floatval($product['price'] / 100 )), 2)}}</li>
                             </ul>
                         @endforeach
                     </div>

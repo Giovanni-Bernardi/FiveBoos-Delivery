@@ -76,7 +76,7 @@
                                         </li>
 
                                         <li>
-                                            <label>Categorie (min. 1):</label>
+                                            <label>Categorie (min. 1, max. 3):</label>
                                             <div>
                                                 <ul class="category-box">
                                                     @foreach ($categories as $category)
@@ -244,9 +244,9 @@
                                             </p>
                                             <p>
                                                 <label for="price">
-                                                    Prezzo
+                                                    Prezzo (in centesimi):
                                                 </label>
-                                                <input type="number" name="price" placeholder="mille lire" required>
+                                                <input type="number" name="price" placeholder="prezzo" required>
                                             </p>
                                             <p>
                                                 <label>Categorie</label>

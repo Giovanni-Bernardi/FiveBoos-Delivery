@@ -147,7 +147,6 @@ class AdminController extends Controller
             'ingredients' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|integer',
-            'visible' => 'required|boolean',
         ]);
 
         $product = Product::findorFail($id);

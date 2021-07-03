@@ -11,6 +11,9 @@ main.user.details{
                 &.hide{
                     opacity: 0.6;
                 }
+                &.no-opacity{
+                    opacity: 1;
+                }
                 flex-basis: calc(100% / 3 - 20px);
                 cursor: default;
             }

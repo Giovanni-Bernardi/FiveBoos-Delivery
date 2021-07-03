@@ -889,7 +889,6 @@ main.details .restaurant-info #info-box h3:first-child {
   border-bottom: 1px solid lightgrey;
   cursor: pointer;
   padding: 5px;
-  width: 100%;
 }
 
 main.details .restaurant-info #info-box {
@@ -919,6 +918,7 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) {
   flex-wrap: wrap;
   flex-basis: calc(100% / 3 * 2);
   margin: 0 -10px;
+  cursor: default;
 }
 
 main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
@@ -927,7 +927,6 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
   margin: 0 10px 20px;
   padding: 15px;
   border-radius: 8px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -973,8 +972,8 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-si
   text-align: center;
   width: 23px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 7px;
+  right: 7px;
   height: 23px;
   padding-top: 3px;
   margin: 10px 5px;
@@ -986,6 +985,7 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-si
   color: whitesmoke;
   text-transform: capitalize;
   cursor: pointer;
+  margin: 0;
 }
 
 main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element:hover {
@@ -1002,6 +1002,7 @@ main.details .dishes-box .green-btn {
   background-color: rgba(0, 172, 0, 0.178);
   text-align: center;
   overflow: hidden;
+  cursor: pointer;
   vertical-align: middle;
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -1258,6 +1259,10 @@ main.user.details .dishes-box ul:not(.overview ul) .dish-element {
 
 main.user.details .dishes-box ul:not(.overview ul) .dish-element.hide {
   opacity: 0.6;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) .dish-element.no-opacity {
+  opacity: 1;
 }
 
 main.user.details .dishes-box ul:not(.overview ul) .info-badge {
@@ -1790,6 +1795,20 @@ main#profile .restaurant-container #restaurant-cards #edit-button {
   color: black;
 }
 
+@media screen and (min-width: 1588px) {
+  main#profile h1 {
+    margin: 120px auto 10px;
+  }
+
+  main#profile div.create-restaurant {
+    margin: 0 auto 20px;
+  }
+
+  main#profile .restaurant-container {
+    margin: 20px auto;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   main#profile .restaurant-container #restaurant-cards .crd {
     flex-basis: calc(100% / 2 - 20px);
@@ -2120,6 +2139,12 @@ main.create-restaurant div.container .submit .button-create:hover {
   margin: auto;
 }
 
+.modal .modal-content #info-box h5,
+.modal .modal-content .info-box h5 {
+  font-size: 17px;
+  font-weight: normal;
+}
+
 .modal .modal-content #info-box h4,
 .modal .modal-content .info-box h4 {
   text-align: center;
@@ -2130,6 +2155,15 @@ main.create-restaurant div.container .submit .button-create:hover {
 .modal .modal-content .info-box li {
   margin-top: 10px;
   position: relative;
+}
+
+.modal .modal-content #info-box li h3,
+.modal .modal-content .info-box li h3 {
+  font-size: 28px;
+  text-transform: capitalize;
+  font-weight: normal;
+  margin: 5px 0;
+  padding: 0;
 }
 
 .modal .modal-content #info-box li label,
@@ -2310,6 +2344,7 @@ main.create-restaurant div.container .submit .button-create:hover {
 }
 
 .modal {
+  cursor: auto;
   display: none;
   position: fixed;
   z-index: 10;
@@ -2330,30 +2365,45 @@ main.create-restaurant div.container .submit .button-create:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
-  transition: 0.3s ease-in-out;
-  -webkit-animation: modal-fade-in 1s ease-in-out;
-          animation: modal-fade-in 1s ease-in-out;
+  -webkit-animation: modal-fade-in 0.3s ease-in-out;
+          animation: modal-fade-in 0.3s ease-in-out;
   border-radius: 10px;
+}
+
+.modal h3 {
+  border-bottom: 1px solid lightgrey;
 }
 
 .modal .close {
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
   font-weight: bold;
+  width: 30px;
+  transition: color 0.5s;
+  cursor: pointer;
 }
 
 .modal .close:hover,
 .modal .close:focus {
   color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .product-details .modal-content {
   width: 50%;
   position: relative;
   top: 25px;
+}
+
+.product-details .modal-content .info-box ul li h3 {
+  padding-bottom: 10px;
+}
+
+.product-details .modal-content .info-box ul li h5 {
+  margin: 10px 0 5px;
 }
 
 @media screen and (max-width: 991px) {
@@ -3604,7 +3654,7 @@ main.pay-order form #box-left .container {
 
 main.pay-order form #box-left .container h2 {
   font-family: "Segoe UI";
-  font-size: 40px;
+  font-size: 32px;
   color: #303030;
   padding: 10px 0;
 }

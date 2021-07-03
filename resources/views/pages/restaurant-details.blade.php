@@ -17,24 +17,42 @@
             <!-- modal popup info -->
             <div id="myModal" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <div class="close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    
                     <div id="info-box">
-                        <h3>Informazioni sul ristorante</h3>
-                        <h3>
-                            <i class="fas fa-user-tie"></i> {{$restaurant -> business_name}}
-                        </h3>
-                        <p>
-                            <i class="fas fa-map-marked-alt"></i> {{$restaurant -> address}}
-                        </p>
-                        <p>
-                            <i class="fas fa-wallet"></i> {{$restaurant -> piva}}
-                        </p>
-                        <p>
-                            <i class="fas fa-phone-alt"></i> Chiama il ristorante <strong>{{$restaurant -> business_name}}</strong> al numero {{$restaurant -> telephone}} per prenotare un tavolo al più presto!
-                        </p>
-                        <p>
-                            <i class="fas fa-file-alt"></i> {{$restaurant -> description}}
-                        </p>
+                        <ul>
+                            <li>
+                                <h3>
+                                    {{$restaurant -> business_name}}
+                                </h3>
+                            </li>
+                            <li>
+                                <h5>
+                                    Indirizzo:
+                                </h5>
+                                <p>
+                                    {{$restaurant -> address}}
+                                </p>
+                            </li>
+                            <li>
+                                <h5>
+                                    Telefono:
+                                </h5>
+                                <p>
+                                    {{$restaurant -> telephone}}
+                                </p>
+                            </li>
+                            <li>
+                                <h5>
+                                    Descrizione:
+                                </h5>
+                                <p>
+                                    {{$restaurant -> description}}
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -62,12 +80,24 @@
                             <i class="fas fa-info"></i>
                         </div>
                         <div class="modal product-details" :class="btnID==product.id ? 'active' : ''">
-                            <div class="modal-content" @click="closePopup">
-                                <span class="close" @click="closePopup">&times;</span>
+                            <div class="modal-content">
+                                <div class="close" @click="closePopup">
+                                    <i class="fas fa-times"></i>
+                                </div>
                                 <div class="info-box">
-                                    <h3> <i class="fas fa-pencil-alt"></i> @{{product.name}}</h3>
-                                    <p> <i class="fas fa-utensils"></i> @{{product.ingredients}}</p>
-                                    <p> <i class="fab fa-readme"></i> @{{product.description.slice(0, 45)}}...</p>
+                                    <ul>
+                                        <li>
+                                            <h3> @{{product.name}}</h3>
+                                        </li>
+                                        <li>
+                                            <h5>Ingredienti:</h5>
+                                            <p> @{{product.ingredients}}</p>
+                                        </li>
+                                        <li>
+                                            <h5>Descrizione:</h5>
+                                            <p> @{{product.description}}</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
