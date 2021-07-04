@@ -13,12 +13,10 @@
 //partials
 @import 'partials/variables';
 @import 'partials/animations';
-@import 'partials/header';
 @import 'partials/footer';
 @import 'partials/restaurant-list';
 @import 'partials/restaurant-details';
 @import 'partials/restaurant-profile-details';
-@import 'partials/searchbar';
 @import 'partials/my-profile';
 @import 'partials/restaurant-create';
 @import 'partials/preloader';
@@ -26,6 +24,7 @@
 
 @import 'partials/footer';
 @import 'partials/header.scss';
+@import 'partials/searchbar';
 @import 'partials/landing';
 
 @import 'partials/byebye';

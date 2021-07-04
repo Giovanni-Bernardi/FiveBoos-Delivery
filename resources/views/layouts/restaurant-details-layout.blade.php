@@ -23,7 +23,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    @include('components.header')
+    @include('components.search-header')
     @include('components.notifications')
 
     @yield('content')

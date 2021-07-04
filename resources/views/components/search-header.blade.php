@@ -1,4 +1,4 @@
-<header id="scrolledHeader">
+<header id="scrolledHeader" class="orange">
     <nav>
         {{-- Sezione sx: hamburger + logo --}}
         <div class="sx-section">

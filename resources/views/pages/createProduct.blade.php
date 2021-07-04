@@ -1,4 +1,5 @@
 @extends('layouts.main-layout')
+
 @section('content')
 <main>
     @if ($errors->any())
