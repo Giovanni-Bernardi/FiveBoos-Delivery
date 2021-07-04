@@ -61,28 +61,19 @@ class AdminController extends Controller
         return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id));
     }
 
-    public function createProduct() {
-
-        $id = Auth::id();
-        $restaurants = Restaurant::All() -> where('user_id', $id);
-        return view('pages.createProduct', compact('restaurants'));
-    }
-
-    public function storeProduct(Request $request) {
+    public function storeProduct(Request $request, $id) {
 
         $validate = $request -> validate([
           'name' => 'required|string|min:3',
           'ingredients' => 'required|string',
           'description' => 'required|string',
           'price' => 'required|integer',
-          'visible' => 'required|boolean',
-          'restaurant_id' => 'required|exists:restaurants,id'
         ]);
 
-        $restaurant = Restaurant::findorFail($request -> get('restaurant_id'));
-
+        $restaurant = Restaurant::findorFail($id);
         $product = Product::make($validate);
         $product -> restaurant() -> associate($restaurant);
+        $product -> visible = 1;
 
         if($request -> file('img')){
             $img = $request -> file('img');
@@ -95,7 +86,7 @@ class AdminController extends Controller
 
         $product -> save();
 
-        return redirect() -> route('productDetailsViewLink', $product -> id);
+        return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($product -> restaurant -> id));
     }
 
     public function editRestaurantView($id){

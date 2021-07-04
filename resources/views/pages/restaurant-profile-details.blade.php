@@ -114,7 +114,7 @@
                     </h3>
                     <ul>
                         @foreach ($restaurant -> products as $product)
-                            
+
                         <li class="dish-element @if(!$product -> visible) hide @endif">
                             <div class="left-side">
                                 <h3 class="product-name">{{$product -> name}}</h3>
@@ -186,19 +186,6 @@
                                                     <input type="file" name="img" value="{{$product -> img}}">
                                                 </li>
 
-                                                {{-- <li>
-                                                    <label for="visible">
-                                                        Visibile:
-                                                    </label>
-                                                    <div class="box-visible">
-                                                        <label for="1">Si</label>
-                                                        <input type="radio" name="visible" value="1" @if($product -> visible) checked @endif>
-
-                                                        <label for="0">No</label>
-                                                        <input type="radio" name="visible" value="0" @if(!($product -> visible)) checked @endif>
-                                                    </div>
-                                                </li> --}}
-
                                                 <li>
                                                     <button type="submit">Salva le modifiche</button>
                                                 </li>
@@ -217,70 +204,63 @@
                                 <div class="modal-content">
                                     <span class="close" @click="closePopup">&times;</span>
                                     <div class="info-box">
-                                        <form method="POST" enctype="multipart/form-data" action="{{ route('storeProduct') }}">
+                                        <form method="POST" enctype="multipart/form-data" action="{{ route('storeProduct', $restaurant -> id) }}">
                                             @method('POST')
                                             @csrf
                                             <div class="title-card">
                                                 <img src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
                                                 <h4> Crea un nuovo piatto!</h4>
                                             </div>
-                                            <p>
-                                                <label for="name">
-                                                    Nome del piatto:
-                                                </label>
-                                                <input type="text" name="name" placeholder="nome" required>
-                                            </p>
-                                            <p>
-                                                <label for="ingredients">
-                                                    Ingredienti:
-                                                </label>
-                                                <textarea name="ingredients" id="" spellcheck="false" cols="30" rows="10" placeholder="Inserisci qui gli ingredienti" required > </textarea>
-                                            </p>
-                                            <p>
-                                                <label for="description">
-                                                    Descrizione
-                                                </label>
-                                                <textarea name="description" id="" cols="30" rows="10"  placeholder="Inserisci una breve descrizione del piatto/allergeni" required> </textarea>
-                                            </p>
-                                            <p>
-                                                <label for="price">
-                                                    Prezzo (in centesimi):
-                                                </label>
-                                                <input type="number" name="price" placeholder="prezzo" required>
-                                            </p>
-                                            <p>
-                                                <label>Categorie</label>
-                                                <div class="category-box">
-                                                    @foreach ($categories as $category)
-                                                    <div class="edit-prod">
-                                                        <input type="checkbox" name="category_id[]" id="" value="{{$category -> id}}">
-                                                        <label for="categories[]">
-                                                            {{$category -> name}}
-                                                            {{$category -> id}}
-                                                        </label>
-                                                    </div>
-                                                    @endforeach
-                                                </div>
-                                            </p>
-                                            <p class="visibility">
-                                                <label for="visible">
-                                                    Disponibilità
-                                                </label>
-                                                <input type="radio" name="visible" value="0">No
-                                                <input type="radio" name="visible" value="1">Si
-                                            </p>
-                                            <p class="restaurant-id" hidden>
-                                                <input type="text" name="restaurant_id" id="" value="{{$restaurant -> id}}">
-                                            </p>
-                                            <p>
-                                                <label for="img">
-                                                    Carica la foto del tuo nuovo piatto!
-                                                </label>
-                                                <input type="file" name="img">
-                                            </p>
-                                            <button type="submit">
-                                                Crea piatto
-                                            </button>
+                                            <ul>
+                                                <li>
+                                                    <label for="name">
+                                                        Nome del piatto:
+                                                    </label>
+                                                    <input type="text" name="name" placeholder="nome" required>
+                                                </li>
+
+                                                <li>
+                                                    <label for="ingredients">
+                                                        Ingredienti:
+                                                    </label>
+                                                    <textarea name="ingredients" id="" spellcheck="false" cols="30" rows="10" placeholder="Inserisci qui gli ingredienti" required > </textarea>
+                                                </li>
+
+                                                <li>
+                                                    <label for="description">
+                                                        Descrizione
+                                                    </label>
+                                                    <textarea name="description" id="" cols="30" rows="10"  placeholder="Inserisci una breve descrizione del piatto/allergeni" required> </textarea>
+                                                </li>
+
+                                                <li>
+                                                    <label for="price">
+                                                        Prezzo (in centesimi):
+                                                    </label>
+                                                    <input type="number" name="price" placeholder="prezzo" required>
+                                                </li>
+
+                                                <li>
+                                                    <label for="img">
+                                                        Carica la foto del tuo nuovo piatto!
+                                                    </label>
+                                                    <input type="file" name="img">
+                                                </li>
+
+                                                {{-- <li class="visibility">
+
+                                                    <label for="visible">
+                                                        Disponibilità
+                                                    </label>
+                                                    <input type="radio" name="visible" value="0">No
+                                                    <input type="radio" name="visible" value="1">Si
+                                                </li> --}}
+
+                                                <li>
+                                                    <button type="submit">Crea piatto</button>
+                                                </li>
+
+                                            </ul>
                                         </form>
                                     </div>
                                 </div>
