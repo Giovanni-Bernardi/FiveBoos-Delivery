@@ -25,7 +25,10 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    @include('components.notifications')
+    {{-- <div class="marginNotification" style="margin-top: 100px">
+        @include('components.notifications')
+
+    </div> --}}
 
     @yield('content')
 
