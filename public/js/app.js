@@ -49675,25 +49675,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
  //mouse follow
 
-var cursorFollow = document.querySelectorAll('.popup-note'); //TEST FUNZIONE SCOLL 1
-// $(document).on('scroll', function(e) {
-//     var value = $(this).scrollTop();
-//     if ( value < 100 ){
-//         $("header").css("background", "transparent");
-//     }
-//     else{
-//         $("header").css("background", "red");
-//     }
-// });
-// TEST FUNZIONE SCOLL 2
-// window.onscroll = function() {scrollFunction()};
-//  function scrollFunction() {
-//    if (document.body.scrollTop >80 || document.documentElement.scrollTop >80) {
-//      $('nav').addClass('navbar-shrink');
-//    } else {
-//      $('nav').removeClass('navbar-shrink');
-//    }
-// }
+var cursorFollow = document.querySelectorAll('.popup-note'); //MODALS 
 
 function PopupModal() {
   var modal = document.getElementById("myModal");
@@ -49720,6 +49702,25 @@ document.addEventListener('DOMContentLoaded', PopupModal); //page preloader
 window.addEventListener('load', function () {
   var preloader = document.querySelector('.preloader');
   preloader.classList.add('preloader-hide'); // setTimeout(location.reload.bind(location), 3000);
+}); //BACK TO TOP BUTTON
+
+$(window).scroll(function () {
+  var height = $(window).scrollTop();
+
+  if (height > 100) {
+    $('#back2Top').fadeIn();
+  } else {
+    $('#back2Top').fadeOut();
+  }
+});
+$(document).ready(function () {
+  $("#back2Top").click(function (event) {
+    event.preventDefault();
+    $("html, body").animate({
+      scrollTop: 0
+    }, "slow");
+    return false;
+  });
 });
 
 /***/ }),

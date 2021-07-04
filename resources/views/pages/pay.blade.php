@@ -3,6 +3,8 @@
 @extends('layouts.pay-layout')
 @section('content')
 
+@include('components.preloader')
+
 <main class="pay-order">
 
     <form method="post" id="payment-form" action="{{route ('checkoutOrder')}}">
@@ -12,7 +14,7 @@
 
         <div id="box-left">
             <div class="container">
-                <h3>Check-out</h3>
+                <h3>Fiveboo's Checkout</h3>
                 <h2>
                     Totale: {{number_format($prezzo = (floatval($total_price / 100 )), 2)}} &euro;
                 </h2>
@@ -22,9 +24,9 @@
                 <div class="container-order">
                     <div>
                         <ul class="recap-order">
-                            <li>Prodotto</li>
-                            <li>Q.tà</li>
-                            <li>Prezzo</li>
+                            <li>Titolo</li>
+                            <li>Qta</li>
+                            <li>Totale</li>
                         </ul>
                     </div>
 

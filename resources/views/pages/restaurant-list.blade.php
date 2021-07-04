@@ -2,6 +2,7 @@
 
 @include('components.search-header')
 @include('components.preloader')
+@include('components.back-to-top')
     
 @section('content')
 <main>
