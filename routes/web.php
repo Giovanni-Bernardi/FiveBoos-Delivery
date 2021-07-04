@@ -38,8 +38,7 @@ Route::get('/create/restaurant', 'AdminController@createRestaurant') -> name('cr
 Route::post('/store/restaurant', 'AdminController@storeRestaurant') -> name('storeRestaurant');
 
 // Route per creazione di Product
-Route::get('/create/product', 'AdminController@createProduct') -> name('createProduct');
-Route::post('/store/product', 'AdminController@storeProduct') -> name('storeProduct');
+Route::post('/store/product/{id}', 'AdminController@storeProduct') -> name('storeProduct');
 
 // Route edit ristorante
 Route::get('/edit/restaurant/{id}','AdminController@editRestaurantView') -> name('editRestaurantViewLink');
