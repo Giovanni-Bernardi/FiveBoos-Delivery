@@ -14,7 +14,7 @@ class RestaurantController extends Controller
 {
     //pagina landing page
     public function indexView(){
-        //session()->flush();
+        session()->forget(['products', 'total_price']);
 
         $restaurants = Restaurant::all();
         $categories = Category::all();
@@ -23,7 +23,7 @@ class RestaurantController extends Controller
     }
     //pagina restaurant list
     public function restaurantListView($filter){
-        // session()->flush();
+        session()->forget(['products', 'total_price']);
         if ($filter == 'all') {
             $filter = '';
         }
@@ -35,8 +35,8 @@ class RestaurantController extends Controller
     }
     //pagina restaurant details
     public function restaurantDetailsView($id){
-        // session()->flush();
-
+        session()->forget(['products', 'total_price']);
+        
         $restaurant = Restaurant::findOrFail($id);
         $products = DB::table("products") -> where("restaurant_id", $id) -> get();
         return view('pages.restaurant-details', compact('restaurant', 'products'));
@@ -66,7 +66,7 @@ class RestaurantController extends Controller
     //
     public function storeOrder(Request $request) {
         // Pulizia session
-        $request->session()->flush();
+        session()->forget(['products', 'total_price']);
         $productsArray = [];
 
         // Push prodotti del carrello in array fittizio

@@ -73,11 +73,8 @@ class PaymentController extends Controller
         return view('pages.pay', compact('gateway', 'token', 'total_price', 'products'));
     }
 
-    public function checkoutOrder(Request $request)
-    {
-        // $order = Order::findOrFail($id);
-        
-        
+    public function checkoutOrder(Request $request) {
+   
         $validate = $request -> validate([
             'firstname' => 'required|string',
             'lastname' => 'required|string',
@@ -149,10 +146,13 @@ class PaymentController extends Controller
 
             return redirect() -> route('byebyeOrder') -> withErrors('Errore nel pagamento: ' . $result -> message);
         }
+        
+        // Pulizia session
+        session()->forget(['products', 'total_price']);
     }
 
-    public function byebyeOrder()
-    {
+    public function byebyeOrder(){
+
         return view('pages.byebye');
     }
 

@@ -129,7 +129,7 @@ main.user.details{
         margin: 0 10% 50px;
         width: 80%;
         max-width: 1270px;
-        height: 500px;
+        max-height: 500px;
         overflow: auto;
         table{
             font-family: "Raleway", sans-serif;
@@ -267,7 +267,7 @@ main.user.details{
             }
         }
         .orders-tab{
-            height: 400px;
+            max-height: 400px;
         }
     }
 }
@@ -296,7 +296,7 @@ main.user.details{
         .orders-tab{
             width: calc(100% - 40px);
             margin: 0 20px 50px;
-            height: 300px;
+            max-height: 300px;
         }
     }
 }

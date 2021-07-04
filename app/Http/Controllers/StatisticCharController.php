@@ -78,17 +78,15 @@ class StatisticCharController extends Controller
     public function getOrdersCount($monthNumber, $restaurantId, $selectedYear){
         $id = Auth::id();
 
-        $orderPerMonth = DB::table('orders')
-                        -> select('orders.id')
-                        
+        $orderPerMonth = DB::table('orders') -> select('orders.id')
                         -> join('order_product', 'orders.id', '=', 'order_product.order_id')
                         -> join('products', 'order_product.product_id', '=', 'products.id')
                         -> where ('products.restaurant_id', $restaurantId)
                         -> whereMonth('orders.delivery_date', $monthNumber)
                         -> whereYear('orders.delivery_date', $selectedYear)
+                        -> groupBy('orders.id')
                         -> get();
-        // $orderPerMonth = count($orderPerMonth);
-        // dd(count($orderPerMonth));
+                        
         return count($orderPerMonth);
     }
 
@@ -113,6 +111,7 @@ class StatisticCharController extends Controller
         foreach ($valuePerMonth as $value) {
             $total_price += $value -> total_price;
         }
+        $total_price = number_format($total = floatval($total_price / 100), 2);
         return $total_price;
     }
 }
