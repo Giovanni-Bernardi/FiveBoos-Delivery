@@ -30,7 +30,7 @@
             <li v-else class="titles-restaurant-list">
                 <h2>Risultato ricerca</h2>
             </li>
-            <li class="restaurant-card" v-for="restaurant in filteredRestaurants" v-if="restaurant.visible">
+            <li class="restaurant-card .dish-element" v-for="restaurant in filteredRestaurants" v-if="restaurant.visible">
                 <a :href="'/restaurant/' + restaurant.id">
                     <div class="background-image">
                         <img src="{{asset('/storage/assets/pizza-try.jpg')}}" alt="">

@@ -183,10 +183,21 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       popupDetails: function popupDetails(productId) {
         this.btnID = productId;
-        console.log(this.btnID, productId);
+        var restaurantBox = document.getElementsByClassName('dish-element');
+        console.log(restaurantBox);
+
+        for (var i = 0; i < restaurantBox.length; i++) {
+          restaurantBox[i].classList.add('no-opacity');
+        }
       },
       closePopup: function closePopup() {
         this.btnID = '';
+        var restaurantBox = document.getElementsByClassName('dish-element');
+        console.log(restaurantBox);
+
+        for (var i = 0; i < restaurantBox.length; i++) {
+          restaurantBox[i].classList.remove('no-opacity');
+        }
       },
       popupCreate: function popupCreate() {
         this.btnID = 'create';

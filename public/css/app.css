@@ -266,158 +266,6 @@
   }
 }
 
-header {
-  height: 100px;
-  padding: 10px 30px;
-  width: 100%;
-  z-index: 900;
-  background-color: #ffc244;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  transition: height 0.5s, background-color 0.5s, border-bottom 0.2s;
-}
-
-header.scrolled {
-  height: 75px;
-  background-color: #ffc244;
-  box-shadow: 0 0 10px 0 #5e5e5e;
-}
-
-header nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header nav div.sx-section {
-  padding: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-header nav div.sx-section img {
-  vertical-align: middle;
-  width: 200px;
-}
-
-header nav div.sx-section .ham-container {
-  cursor: pointer;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  overflow: visible;
-  margin-right: 20px;
-}
-
-header nav div.sx-section .ham-container .hamburger {
-  position: relative;
-  z-index: 950;
-  line-height: 30px;
-  height: 4px;
-  width: 30px;
-  background-color: white;
-  border: 0;
-  transition: background-color 0.5s;
-}
-
-header nav div.sx-section .ham-container .hamburger::before,
-header nav div.sx-section .ham-container .hamburger::after {
-  content: "";
-  height: 4px;
-  width: 30px;
-  background-color: white;
-  border: 0;
-  position: absolute;
-  left: 0;
-  transition: all 0.3s;
-}
-
-header nav div.sx-section .ham-container .hamburger::before {
-  top: -9px;
-}
-
-header nav div.sx-section .ham-container .hamburger::after {
-  bottom: -9px;
-}
-
-header nav div.sx-section .ham-container.active .hamburger {
-  background-color: transparent;
-}
-
-header nav div.sx-section .ham-container.active .hamburger::before,
-header nav div.sx-section .ham-container.active .hamburger::after {
-  width: 30px;
-  background-color: white;
-  left: 50%;
-}
-
-header nav div.sx-section .ham-container.active .hamburger::before {
-  top: 50%;
-  transform: translate(-50%, -50%) rotateZ(45deg);
-}
-
-header nav div.sx-section .ham-container.active .hamburger::after {
-  bottom: 50%;
-  transform: translate(-50%, 50%) rotateZ(-45deg);
-}
-
-header nav .menulist {
-  top: 0px;
-  left: -100%;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  z-index: 910;
-  font-weight: normal;
-  text-align: center;
-  padding-top: 50px;
-  margin-right: 0px;
-  margin-right: 10px;
-  -webkit-animation-name: bg-landing-rgb;
-          animation-name: bg-landing-rgb;
-  -webkit-animation-duration: 18s;
-          animation-duration: 18s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  transition: left 0.5s, visibility 0.5s, opacity 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-header nav .menulist.active {
-  left: 0%;
-  visibility: visible;
-  opacity: 1;
-}
-
-header nav .menulist li {
-  font-size: 25px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-header nav .menulist li:first-child a {
-  background-color: #ffaf53;
-  padding: 10px 50px;
-  border-radius: 3px;
-}
-
-header nav .menulist li a {
-  text-decoration: none;
-  color: #000000;
-}
-
 footer {
   width: 100%;
   background-color: black;
@@ -811,9 +659,9 @@ main.details {
 
 main.details .details-jumbotron {
   width: 100%;
-  height: 220px;
+  height: 250px;
   background-color: #ffc244;
-  padding: 20px 0 0px;
+  padding: 40px 0 0px;
 }
 
 main.details .details-jumbotron .jumbo-img {
@@ -889,7 +737,6 @@ main.details .restaurant-info #info-box h3:first-child {
   border-bottom: 1px solid lightgrey;
   cursor: pointer;
   padding: 5px;
-  width: 100%;
 }
 
 main.details .restaurant-info #info-box {
@@ -915,19 +762,19 @@ main.details .dishes-box h3 {
 
 main.details .dishes-box ul:not(.overview ul, .modal ul) {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   flex-basis: calc(100% / 3 * 2);
   margin: 0 -10px;
+  cursor: default;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
   flex-basis: calc(100% / 2 - 20px);
   height: 170px;
   margin: 0 10px 20px;
   padding: 15px;
   border-radius: 8px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -935,7 +782,7 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
   transition: box-shadow 0.3s;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .left-side {
   flex-basis: 50%;
   min-width: 150px;
   display: flex;
@@ -943,23 +790,23 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
   justify-content: space-between;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side .product-name {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .left-side .product-name {
   text-transform: capitalize;
   word-wrap: break-word;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .left-side .add span {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .left-side .add span {
   font-family: "Raleway", sans-serif;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-side {
   flex-basis: 50%;
   overflow: hidden;
   position: relative;
   margin-left: 10px;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side img {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-side img {
   min-width: 140px;
   width: 100%;
   height: 100%;
@@ -969,12 +816,12 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
      object-position: center;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li) .right-side .product-info-badge {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element .right-side .product-info-badge {
   text-align: center;
   width: 23px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 7px;
+  right: 7px;
   height: 23px;
   padding-top: 3px;
   margin: 10px 5px;
@@ -986,9 +833,10 @@ main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .m
   color: whitesmoke;
   text-transform: capitalize;
   cursor: pointer;
+  margin: 0;
 }
 
-main.details .dishes-box ul:not(.overview ul, .modal ul) li:not(.overview li, .modal li):hover {
+main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element:hover {
   box-shadow: 0px 22px 24px 0px rgba(0, 0, 0, 0.04);
 }
 
@@ -1002,6 +850,7 @@ main.details .dishes-box .green-btn {
   background-color: rgba(0, 172, 0, 0.178);
   text-align: center;
   overflow: hidden;
+  cursor: pointer;
   vertical-align: middle;
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -1184,11 +1033,11 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 @media screen and (max-width: 1350px) {
-  main.details .dishes-box ul:not(.overview ul) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) {
     flex-basis: calc(100% / 2);
   }
 
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
     flex-basis: calc(100% / 1 - 20px);
   }
 
@@ -1198,11 +1047,11 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 @media screen and (max-width: 991px) {
-  main.details .dishes-box ul:not(.overview ul) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) {
     flex-basis: calc(100% / 1);
   }
 
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
     flex-basis: calc(100% / 1 - 20px);
     height: 200px;
   }
@@ -1213,7 +1062,7 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
 }
 
 @media screen and (max-width: 767px) {
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul .modal ul) .dish-element {
     height: 170px;
   }
 }
@@ -1228,7 +1077,7 @@ main.details .dishes-box .overview .temp-cart .payment button:hover {
     justify-content: center;
   }
 
-  main.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.details .dishes-box ul:not(.overview ul, .modal ul) .dish-element {
     flex-basis: calc(100% / 1);
     margin: 0 0 20px;
   }
@@ -1251,13 +1100,17 @@ main.user.details .dishes-box ul:not(.overview ul) h3 {
   margin: 0 0 20px;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+main.user.details .dishes-box ul:not(.overview ul) .dish-element {
   flex-basis: calc(100% / 3 - 20px);
   cursor: default;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li).hide {
+main.user.details .dishes-box ul:not(.overview ul) .dish-element.hide {
   opacity: 0.6;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) .dish-element.no-opacity {
+  opacity: 1;
 }
 
 main.user.details .dishes-box ul:not(.overview ul) .info-badge {
@@ -1472,25 +1325,21 @@ main.user.details .orders-tab::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1350px) {
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     flex-basis: calc(100% / 2 - 20px);
   }
 }
 
 @media screen and (max-width: 991px) {
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     flex-basis: calc(100% / 1 - 20px);
     height: 200px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     height: 170px;
-  }
-
-  main.user.details #appChart {
-    margin: 0 20px 50px;
   }
 
   main.user.details .orders-tab {
@@ -1504,7 +1353,7 @@ main.user.details .orders-tab::-webkit-scrollbar-thumb {
     justify-content: center;
   }
 
-  main.user.details .dishes-box ul:not(.overview ul) li:not(.overview li) {
+  main.user.details .dishes-box ul:not(.overview ul) .dish-element {
     flex-basis: calc(100% / 1);
     margin: 0 0 20px;
   }
@@ -1528,149 +1377,6 @@ main.user.details .orders-tab::-webkit-scrollbar-thumb {
   main.user.details .orders-tab {
     margin: 0 auto 50px;
   }
-}
-
-header nav .center-section {
-  flex-basis: 300px;
-  text-align: center;
-  position: relative;
-}
-
-header nav .center-section .search-bar {
-  box-shadow: 0 2px 17px 0 #e19f17;
-  width: 80%;
-  height: 40px;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 20px;
-  padding: 5px 10px 5px 25px;
-  font-size: 1rem;
-  font-family: "Raleway", sans-serif;
-  text-align: center;
-  transition: width 0.5s;
-}
-
-header nav .center-section .search-bar:not(:-moz-placeholder-shown) {
-  width: 100%;
-}
-
-header nav .center-section .search-bar:not(:-ms-input-placeholder) {
-  width: 100%;
-}
-
-header nav .center-section .search-bar:not(:placeholder-shown) {
-  width: 100%;
-}
-
-header nav .center-section .search-bar:not(:-moz-placeholder-shown) + i {
-  left: 3%;
-}
-
-header nav .center-section .search-bar:not(:-ms-input-placeholder) + i {
-  left: 3%;
-}
-
-header nav .center-section .search-bar:not(:placeholder-shown) + i {
-  left: 3%;
-}
-
-header nav .center-section .search-bar::-moz-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #adadad;
-  opacity: 1;
-  /* Firefox */
-}
-
-header nav .center-section .search-bar:-ms-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #adadad;
-  opacity: 1;
-  /* Firefox */
-}
-
-header nav .center-section .search-bar::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #adadad;
-  opacity: 1;
-  /* Firefox */
-}
-
-header nav .center-section .search-bar:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #adadad;
-}
-
-header nav .center-section .search-bar::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #adadad;
-}
-
-header nav .center-section i {
-  color: #d4d4d4;
-  position: absolute;
-  z-index: 100;
-  font-size: 15px;
-  left: 37%;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: left 0.5s;
-  cursor: pointer;
-}
-
-header nav .rx-section {
-  flex-basis: 250px;
-  text-align: right;
-  position: relative;
-}
-
-header nav .rx-section i {
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-header nav .rx-section .user-popup {
-  text-align: left;
-  padding: 10px 15px;
-  position: absolute;
-  top: 115%;
-  right: 0px;
-  background-color: white;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 17px 0 #e19f17;
-  visibility: hidden;
-  opacity: 0;
-  width: 0px;
-  height: 0px;
-  transition: width 0.5s, height 0.5s, opacity 0.5s, visibility 0.5s;
-}
-
-header nav .rx-section .user-popup.active {
-  visibility: visible;
-  width: 100px;
-  height: 65px;
-  opacity: 1;
-}
-
-header nav .rx-section .user-popup li {
-  margin-bottom: 8px;
-}
-
-header nav .rx-section .user-popup li:last-of-type {
-  margin-bottom: 0;
-}
-
-header nav .rx-section .user-popup li a {
-  font-size: 15px;
-  font-weight: 600;
-  color: white;
-  font-family: "Raleway", sans-serif;
-  transition: color 1s;
-}
-
-header nav .rx-section .user-popup li a.active {
-  color: black;
 }
 
 main#profile {
@@ -1813,6 +1519,20 @@ main#profile .restaurant-container #restaurant-cards #edit-button {
   color: black;
 }
 
+@media screen and (min-width: 1588px) {
+  main#profile h1 {
+    margin: 120px auto 10px;
+  }
+
+  main#profile div.create-restaurant {
+    margin: 0 auto 20px;
+  }
+
+  main#profile .restaurant-container {
+    margin: 20px auto;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   main#profile .restaurant-container #restaurant-cards .crd {
     flex-basis: calc(100% / 2 - 20px);
@@ -1843,11 +1563,14 @@ main#profile .restaurant-container #restaurant-cards #edit-button {
 }
 
 main.create-restaurant div.container {
-  width: 75%;
-  margin: 30px auto;
-  border: 1px solid black;
+  width: 80%;
+  max-width: 1270px;
+  margin: 150px auto 50px;
   border-radius: 15px;
   background-color: white;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 main.create-restaurant div.container div.separation-content {
@@ -1856,19 +1579,32 @@ main.create-restaurant div.container div.separation-content {
 }
 
 main.create-restaurant div.container div.separation-content form {
-  width: 55%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main.create-restaurant div.container div.separation-content form ul {
+  padding-top: 20px;
 }
 
 main.create-restaurant div.container div.separation-content form ul li {
   padding: 10px 30px;
 }
 
+main.create-restaurant div.container div.separation-content form ul li h2 {
+  font-weight: normal;
+}
+
 main.create-restaurant div.container div.separation-content form ul li label {
   font-family: "Fredoka One", cursive;
+  font-weight: normal;
   font-size: 18px;
 }
 
 main.create-restaurant div.container div.separation-content form ul li .text {
+  font-family: "Raleway", sans-serif;
   font-size: 15px;
   width: 87%;
   margin-top: 5px;
@@ -1879,7 +1615,6 @@ main.create-restaurant div.container div.separation-content form ul li .text {
 }
 
 main.create-restaurant div.container div.separation-content form ul li textarea {
-  font-family: fantasy;
   box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
 }
 
@@ -1940,25 +1675,26 @@ main.create-restaurant div.container div.separation-content form ul li .containe
 main.create-restaurant div.container div.separation-content form ul li .container-categories .category .name-category {
   text-transform: capitalize;
   cursor: pointer;
+  margin-left: 3px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
 }
 
 main.create-restaurant div.container div.separation-content .logo-image {
-  width: 45%;
+  width: 50%;
   background-color: #FF5757;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
 }
 
 main.create-restaurant div.container div.separation-content .logo-image #logo-img {
-  width: 90%;
+  width: 100%;
   background-color: #FF5757;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
 }
 
 main.create-restaurant div.container .submit {
-  border-top: 2px solid grey;
-  padding: 15px 30PX;
+  padding: 20px 30px 30px;
 }
 
 main.create-restaurant div.container .submit .button-back {
@@ -2102,7 +1838,7 @@ main.create-restaurant div.container .submit .button-create:hover {
   }
 
   main.create-restaurant div.container .submit {
-    padding: 15px 10px 15px 10px;
+    padding: 15px 30px;
   }
 
   main.create-restaurant div.container .submit .button-create {
@@ -2143,6 +1879,12 @@ main.create-restaurant div.container .submit .button-create:hover {
   margin: auto;
 }
 
+.modal .modal-content #info-box h5,
+.modal .modal-content .info-box h5 {
+  font-size: 17px;
+  font-weight: normal;
+}
+
 .modal .modal-content #info-box h4,
 .modal .modal-content .info-box h4 {
   text-align: center;
@@ -2153,6 +1895,15 @@ main.create-restaurant div.container .submit .button-create:hover {
 .modal .modal-content .info-box li {
   margin-top: 10px;
   position: relative;
+}
+
+.modal .modal-content #info-box li h3,
+.modal .modal-content .info-box li h3 {
+  font-size: 28px;
+  text-transform: capitalize;
+  font-weight: normal;
+  margin: 5px 0;
+  padding: 0;
 }
 
 .modal .modal-content #info-box li label,
@@ -2294,21 +2045,29 @@ main.create-restaurant div.container .submit .button-create:hover {
 
 .modal .modal-content #info-box .box-visible,
 .modal .modal-content .info-box .box-visible {
-  width: 12%;
-  display: flex;
-  justify-content: space-between;
   margin-top: 5px;
 }
 
 .modal .modal-content #info-box .box-visible label,
 .modal .modal-content .info-box .box-visible label {
+  display: inline;
+  margin-right: 0;
+  font-weight: normal;
+  font-size: 16px !important;
+}
+
+.modal .modal-content #info-box .box-visible label:last-of-type,
+.modal .modal-content .info-box .box-visible label:last-of-type {
   margin-left: 10px;
 }
 
 .modal .modal-content #info-box .box-visible input,
 .modal .modal-content .info-box .box-visible input {
-  width: 50px;
+  width: 20px;
   height: 18px;
+  border: 0;
+  box-shadow: none;
+  vertical-align: bottom;
 }
 
 .modal.active {
@@ -2325,6 +2084,7 @@ main.create-restaurant div.container .submit .button-create:hover {
 }
 
 .modal {
+  cursor: auto;
   display: none;
   position: fixed;
   z-index: 10;
@@ -2341,33 +2101,49 @@ main.create-restaurant div.container .submit .button-create:hover {
   position: relative;
   z-index: 80;
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 130px auto 30px;
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
-  transition: 0.3s ease-in-out;
-  -webkit-animation: modal-fade-in 1s ease-in-out;
-          animation: modal-fade-in 1s ease-in-out;
+  -webkit-animation: modal-fade-in 0.3s ease-in-out;
+          animation: modal-fade-in 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.modal h3 {
+  border-bottom: 1px solid lightgrey;
 }
 
 .modal .close {
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
   font-weight: bold;
+  width: 30px;
+  transition: color 0.5s;
+  cursor: pointer;
 }
 
 .modal .close:hover,
 .modal .close:focus {
   color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .product-details .modal-content {
   width: 50%;
   position: relative;
   top: 25px;
+}
+
+.product-details .modal-content .info-box ul li h3 {
+  padding-bottom: 10px;
+}
+
+.product-details .modal-content .info-box ul li h5 {
+  margin: 10px 0 5px;
 }
 
 @media screen and (max-width: 991px) {
@@ -2559,7 +2335,7 @@ header {
   padding: 10px 30px;
   width: 100%;
   z-index: 900;
-  background-color: #ffc244;
+  background-color: transparent;
   position: fixed;
   display: flex;
   align-items: center;
@@ -2704,6 +2480,153 @@ header nav .menulist li:first-child a {
 header nav .menulist li a {
   text-decoration: none;
   color: #000000;
+}
+
+header.orange {
+  background-color: #ffc244;
+}
+
+header nav .center-section {
+  flex-basis: 300px;
+  text-align: center;
+  position: relative;
+}
+
+header nav .center-section .search-bar {
+  box-shadow: 0 2px 17px 0 #e19f17;
+  width: 80%;
+  height: 40px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 5px 10px 5px 25px;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  transition: width 0.5s;
+}
+
+header nav .center-section .search-bar:not(:-moz-placeholder-shown) {
+  width: 100%;
+}
+
+header nav .center-section .search-bar:not(:-ms-input-placeholder) {
+  width: 100%;
+}
+
+header nav .center-section .search-bar:not(:placeholder-shown) {
+  width: 100%;
+}
+
+header nav .center-section .search-bar:not(:-moz-placeholder-shown) + i {
+  left: 3%;
+}
+
+header nav .center-section .search-bar:not(:-ms-input-placeholder) + i {
+  left: 3%;
+}
+
+header nav .center-section .search-bar:not(:placeholder-shown) + i {
+  left: 3%;
+}
+
+header nav .center-section .search-bar::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #adadad;
+  opacity: 1;
+  /* Firefox */
+}
+
+header nav .center-section .search-bar:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #adadad;
+  opacity: 1;
+  /* Firefox */
+}
+
+header nav .center-section .search-bar::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #adadad;
+  opacity: 1;
+  /* Firefox */
+}
+
+header nav .center-section .search-bar:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #adadad;
+}
+
+header nav .center-section .search-bar::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #adadad;
+}
+
+header nav .center-section i {
+  color: #d4d4d4;
+  position: absolute;
+  z-index: 100;
+  font-size: 15px;
+  left: 37%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.5s;
+  cursor: pointer;
+}
+
+header nav .rx-section {
+  flex-basis: 250px;
+  text-align: right;
+  position: relative;
+}
+
+header nav .rx-section i {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+header nav .rx-section .user-popup {
+  text-align: left;
+  padding: 10px 15px;
+  position: absolute;
+  top: 115%;
+  right: 0px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 17px 0 #e19f17;
+  visibility: hidden;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  transition: width 0.5s, height 0.5s, opacity 0.5s, visibility 0.5s;
+}
+
+header nav .rx-section .user-popup.active {
+  visibility: visible;
+  width: 100px;
+  height: 65px;
+  opacity: 1;
+}
+
+header nav .rx-section .user-popup li {
+  margin-bottom: 8px;
+}
+
+header nav .rx-section .user-popup li:last-of-type {
+  margin-bottom: 0;
+}
+
+header nav .rx-section .user-popup li a {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  transition: color 1s;
+}
+
+header nav .rx-section .user-popup li a.active {
+  color: black;
 }
 
 * {
@@ -3618,7 +3541,7 @@ main.pay-order form #box-left .container {
 
 main.pay-order form #box-left .container h2 {
   font-family: "Segoe UI";
-  font-size: 40px;
+  font-size: 32px;
   color: #303030;
   padding: 10px 0;
 }

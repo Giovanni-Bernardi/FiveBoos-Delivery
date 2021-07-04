@@ -147,7 +147,6 @@ class AdminController extends Controller
             'ingredients' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|integer',
-            'visible' => 'required|boolean',
         ]);
 
         $product = Product::findorFail($id);
@@ -206,7 +205,7 @@ class AdminController extends Controller
 
     public function restaurantDetailsProfileView($restaurantId){
         $restaurantId = Crypt::decrypt($restaurantId);
-        $restaurant = Restaurant::findOrFail($restaurantId );
+        $restaurant = Restaurant::findOrFail($restaurantId);
         $categories = Category::all();
         $orders = Order::select('orders.id' ,'orders.total_price', 'orders.delivery_date', 'orders.payment_status')
         -> groupBy('orders.id')

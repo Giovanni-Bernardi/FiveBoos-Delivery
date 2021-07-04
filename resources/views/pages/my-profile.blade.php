@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 
-@include('components.header')
+@include('components.search-header')
 
 @section ('content')
 <main id="profile">

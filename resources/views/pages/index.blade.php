@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @include('components.header')
-@include('components.preloader')
+{{-- @include('components.preloader') --}}
 
 @section('content')
 <main>

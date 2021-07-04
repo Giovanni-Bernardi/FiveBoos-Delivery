@@ -84,9 +84,7 @@ class PaymentController extends Controller
             'email' => 'required|string',
             'address' => 'required|string',
             'telephone' => 'required|string',
-            // 'delivery_date' => 'required|date',
             'delivery_time' => 'required|string',
-            // 'total_price' => 'required|numeric',
         ]);
         
         $order = Order::make($validate);
@@ -101,7 +99,9 @@ class PaymentController extends Controller
 
         // $amount = $request -> amount;
         // Amount adesso viene passato dalla session (input non necessario)
-        $amount = session('total_price')[0];
+        $partialAmount = session('total_price')[0]; 
+        $amount = number_format($partialAmount = floatval($partialAmount / 100), 2);
+        // number_format($prezzo = (floatval($product['price'] / 100 )), 2)
         $nonce = $request -> payment_method_nonce;
 
         $result = $gateway->transaction()->sale([
@@ -124,7 +124,6 @@ class PaymentController extends Controller
             ],
             'options' => ['submitForSettlement' => true]
         ]);
-        // dd($result);
 
         // Situazione di successo
         if ($result->success) {

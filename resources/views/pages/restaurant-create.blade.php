@@ -1,6 +1,8 @@
 @extends('layouts.main-layout')
-@section('content')
 
+@include('components.search-header')
+
+@section('content')
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -26,43 +28,43 @@
                         <h2>Crea il tuo ristorante</h2>
                     </li>
                     <li>
-                        <label>Nome del ristorante</label>
+                        <label>Nome</label>
                         <div class="">
-                            <input type="text" class="text" name="business_name" required>
+                            <input type="text" placeholder="Nome del tuo ristorante" maxlength="50" class="text" name="business_name" required>
                         </div>
                     </li>
                     <li>
                         <label>Partita IVA</label>
                         <div class="">
-                            <input type="number" class="text" name="piva" required>
+                            <input type="text" placeholder="IT12345678900" maxlength="13" class="text" name="piva" required>
                         </div>
                     </li>
                     <li>
                         <label>Indirizzo</label>
                         <div class="">
-                            <input type="text" class="text" name="address" required>
+                            <input type="text" maxlength="128" placeholder="Inserisci l'indirizzo" class="text" name="address" required>
                         </div>
                     </li>
                     <li>
                         <label>Descrizione</label>
                         <div class="">
-                            <textarea spellcheck="false" rows="4" name="description" class="text" required></textarea>
+                            <textarea spellcheck="false" rows="4" name="description" class="text" placeholder="Inserisci una descrizione" required></textarea>
                         </div>
                     </li>
                     <li>
                         <label>Telefono</label>
                         <div class="">
-                            <input type="text" class="text" name="telephone" required>
+                            <input type="text" class="text" name="telephone" maxlength="30" required placeholder="+39 0308000000">
                         </div>
                     </li>
                     <li>
-                        <label>Imagine del ristorante</label>
+                        <label>Immagine di copertina</label>
                         <div class="">
                             <input type="file" class="text" name="img">
                         </div>
                     </li>
                     <li>
-                        <label>Categorie</label>
+                        <label>Categorie (min. 1, max. 3)</label>
                         <div class="container-categories">
                             @foreach ($categories as $category)
                                 <div class="category">
@@ -77,7 +79,7 @@
                     </li>
                 </ul>
                 <div class="submit">
-                    <a class="button-back" href='{{ route('restaurantProfileViewLink')}}'>Lista ristoranti</a>
+                    <a class="button-back" href='{{ route('restaurantProfileViewLink')}}'>Indietro</a>
                     <button class="button-create" type="submit" class="btn btn-primary" form="new-restaurant">Crea Ristorante</button>
                 </div>
             </form>

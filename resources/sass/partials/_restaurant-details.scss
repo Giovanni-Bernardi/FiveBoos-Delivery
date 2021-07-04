@@ -3,9 +3,9 @@ main.details {
     // overflow: hidden; non toccare (problemi con sticky posotion carrello)
     .details-jumbotron {
         width: 100%;
-        height: 220px;
+        height: 250px;
         background-color: #ffc244;
-        padding: 20px 0 0px;
+        padding: 40px 0 0px;
 
         .jumbo-img{
             height: 100%;
@@ -67,7 +67,6 @@ main.details {
                 border-bottom: 1px solid lightgrey;
                 cursor: pointer;
                 padding: 5px;
-                width: 100%;
             }
 
         }
@@ -96,18 +95,18 @@ main.details {
         }
         ul:not(.overview ul, .modal ul){
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             flex-wrap: wrap;
             flex-basis: calc(100% / 3 * 2);
             margin:0 -10px ;
-            li:not(.overview li, .modal li) {
+            cursor: default;
+            .dish-element {
                 flex-basis: calc(100% / 2 - 20px);
                 // min-width: 320px;
                 height: 170px;
                 margin: 0 10px 20px;
                 padding: 15px;
                 border-radius: 8px;
-                cursor: pointer;
                 display: flex;
                 justify-content: space-between;
                 background-color: white;
@@ -146,9 +145,10 @@ main.details {
                         text-align: center;
                         width: 23px;
                         position: absolute;
-                        top: 10px;
-                        right: 10px;
+                        top: 7px;
+                        right:7px;
                         @include info-details;
+                        margin: 0;
                     }
                 }
 
@@ -170,6 +170,7 @@ main.details {
             background-color: rgba(0, 172, 0, 0.178);
             text-align: center;
             overflow: hidden;
+            cursor: pointer;
             vertical-align: middle;
             transition: background-color .3s, transform .3s;
             i{
@@ -343,9 +344,9 @@ main.details {
         }
         .dishes-box{
             margin: 120px auto 50px;
-            ul:not(.overview ul){
+            ul:not(.overview ul, .modal ul){
                 // flex-basis: calc(100% / 2);
-                li:not(.overview li) {
+                .dish-element {
                     // flex-basis: calc(100% / 1 - 20px);
                 }
             }
@@ -357,9 +358,9 @@ main.details {
 @media screen and (max-width: 1350px) {
     main.details {
         .dishes-box{
-            ul:not(.overview ul){
+            ul:not(.overview ul, .modal ul){
                 flex-basis: calc(100% / 2);
-                li:not(.overview li) {
+                .dish-element {
                     flex-basis: calc(100% / 1 - 20px);
                 }
             }
@@ -375,9 +376,9 @@ main.details {
 @media screen and (max-width: 991px) {
     main.details {
         .dishes-box{
-            ul:not(.overview ul){
+            ul:not(.overview ul, .modal ul){
                 flex-basis: calc(100% / 1);
-                li:not(.overview li) {
+                .dish-element {
                     flex-basis: calc(100% / 1 - 20px);
                     height: 200px;
                 }
@@ -393,8 +394,8 @@ main.details {
 @media screen and (max-width: 767px) {
     main.details {
         .dishes-box{
-            ul:not(.overview ul){
-                li:not(.overview li) {
+            ul:not(.overview ul .modal ul){
+                .dish-element {
                     height: 170px;
                 }
             }
@@ -413,8 +414,8 @@ main.details {
         .dishes-box{
             margin: 120px 20px 50px;
             justify-content: center;
-            ul:not(.overview ul){
-                li:not(.overview li) {
+            ul:not(.overview ul, .modal ul){
+                .dish-element {
                     flex-basis: calc(100% / 1);
                     margin: 0 0 20px;
                 }

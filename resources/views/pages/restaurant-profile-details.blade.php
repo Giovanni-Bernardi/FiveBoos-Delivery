@@ -30,53 +30,53 @@
                                     <div class="title-card">
                                         <img src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
                                         <h4>
-                                            Modifica il tuo ristorante: '{{$restaurant -> business_name}}'
+                                            Modifica '{{$restaurant -> business_name}}'
                                         </h4>
                                     </div>
                                     <ul>
 
                                         <li>
-                                            <label for="business_name"> Nome del ristorante:</label>
-                                            <input type="text" name="business_name" value="{{$restaurant -> business_name}}">
+                                            <label for="business_name"> Nome:</label>
+                                            <input type="text" name="business_name" required value="{{$restaurant -> business_name}}">
                                         </li>
                                         <li>
                                             <label for="address">
                                                 Indirizzo:
                                             </label>
-                                            <textarea name="address" cols="50" rows="2">{{$restaurant -> address}}</textarea>
+                                            <textarea name="address" required spellcheck="false" cols="50" rows="2">{{$restaurant -> address}}</textarea>
                                         </li>
 
                                         <li>
                                             <label for="piva">
                                                 P-IVA:
                                             </label>
-                                            <input type="text" name="piva" value="{{$restaurant -> piva}}">
+                                            <input type="text" name="piva" required value="{{$restaurant -> piva}}">
                                         </li>
 
                                         <li>
                                             <label for="telephone">
                                                 Recapito telefonico:
                                             </label>
-                                            <input type="text" name="telephone" value="{{$restaurant -> telephone}}">
+                                            <input type="text" name="telephone" required value="{{$restaurant -> telephone}}">
                                         </li>
 
                                         <li>
                                             <label for="description">
                                                 Descrizione:
                                             </label>
-                                            <textarea name="description" cols="50" rows="7">{{$restaurant -> description}}</textarea>
+                                            <textarea name="description" cols="50" spellcheck="false" rows="7">{{$restaurant -> description}}</textarea>
                                         </li>
 
                                         <li>
                                             <label for="img">
-                                                Immagine ristorante:
+                                                Immagine principale:
                                                 <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px">
                                             </label>
                                             <input type="file" name="img">
                                         </li>
 
                                         <li>
-                                            <label>Categorie:</label>
+                                            <label>Categorie (min. 1, max. 3):</label>
                                             <div>
                                                 <ul class="category-box">
                                                     @foreach ($categories as $category)
@@ -98,11 +98,9 @@
                                                 </ul>
                                             </div>
                                         </li>
-
                                         <li>
                                             <button type="submit">Salva le modifiche</button>
                                         </li>
-
                                     </ul>
                                 </form>
                             </div>
@@ -117,92 +115,101 @@
                     <ul>
                         @foreach ($restaurant -> products as $product)
                             
-                        <li class="@if(!$product -> visible) hide @endif">
+                        <li class="dish-element @if(!$product -> visible) hide @endif">
                             <div class="left-side">
                                 <h3 class="product-name">{{$product -> name}}</h3>
                                 <div class="add">
-                                    <span class="prduct-price">&euro; {{$product -> price}},00</span>
+                                    <span class="prduct-price">&euro; {{number_format($prezzo = (floatval($product -> price / 100 )), 2)}}</span>
                                 </div>
-                                <div class="right-side">
-                                    <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
-                                    <div class="info-badge" @click="popupDetails({{$product -> id}})">
-                                        <i class="fas fa-cog" ></i>
-                                    </div>
-                                <div class="modal product-edit" :class="btnID == {{$product -> id}} ? 'active' : ''">
-                                        <div class="modal-content" >
-                                            <span class="close" @click="closePopup">&times;</span>
-                                            <div class="info-box">
-                                                <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data" >
-                                                    @method('POST')
-                                                    @csrf
-                                                    <div class="title-card">
-                                                        <img id="img-edit-product" class="img-edit" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
-                                                        <h4> Modifica {{$product -> name}}  </h4>
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            <label for="name">
-                                                                Nome piatto:
-                                                            </label>
-                                                            <input type="text" name="name" value="{{$product -> name}}">
-                                                        </li>
+                            </div>
+                            <div class="right-side">
+                                <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
 
-                                                        <li>
-                                                            <label for="ingredients">
-                                                                Ingredienti:
-                                                            </label>
-                                                            <textarea name="ingredients" cols="40" rows="5">{{$product -> ingredients}}</textarea>
-                                                        </li>
+                                <div class="info-badge edit-product" @click="popupDetails({{$product -> id}})">
+                                    <i class="fas fa-cog" ></i>
+                                </div>
 
-                                                        <li>
-                                                            <label for="description">
-                                                                Descrizione:
-                                                            </label>
-                                                            <textarea name="description" cols="40" rows="5">{{$product -> description}}</textarea>
-                                                        </li>
-
-                                                        <li>
-                                                            <label for="price">
-                                                                Prezzo:
-                                                            </label>
-                                                            <input type="text" name="price" value="{{$product -> price}}">
-                                                        </li>
-
-                                                        <li>
-                                                            <label for="img">
-                                                                Immagine del piatto:
-                                                            </label>
-                                                            <input type="file" name="img" value="{{$product -> img}}">
-                                                        </li>
-
-                                                        <li>
-
-                                                            <label for="visible">
-                                                                Visibile:
-                                                            </label>
-                                                            <div class="box-visible">
-                                                                <label for="1">Si</label>
-                                                                <input type="radio" name="visible" value="1" @if($product -> visible) checked @endif>
-                                                            </div>
-                                                            <div class="box-visible">
-                                                                <label for="0">No</label>
-                                                                <input type="radio" name="visible" value="0" @if(!($product -> visible)) checked @endif>
-                                                            </div>
-
-                                                        </li>
-
-                                                        <li>
-                                                            <button type="submit">Salva le modifiche</button>
-                                                        </li>
-                                                    </ul>
-                                                </form>
+                                <div class="info-badge hide-product">
+                                    <a href="{{route('deleteProductLink', $product -> id)}}">
+                                        @if ($product -> visible)
+                                            <i class="fas fa-eye"></i>
+                                        @else
+                                            <i class="fas fa-eye-slash"></i>
+                                        @endif
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="modal product-edit" :class="btnID == {{$product -> id}} ? 'active' : ''">
+                                <div class="modal-content" >
+                                    <span class="close" @click="closePopup">&times;</span>
+                                    <div class="info-box">
+                                        <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data" >
+                                            @method('POST')
+                                            @csrf
+                                            <div class="title-card">
+                                                <img id="img-edit-product" class="img-edit" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
+                                                <h4> Modifica {{$product -> name}}  </h4>
                                             </div>
-                                        </div>
+                                            <ul>
+                                                <li>
+                                                    <label for="name">
+                                                        Nome piatto:
+                                                    </label>
+                                                    <input type="text" name="name" value="{{$product -> name}}">
+                                                </li>
+
+                                                <li>
+                                                    <label for="ingredients">
+                                                        Ingredienti:
+                                                    </label>
+                                                    <textarea name="ingredients" spellcheck="false" cols="40" rows="5">{{$product -> ingredients}}</textarea>
+                                                </li>
+
+                                                <li>
+                                                    <label for="description">
+                                                        Descrizione:
+                                                    </label>
+                                                    <textarea name="description" spellcheck="false" cols="40" rows="5">{{$product -> description}}</textarea>
+                                                </li>
+
+                                                <li>
+                                                    <label for="price">
+                                                        Prezzo (in centesimi):
+                                                    </label>
+                                                    <input type="text" name="price" value="{{$product -> price}}">
+                                                </li>
+
+                                                <li>
+                                                    <label for="img">
+                                                        Immagine del piatto:
+                                                    </label>
+                                                    <input type="file" name="img" value="{{$product -> img}}">
+                                                </li>
+
+                                                {{-- <li>
+                                                    <label for="visible">
+                                                        Visibile:
+                                                    </label>
+                                                    <div class="box-visible">
+                                                        <label for="1">Si</label>
+                                                        <input type="radio" name="visible" value="1" @if($product -> visible) checked @endif>
+
+                                                        <label for="0">No</label>
+                                                        <input type="radio" name="visible" value="0" @if(!($product -> visible)) checked @endif>
+                                                    </div>
+                                                </li> --}}
+
+                                                <li>
+                                                    <button type="submit">Salva le modifiche</button>
+                                                </li>
+                                            </ul>
+                                        </form>
                                     </div>
                                 </div>
-                            </li>
+                            </div>
+                        </li>
                         @endforeach
-                        <li id="new-product" class="new-product">
+                        <li id="new-product" class="new-product dish-element">
                             <div class="add-new" @click="popupCreate">
                                 <i class="fas fa-plus"></i>
                             </div>
@@ -227,7 +234,7 @@
                                                 <label for="ingredients">
                                                     Ingredienti:
                                                 </label>
-                                                <textarea name="ingredients" id="" cols="30" rows="10" placeholder="Inserisci qui gli ingredienti" required > </textarea>
+                                                <textarea name="ingredients" id="" spellcheck="false" cols="30" rows="10" placeholder="Inserisci qui gli ingredienti" required > </textarea>
                                             </p>
                                             <p>
                                                 <label for="description">
@@ -237,9 +244,9 @@
                                             </p>
                                             <p>
                                                 <label for="price">
-                                                    Prezzo
+                                                    Prezzo (in centesimi):
                                                 </label>
-                                                <input type="number" name="price" placeholder="mille lire" required>
+                                                <input type="number" name="price" placeholder="prezzo" required>
                                             </p>
                                             <p>
                                                 <label>Categorie</label>

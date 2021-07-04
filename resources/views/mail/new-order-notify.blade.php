@@ -186,7 +186,7 @@
                     </div>
 
                     <div id="table-part-right">
-                        <h4 class="color-white">QTA</h4>
+                        <h4 class="color-white">Q.TA</h4>
                         <h4 class="color-white">PREZZO</h4>
                         <h4 class="color-white">TOTALE</h4>
                     </div>
@@ -212,6 +212,10 @@
                             $plates[count($plates) - 1] ['count'] = 1;
                         }
                     }
+
+                    // number_format($prezzo = (floatval($plate['price'] / 100 )), 2);
+
+                    // $final_price = number_format($totale = (floatval($total_price / 100), 2));
                 @endphp
                 <div>
                     @foreach ($plates as $plate)
@@ -223,8 +227,10 @@
 
                             <div id="table-products-right">
                                 <p class="product">{{$plate ['count']}}</p>
-                                <p class="product">{{$plate ['price']}} €</p>
-                                <p class="product">{{$plate ['price'] * $plate ['count']}} €</p>
+                                {{-- {{number_format($prezzo = (floatval($product -> price / 100 )), 2)}} --}}
+                                <p class="product">{{number_format($prezzo = (floatval($plate['price'] / 100 )), 2)}} &euro;</p>
+                                <p class="product">{{number_format($prezzo = (floatval($plate['price'] / 100 * $plate ['count'])), 2)}} &euro;</p>
+                                {{-- <p class="product">{{$price * $plate ['count']}} &euro;</p> --}}
                             </div>
 
                         </div>
@@ -232,7 +238,7 @@
                 </div>
 
                 <div id="total-price">
-                    <h2>TOTALE: <strong>{{$order -> total_price}} €</strong></h2>
+                    <h2>TOTALE: <strong>{{number_format($prezzo = (floatval($order -> total_price / 100 )), 2)}} &euro;</strong></h2>
                 </div>
             </div>
         </div>

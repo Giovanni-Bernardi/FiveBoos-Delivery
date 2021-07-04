@@ -126,7 +126,24 @@ main#profile {
 }
 
 
-// --- Media query soto i 1350px Speciale ---
+// --- Media query sotto i 1350px Speciale ---
+@media screen and (min-width: 1588px) {
+    main#profile {
+        h1{
+            margin: 120px auto 10px;
+        }
+    
+        div.create-restaurant{
+            margin: 0 auto 20px;
+        }
+        .restaurant-container {
+            margin: 20px auto;
+        }
+    }
+}
+
+
+// --- Media query sotto i 1350px Speciale ---
 @media screen and (max-width: 1350px) {
     main#profile {
         .restaurant-container {

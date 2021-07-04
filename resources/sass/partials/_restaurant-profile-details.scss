@@ -7,9 +7,12 @@ main.user.details{
             h3{
                 margin: 0 0 20px;
             }
-            li:not(.overview li) {
+            .dish-element {
                 &.hide{
-                    opacity: .6;
+                    opacity: 0.6;
+                }
+                &.no-opacity{
+                    opacity: 1;
                 }
                 flex-basis: calc(100% / 3 - 20px);
                 cursor: default;
@@ -230,7 +233,7 @@ main.user.details{
     main.user.details {
         .dishes-box{
             ul:not(.overview ul){
-                li:not(.overview li) {
+                .dish-element {
                     flex-basis: calc(100% / 2 - 20px);
                 }
             }
@@ -244,7 +247,7 @@ main.user.details{
     main.user.details {
         .dishes-box{
             ul:not(.overview ul){
-                li:not(.overview li) {
+                .dish-element {
                     flex-basis: calc(100% / 1 - 20px);
                     height: 200px;
                 }
@@ -258,13 +261,10 @@ main.user.details{
     main.user.details {
         .dishes-box{
             ul:not(.overview ul){
-                li:not(.overview li) {
+                .dish-element {
                     height: 170px;
                 }
             }
-        }
-        #appChart{
-            margin: 0 20px 50px;
         }
         .orders-tab{
             height: 400px;
@@ -279,7 +279,7 @@ main.user.details{
             margin: 120px 20px 50px;
             justify-content: center;
             ul:not(.overview ul){
-                li:not(.overview li) {
+                .dish-element {
                     flex-basis: calc(100% / 1);
                     margin: 0 0 20px;
                 }

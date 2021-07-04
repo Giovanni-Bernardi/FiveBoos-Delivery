@@ -1,30 +1,40 @@
 main.create-restaurant{
 
     div.container{
-        width: 75%;
-        margin: 30px auto;
-        border: 1px solid black;
+        width: 80%;
+        max-width: 1270px;
+        margin: 150px auto 50px;
+        // border: 1px solid black;
         border-radius: 15px;
         background-color: white;
-
+        box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        overflow: hidden;
         div.separation-content{
             display: flex;
             justify-content: space-between;
 
             form{
-                width: 55%;
-
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 ul{
-
+                    padding-top: 20px;
                     li{
                         padding: 10px 30px;
 
+                        h2{
+                            font-weight: normal;
+                        }
                         label{
                             font-family: "Fredoka One", cursive;
+                            font-weight: normal;
                             font-size: 18px;
                         }
 
                         .text{
+                            font-family: "Raleway", sans-serif;
                             font-size: 15px;
                             width: 87%;
                             margin-top: 5px;
@@ -35,7 +45,6 @@ main.create-restaurant{
                         }
 
                         textarea{
-                            font-family: fantasy;
                             box-shadow: 0px 0px 3px 0px rgba(34, 60, 80, 0.2);
                         }
                         .container-categories{
@@ -93,6 +102,12 @@ main.create-restaurant{
                                 .name-category{
                                     text-transform: capitalize;
                                     cursor: pointer;
+                                    margin-left: 3px;
+                                    -moz-user-select: none;
+                                    -webkit-user-select: none;
+                                    -ms-user-select:none;
+                                    user-select:none;
+                                    -o-user-select:none;
                                 }
                             }
                         }
@@ -101,23 +116,17 @@ main.create-restaurant{
             }
 
             .logo-image{
-                width: 45%;
+                width: 50%;
                 background-color: #FF5757;
-                border-top-left-radius: 15px;
-                border-bottom-left-radius: 15px;
-
                 #logo-img{
-                    width: 90%;
+                    width: 100%;
                     background-color: #FF5757;
-                    border-top-left-radius: 15px;
-                    border-bottom-left-radius: 15px;
                 }
             }
         }
 
         .submit{
-            border-top: 2px solid grey;
-            padding: 15px 30PX;
+            padding: 20px 30px 30px;
 
             .button-back{
                 font-family: 'Raleway', sans-serif;
@@ -309,7 +318,7 @@ main.create-restaurant{
             }
 
             .submit{
-                padding: 15px 10px 15px 10px;
+                padding: 15px 30px;
 
                 .button-create{
 
