@@ -114,87 +114,95 @@
                     </h3>
                     <ul>
                         @foreach ($restaurant -> products as $product)
-
-                        <li class="dish-element @if(!$product -> visible) hide @endif">
-                            <div class="left-side">
-                                <h3 class="product-name">{{$product -> name}}</h3>
-                                <div class="add">
-                                    <span class="prduct-price">&euro; {{number_format($prezzo = (floatval($product -> price / 100 )), 2)}}</span>
-                                </div>
-                            </div>
-                            <div class="right-side">
-                                <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
-
-                                <div class="info-badge edit-product" @click="popupDetails({{$product -> id}})">
-                                    <i class="fas fa-cog" ></i>
-                                </div>
-
-                                <div class="info-badge hide-product">
-                                    <a href="{{route('deleteProductLink', $product -> id)}}">
-                                        @if ($product -> visible)
-                                            <i class="fas fa-eye"></i>
-                                        @else
-                                            <i class="fas fa-eye-slash"></i>
-                                        @endif
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="modal product-edit" :class="btnID == {{$product -> id}} ? 'active' : ''">
-                                <div class="modal-content" >
-                                    <span class="close" @click="closePopup">&times;</span>
-                                    <div class="info-box">
-                                        <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data" >
-                                            @method('POST')
-                                            @csrf
-                                            <div class="title-card">
-                                                <img id="img-edit-product" class="img-edit" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
-                                                <h4> Modifica {{$product -> name}}  </h4>
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <label for="name">
-                                                        Nome piatto:
-                                                    </label>
-                                                    <input type="text" name="name" value="{{$product -> name}}">
-                                                </li>
-
-                                                <li>
-                                                    <label for="ingredients">
-                                                        Ingredienti:
-                                                    </label>
-                                                    <textarea name="ingredients" spellcheck="false" cols="40" rows="5">{{$product -> ingredients}}</textarea>
-                                                </li>
-
-                                                <li>
-                                                    <label for="description">
-                                                        Descrizione:
-                                                    </label>
-                                                    <textarea name="description" spellcheck="false" cols="40" rows="5">{{$product -> description}}</textarea>
-                                                </li>
-
-                                                <li>
-                                                    <label for="price">
-                                                        Prezzo (in centesimi):
-                                                    </label>
-                                                    <input type="text" name="price" value="{{$product -> price}}">
-                                                </li>
-
-                                                <li>
-                                                    <label for="img">
-                                                        Immagine del piatto:
-                                                    </label>
-                                                    <input type="file" name="img" value="{{$product -> img}}">
-                                                </li>
-
-                                                <li>
-                                                    <button type="submit">Salva le modifiche</button>
-                                                </li>
-                                            </ul>
-                                        </form>
+                            @if (!$product -> deleted)
+                                <li class="dish-element @if(!$product -> visible) hide @endif">
+                                    <div class="left-side">
+                                        <h3 class="product-name">{{$product -> name}}</h3>
+                                        <div class="add">
+                                            <span class="prduct-price">&euro; {{number_format($prezzo = (floatval($product -> price / 100 )), 2)}}</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
+                                    <div class="right-side">
+                                        <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+        
+                                        <div class="info-badge edit-product" @click="popupDetails({{$product -> id}})">
+                                            <i class="fas fa-cog" ></i>
+                                        </div>
+        
+                                        <div class="info-badge hide-product">
+                                            <a href="{{route('deleteProductLink', $product -> id)}}">
+                                                @if ($product -> visible)
+                                                    <i class="fas fa-eye"></i>
+                                                @else
+                                                    <i class="fas fa-eye-slash"></i>
+                                                @endif
+                                            </a>
+                                        </div>
+                                        <div class="info-badge delete-product">
+                                            <a href="{{route('realDeleteProductLink', $product -> id)}}"
+                                            >
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal product-edit" :class="btnID == {{$product -> id}} ? 'active' : ''">
+                                        <div class="modal-content" >
+                                            <span class="close" @click="closePopup">&times;</span>
+                                            <div class="info-box">
+                                                <form  method="POST" action="{{route('updateProductViewLink', $product -> id)}}" enctype="multipart/form-data" >
+                                                    @method('POST')
+                                                    @csrf
+                                                    <div class="title-card">
+                                                        <img id="img-edit-product" class="img-edit" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
+                                                        <h4> Modifica {{$product -> name}}  </h4>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <label for="name">
+                                                                Nome piatto:
+                                                            </label>
+                                                            <input type="text" name="name" value="{{$product -> name}}">
+                                                        </li>
+        
+                                                        <li>
+                                                            <label for="ingredients">
+                                                                Ingredienti:
+                                                            </label>
+                                                            <textarea name="ingredients" spellcheck="false" cols="40" rows="5">{{$product -> ingredients}}</textarea>
+                                                        </li>
+        
+                                                        <li>
+                                                            <label for="description">
+                                                                Descrizione:
+                                                            </label>
+                                                            <textarea name="description" spellcheck="false" cols="40" rows="5">{{$product -> description}}</textarea>
+                                                        </li>
+        
+                                                        <li>
+                                                            <label for="price">
+                                                                Prezzo (in centesimi):
+                                                            </label>
+                                                            <input type="text" name="price" value="{{$product -> price}}">
+                                                        </li>
+        
+                                                        <li>
+                                                            <label for="img">
+                                                                Immagine del piatto:
+                                                            </label>
+                                                            <input type="file" name="img" value="{{$product -> img}}">
+                                                        </li>
+        
+                                                        <li>
+                                                            <button type="submit">Salva le modifiche</button>
+                                                        </li>
+                                                    </ul>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            @endif
                         @endforeach
                         <li id="new-product" class="new-product dish-element">
                             <div class="add-new" @click="popupCreate">

@@ -1140,7 +1140,11 @@ main.user.details .dishes-box ul:not(.overview ul) .info-badge.hide-product {
   top: 22px;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) .info-badge.hide-product a {
+main.user.details .dishes-box ul:not(.overview ul) .info-badge.delete-product {
+  bottom: -5px;
+}
+
+main.user.details .dishes-box ul:not(.overview ul) .info-badge a {
   display: inline-block;
   height: 100%;
   width: 100%;
