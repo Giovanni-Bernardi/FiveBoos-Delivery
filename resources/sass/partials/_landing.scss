@@ -59,8 +59,10 @@
             position: absolute;
             top: 38%;
             left: 10%;
+            z-index: 30;
             img {
                 animation: float-down 5s ease-in-out infinite;
+                z-index: 30;
             }
         }
 
@@ -201,7 +203,7 @@
 
 //boobles
 #lottie-player {
-    width: 1900px;
+    width: 100%;
     height: 116vh;
 }
 
@@ -214,18 +216,22 @@
 }
 
 // MEDIA QUERY
+
+// MOBILE
 @media screen and(max-width:576px)  {  
     #dotted-button {
+        display: none;
+    }
+    #or {
         display: none;
     }
 
     //boobles
     #lottie-player {
-        width: 800px;
         height: 116vh;
+        width: 160%;
     }
 
-    
     // resize pop hovers
     .popup-note {
         .pop {
@@ -254,6 +260,9 @@
         #background-jumbo {
             #or {
                 display: none;
+            }
+            #white-button {
+                padding: 15px 30px;
             }
             .type {
                 z-index: 20;
@@ -286,8 +295,10 @@
                 position: absolute;
                 top: 26%;
                 left: 33%;
+                z-index: 30;
                 img {
                     animation: float-down 5s ease-in-out infinite;
+                    z-index: 30;
                 }
             }
             #cat-cinese {
@@ -313,7 +324,7 @@
             }
             #cat-bakery {
                 position: absolute;
-                top: 74%;
+                top: 80%;
                 left: 40%;
             }
             #cat-vegan {
@@ -336,20 +347,19 @@
         }
         #landing-title {
             h1 {
-                font-size: 4.8rem;
+                font-size: 4.7rem;
             }
         }
     }
-  } // /@<576px
+}
 
-  @media (max-width:1192px) and (min-width:873px) {
+//TABLET
+  @media (max-width:1288px) and (min-width:873px) {
     //boobles
     #lottie-player {
-        width: 900px;
         height: 116vh;
+        width: 120%;
     }
-    
-
     #dotted-button {
         display: flex;
         margin-left: 0px;
@@ -369,22 +379,22 @@
                 top: 17%;
                 left: 42%;
             }
-    
             #cat-fast-food {
                 position: absolute;
                 top: 19%;
                 left: 22%;
+                z-index: 30;
             }
-    
             #cat-sushi {
                 position: absolute;
                 top: 42%;
                 left: 76%;
+                z-index: 30;
                 img {
                     width: 140px;
+                    z-index: 30;
                 }
             }
-    
             #messicano {
                 position: absolute;
                 top: 38%;
@@ -393,7 +403,6 @@
                     animation: float-down 5s ease-in-out infinite;
                 }
             }
-    
             #cat-cinese {
                 position: absolute;
                 top: 79%;
@@ -402,7 +411,6 @@
                     animation: float-down 5s ease-in-out infinite;
                 }
             }
-    
             #cat-carne {
                 position: absolute;
                 top: 70%;
@@ -411,19 +419,16 @@
                     width: 120px;
                 }
             }
-    
             #cat-pesce {
                 position: absolute;
                 top: 62%;
                 left: 77%;
             }
-    
             #cat-bakery {
                 position: absolute;
                 top: 79%;
                 left: 56%;
             }
-    
             #cat-vegan {
                 position: absolute;
                 top: 77%;
@@ -433,7 +438,6 @@
                     width: 85px;
                 }
             }
-    
             #cat-poke {
                 position: absolute;
                 top: 20%;
@@ -444,13 +448,14 @@
             }
         }  
     }
-  }
+}
 
+//INTERMEDIATE MOBILE-TABLET
   @media (max-width:872px) and (min-width:577px) {
     //boobles
     #lottie-player {
-        width: 872px;
         height: 116vh;
+        width: 130%;
     }
  
     #dotted-button {
@@ -477,14 +482,17 @@
                 position: absolute;
                 top: 19%;
                 left: 18%;
+                z-index: 30;
             }
     
             #cat-sushi {
                 position: absolute;
                 top: 42%;
                 left: 76%;
+                z-index: 30;
                 img {
                     width: 130px;
+                    z-index: 30;
                 }
             }
     
@@ -492,8 +500,10 @@
                 position: absolute;
                 top: 38%;
                 left: 4%;
+                z-index: 30;
                 img {
                     animation: float-down 5s ease-in-out infinite;
+                    z-index: 30;
                 }
             }
     
@@ -548,9 +558,9 @@
         }
         #landing-title {
             h1 {
-                font-size: 5.5rem;
+                font-size: 5.2rem;
             }
         }  
     }
-  }
+}
   

@@ -3,6 +3,8 @@
 @extends('layouts.pay-layout')
 @section('content')
 
+@include('components.preloader')
+
 <main class="pay-order">
 
     <form method="post" id="payment-form" action="{{route ('checkoutOrder')}}">
@@ -12,7 +14,7 @@
 
         <div id="box-left">
             <div class="container">
-                <h3>Fiveboo's Chackout</h3>
+                <h3>Fiveboo's Checkout</h3>
                 <h2>
                     {{$total_price}} &euro;
                 </h2>
@@ -24,7 +26,7 @@
                         <ul class="recap-order">
                             <li>Titolo</li>
                             <li>Qta</li>
-                            <li>Prezzo</li>
+                            <li>Totale</li>
                         </ul>
                     </div>
 

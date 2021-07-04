@@ -10,15 +10,15 @@
         <div id="background-jumbo">
             <div id="landing-title">
                 <h1>
-                    Hungry?
+                    Hai fame?
                 </h1>
                 <h2>
-                    your favourite food delivered in 20 minutes
+                    Il tuo cibo preferito consegnato in 5 minuti 
                 </h2>
                 <div class="landing-buttons">
-                    <a id="white-button" href="{{route('restaurantListLink', 'all')}}">ORDER NOW</a>
-                    <span>or</span>
-                    <a id="dotted-button" href="#">SELECT A FOOD ICON</a> <!-- no route -->
+                    <a id="white-button" href="{{route('restaurantListLink', 'all')}}">ORDINA ORA</a>
+                    <span id="or">o</span>
+                    <a id="dotted-button" href="#">SELEZIONA UN'ICONA</a> <!-- no route -->
                 </div>
             </div>
             <!-- types -->

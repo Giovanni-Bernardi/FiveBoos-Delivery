@@ -19,7 +19,7 @@
     {{-- lottie --}}
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
     {{-- JS/VUE --}}
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
     <div id="app">

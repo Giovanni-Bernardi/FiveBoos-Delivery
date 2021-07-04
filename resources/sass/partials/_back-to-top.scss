@@ -1,0 +1,16 @@
+#back2Top {
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 20px;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    background-color: #ffc144da;
+    color: #343434;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}

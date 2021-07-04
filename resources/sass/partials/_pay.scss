@@ -18,53 +18,62 @@ main.pay-order{
                 font-family:'Segoe UI';
 
                 h2{
-                    font-family:'Segoe UI';
+                    font-family: 'Fredoka One', cursive;;
                     font-size: 40px;
                     color: #303030;
                     padding: 10px 0;
+                    font-weight: normal;
                 }
 
                 h3{
-                    font-family:'Segoe UI';
-                    font-size: 27px;
+                    font-family: 'Fredoka One', cursive;
+                    font-size: 30px;
                     color: #727272;
+                    font-weight: normal;
                 }
 
                 #title-recap{
-                    font-family:'Segoe UI';
-                    font-size: 24px;
+                    font-family: 'Fredoka One', cursive;
+                    font-size: 25px;
                     color: #303030;
                     text-align: left;
-                    font-weight: bold;
-                    padding: 15px 0;
+                    padding: 50px 0 15px 0;
+                    font-weight: normal;
                 }
 
                 .container-order{
-                    border: 1px solid black;
+                    // border: 1px solid #343434;
 
                     .recap-order{
                         display: flex;
+                        background-color: #343434;
+                        border-top-left-radius: 3px;
+                        border-top-right-radius: 3px;
+                        color: #ffffff;
+                        font-weight: normal;
+                        line-height: 2rem;
+                        text-transform: uppercase;
 
                         li{
                             width: 35%;
                             text-align: center;
-                            font-family:'Segoe UI';
-                            font-size: 21px;
-                            border: 1px solid black;
+                            font-family: 'Fredoka One', cursive;
+                            font-size: 18px;
+                            letter-spacing: 3px;
+                            font-weight: normal;
                         }
                     }
 
                     .plates{
                         display: flex;
+                        line-height: 2.5rem;
 
                         li{
                             width: 35%;
                             text-align: center;
-                            font-family:'Segoe UI';
+                            font-family:'Segoe UI', sans-serif;
                             font-size: 18px;
-                            border-bottom: 1px solid black;
-                            border-left: 1px solid black;
-                            border-right: 1px solid black;
+                            border-bottom: 3px solid #343434;
                         }
                     }
 
@@ -389,7 +398,7 @@ main.pay-order{
                     margin: 5% 5% 0 5%;
 
                     .container-order{
-                        border: 1px solid black;
+                        // border: 1px solid black;
 
                         .recap-order{
 
