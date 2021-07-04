@@ -22,6 +22,7 @@ class CreateRestaurantsTable extends Migration
             $table -> string('description', 1024);
             $table -> string('telephone', 32);
             $table -> string('img') -> nullable();
+            $table -> string('img_background') -> nullable();
             $table -> boolean('visible') -> default(1);
 
             $table -> bigInteger('user_id') -> unsigned() -> index();

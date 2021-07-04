@@ -327,39 +327,47 @@
                 <h3>Storico Ordini</h3>
             </section>
             <section class="orders-tab">
-                <table>
-                    <tr>
-                        <th>ID Ordine</th>
-                        <th>Data</th>
-                        <th>Prodotti</th>
-                        <th>Totale &euro;</th>
-                        <th>Stato</th>
-                    </tr>
-
-                     @foreach ($orders as $order)
+                @if (count($orders) > 0)
+                    <table>
                         <tr>
-                            <td>{{$order -> id}}</td>
-                            <td>{{$order -> delivery_date}}</td>
-                            <td>
-                                <ul>
-                                    @foreach ($order -> products as $product)
-                                    <li>
-                                        {{$product -> name}}
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </td>
-                            <td>{{$order -> total_price}}</td>
-                            <td>
-                                @if ($order -> payment_status)
-                                    Pagato
-                                @else
-                                    In attesa
-                                @endif
-                            </td>
+                            <th>ID Ordine</th>
+                            <th>Data</th>
+                            <th>Prodotti</th>
+                            <th>Totale &euro;</th>
+                            <th>Stato</th>
                         </tr>
-                    @endforeach
-                </table>
+
+                        @foreach ($orders as $order)
+                            <tr>
+                                <td>{{$order -> id}}</td>
+                                <td>{{$order -> delivery_date}}</td>
+                                <td>
+                                    <ul>
+                                        @php
+                                                
+                                        @endphp
+                                        @foreach ($order -> products as $product)
+                                        <li>
+                                            {{$product -> name}}
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+                                <td>{{number_format($total = floatval($order -> total_price / 100), 2)}}</td>
+                                <td>
+                                    @if ($order -> payment_status)
+                                        Pagato
+                                    @else
+                                        In attesa
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    
+                @else
+                    <p>Non hai ancora ricevuto alcun ordine</p>
+                @endif
             </section>
 
             @else

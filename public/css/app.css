@@ -744,7 +744,7 @@ main.details .restaurant-info #info-box {
 }
 
 main.details .dishes-box {
-  min-height: 500px;
+  min-height: 400px;
   margin: 120px 10% 50px;
   max-width: 1270px;
   display: flex;
@@ -1173,25 +1173,6 @@ main.user.details .dishes-box ul:not(.overview ul) p.visibility input {
   margin: 5px;
 }
 
-main.user.details .dishes-box ul:not(.overview ul) p.visibility {
-  display: flex;
-  justify-content: flex-start;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  align-items: center;
-}
-
-main.user.details .dishes-box ul:not(.overview ul) p.visibility label {
-  align-self: center;
-  margin: 5px;
-}
-
-main.user.details .dishes-box ul:not(.overview ul) p.visibility input {
-  align-self: center;
-  margin: 5px;
-}
-
 main.user.details .dishes-box li#new-product.new-product {
   display: flex;
   justify-content: center;
@@ -1266,7 +1247,7 @@ main.user.details .orders-tab {
   margin: 0 10% 50px;
   width: 80%;
   max-width: 1270px;
-  height: 500px;
+  max-height: 500px;
   overflow: auto;
 }
 
@@ -1343,7 +1324,7 @@ main.user.details .orders-tab::-webkit-scrollbar-thumb {
   }
 
   main.user.details .orders-tab {
-    height: 400px;
+    max-height: 400px;
   }
 }
 
@@ -1365,7 +1346,7 @@ main.user.details .orders-tab::-webkit-scrollbar-thumb {
   main.user.details .orders-tab {
     width: calc(100% - 40px);
     margin: 0 20px 50px;
-    height: 300px;
+    max-height: 300px;
   }
 }
 
