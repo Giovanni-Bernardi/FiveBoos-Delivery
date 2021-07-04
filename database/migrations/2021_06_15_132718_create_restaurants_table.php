@@ -24,6 +24,7 @@ class CreateRestaurantsTable extends Migration
             $table -> string('img') -> nullable();
             $table -> string('img_background') -> nullable();
             $table -> boolean('visible') -> default(1);
+            $table -> boolean('deleted') -> default(0);
 
             $table -> bigInteger('user_id') -> unsigned() -> index();
 
