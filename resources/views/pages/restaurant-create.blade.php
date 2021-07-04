@@ -3,7 +3,7 @@
 @include('components.search-header')
 
 @section('content')
-@if ($errors->any())
+{{-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -11,7 +11,7 @@
             @endforeach
         </ul>
     </div>
-@endif
+@endif --}}
 
 <main class="create-restaurant">
     <div class="container">
@@ -86,4 +86,13 @@
         </div>
     </div>
 </main>
+
+{{-- <script>
+    $('input[type=checkbox]').on('change', function (e) {
+        if ($('input[type=checkbox]:checked').length > 3) {
+        $(this).prop('checked', false);
+        // alert("puoi selezionare massimo 3 Categorie");
+        }
+    });
+</script> --}}
 @endsection

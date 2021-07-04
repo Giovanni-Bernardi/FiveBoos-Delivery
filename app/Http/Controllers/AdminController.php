@@ -31,6 +31,10 @@ class AdminController extends Controller
     // ---------------------------------
     public function storeRestaurant(Request $request)
     {
+        if (count($request -> category_id) > 3) {
+            return redirect() -> route('restaurantProfileViewLink');
+        }
+
         $validate = $request -> validate([
         'business_name' => 'required|string',
         'piva' => 'required|string',
@@ -44,9 +48,9 @@ class AdminController extends Controller
         $id = Auth::id();
 
         $restaurant -> user() -> associate($id);
-        $restaurant -> save();
+        $restaurant -> save();        
 
-        $restaurant -> categories() -> attach($request -> category_id);
+        $restaurant -> categories() -> attach($request -> category_id);        
 
         if ($request -> file('img')) {
             $img = $request -> file('img');
@@ -97,14 +101,20 @@ class AdminController extends Controller
     }
     // ----------------------
     public function updateRestaurantView(Request $request, $id) {
-
+        
         $validate = $request -> validate([
             'business_name' => 'required|string',
             'piva' => 'required|string',
             'address' => 'required|string',
             'description' => 'required|string',
             'telephone' => 'required|string',
+            'category_id' => 'required|exists:categories,id',
         ]);
+
+        if (count($request -> category_id) > 3 || count($request -> category_id) < 1) {
+            return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($id));
+        }
+
         $restaurant = Restaurant::findOrFail($id);
 
         $restaurant -> update($validate);
