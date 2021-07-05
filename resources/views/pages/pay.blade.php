@@ -14,6 +14,12 @@
 
         <div id="box-left">
             <div class="container">
+                @if (session('msg'))
+                    <h3 class="error">
+                        Pagamento rifiutato, riprovare più tardi.
+                    </h3>
+                @endif
+                
                 <h3>Fiveboo's Checkout</h3>
                 <h2>
                     Totale: {{number_format($prezzo = (floatval($total_price / 100 )), 2)}} &euro;
@@ -25,7 +31,7 @@
                     <div>
                         <ul class="recap-order">
                             <li>Titolo</li>
-                            <li>Qta</li>
+                            <li>Q.TA'</li>
                             <li>Totale</li>
                         </ul>
                     </div>
@@ -35,7 +41,7 @@
                             <ul class="plates">
                                 <li>{{$product['name']}}</li>
                                 <li>{{$product['count']}}</li>
-                                <li>{{number_format($prezzo = (floatval($product['price'] / 100 )), 2)}}</li>
+                                <li>{{number_format($prezzo = (floatval($product['price'] / 100 ) * $product['count']), 2)}} &euro;</li>
                             </ul>
                         @endforeach
                     </div>
@@ -58,15 +64,15 @@
                         <ul>
                             <li>
                                 <label for="firstname">Nome</label>
-                                <input type="text" name="firstname" required>
+                                <input type="text" name="firstname" required @auth value="{{$user -> firstname}}" @endauth>
                             </li>
                             <li>
                                 <label for="lastname">Cognome</label>
-                                <input type="text" name="lastname" required>
+                                <input type="text" name="lastname" required @auth value="{{$user -> lastname}}" @endauth>
                             </li>
                             <li>
                                 <label for="email">Email</label>
-                                <input type="text" name="email" required>
+                                <input type="text" name="email" required @auth value="{{$user -> email}}" @endauth>
                             </li>
                             <li>
                                 <label for="telephone">Telefono</label>

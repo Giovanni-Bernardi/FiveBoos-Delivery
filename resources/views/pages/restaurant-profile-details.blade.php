@@ -30,7 +30,7 @@
                                     <div class="title-card">
                                         <img src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
                                         <h4>
-                                            Modifica '{{$restaurant -> business_name}}'
+                                            {{$restaurant -> business_name}}
                                         </h4>
                                     </div>
                                     <ul>
@@ -99,7 +99,7 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <button type="submit">Salva le modifiche</button>
+                                            <button type="submit">Salva</button>
                                         </li>
                                     </ul>
                                 </form>
@@ -123,7 +123,7 @@
                                         </div>
                                     </div>
                                     <div class="right-side">
-                                        <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+                                        <img src="{{asset('/storage/product-img/' . $product -> img)}}" alt="placeholder product">
         
                                         <div class="info-badge edit-product" @click="popupDetails({{$product -> id}})">
                                             <i class="fas fa-cog" ></i>
@@ -154,12 +154,12 @@
                                                     @csrf
                                                     <div class="title-card">
                                                         <img id="img-edit-product" class="img-edit" src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
-                                                        <h4> Modifica {{$product -> name}}  </h4>
+                                                        <h4>{{$product -> name}}  </h4>
                                                     </div>
                                                     <ul>
                                                         <li>
                                                             <label for="name">
-                                                                Nome piatto:
+                                                                Nome:
                                                             </label>
                                                             <input type="text" name="name" value="{{$product -> name}}">
                                                         </li>
@@ -187,13 +187,13 @@
         
                                                         <li>
                                                             <label for="img">
-                                                                Immagine del piatto:
+                                                                Immagine:
                                                             </label>
                                                             <input type="file" name="img" value="{{$product -> img}}">
                                                         </li>
         
                                                         <li>
-                                                            <button type="submit">Salva le modifiche</button>
+                                                            <button type="submit">Salva</button>
                                                         </li>
                                                     </ul>
                                                 </form>
@@ -217,12 +217,12 @@
                                             @csrf
                                             <div class="title-card">
                                                 <img src="{{asset('/storage/assets/site-logo/loader.svg')}}" alt="logo">
-                                                <h4> Crea un nuovo piatto!</h4>
+                                                <h4>Crea un piatto</h4>
                                             </div>
                                             <ul>
                                                 <li>
                                                     <label for="name">
-                                                        Nome del piatto:
+                                                        Nome:
                                                     </label>
                                                     <input type="text" name="name" placeholder="nome" required>
                                                 </li>
@@ -236,7 +236,7 @@
 
                                                 <li>
                                                     <label for="description">
-                                                        Descrizione
+                                                        Descrizione:
                                                     </label>
                                                     <textarea name="description" id="" cols="30" rows="10"  placeholder="Inserisci una breve descrizione del piatto/allergeni" required> </textarea>
                                                 </li>
@@ -250,7 +250,7 @@
 
                                                 <li>
                                                     <label for="img">
-                                                        Carica la foto del tuo nuovo piatto!
+                                                        Immagine:
                                                     </label>
                                                     <input type="file" name="img">
                                                 </li>

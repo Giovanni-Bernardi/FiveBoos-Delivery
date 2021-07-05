@@ -75,7 +75,7 @@
                     </div>
                     <div class="right-side">
                         {{-- <a href="{{route('productDetailsViewLink', @{{product.id}})}}"> --}}
-                        <img src="{{asset('/storage/product-img/chicken.jpg')}}" alt="placeholder product">
+                        <img :src="'/storage/product-img/' + product.img" alt="placeholder product">
                         <div class="product-info-badge" @click="popupDetails(product.id)">
                             <i class="fas fa-info"></i>
                         </div>

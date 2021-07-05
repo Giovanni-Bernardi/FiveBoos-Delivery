@@ -1500,8 +1500,55 @@ main#profile .restaurant-container #restaurant-cards .hide-button {
   color: black;
 }
 
-main#profile .restaurant-container #restaurant-cards #edit-button {
+main#profile .restaurant-container #restaurant-cards .edit-button {
   color: black;
+}
+
+main#profile .restaurant-container #restaurant-cards .delete-res-button {
+  margin-left: 6px;
+  color: black;
+  cursor: pointer;
+}
+
+main#profile .restaurant-container #restaurant-cards .delete-res-button.active .alert {
+  display: block;
+}
+
+main#profile .restaurant-container #restaurant-cards .delete-res-button .alert {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.397);
+}
+
+main#profile .restaurant-container #restaurant-cards .delete-res-button .alert p {
+  padding: 20px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: left;
+  font-size: 15px;
+  color: black;
+}
+
+main#profile .restaurant-container #restaurant-cards .delete-res-button .alert p a,
+main#profile .restaurant-container #restaurant-cards .delete-res-button .alert p span {
+  margin: 10px 10px 0 0;
+  display: inline-block;
+  color: black;
+  padding: 5px 10px;
+  background-color: #FFC244;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1588px) {
@@ -3573,6 +3620,13 @@ main.pay-order form #box-left .container h3 {
   font-size: 30px;
   color: #727272;
   font-weight: normal;
+}
+
+main.pay-order form #box-left .container h3.error {
+  color: crimson;
+  font-size: 28px;
+  text-decoration: underline;
+  margin-bottom: 10px;
 }
 
 main.pay-order form #box-left .container #title-recap {
