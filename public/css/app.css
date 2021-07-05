@@ -671,7 +671,6 @@ main.details .details-jumbotron .jumbo-img {
   padding-top: 30px;
   position: relative;
   bottom: -80px;
-  background-image: url("/storage/restaurant-img/restaurant1.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);

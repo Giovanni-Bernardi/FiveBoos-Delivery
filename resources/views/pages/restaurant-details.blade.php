@@ -3,7 +3,7 @@
 @section('content')
     <main class="details" id="app" v-cloak>
         <div class="details-jumbotron">
-            <div class="jumbo-img">
+            <div class="jumbo-img" style="background-image: url('/storage/restaurant-img/{{$restaurant -> img_background}}')">
                 <h2>
                     {{$restaurant -> business_name}}
                 </h2>

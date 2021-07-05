@@ -8,7 +8,7 @@
         @if (Auth::user()->id == $restaurant -> user_id)
             <div id="app" v-cloak>
                 <div class="details-jumbotron">
-                    <div class="jumbo-img">
+                    <div class="jumbo-img" style="background-image: url('/storage/restaurant-img/{{$restaurant -> img_background}}')">
                         <h2>
                             {{$restaurant -> business_name}}
                         </h2>

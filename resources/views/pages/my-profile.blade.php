@@ -20,7 +20,7 @@
                         <li class="crd  @if(!$restaurant -> visible) hidden-crd @endif" >
                             <ul>
                                 <li class="background-image">
-                                    <img src="{{asset('/storage/assets/pizza-try.jpg')}}" alt="copertina ristorante">
+                                    <img src="{{asset('/storage/restaurant-img/' . $restaurant -> img)}}" alt="copertina ristorante">
                                     <span>{{$restaurant -> business_name}}</span>
                                 </li>
         
@@ -44,19 +44,19 @@
                                         </a>
                                     @endif
 
-                                    <span class="delete-res-button" 
+                                    <a href="{{route('realDeleteRestaurantLink', $restaurant -> id)}}" class="delete-res-button" 
                                     {{--  --}}>
                                         <i class="fas fa-trash-alt"></i>
-                                        <div class="alert">
+                                        {{-- <div class="alert">
                                             <p>
                                                 Vuoi eliminare '<strong>{{$restaurant -> business_name}}'</strong>?
                                                 <br>
-
+    
                                                 <a href="{{route('realDeleteRestaurantLink', $restaurant -> id)}}">Ok</a>
                                                 <span class="undoIt">Annulla</span>
                                             </p>
-                                        </div>
-                                    </span>
+                                        </div> --}}
+                                    </a>
                                 </li>
                             </ul>
                         </li>
@@ -71,33 +71,44 @@
 </main>
 
 <script>
-    let deleteBtns = document.getElementsByClassName("delete-res-button");
-    let undoBtns = document.getElementsByClassName("undoIt");
-    console.log(deleteBtns, 'delkeeeee');
+    // let deleteBtns = document.getElementsByClassName("delete-res-button");
+    // let undoBtns = document.getElementsByClassName("undoIt");
 
 
-    for (let i = 0; i < deleteBtns.length; i++) {
-        const element = deleteBtns[i];
-        console.log(element);
-        element.addEventListener('click', function() {
-            element.classList.add('active');
-            // console.log(element, undoBtns);
-        });
-    }
+    // for (let i = 0; i < deleteBtns.length; i++) {
+    //     const element = deleteBtns[i];
+    //     console.log(element);
+    //     element.addEventListener('click', function() {
+    //         element.classList.add('active');
+    //         // console.log(element, undoBtns);
+    //     });
+        
+    // }
 
+    // for (let i = 0; i < undoBtns.length; i++) {
+    //     console.log(undoBtns[i]);
+    //     undoBtns[i].addEventListener('click', function(){
+    //         for (let i = 0; i < deleteBtns.length; i++) {
+    //             const element2 = deleteBtns[i];
+    //             element2.classList.remove('active');
+    //         }
+    //     });
+    //     console.log(undoBtns[i]);
+    // }
 
-    for (let i = 0; i < undoBtns.length; i++) {
-        const element2 = array[i];
-        element2.addEventListener('click', function() {
-            console.log(element, 'escii');
-        //     for (let j = 0; j < deleteBtns.lengt; j++) {
-        //         const element2 = deleteBtns[j];
-        //         console.log();
-        //         // element2.classList.remove('active');    
-        //     }
-        //     console.log(element, undoBtns);
-        });
-    }
+    // for (let i = 0; i < deleteBtns.length; i++) {
+    //     console.log(undoBtns, i);
+    //     const element2 = array[i];
+    //     // element2.addEventListener('click', function() {
+    //         // console.log(element, 'escii');
+    //     //     for (let j = 0; j < deleteBtns.lengt; j++) {
+    //     //         const element2 = deleteBtns[j];
+    //     //         console.log();
+    //     //         // element2.classList.remove('active');    
+    //     //     }
+    //     //     console.log(element, undoBtns);
+    //     // });
+    // }
 
 </script>
 @endsection
