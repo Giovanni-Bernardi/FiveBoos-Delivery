@@ -34,7 +34,7 @@
             <li class="restaurant-card .dish-element" v-for="restaurant in filteredRestaurants" v-if="restaurant.visible">
                 <a :href="'/restaurant/' + restaurant.id">
                     <div class="background-image">
-                        <img src="{{asset('/storage/assets/pizza-try.jpg')}}" alt="">
+                        <img :src="'/storage/restaurant-img/' + restaurant.img" alt="">
                         
                         <div class="categories-card">
                             <h3>
