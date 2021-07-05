@@ -30,6 +30,12 @@ main.pay-order{
                     font-size: 30px;
                     color: #727272;
                     font-weight: normal;
+                    &.error{
+                        color: crimson;
+                        font-size: 28px;
+                        text-decoration: underline;
+                        margin-bottom: 10px;
+                    }
                 }
 
                 #title-recap{

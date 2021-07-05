@@ -29,11 +29,15 @@ main.user.details{
                 }
                 &.hide-product{
                     top: 22px;
-                    a{
-                        display: inline-block;
-                        height: 100%;
-                        width: 100%;
-                    }
+                }
+                &.delete-product{
+                    bottom: -5px;
+                }
+
+                a{
+                    display: inline-block;
+                    height: 100%;
+                    width: 100%;
                 }
                 i {
                     color: white;
@@ -172,61 +176,6 @@ main.user.details{
         }
     }
 }
-
-
-// input[type=checkbox] + label{
-//     position: relative;
-//     padding-left: 24px;
-// }
-
-// input[type=checkbox] + label .check{
-//     position: absolute;
-//     left: -4px;
-//     display: block;
-//     width: 24px;
-//     height: 24px;
-//     background: #fff;
-//     border-radius:3px;
-//     border:1px solid #ddd;
-//     cursor: pointer;
-// }
-
-// input[type=checkbox]:checked + label .check{
-//     background: #a123cb;
-// }
-
-// input[type=checkbox]:checked + label .check::after{
-//     content: "";
-//     position: absolute;
-//     width: 10px;
-//     height: 16px;
-//     border: 4px solid #fff;
-//     border-left: none;
-//     border-top: none;
-//     transform: rotate(45deg);
-//     left: 6px;
-// }
-
-// input[type=checkbox] {
-//     opacity: 0;
-// }
-// label{
-//     .check{
-//         // content: '&#9744;';
-//         width: 10px;
-//         height: 10px;
-//         border: 1px solid black;
-//         border-radius: 50%;
-//     }
-// }
-
-// input[type=checkbox]:checked + label.check{
-//   background-color: rgba(0, 172, 0, 0.521);
-//   border: 1px solid white;
-//   color: white;
-//   content: '&#10004;';  
-        
-// }
 
 // --- Media query soto i 1350px Speciale ---
 @media screen and (max-width: 1350px) {

@@ -12,6 +12,7 @@ use App\Restaurant;
 use App\Product;
 use App\Category;
 use App\Order;
+use App\User;
 
 class PaymentController extends Controller
 {
@@ -35,6 +36,11 @@ class PaymentController extends Controller
         if(!session() -> has('products')){
             return redirect() -> route('indexViewLink');
         }
+
+        if (Auth::id()) {
+            $user = User::findOrFail(Auth::id());
+        }
+
         $total_price = session('total_price')[0];
         $sessionProducts = session('products');
 
@@ -70,11 +76,11 @@ class PaymentController extends Controller
             }
         }
 
-        return view('pages.pay', compact('gateway', 'token', 'total_price', 'products'));
+        return view('pages.pay', compact('gateway', 'token', 'total_price', 'products', 'user'));
     }
 
     public function checkoutOrder(Request $request) {
-   
+        
         $validate = $request -> validate([
             'firstname' => 'required|string',
             'lastname' => 'required|string',
@@ -84,8 +90,16 @@ class PaymentController extends Controller
             'delivery_time' => 'required|string',
         ]);
         
-        $order = Order::make($validate);
+        date_default_timezone_set('Europe/Rome');
+        $time = strtotime($request -> delivery_time);;
+        $minimumTime = strtotime('+ 25 minutes');
+
+        if ($time < $minimumTime) {
+            return redirect() -> route('payOrder') -> with('msg', 'Pagamento riufiutato, riprovare più tardi.');
+        }
         
+        $order = Order::make($validate);
+
         $order -> delivery_date = date('Y-m-d');
         $order -> total_price = session('total_price')[0];
 

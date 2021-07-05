@@ -166,7 +166,7 @@ class AdminController extends Controller
         return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($product -> restaurant -> id));
     }
 
-    // Soft delete ristorante
+    // Visibilità ristorante
     public function deleteRestaurant($id){
         $user_id = Auth::id();
         $restaurant = Restaurant::findOrFail($id);
@@ -180,7 +180,7 @@ class AdminController extends Controller
         }
     }
 
-    // Soft delete product
+    // Visibilità product
     public function deleteProduct($id){
         $user_id = Auth::id();
 
@@ -194,6 +194,36 @@ class AdminController extends Controller
             return redirect() -> route('indexView');
         }
 
+    }
+
+    // Soft Delete ristorante
+    public function realDeleteRestaurant($id){
+        $user_id = Auth::id();
+        $restaurant = Restaurant::findOrFail($id);
+
+        if($user_id == $restaurant -> user_id){
+            $restaurant -> visible = 0;
+            $restaurant -> deleted = 1;
+            $restaurant -> save();
+            return redirect() -> route('restaurantProfileViewLink');
+        }else{
+            return redirect() -> route('indexViewLink', $id);
+        }
+    }
+
+    // Soft Delete prodotto
+    public function realDeleteProduct($id){
+        $user_id = Auth::id();
+        $product = Product::findOrFail($id);
+        
+        if($user_id == $product -> restaurant -> user_id){
+            $product -> visible = 0;
+            $product -> deleted = 1;
+            $product -> save();
+            return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($product -> restaurant -> id));
+        }else{
+            return redirect() -> route('indexView');
+        }
     }
 
     // Pagina profilo ristoratore loggato

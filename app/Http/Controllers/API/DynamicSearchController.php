@@ -51,7 +51,7 @@ class DynamicSearchController extends Controller
         $filterArray = explode(',', $filter);
         
         for ($i=0; $i < count($filterArray); $i++) { 
-            $category_restaurant = DB::table('restaurants') 
+            $category_restaurant = Restaurant::inRandomOrder()
                         -> join('category_restaurant','restaurants.id', '=', 'category_restaurant.restaurant_id')
                         -> select('restaurants.id','category_restaurant.category_id')
                         -> where('category_restaurant.category_id', $filterArray[$i])

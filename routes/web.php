@@ -31,7 +31,7 @@ Route::get('/user/profile', 'AdminController@restaurantProfileView')->name('rest
 Route::get('/user/profile/restaurant/{restaurantId}', 'AdminController@restaurantDetailsProfileView')->name('restaurantDetailsProfileLink');
 
 // Route dettaglio piatto
-Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');
+// Route::get('/restaurant/product/{id}','RestaurantController@productDetailsView') -> name('productDetailsViewLink');
 
 // Route per creazione di Restaurant
 Route::get('/create/restaurant', 'AdminController@createRestaurant') -> name('createRestaurant');
@@ -41,18 +41,25 @@ Route::post('/store/restaurant', 'AdminController@storeRestaurant') -> name('sto
 Route::post('/store/product/{id}', 'AdminController@storeProduct') -> name('storeProduct');
 
 // Route edit ristorante
-Route::get('/edit/restaurant/{id}','AdminController@editRestaurantView') -> name('editRestaurantViewLink');
+// Route::get('/edit/restaurant/{id}','AdminController@editRestaurantView') -> name('editRestaurantViewLink');
 Route::post('/update/restaurant/{id}','AdminController@updateRestaurantView') -> name('updateRestaurantViewLink');
 
 // Route edit product
-Route::get('/edit/product/{id}','AdminController@editProductView') -> name('editProductViewLink');
+// Route::get('/edit/product/{id}','AdminController@editProductView') -> name('editProductViewLink');
 Route::post('/update/product/{id}', 'AdminController@updateProductView') -> name('updateProductViewLink');
 
-// Route delete ristorante
+// Route visibilità ristorante
 Route::get('/delete/restaurant/{id}','AdminController@deleteRestaurant') -> name('deleteRestaurantLink');
 
-// Route delete product
+// Route visibilità product
 Route::get('/delete/product/{id}','AdminController@deleteProduct') -> name('deleteProductLink');
+
+// Route soft delete ristorante
+Route::get('/realdelete/restaurant/{id}','AdminController@realDeleteRestaurant') -> name('realDeleteRestaurantLink');
+
+// Route soft delete prodotto
+Route::get('/realdelete/product/{id}','AdminController@realDeleteProduct') -> name('realDeleteProductLink');
+
 
 // Route pay
 Route::get('pay/','PaymentController@payOrder') -> name('payOrder');
@@ -62,8 +69,8 @@ Route::post('checkout/','PaymentController@checkoutOrder') -> name('checkoutOrde
 Route::get('byebye','PaymentController@byebyeOrder') -> name('byebyeOrder');
 
 // 2 Route per carello temporanee
-Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
-Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');
+// Route::get('/all/public','RestaurantController@restaurantPublic') -> name('restaurantPublicLink');
+// Route::get('/all/public/{id}','RestaurantController@restaurantDetailsPublic') -> name('restaurantDetailsPublicLink');
 
 // Route dell'ordine
 Route::post('/store/order', 'RestaurantController@storeOrder') -> name('storeOrder');

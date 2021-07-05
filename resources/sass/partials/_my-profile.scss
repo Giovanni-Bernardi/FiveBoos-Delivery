@@ -117,9 +117,54 @@ main#profile {
                 color: black;
             }
     
-            #edit-button{
+            .edit-button{
                 // color: rgb(25, 122, 201);
                 color: black;
+            }
+
+            .delete-res-button{
+                margin-left: 6px;
+                // color: rgb(25, 122, 201);
+                color: black;
+                cursor: pointer;
+                &.active{
+                    .alert{
+                        display: block;
+                    }
+                }
+                .alert{
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    z-index: 100;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.397);
+                    p{
+                        padding: 20px;
+                        width: 200px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: white;
+                        box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
+                        border-radius: 5px;
+                        text-align: left;
+                        font-size: 15px;
+                        color: black;
+                        a, span{
+                            margin: 10px 10px 0 0;
+                            display: inline-block;
+                            color: black;
+                            padding: 5px 10px;
+                            background-color: #FFC244;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
         }
     }
