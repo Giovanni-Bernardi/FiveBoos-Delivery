@@ -15,54 +15,58 @@
 
         <section class="restaurant-container">
             <ul id="restaurant-cards">
-                @foreach ($restaurants as $restaurant)
-                    @if (!$restaurant -> deleted)
-                        <li class="crd  @if(!$restaurant -> visible) hidden-crd @endif" >
-                            <ul>
-                                <li class="background-image">
-                                    <img src="{{asset('/storage/restaurant-img/' . $restaurant -> img)}}" alt="copertina ristorante">
-                                    <span>{{$restaurant -> business_name}}</span>
-                                </li>
-        
-                                <li id="restaurant-address">
-                                    <p>
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        {{substr($restaurant -> address, 0, 30)}}@if (strlen($restaurant -> address) > 30)...@endif
-                                    </p>
-                                </li>
-        
-                                <li class="btn-edit-del">
-                                    <a class="edit-button" href={{ route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id))}}><i class="fas fa-edit"></i></a>
+                @if (count($restaurants) > 0)
+                    @foreach ($restaurants as $restaurant)
+                        @if (!$restaurant -> deleted)
+                            <li class="crd  @if(!$restaurant -> visible) hidden-crd @endif" >
+                                <ul>
+                                    <li class="background-image">
+                                        <img src="{{asset('/storage/restaurant-img/' . $restaurant -> img)}}" alt="copertina ristorante">
+                                        <span>{{$restaurant -> business_name}}</span>
+                                    </li>
+            
+                                    <li id="restaurant-address">
+                                        <p>
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            {{substr($restaurant -> address, 0, 30)}}@if (strlen($restaurant -> address) > 30)...@endif
+                                        </p>
+                                    </li>
+            
+                                    <li class="btn-edit-del">
+                                        <a class="edit-button" href={{ route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id))}}><i class="fas fa-edit"></i></a>
 
-                                    @if ($restaurant -> visible == 0)
-                                        <a class="hide-button" href={{ route('deleteRestaurantLink', $restaurant -> id)}}>
-                                            <i class="fas fa-eye-slash"></i>
-                                        </a>
-                                    @else
-                                        <a class="hide-button" href={{ route('deleteRestaurantLink', $restaurant -> id)}}>
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                    @endif
+                                        @if ($restaurant -> visible == 0)
+                                            <a class="hide-button" href={{ route('deleteRestaurantLink', $restaurant -> id)}}>
+                                                <i class="fas fa-eye-slash"></i>
+                                            </a>
+                                        @else
+                                            <a class="hide-button" href={{ route('deleteRestaurantLink', $restaurant -> id)}}>
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                        @endif
 
-                                    <a href="{{route('realDeleteRestaurantLink', $restaurant -> id)}}" class="delete-res-button" 
-                                    {{--  --}}>
-                                        <i class="fas fa-trash-alt"></i>
-                                        {{-- <div class="alert">
-                                            <p>
-                                                Vuoi eliminare '<strong>{{$restaurant -> business_name}}'</strong>?
-                                                <br>
-    
-                                                <a href="{{route('realDeleteRestaurantLink', $restaurant -> id)}}">Ok</a>
-                                                <span class="undoIt">Annulla</span>
-                                            </p>
-                                        </div> --}}
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                    @endif
-                @endforeach
+                                        <a href="{{route('realDeleteRestaurantLink', $restaurant -> id)}}" class="delete-res-button" 
+                                        {{--  --}}>
+                                            <i class="fas fa-trash-alt"></i>
+                                            {{-- <div class="alert">
+                                                <p>
+                                                    Vuoi eliminare '<strong>{{$restaurant -> business_name}}'</strong>?
+                                                    <br>
+        
+                                                    <a href="{{route('realDeleteRestaurantLink', $restaurant -> id)}}">Ok</a>
+                                                    <span class="undoIt">Annulla</span>
+                                                </p>
+                                            </div> --}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                        @endif
+                    @endforeach
+                @else
+                    <p>Non possiedi ancora nessun ristorante. Creane uno nuovo!</p>
+                @endif
             </ul>    
         </section>
     @else

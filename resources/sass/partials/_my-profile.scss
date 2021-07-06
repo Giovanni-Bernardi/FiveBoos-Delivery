@@ -232,6 +232,12 @@ main#profile {
 // Small
 @media screen and (max-width: 576px) {
     main#profile {
+        h1{
+            margin: 120px 20px 10px;
+        }
+        div.create-restaurant{
+            margin: 0 20px 20px;
+        }
         .restaurant-container {
             margin: 20px 20px;
             #restaurant-cards {
