@@ -2947,7 +2947,7 @@ header nav .rx-section .user-popup li a.active {
   }
 
   #landing-jumbo #background-jumbo #white-button {
-    padding: 15px 30px;
+    padding: 15px 15px;
   }
 
   #landing-jumbo #background-jumbo .type {
@@ -2969,13 +2969,13 @@ header nav .rx-section .user-popup li a.active {
 
   #landing-jumbo #background-jumbo #cat-fast-food {
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 10%;
   }
 
   #landing-jumbo #background-jumbo #cat-sushi {
     position: absolute;
-    top: 58%;
+    top: 51%;
     left: 64%;
     z-index: 999;
   }
@@ -2984,14 +2984,14 @@ header nav .rx-section .user-popup li a.active {
     width: 100px;
   }
 
-  #landing-jumbo #background-jumbo #messicano {
+  #landing-jumbo #background-jumbo #cat-messicano {
     position: absolute;
-    top: 26%;
-    left: 33%;
+    top: 25%;
+    left: 63%;
     z-index: 30;
   }
 
-  #landing-jumbo #background-jumbo #messicano img {
+  #landing-jumbo #background-jumbo #cat-messicano img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
     z-index: 30;
@@ -3000,7 +3000,7 @@ header nav .rx-section .user-popup li a.active {
   #landing-jumbo #background-jumbo #cat-cinese {
     position: absolute;
     top: 83%;
-    left: 18%;
+    left: 14%;
   }
 
   #landing-jumbo #background-jumbo #cat-cinese img {
@@ -3010,8 +3010,8 @@ header nav .rx-section .user-popup li a.active {
 
   #landing-jumbo #background-jumbo #cat-carne {
     position: absolute;
-    top: 71%;
-    left: 6%;
+    top: 44%;
+    left: 0%;
   }
 
   #landing-jumbo #background-jumbo #cat-carne img {
@@ -3020,20 +3020,20 @@ header nav .rx-section .user-popup li a.active {
 
   #landing-jumbo #background-jumbo #cat-pesce {
     position: absolute;
-    top: 70%;
+    top: 62%;
     left: 70%;
   }
 
   #landing-jumbo #background-jumbo #cat-bakery {
     position: absolute;
-    top: 80%;
+    top: 88%;
     left: 40%;
   }
 
   #landing-jumbo #background-jumbo #cat-vegan {
     position: absolute;
     top: 84%;
-    left: 69%;
+    left: 73%;
   }
 
   #landing-jumbo #background-jumbo #cat-vegan img {
@@ -3044,8 +3044,8 @@ header nav .rx-section .user-popup li a.active {
 
   #landing-jumbo #background-jumbo #cat-poke {
     position: absolute;
-    top: 21%;
-    left: 66%;
+    top: 11%;
+    left: 69%;
   }
 
   #landing-jumbo #background-jumbo #cat-poke img {
@@ -3054,11 +3054,11 @@ header nav .rx-section .user-popup li a.active {
   }
 
   #landing-jumbo #landing-title h1 {
-    font-size: 4.7rem;
+    font-size: 4rem;
   }
 }
 
-@media (max-width: 1288px) and (min-width: 873px) {
+@media (max-width: 1288px) and (min-width: 577px) {
   #lottie-player {
     height: 116vh;
     width: 120%;
@@ -3072,20 +3072,20 @@ header nav .rx-section .user-popup li a.active {
   }
 
   #landing-jumbo #background-jumbo .type img {
-    width: 110px;
+    width: 100px;
     height: auto;
   }
 
   #landing-jumbo #background-jumbo #cat-pizza {
     position: absolute;
-    top: 17%;
+    top: 15%;
     left: 42%;
   }
 
   #landing-jumbo #background-jumbo #cat-fast-food {
     position: absolute;
-    top: 19%;
-    left: 22%;
+    top: 16%;
+    left: 19%;
     z-index: 30;
   }
 
@@ -3159,17 +3159,21 @@ header nav .rx-section .user-popup li a.active {
 
   #landing-jumbo #background-jumbo #cat-poke {
     position: absolute;
-    top: 20%;
-    left: 66%;
+    top: 16%;
+    left: 62%;
   }
 
   #landing-jumbo #background-jumbo #cat-poke img {
     -webkit-animation: float-down 5s ease-in-out infinite;
             animation: float-down 5s ease-in-out infinite;
   }
+
+  #landing-jumbo #landing-title h1 {
+    font-size: 4.8rem;
+  }
 }
 
-@media (max-width: 872px) and (min-width: 577px) {
+@media (max-width: 9px) and (min-width: 577px) {
   #lottie-player {
     height: 116vh;
     width: 130%;

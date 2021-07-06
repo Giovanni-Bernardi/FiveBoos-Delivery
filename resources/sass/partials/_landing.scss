@@ -262,7 +262,7 @@
                 display: none;
             }
             #white-button {
-                padding: 15px 30px;
+                padding: 15px 15px;
             }
             .type {
                 z-index: 20;
@@ -279,22 +279,22 @@
             }
             #cat-fast-food {
                 position: absolute;
-                top: 25%;
+                top: 15%;
                 left: 10%;
             }
             #cat-sushi {
                 position: absolute;
-                top: 58%;
+                top: 51%;
                 left: 64%;
                 z-index: 999;
                 img {
                     width: 100px;
                 }
             }
-            #messicano {
+            #cat-messicano {
                 position: absolute;
-                top: 26%;
-                left: 33%;
+                top: 25%;
+                left: 63%;
                 z-index: 30;
                 img {
                     animation: float-down 5s ease-in-out infinite;
@@ -304,33 +304,33 @@
             #cat-cinese {
                 position: absolute;
                 top: 83%;
-                left: 18%;
+                left: 14%;
                 img {
                     animation: float-down 5s ease-in-out infinite;
                 }
             }
             #cat-carne {
                 position: absolute;
-                top: 71%;
-                left: 6%;
+                top: 44%;
+                left: 0%;
                 img {
                     width: 90px;
                 }
             }
             #cat-pesce {
                 position: absolute;
-                top: 70%;
+                top: 62%;
                 left: 70%;
             }
             #cat-bakery {
                 position: absolute;
-                top: 80%;
+                top: 88%;
                 left: 40%;
             }
             #cat-vegan {
                 position: absolute;
                 top: 84%;
-                left: 69%;
+                left: 73%;
                 img {
                     animation: float-down 5s ease-in-out infinite;
                     width: 60px;
@@ -338,8 +338,8 @@
             }
             #cat-poke {
                 position: absolute;
-                top: 21%;
-                left: 66%;
+                top: 11%;
+                left: 69%;
                 img {
                     animation: float-down 5s ease-in-out infinite;
                 }
@@ -347,14 +347,14 @@
         }
         #landing-title {
             h1 {
-                font-size: 4.7rem;
+                font-size: 4rem;
             }
         }
     }
 }
 
 //TABLET
-  @media (max-width:1288px) and (min-width:873px) {
+  @media (max-width:1288px) and (min-width:577px) {
     //boobles
     #lottie-player {
         height: 116vh;
@@ -370,19 +370,19 @@
         #background-jumbo {
             .type {
                 img {
-                width: 110px;
+                width: 100px;
                 height: auto;
                 }
             }
             #cat-pizza {
                 position: absolute;
-                top: 17%;
+                top: 15%;
                 left: 42%;
             }
             #cat-fast-food {
                 position: absolute;
-                top: 19%;
-                left: 22%;
+                top: 16%;
+                left: 19%;
                 z-index: 30;
             }
             #cat-sushi {
@@ -440,18 +440,23 @@
             }
             #cat-poke {
                 position: absolute;
-                top: 20%;
-                left: 66%;
+                top: 16%;
+                left: 62%;
                 img {
                     animation: float-down 5s ease-in-out infinite;
                 }
             }
-        }  
+        }
+        #landing-title {
+            h1 {
+                font-size: 4.8rem;
+             } 
+        }
     }
 }
 
 //INTERMEDIATE MOBILE-TABLET
-  @media (max-width:872px) and (min-width:577px) {
+  @media (max-width:9px) and (min-width:577px) {
     //boobles
     #lottie-player {
         height: 116vh;
