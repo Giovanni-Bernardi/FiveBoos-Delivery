@@ -70,9 +70,17 @@
                                         <li>
                                             <label for="img">
                                                 Immagine principale:
-                                                <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px">
+                                                {{-- <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px"> --}}
                                             </label>
                                             <input type="file" name="img">
+                                        </li>
+
+                                        <li>
+                                            <label for="img">
+                                                Immagine banner:
+                                                {{-- <img src="{{asset ('storage/restaurant-img/' . $restaurant -> img)}}" alt="" width="100px"> --}}
+                                            </label>
+                                            <input type="file" name="img_background">
                                         </li>
 
                                         <li>
@@ -332,12 +340,30 @@
                                 <td>
                                     <ul>
                                         @php
-                                                
+                                            $products = [];
+                                            for ($i=0; $i < count($order -> products) ; $i++) { 
+                                                if($i == 0){
+                                                    $products[$i] ['id'] = $order -> products[$i] -> id;
+                                                    $products[$i] ['name'] = $order -> products[$i] -> name;
+                                                    $products[$i] ['price'] = $order -> products[$i] -> price;
+                                                    $products[$i] ['count'] = 1;
+                                                    
+                                                }
+                                                else if($order -> products[$i] -> id == $products[count($products) - 1]['id']){
+                                                    $products[count($products) - 1]['count'] ++;
+                                                }
+                                                else{
+                                                    $products[count($products)] ['id'] = $order -> products[$i] -> id;
+                                                    $products[count($products) - 1] ['name'] = $order -> products[$i] -> name;
+                                                    $products[count($products) - 1] ['price'] = $order -> products[$i] -> price;
+                                                    $products[count($products) - 1] ['count'] = 1;
+                                                }
+                                            }
                                         @endphp
-                                        @foreach ($order -> products as $product)
-                                        <li>
-                                            {{$product -> name}}
-                                        </li>
+                                        @foreach ($products as $product)
+                                            <li>
+                                                {{$product['name']}} &#10799; {{$product['count']}}
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </td>

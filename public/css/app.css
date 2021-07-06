@@ -1584,6 +1584,14 @@ main#profile .restaurant-container #restaurant-cards .delete-res-button .alert p
 }
 
 @media screen and (max-width: 576px) {
+  main#profile h1 {
+    margin: 120px 20px 10px;
+  }
+
+  main#profile div.create-restaurant {
+    margin: 0 20px 20px;
+  }
+
   main#profile .restaurant-container {
     margin: 20px 20px;
   }
@@ -2642,7 +2650,7 @@ header nav .rx-section .user-popup {
   background-color: white;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0 2px 17px 0 #e19f17;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
   visibility: hidden;
   opacity: 0;
   width: 0px;

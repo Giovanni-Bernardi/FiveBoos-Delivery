@@ -78,7 +78,7 @@ class ProductSeeder extends Seeder
             'price' => 600,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'bbq-burger.jpg',
             'restaurant_id' => 8,
         ],
         [
@@ -90,7 +90,7 @@ class ProductSeeder extends Seeder
             'price' => 450,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'chicken-sandwitch.jpg',
             'restaurant_id' => 10,
         ],
         [
@@ -103,7 +103,7 @@ class ProductSeeder extends Seeder
             'price' => 650,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'salmon-sanwitch.jpg',
             'restaurant_id' => 10,
         ],
         [
@@ -115,7 +115,7 @@ class ProductSeeder extends Seeder
             'price' => 700,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'big-manzo.jpg',
             'restaurant_id' => 10,
         ],
         [
@@ -127,7 +127,7 @@ class ProductSeeder extends Seeder
             'price' => 600,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'crispy ham sandwitch.jpg',
             'restaurant_id' => 12,
         ],
         [
@@ -140,7 +140,7 @@ class ProductSeeder extends Seeder
             'price' => 650,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'cheese burger.jpg',
             'restaurant_id' => 12,
         ],
         [
@@ -152,7 +152,7 @@ class ProductSeeder extends Seeder
             'price' => 550,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'vegetarian-sanwitch.jpg',
             'restaurant_id' => 14,
         ],
         [
@@ -166,7 +166,7 @@ class ProductSeeder extends Seeder
             'price' => 850,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'robert burger.jpg',
             'restaurant_id' => 14,
         ],
         [
@@ -179,7 +179,7 @@ class ProductSeeder extends Seeder
             'price' => 750,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => '9.jpg',
             'restaurant_id' => 14,
         ],
         [
@@ -192,7 +192,7 @@ class ProductSeeder extends Seeder
             'price' => 750,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'nicky-beef-burger.jpg',
             'restaurant_id' => 14,
         ],
         [
@@ -205,7 +205,7 @@ class ProductSeeder extends Seeder
             'price' => 600,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'scrambled bun.jpg',
             'restaurant_id' => 14,
         ],
         [
@@ -220,7 +220,7 @@ class ProductSeeder extends Seeder
             'price' => 720,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'crispy-mc-bacon.jpg',
             'restaurant_id' => 16,
         ],
         [
@@ -234,7 +234,7 @@ class ProductSeeder extends Seeder
             'price' => 520,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'mc-chicken.jpg',
             'restaurant_id' => 16,
         ],
         [
@@ -248,7 +248,7 @@ class ProductSeeder extends Seeder
             'price' => 640,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'double-chicken-bbq.jpg',
             'restaurant_id' => 16,
         ],
         [
@@ -261,7 +261,7 @@ class ProductSeeder extends Seeder
             'price' => 570,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'Mc-wrap.jpg',
             'restaurant_id' => 16,
         ],
         [
@@ -274,7 +274,7 @@ class ProductSeeder extends Seeder
             'price' => 570,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'McToast.jpg',
             'restaurant_id' => 16,
         ],
 
@@ -348,7 +348,7 @@ class ProductSeeder extends Seeder
             'price' => 750,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'capricciosa.jpg',
             'restaurant_id' => 9,
         ],
         [
@@ -360,7 +360,7 @@ class ProductSeeder extends Seeder
             'price' => 650,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'vegetariana.jpg',
             'restaurant_id' => 9,
         ],
         [
@@ -372,7 +372,7 @@ class ProductSeeder extends Seeder
             'price' => 700,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'boscaiola.jpg',
             'restaurant_id' => 20,
         ],
         [
@@ -384,7 +384,7 @@ class ProductSeeder extends Seeder
             'price' => 680,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'zuccosa.jpg',
             'restaurant_id' => 20,
         ],
         [
@@ -396,7 +396,7 @@ class ProductSeeder extends Seeder
             'price' => 750,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'napoli.jpg',
             'restaurant_id' => 20,
         ],
         [
@@ -408,7 +408,7 @@ class ProductSeeder extends Seeder
             'price' => 600,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'origano-bio.jpg',
             'restaurant_id' => 20,
         ],
         [
@@ -420,7 +420,7 @@ class ProductSeeder extends Seeder
            'price' => 800,
            'visible'  => 1,
            'deleted' => 0,
-           'img' => NULL, //'/path/img',
+           'img' => 'salmonata.jpg',
            'restaurant_id' => 20,
         ],
 
@@ -494,7 +494,7 @@ class ProductSeeder extends Seeder
             'price' => 1100,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'maki-misto.jpg',
             'restaurant_id' => 18,
         ],
 
@@ -508,7 +508,7 @@ class ProductSeeder extends Seeder
             'price' => 450,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'mex (2).jpg',
             'restaurant_id' => 2,
         ],
         [
@@ -569,7 +569,7 @@ class ProductSeeder extends Seeder
             'price' => 500,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'Texasburito.jpg',
             'restaurant_id' => 13,
         ],
         [
@@ -582,7 +582,7 @@ class ProductSeeder extends Seeder
             'price' => 550,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'Fajutas-de-pollo.jpg',
             'restaurant_id' => 13,
         ],
         [
@@ -595,7 +595,7 @@ class ProductSeeder extends Seeder
             'price' => 620,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'fajutas-de-res.jpg',
             'restaurant_id' => 13,
         ],
         [
@@ -608,7 +608,7 @@ class ProductSeeder extends Seeder
             'price' => 720,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'chilly-con-carne.jpg',
             'restaurant_id' => 13,
         ],
         [
@@ -621,7 +621,7 @@ class ProductSeeder extends Seeder
             'price' => 640,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'taco-de-pollo.jpg',
             'restaurant_id' => 13,
         ],
         [
@@ -634,7 +634,7 @@ class ProductSeeder extends Seeder
             'price' => 620,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'vegetarian-burrito.jpg',
             'restaurant_id' => 19,
         ],
         [
@@ -647,7 +647,7 @@ class ProductSeeder extends Seeder
             'price' => 720,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'salmon-wrap.jpg',
             'restaurant_id' => 19,
         ],
         [
@@ -660,7 +660,7 @@ class ProductSeeder extends Seeder
             'price' => 720,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'vegetarian-burrito.jpg',
             'restaurant_id' => 19,
         ],
         [
@@ -672,7 +672,7 @@ class ProductSeeder extends Seeder
             'price' => 440,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'fruit-salad.jpg',
             'restaurant_id' => 19,
         ],
         [
@@ -685,7 +685,7 @@ class ProductSeeder extends Seeder
             'price' => 520,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'cesar-salad.jpg',
             'restaurant_id' => 19,
         ],
 
@@ -760,7 +760,7 @@ class ProductSeeder extends Seeder
             'price' => 450,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'nwe-york-cheesecake.jpg',
             'restaurant_id' => 15,
         ],
         [
@@ -773,7 +773,7 @@ class ProductSeeder extends Seeder
             'price' => 400,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'deep-chocolate-cake.jpg',
             'restaurant_id' => 15,
         ],
         [
@@ -786,7 +786,7 @@ class ProductSeeder extends Seeder
             'price' => 470,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'torta-oreo.jpg',
             'restaurant_id' => 15,
         ],
         [
@@ -798,7 +798,7 @@ class ProductSeeder extends Seeder
             'price' => 400,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'apple-crumble.jpg',
             'restaurant_id' => 15,
         ],
         [
@@ -811,7 +811,7 @@ class ProductSeeder extends Seeder
             'price' => 380,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'vegan-apple-pie.jpg',
             'restaurant_id' => 15,
         ],
         [
@@ -824,7 +824,7 @@ class ProductSeeder extends Seeder
             'price' => 350,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'sandy-yogurt.jpg',
             'restaurant_id' => 21,
         ],
         [
@@ -836,7 +836,7 @@ class ProductSeeder extends Seeder
             'price' => 350,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'danny-yogurt.jpg',
             'restaurant_id' => 21,
         ],
 
@@ -922,7 +922,7 @@ class ProductSeeder extends Seeder
             'price' => 1250,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'poke-aloha.jpg',
             'restaurant_id' => 18,
         ],
 
@@ -996,7 +996,7 @@ class ProductSeeder extends Seeder
             'price' => 1000,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'zuppa-mare.jpg',
             'restaurant_id' => 7,
         ],
 
@@ -1070,7 +1070,7 @@ class ProductSeeder extends Seeder
             'price' => 700,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'spezzatino-di-manzo.jpg',
             'restaurant_id' => 7,
         ],
         [
@@ -1082,7 +1082,7 @@ class ProductSeeder extends Seeder
             'price' => 1500,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'costine glassate.jpg',
             'restaurant_id' => 7,
         ],
         [
@@ -1094,7 +1094,7 @@ class ProductSeeder extends Seeder
             'price' => 900,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'coniglio-alla-ligure.jpg',
             'restaurant_id' => 8,
         ],
         [
@@ -1106,7 +1106,7 @@ class ProductSeeder extends Seeder
             'price' => 1200,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'bombette pugliesi.jpg',
             'restaurant_id' => 8,
         ],
         [
@@ -1118,7 +1118,7 @@ class ProductSeeder extends Seeder
             'price' => 700,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'filetto-di-maiale.jpg',
             'restaurant_id' => 8,
         ],
         [
@@ -1130,7 +1130,7 @@ class ProductSeeder extends Seeder
             'price' => 1100,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'maiale-in-agrodolce.jpg',
             'restaurant_id' => 11,
         ],
         [
@@ -1142,7 +1142,7 @@ class ProductSeeder extends Seeder
             'price' => 1700,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'petto-di-anatra.jpg',
             'restaurant_id' => 11,
         ],
         [
@@ -1154,7 +1154,7 @@ class ProductSeeder extends Seeder
             'price' => 1300,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'bistecca-alla-tartara.jpg',
             'restaurant_id' => 11,
         ],
 
@@ -1302,7 +1302,7 @@ class ProductSeeder extends Seeder
             'price' => 1300,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'parmigiana-di-melanzane.jpg',
             'restaurant_id' => 21,
         ],
         [
@@ -1314,7 +1314,7 @@ class ProductSeeder extends Seeder
             'price' => 600,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'polpette-di-spinaci.jpg',
             'restaurant_id' => 21,
         ],
         [
@@ -1326,7 +1326,7 @@ class ProductSeeder extends Seeder
             'price' => 1300,
             'visible'  => 1,
             'deleted' => 0,
-            'img' => NULL, //'/path/img',
+            'img' => 'frittelle-di-patate.jpg',
             'restaurant_id' => 21,
         ],
     ];

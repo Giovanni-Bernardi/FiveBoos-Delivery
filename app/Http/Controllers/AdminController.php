@@ -62,6 +62,17 @@ class AdminController extends Controller
         }
         $restaurant -> save();
 
+        // dd($request -> file('img_background'));
+        if ($request -> file('img_background')) {
+            $img = $request -> file('img_background');
+            $imgExt = $img -> getClientOriginalExtension();
+            $imgNewName = time() . rand(0, 1000). '.' . $imgExt;
+            $folder = '/restaurant-img/';
+            $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+            $restaurant -> img_background = $imgNewName;
+        }
+        $restaurant -> save();
+
         return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id));
     }
 
@@ -131,6 +142,16 @@ class AdminController extends Controller
             $restaurant -> img = $imgNewName;
             $restaurant -> save();
         }
+
+        if ($request -> file('img_background')) {
+            $img = $request -> file('img_background');
+            $imgExt = $img -> getClientOriginalExtension();
+            $imgNewName = time() . rand(0, 1000). '.' . $imgExt;
+            $folder = '/restaurant-img/';
+            $imgFile = $img -> storeAs($folder, $imgNewName, 'public');
+            $restaurant -> img_background = $imgNewName;
+        }
+        $restaurant -> save();
 
         return redirect() -> route('restaurantDetailsProfileLink', Crypt::encrypt($restaurant -> id));
     }
@@ -238,6 +259,7 @@ class AdminController extends Controller
         $restaurantId = Crypt::decrypt($restaurantId);
         $restaurant = Restaurant::findOrFail($restaurantId);
         $categories = Category::all();
+        
         $orders = Order::select('orders.id' ,'orders.total_price', 'orders.delivery_date', 'orders.payment_status')
         -> groupBy('orders.id')
         -> join('order_product', 'orders.id', '=', 'order_product.order_id')

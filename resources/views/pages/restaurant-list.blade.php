@@ -49,6 +49,9 @@
                     </div>
                 </a>   
             </li>
+            <li v-if="filteredRestaurants.length < 1 " style="padding-left: 10px">
+                <p>Nessun ristorante trovato</p>
+            </li>
         </ul>
     </div>
 </main>

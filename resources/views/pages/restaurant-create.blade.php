@@ -58,9 +58,15 @@
                         </div>
                     </li>
                     <li>
-                        <label>Immagine di copertina</label>
+                        <label>Immagine principale</label>
                         <div class="">
                             <input type="file" class="text" name="img">
+                        </div>
+                    </li>
+                    <li>
+                        <label>Immagine banner</label>
+                        <div class="">
+                            <input type="file" class="text" name="img_background">
                         </div>
                     </li>
                     <li>

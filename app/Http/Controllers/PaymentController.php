@@ -37,24 +37,21 @@ class PaymentController extends Controller
             return redirect() -> route('indexViewLink');
         }
 
-        if (Auth::id()) {
-            $user = User::findOrFail(Auth::id());
-        }
-
+        
         $total_price = session('total_price')[0];
         $sessionProducts = session('products');
-
+        
         $gateway = $this -> braintreeGateway();
-
+        
         $token = $gateway->ClientToken()->generate();
-
+        
         $productsList = [];
         // Creo un array con i prod. già ordinati
         foreach ($sessionProducts as $product_id) {
             $query = Product::findOrFail($product_id);
             $productsList [] = $query;
         }
-
+        
         // Nuovo array con nome e quanità per riepilogo carrello
         $products = [];
         for ($i=0; $i < count($productsList) ; $i++) { 
@@ -75,8 +72,13 @@ class PaymentController extends Controller
                 $products[count($products) - 1] ['count'] = 1;
             }
         }
-
-        return view('pages.pay', compact('gateway', 'token', 'total_price', 'products', 'user'));
+        
+        if (Auth::check()) {
+            $user = User::findOrFail(Auth::id());
+            return view('pages.pay', compact('gateway', 'token', 'total_price', 'products', 'user'));
+        }else{
+            return view('pages.pay', compact('gateway', 'token', 'total_price', 'products'));
+        }
     }
 
     public function checkoutOrder(Request $request) {
